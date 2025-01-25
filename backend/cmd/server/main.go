@@ -1,16 +1,22 @@
 package main
 
 import (
-	"fmt"
-	"log"
-	"net/http"
+	// "fmt"
+	// "log"
+	// "net/http"
+	"github.com/gin-gonic/gin"
 )
 
-func handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hi there, I love %s!", r.URL.Path[1:])
-}
-
 func main() {
-	http.HandleFunc("/", handler)
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	r := gin.Default()
+	r.GET("/ping", func(c *gin.Context) {
+		c.IndentedJSON(200, gin.H{
+			"message": "pong",
+			"wow":     "amazinng",
+			"moto": gin.H{
+				"this": "is a wpw",
+			},
+		})
+	})
+	r.Run() // listen and serve on 0.0.0.0:8080
 }

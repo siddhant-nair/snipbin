@@ -11,7 +11,4 @@ func dbConnect() {
 	if err != nil {
 		panic("failed to connect to the database")
 	}
-
 }
-
-// github.com/mattn/go-sqlite3

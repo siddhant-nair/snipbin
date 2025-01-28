@@ -1,6 +1,9 @@
 package main
 
-// import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 type runeIndices map[rune][]int
 
@@ -18,13 +21,47 @@ func indexString(txt string, runeCount runeIndices) runeIndices {
 // bayes-moore attempt 1
 func findPattern(txtIndices runeIndices, pattIndices runeIndices, txt string, pattern string) []int {
 
-	lastChar := rune(pattern[len(pattern)-1])
+	// last character
+	lc := rune(pattern[len(pattern)-1])
+	lenP := len(pattern)
 	ans := []int{}
-	minOffset := 0
+	min_offset := 0
 
-	for _, v := range txtIndices[lastChar] {
+	// fmt.Println(txtIndices[lc])
+
+	for _, lc_idx := range txtIndices[lc] {
+		off := 0
+
+		if lc_idx < min_offset || lc_idx < lenP-1 {
+			continue
+		}
+
+		for ; txt[lc_idx-off] == pattern[lenP-1-off] && off < lenP-1; off++ {
+		}
+
+		if off == lenP-1 && txt[lc_idx-off] == pattern[0] {
+			ans = append(ans, lc_idx-(lenP-1))
+			min_offset = 0
+			continue
+		}
+
+		if off > lenP-1 {
+			mismatch, exists := pattIndices[rune(txt[lc_idx-off])]
+			mismatch_idx := len(mismatch)
+			if exists {
+				for ; lenP-1-off < mismatch[mismatch_idx]; mismatch_idx-- {
+				}
+				min_offset = mismatch[mismatch_idx]
+			} else {
+				min_offset = lenP
+			}
+
+			min_offset += lc_idx
+		}
 
 	}
+
+	fmt.Println(ans)
 
 	return ans
 }
@@ -33,20 +70,25 @@ func main() {
 	txtRuneIndices := make(runeIndices)
 	pattRuneIndices := make(runeIndices)
 
-	randomString := `ttY bM,qt InCwdoitC[D;O t0J b]WMv4dotpTXj0., XJtyZ
-{lV6b74S} Dotxf{KLs LqnKPT6$ 9zkU{fE&H7rI ${txtIndices}
- cCwez=g9Mtb' 6eMSVL 'FM8yLX 2i(fVRdoth4)2MW`
+	randomString := "fainfivwbafovuiwsaov"
 
-	pattern := "dot"
+	loweredRandomString := strings.ToLower(randomString)
+	// pattern := "dot"
+	// pattern := "lmao"
+
+	var pattern string
 
 	for i := 'a'; i <= 'z'; i++ {
 		txtRuneIndices[i] = []int{}
 		pattRuneIndices[i] = []int{}
 	}
 
-	indexString(randomString, txtRuneIndices)
-	indexString(pattern, pattRuneIndices)
+	indexString(loweredRandomString, txtRuneIndices)
 
-	findPattern(txtRuneIndices, pattRuneIndices, randomString, pattern)
+	for true {
+		fmt.Scan(&pattern)
+		indexString(strings.ToLower(pattern), pattRuneIndices)
+		findPattern(txtRuneIndices, pattRuneIndices, strings.ToLower(randomString), strings.ToLower(pattern))
+	}
 
 }

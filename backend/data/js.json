@@ -1,0 +1,72 @@
+[
+    {
+        "title": "Array Filtering with filter()",
+        "summary": "const result = array.filter(() => {});",
+        "description": "This snippet demonstrates how to use the built-in JavaScript `filter()` method to create a new array containing only the even numbers from an input array. The `filter()` method iterates over the elements and applies a callback function that returns `true` for elements to keep.",
+        "example": "const numbers = [1, 2, 3, 4, 5, 6];\nconst evens = numbers.filter(num => num % 2 === 0);\nconsole.log(evens); // Output: [2, 4, 6]",
+        "tags": "array, filter, javascript, functional programming"
+    },
+    {
+        "title": "Mapping Array Elements with map()",
+        "summary": "const result = array.map(() => {});",
+        "description": "This snippet shows how to use the `map()` method to create a new array by transforming each element of an input array. It applies a provided function to each element and returns the transformed result.",
+        "example": "const numbers = [1, 2, 3, 4];\nconst doubled = numbers.map(num => num * 2);\nconsole.log(doubled); // Output: [2, 4, 6, 8]",
+        "tags": "array, map, javascript, transformation"
+    },
+    {
+        "title": "Reducing Array Values with reduce()",
+        "summary": "const result = array.reduce(() => {});",
+        "description": "This example demonstrates how to use the `reduce()` method to accumulate values in an array. The method applies a reducer function to each element, resulting in a single output value.",
+        "example": "const numbers = [1, 2, 3, 4];\nconst sum = numbers.reduce((acc, num) => acc + num, 0);\nconsole.log(sum); // Output: 10",
+        "tags": "array, reduce, javascript, aggregation"
+    },
+    {
+        "title": "Finding an Element with find()",
+        "summary": "const result = array.find(() => {});",
+        "description": "This snippet illustrates the use of the `find()` method to locate the first element in an array that satisfies a given condition. If no elements match, it returns `undefined`.",
+        "example": "const users = [{name: 'Alice'}, {name: 'Bob'}, {name: 'Charlie'}];\nconst user = users.find(u => u.name === 'Bob');\nconsole.log(user); // Output: {name: 'Bob'}",
+        "tags": "array, find, javascript, search"
+    },
+    {
+        "title": "Sorting an Array with sort()",
+        "summary": "const result = array.sort(() => {});",
+        "description": "This snippet shows how to use the `sort()` method to sort elements of an array in place. The method optionally takes a comparator function to define the sorting logic.",
+        "example": "const numbers = [4, 2, 1, 3];\nnumbers.sort((a, b) => a - b);\nconsole.log(numbers); // Output: [1, 2, 3, 4]",
+        "tags": "array, sort, javascript, comparator"
+    },
+    {
+        "title": "Checking for NaN with isNaN()",
+        "summary": "const result = isNaN(value);",
+        "description": "This snippet demonstrates the use of `isNaN()` to check if a value is NaN (Not-a-Number). It is useful for ensuring numeric validation.",
+        "example": "console.log(isNaN('hello')); // Output: true\nconsole.log(isNaN(123)); // Output: false",
+        "tags": "validation, number, javascript, isNaN"
+    },
+    {
+        "title": "Generating a Random Number",
+        "summary": "const result = Math.random();",
+        "description": "This snippet shows how to use `Math.random()` to generate a random floating-point number between 0 (inclusive) and 1 (exclusive).",
+        "example": "const randomNum = Math.random();\nconsole.log(randomNum); // Output: 0.123456 (example)",
+        "tags": "math, random, javascript, number"
+    },
+    {
+        "title": "Getting Current Date and Time",
+        "summary": "const result = new Date();",
+        "description": "This snippet demonstrates how to use the `Date` object to get the current date and time in JavaScript.",
+        "example": "const currentDate = new Date();\nconsole.log(currentDate); // Output: Tue Jan 30 2025 10:00:00 GMT+0000 (example)",
+        "tags": "date, time, javascript, datetime"
+    },
+    {
+        "title": "Converting to a String with toString()",
+        "summary": "const result = value.toString();",
+        "description": "This snippet illustrates the use of the `toString()` method to convert a number or object to its string representation.",
+        "example": "const num = 42;\nconsole.log(num.toString()); // Output: '42'",
+        "tags": "string, conversion, javascript, toString"
+    },
+    {
+        "title": "Parsing Integers with parseInt()",
+        "summary": "const result = parseInt(value, 10);",
+        "description": "This snippet demonstrates how to use `parseInt()` to convert a string to an integer. It optionally accepts a radix to specify the base of the number system.",
+        "example": "const str = '42';\nconst num = parseInt(str, 10);\nconsole.log(num); // Output: 42",
+        "tags": "number, parsing, javascript, parseInt"
+    }
+]

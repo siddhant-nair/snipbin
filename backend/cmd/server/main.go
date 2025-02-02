@@ -4,8 +4,7 @@ import (
 	// "fmt"
 	// "log"
 	// "net/http"
-	"fmt"
-
+	// "github.com/siddhant-nair/snipbin/internal/models"
 	"github.com/gin-gonic/gin"
 )
 
@@ -20,8 +19,6 @@ func main() {
 			},
 		})
 	})
-
-	fmt.Println("hello")
 
 	r.Run() // listen and serve on 0.0.0.0:8080
 }

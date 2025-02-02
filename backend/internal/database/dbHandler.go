@@ -1,5 +1,7 @@
 package database
 
+// package main
+
 import (
 	"gorm.io/driver/sqlite" // Sqlite driver based on CGO
 	// "github.com/glebarez/sqlite" // Pure go SQLite driver, checkout https://github.com/glebarez/sqlite for details
@@ -7,7 +9,8 @@ import (
 )
 
 func dbConnect() {
-	_, err := gorm.Open(sqlite.Open("snippet.db"), &gorm.Config{})
+	// func main() {
+	_, err := gorm.Open(sqlite.Open("snippetsDB.db"), &gorm.Config{})
 	if err != nil {
 		panic("failed to connect to the database")
 	}

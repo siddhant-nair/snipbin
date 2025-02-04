@@ -1,0 +1,72 @@
+[
+    {
+        "title": "Reading a File",
+        "summary": "with open(filename, 'r') as file:",
+        "description": "This snippet demonstrates how to read the contents of a file using the `open()` function in Python with a context manager.",
+        "example": "with open('example.txt', 'r') as file:\n    data = file.read()\nprint(data)",
+        "tags": "file, read, python, io"
+    },
+    {
+        "title": "Writing to a File",
+        "summary": "with open(filename, 'w') as file:",
+        "description": "This snippet shows how to write data to a file in Python using a context manager.",
+        "example": "with open('example.txt', 'w') as file:\n    file.write('Hello, World!')",
+        "tags": "file, write, python, io"
+    },
+    {
+        "title": "Filtering a List",
+        "summary": "result = list(filter(lambda x: condition, iterable))",
+        "description": "This snippet demonstrates how to filter elements from a list using the built-in `filter()` function.",
+        "example": "numbers = [1, 2, 3, 4, 5]\nevens = list(filter(lambda x: x % 2 == 0, numbers))\nprint(evens) # Output: [2, 4]",
+        "tags": "filter, list, python, functional programming"
+    },
+    {
+        "title": "Using a Dictionary Comprehension",
+        "summary": "result = {key: value for key, value in iterable}",
+        "description": "This snippet shows how to create a dictionary using a comprehension.",
+        "example": "numbers = [1, 2, 3]\nsquares = {x: x**2 for x in numbers}\nprint(squares) # Output: {1: 1, 2: 4, 3: 9}",
+        "tags": "dictionary, comprehension, python"
+    },
+    {
+        "title": "Reading JSON Data",
+        "summary": "data = json.load(file)",
+        "description": "This snippet demonstrates how to read and parse JSON data from a file in Python.",
+        "example": "import json\nwith open('data.json', 'r') as file:\n    data = json.load(file)\nprint(data)",
+        "tags": "json, read, python, parsing"
+    },
+    {
+        "title": "Handling Exceptions",
+        "summary": "try: except Exception as e:",
+        "description": "This snippet demonstrates basic error handling in Python using a `try-except` block.",
+        "example": "try:\n    result = 10 / 0\nexcept ZeroDivisionError as e:\n    print('Error:', e)",
+        "tags": "exception, error handling, python"
+    },
+    {
+        "title": "Defining a Simple Class",
+        "summary": "class ClassName: def __init__(self):",
+        "description": "This snippet demonstrates how to define and use a simple class in Python.",
+        "example": "class Person:\n    def __init__(self, name):\n        self.name = name\n    def greet(self):\n        print(f'Hello, my name is {self.name}')\n\np = Person('Alice')\np.greet()",
+        "tags": "class, oop, python"
+    },
+    {
+        "title": "Using a Generator Function",
+        "summary": "def generator(): yield value",
+        "description": "This snippet demonstrates how to define and use a generator function in Python.",
+        "example": "def count_up_to(n):\n    i = 1\n    while i <= n:\n        yield i\n        i += 1\n\nfor num in count_up_to(5):\n    print(num)",
+        "tags": "generator, yield, python, iteration"
+    },
+    {
+        "title": "Sorting a List by Key",
+        "summary": "sorted(iterable, key=lambda x: x.property)",
+        "description": "This snippet shows how to sort a list of objects or dictionaries by a specific key using the `sorted()` function.",
+        "example": "people = [{'name': 'Alice', 'age': 30}, {'name': 'Bob', 'age': 25}]\nsorted_people = sorted(people, key=lambda x: x['age'])\nprint(sorted_people) # Output: [{'name': 'Bob', 'age': 25}, {'name': 'Alice', 'age': 30}]",
+        "tags": "sort, list, python, lambda"
+    },
+    {
+        "title": "Creating a Virtual Environment",
+        "summary": "python -m venv env_name",
+        "description": "This snippet demonstrates how to create a virtual environment in Python for managing project dependencies.",
+        "example": "python -m venv my_env\nsource my_env/bin/activate",
+        "tags": "virtual environment, python, venv, dependencies"
+    }
+]

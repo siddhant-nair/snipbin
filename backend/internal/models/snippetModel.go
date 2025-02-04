@@ -1,7 +1,7 @@
 package models
 
 type Snippet struct {
-	ID          uint `gorm:"primaryKey;autoincrement"`
+	SnippetID   uint `gorm:"primaryKey;autoincrement"`
 	Title       string
 	Summary     string
 	Description string

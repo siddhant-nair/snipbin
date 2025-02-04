@@ -41,7 +41,7 @@ func indexSnippet(snippet *models.Snippet) *models.ProcessedSnippet {
 
 	return &models.ProcessedSnippet{
 		IndexedScores: json,
-		SnippetID:     snippet.ID,
+		SnippetID:     snippet.SnippetID,
 		Snippet:       *snippet,
 	}
 }
@@ -58,7 +58,7 @@ func PreProcessor(db *gorm.DB) {
 
 	// fmt.Println(processedList[1].IndexedScores)
 
-	// db.AutoMigrate(&models.ProcessedSnippet{})
-	// db.Create(processedList)
+	db.AutoMigrate(&models.ProcessedSnippet{})
+	db.Create(processedList)
 
 }

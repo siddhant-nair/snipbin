@@ -1,0 +1,72 @@
+[
+    {
+        "title": "Concatenating Strings",
+        "summary": "result := str1 + str2",
+        "description": "This snippet demonstrates how to concatenate two strings in Go using the `+` operator.",
+        "example": "package main\nimport \"fmt\"\nfunc main() {\n    str1 := \"Hello, \"\n    str2 := \"World!\"\n    result := str1 + str2\n    fmt.Println(result) // Output: Hello, World!\n}",
+        "tags": "string, concatenate, golang"
+    },
+    {
+        "title": "Reading Input from Console",
+        "summary": "fmt.Scanln(&input)",
+        "description": "This snippet demonstrates how to read user input from the console using `fmt.Scanln` in Go.",
+        "example": "package main\nimport \"fmt\"\nfunc main() {\n    var name string\n    fmt.Print(\"Enter your name: \")\n    fmt.Scanln(&name)\n    fmt.Printf(\"Hello, %s!\\n\", name)\n}",
+        "tags": "input, console, golang, fmt"
+    },
+    {
+        "title": "Working with Maps",
+        "summary": "myMap := map[string]int{}",
+        "description": "This snippet shows how to create and use a map (dictionary) in Go to store key-value pairs.",
+        "example": "package main\nimport \"fmt\"\nfunc main() {\n    myMap := map[string]int{\"apple\": 2, \"banana\": 3}\n    fmt.Println(myMap[\"apple\"]) // Output: 2\n}",
+        "tags": "map, dictionary, golang, data structure"
+    },
+    {
+        "title": "Defining and Using Structs",
+        "summary": "type Person struct {}",
+        "description": "This snippet demonstrates how to define a struct in Go and use it to store related data.",
+        "example": "package main\nimport \"fmt\"\n\ntype Person struct {\n    Name string\n    Age  int\n}\n\nfunc main() {\n    p := Person{Name: \"Alice\", Age: 30}\n    fmt.Println(p.Name) // Output: Alice\n}",
+        "tags": "struct, data structure, golang"
+    },
+    {
+        "title": "Simple for Loop",
+        "summary": "for i := 0; i < 5; i++ {}",
+        "description": "This snippet shows how to use a `for` loop in Go to iterate a specific number of times.",
+        "example": "package main\nimport \"fmt\"\nfunc main() {\n    for i := 0; i < 5; i++ {\n        fmt.Println(i)\n    }\n}",
+        "tags": "loop, iteration, golang, for"
+    },
+    {
+        "title": "Handling Errors",
+        "summary": "if err != nil {}",
+        "description": "This snippet demonstrates basic error handling in Go using an `if` statement to check for errors.",
+        "example": "package main\nimport (\n    \"fmt\"\n    \"strconv\"\n)\nfunc main() {\n    num, err := strconv.Atoi(\"42\")\n    if err != nil {\n        fmt.Println(\"Error:\", err)\n    } else {\n        fmt.Println(\"Converted number:\", num)\n    }\n}",
+        "tags": "error handling, golang, strconv"
+    },
+    {
+        "title": "Creating a Goroutine",
+        "summary": "go myFunction()",
+        "description": "This snippet shows how to create a simple Goroutine in Go for concurrent execution.",
+        "example": "package main\nimport (\n    \"fmt\"\n    \"time\"\n)\nfunc printMessage() {\n    fmt.Println(\"Hello from Goroutine!\")\n}\nfunc main() {\n    go printMessage()\n    time.Sleep(time.Second) // Wait for Goroutine to finish\n}",
+        "tags": "goroutine, concurrency, golang"
+    },
+    {
+        "title": "Writing to a File",
+        "summary": "ioutil.WriteFile(filename, data, perm)",
+        "description": "This snippet demonstrates how to write data to a file using `ioutil.WriteFile` in Go.",
+        "example": "package main\nimport (\n    \"io/ioutil\"\n    \"log\"\n)\nfunc main() {\n    data := []byte(\"Hello, File!\")\n    err := ioutil.WriteFile(\"example.txt\", data, 0644)\n    if err != nil {\n        log.Fatal(err)\n    }\n}",
+        "tags": "file, write, ioutil, golang"
+    },
+    {
+        "title": "Creating an HTTP Server",
+        "summary": "http.ListenAndServe(addr, handler)",
+        "description": "This snippet shows how to set up a simple HTTP server using the `net/http` package in Go.",
+        "example": "package main\nimport (\n    \"fmt\"\n    \"net/http\"\n)\nfunc handler(w http.ResponseWriter, r *http.Request) {\n    fmt.Fprintln(w, \"Hello, World!\")\n}\nfunc main() {\n    http.HandleFunc(\"/\", handler)\n    http.ListenAndServe(\":8080\", nil)\n}",
+        "tags": "http, server, golang, web"
+    },
+    {
+        "title": "Using Channels for Communication",
+        "summary": "ch := make(chan int)",
+        "description": "This snippet demonstrates how to use channels in Go for communication between Goroutines.",
+        "example": "package main\nimport \"fmt\"\nfunc main() {\n    ch := make(chan int)\n    go func() { ch <- 42 }()\n    fmt.Println(<-ch) // Output: 42\n}",
+        "tags": "channel, concurrency, golang"
+    }
+]

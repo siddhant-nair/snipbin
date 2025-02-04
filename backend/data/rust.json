@@ -1,0 +1,72 @@
+[
+    {
+        "title": "Printing to the Console",
+        "summary": "println!(\"{}\", value);",
+        "description": "This snippet demonstrates how to print text and formatted values to the console using the `println!` macro in Rust.",
+        "example": "fn main() {\n    let name = \"Alice\";\n    println!(\"Hello, {}!\", name);\n}",
+        "tags": "console, println, rust, basics"
+    },
+    {
+        "title": "Reading a Line from Standard Input",
+        "summary": "std::io::stdin().read_line(&mut buffer).unwrap();",
+        "description": "This snippet shows how to read input from the user using `std::io::stdin()` in Rust.",
+        "example": "use std::io;\n\nfn main() {\n    let mut input = String::new();\n    println!(\"Enter something:\");\n    io::stdin().read_line(&mut input).unwrap();\n    println!(\"You entered: {}\", input);\n}",
+        "tags": "input, io, rust, read_line"
+    },
+    {
+        "title": "Defining and Using a Struct",
+        "summary": "struct StructName { field1: Type, field2: Type }",
+        "description": "This snippet demonstrates how to define and use a simple struct in Rust.",
+        "example": "struct Person {\n    name: String,\n    age: u32,\n}\n\nfn main() {\n    let alice = Person {\n        name: String::from(\"Alice\"),\n        age: 30,\n    };\n    println!(\"{} is {} years old.\", alice.name, alice.age);\n}",
+        "tags": "struct, data structure, rust"
+    },
+    {
+        "title": "Using a Vector",
+        "summary": "let mut vec = Vec::new();",
+        "description": "This snippet shows how to create and manipulate a vector in Rust.",
+        "example": "fn main() {\n    let mut numbers = vec![1, 2, 3];\n    numbers.push(4);\n    println!(\"{:?}\", numbers); // Output: [1, 2, 3, 4]\n}",
+        "tags": "vector, collection, rust, vec"
+    },
+    {
+        "title": "Error Handling with Result",
+        "summary": "if let Err(e) = result {}",
+        "description": "This snippet demonstrates error handling in Rust using the `Result` type and pattern matching.",
+        "example": "use std::fs::File;\n\nfn main() {\n    let file = File::open(\"nonexistent.txt\");\n    match file {\n        Ok(_) => println!(\"File opened successfully\"),\n        Err(e) => println!(\"Error opening file: {}\", e),\n    }\n}",
+        "tags": "error handling, result, rust"
+    },
+    {
+        "title": "Implementing a Trait",
+        "summary": "impl TraitName for StructName {}",
+        "description": "This snippet shows how to implement a trait for a struct in Rust.",
+        "example": "trait Greet {\n    fn greet(&self);\n}\n\nstruct Person;\n\nimpl Greet for Person {\n    fn greet(&self) {\n        println!(\"Hello!\");\n    }\n}\n\nfn main() {\n    let p = Person;\n    p.greet();\n}",
+        "tags": "trait, implementation, rust"
+    },
+    {
+        "title": "Using an Enum",
+        "summary": "enum EnumName { Variant1, Variant2 }",
+        "description": "This snippet demonstrates how to define and use an enum in Rust.",
+        "example": "enum Direction {\n    Up,\n    Down,\n    Left,\n    Right,\n}\n\nfn main() {\n    let dir = Direction::Left;\n    match dir {\n        Direction::Up => println!(\"Going up\"),\n        Direction::Down => println!(\"Going down\"),\n        Direction::Left => println!(\"Going left\"),\n        Direction::Right => println!(\"Going right\"),\n    }\n}",
+        "tags": "enum, match, rust"
+    },
+    {
+        "title": "Using Ownership and Borrowing",
+        "summary": "fn function_name(param: &Type) {}",
+        "description": "This snippet shows how ownership and borrowing work in Rust by passing a reference to a function.",
+        "example": "fn print_length(s: &String) {\n    println!(\"Length: {}\", s.len());\n}\n\nfn main() {\n    let s = String::from(\"Hello\");\n    print_length(&s);\n    println!(\"String still accessible: {}\", s);\n}",
+        "tags": "ownership, borrowing, rust, references"
+    },
+    {
+        "title": "Creating a HashMap",
+        "summary": "let mut map = HashMap::new();",
+        "description": "This snippet demonstrates how to create and manipulate a HashMap in Rust.",
+        "example": "use std::collections::HashMap;\n\nfn main() {\n    let mut scores = HashMap::new();\n    scores.insert(\"Alice\", 50);\n    scores.insert(\"Bob\", 40);\n    println!(\"{:?}\", scores);\n}",
+        "tags": "hashmap, collection, rust, data structure"
+    },
+    {
+        "title": "Using Threads for Concurrency",
+        "summary": "thread::spawn(|| {});",
+        "description": "This snippet shows how to spawn a new thread in Rust using `thread::spawn`.",
+        "example": "use std::thread;\n\nfn main() {\n    let handle = thread::spawn(|| {\n        println!(\"Hello from a thread!\");\n    });\n\n    handle.join().unwrap();\n}",
+        "tags": "thread, concurrency, rust"
+    }
+]

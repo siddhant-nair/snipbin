@@ -4,11 +4,10 @@ import "gorm.io/datatypes"
 
 type ProcessedSnippet struct {
 	// gorm.Model
-	ID uint
-	// IndexedScores map[string]int `gorm:"serializer:json"`
-	IndexedScores datatypes.JSON
-	SnippetID     uint
-	Snippet       Snippet
+	ProcessedSnippetID uint
+	IndexedScores      datatypes.JSON
+	SnippetID          uint
+	Snippet            Snippet
 }
 
 // func (ps *ProcessedSnippet) ConvertToJson() {

@@ -14,7 +14,8 @@ import (
 )
 
 func createSnippetList(db *gorm.DB, language string) {
-	jsonData, err := os.ReadFile("js.json")
+
+	jsonData, err := os.ReadFile(language + ".json")
 
 	if err != nil {
 		fmt.Println(err)
@@ -60,10 +61,11 @@ func main() {
 		panic("failed to connect to the database")
 	}
 
-	// insert := "language"
-	insert := "snippets"
+	insert := "language"
+	// insert := "snippets"
+	// insert := ""
 
-	if onlyProcess := true; onlyProcess {
+	if onlyProcess := false; onlyProcess {
 		PreProcessor(db)
 		return
 	}
@@ -74,6 +76,12 @@ func main() {
 	} else if insert == "snippets" {
 		db.AutoMigrate(&models.Snippet{})
 		createSnippetList(db, "javascript")
+	} else {
+		db.AutoMigrate(&models.Language{}, models.Snippet{})
+		createLanguageList(db)
+		createSnippetList(db, "javascript")
+
+		PreProcessor(db)
 	}
 
 }

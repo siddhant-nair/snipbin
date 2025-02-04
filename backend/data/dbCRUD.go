@@ -6,6 +6,7 @@ import (
 	"os"
 
 	"gorm.io/driver/sqlite" // Sqlite driver based on CGO
+	"gorm.io/gorm/logger"
 
 	"github.com/siddhant-nair/snipbin/internal/models"
 	// "github.com/glebarez/sqlite" // Pure go SQLite driver, checkout https://github.com/glebarez/sqlite for details
@@ -52,13 +53,20 @@ func createLanguageList(db *gorm.DB) {
 }
 
 func main() {
-	db, err := gorm.Open(sqlite.Open("../internal/database/snippetsDB.db"), &gorm.Config{})
+	db, err := gorm.Open(sqlite.Open("../internal/database/snippetsDB.db"), &gorm.Config{
+		Logger: logger.Default.LogMode(logger.Error),
+	})
 	if err != nil {
 		panic("failed to connect to the database")
 	}
 
 	// insert := "language"
 	insert := "snippets"
+
+	if onlyProcess := true; onlyProcess {
+		PreProcessor(db)
+		return
+	}
 
 	if insert == "language" {
 		db.AutoMigrate(&models.Language{})

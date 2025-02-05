@@ -4,7 +4,7 @@ import "gorm.io/datatypes"
 
 type ProcessedSnippet struct {
 	// gorm.Model
-	ProcessedSnippetID uint
+	ProcessedSnippetID uint `gorm:"primaryKey;autoincrement"`
 	IndexedScores      datatypes.JSON
 	SnippetID          uint
 	Snippet            Snippet

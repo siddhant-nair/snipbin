@@ -55,19 +55,26 @@ func createLanguageList(db *gorm.DB) {
 
 func main() {
 	db, err := gorm.Open(sqlite.Open("../internal/database/snippetsDB.db"), &gorm.Config{
-		Logger: logger.Default.LogMode(logger.Error),
+		Logger: logger.Default.LogMode(logger.Silent),
 	})
 	if err != nil {
 		panic("failed to connect to the database")
 	}
 
-	insert := "language"
+	// insert := "language"
 	// insert := "snippets"
-	// insert := ""
+	insert := "all"
 
 	if onlyProcess := false; onlyProcess {
 		PreProcessor(db)
 		return
+	}
+
+	languages := [...]string{
+		"javascript",
+		"go",
+		"python",
+		"rust",
 	}
 
 	if insert == "language" {
@@ -75,11 +82,17 @@ func main() {
 		createLanguageList(db)
 	} else if insert == "snippets" {
 		db.AutoMigrate(&models.Snippet{})
-		createSnippetList(db, "javascript")
-	} else {
+		createSnippetList(db, languages[1])
+		// PreProcessor(db)
+
+	} else if insert == "all" {
 		db.AutoMigrate(&models.Language{}, models.Snippet{})
+
 		createLanguageList(db)
-		createSnippetList(db, "javascript")
+
+		for i := range languages {
+			createSnippetList(db, languages[i])
+		}
 
 		PreProcessor(db)
 	}

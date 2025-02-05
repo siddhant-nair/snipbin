@@ -3,7 +3,7 @@ package models
 type Snippet struct {
 	SnippetID   uint `gorm:"primaryKey;autoincrement"`
 	Title       string
-	Summary     string
+	Summary     string `gorm:"unique"`
 	Description string
 	Example     string
 	Tags        string

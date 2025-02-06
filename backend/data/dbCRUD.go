@@ -6,7 +6,6 @@ import (
 	"os"
 
 	"gorm.io/driver/sqlite" // Sqlite driver based on CGO
-	"gorm.io/gorm/logger"
 
 	"github.com/siddhant-nair/snipbin/internal/models"
 	// "github.com/glebarez/sqlite" // Pure go SQLite driver, checkout https://github.com/glebarez/sqlite for details
@@ -53,9 +52,20 @@ func createLanguageList(db *gorm.DB) {
 	db.Create(languageArray)
 }
 
+func QueryTrials(db *gorm.DB) {
+
+	lang := *models.Languages["javascript"]
+
+	var snipList []*models.Snippet
+
+	db.Where(&models.Snippet{LanguageID: lang.LanguageID}).Find(&snipList)
+
+	fmt.Println(len(snipList))
+}
+
 func main() {
-	db, err := gorm.Open(sqlite.Open("../internal/database/snippetsDB.db"), &gorm.Config{
-		Logger: logger.Default.LogMode(logger.Silent),
+	db, err := gorm.Open(sqlite.Open("../snippetsDB.db"), &gorm.Config{
+		// Logger: logger.Default.LogMode(logger.Silent),
 	})
 	if err != nil {
 		panic("failed to connect to the database")
@@ -63,7 +73,13 @@ func main() {
 
 	// insert := "language"
 	// insert := "snippets"
-	insert := "all"
+	// insert := "all"
+	insert := ""
+
+	if amIQuerying := true; amIQuerying {
+		QueryTrials(db)
+		return
+	}
 
 	if onlyProcess := false; onlyProcess {
 		PreProcessor(db)

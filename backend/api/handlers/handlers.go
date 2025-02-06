@@ -2,6 +2,7 @@ package handlers
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 
 	"github.com/siddhant-nair/snipbin/internal/database"
@@ -32,7 +33,11 @@ func NewHandler(userRepo *database.UserRepo) *Handler {
 func (h *Handler) SetLanguage() {
 	language := "javascript"
 
-	langArray, _ := h.userRepo.GetLanguageArray(language)
+	langArray, err := h.userRepo.GetLanguageArray(language)
+
+	if err != nil {
+		fmt.Println("Something went wrong while setting the database")
+	}
 
 	h.languageArray = langArray
 }
@@ -43,5 +48,5 @@ func (h *Handler) GetAllSnippets(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 	w.Header().Set("Content-Type", "application/json")
 
-	json.NewEncoder(w).Encode(map[string]string{"lmao": "lmao"})
+	json.NewEncoder(w).Encode(h.languageArray)
 }

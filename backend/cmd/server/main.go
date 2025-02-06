@@ -2,6 +2,7 @@ package main
 
 import (
 	// "fmt"
+	"fmt"
 	"log"
 	"net/http"
 
@@ -25,6 +26,8 @@ func main() {
 
 	server.SetLanguage()
 	mux.HandleFunc("GET /", server.GetAllSnippets)
+
+	fmt.Println("Server running on localhost:8080")
 
 	log.Fatal(http.ListenAndServe("localhost:8080", mux))
 	// listen and serve on 0.0.0.0:8080

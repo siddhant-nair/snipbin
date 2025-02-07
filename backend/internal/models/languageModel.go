@@ -1,8 +1,8 @@
 package models
 
 type Language struct {
-	LanguageID   uint   `gorm:"primaryKey"`
-	LanguageName string `gorm:"column:language_name"`
+	LanguageID   uint   `json:"language_id" gorm:"primaryKey"`
+	LanguageName string `json:"language_name" gorm:"column:language_name"`
 }
 
 var Languages = map[string]*Language{

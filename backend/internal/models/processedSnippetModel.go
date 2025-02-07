@@ -4,10 +4,10 @@ import "gorm.io/datatypes"
 
 type ProcessedSnippet struct {
 	// gorm.Model
-	ProcessedSnippetID uint `gorm:"primaryKey;autoincrement"`
-	IndexedScores      datatypes.JSON
-	SnippetID          uint
-	Snippet            Snippet
+	ProcessedSnippetID uint           `json:"processed_snippet_id" gorm:"primaryKey;autoincrement"`
+	IndexedScores      datatypes.JSON `json:"indexed_scores"`
+	SnippetID          uint           `json:"snippet_id"`
+	Snippet            Snippet        `json:"snippet"`
 }
 
 // func (ps *ProcessedSnippet) ConvertToJson() {

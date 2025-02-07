@@ -45,8 +45,8 @@ func (h *Handler) SetLanguage() {
 func (h *Handler) GetAllSnippets(w http.ResponseWriter, r *http.Request) {
 	// language := "javascript"
 
-	w.WriteHeader(http.StatusOK)
 	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
 
 	json.NewEncoder(w).Encode(h.languageArray)
 }

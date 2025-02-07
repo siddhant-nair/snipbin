@@ -14,18 +14,44 @@ import (
 	// "github.com/gin-gonic/gin"
 )
 
+type MiddleWare func(http.HandlerFunc) http.HandlerFunc
+
+func chainMiddleWare(f http.HandlerFunc, middleware ...MiddleWare) http.HandlerFunc {
+	for _, m := range middleware {
+		f = m(f)
+	}
+
+	return f
+}
+
+func enableCORS(next http.HandlerFunc) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Access-Control-Allow-Origin", "*")
+		w.Header().Set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS")
+		w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+
+		if r.Method == "OPTIONS" {
+			w.WriteHeader(http.StatusOK)
+			return
+		}
+		next(w, r)
+	}
+}
+
 func main() {
 	db, err := gorm.Open(sqlite.Open("snippetsDB.db"), &gorm.Config{})
 	if err != nil {
 		panic("failed to connect to the database")
 	}
 
+	middleware := []MiddleWare{enableCORS}
+
 	mux := http.NewServeMux()
 	userRepo := database.NewUserRepo(db)
 	server := handlers.NewHandler(userRepo)
 
 	server.SetLanguage()
-	mux.HandleFunc("GET /", server.GetAllSnippets)
+	mux.HandleFunc("GET /", chainMiddleWare(server.GetAllSnippets, middleware...))
 
 	fmt.Println("Server running on localhost:8080")
 

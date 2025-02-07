@@ -1,14 +1,14 @@
 package models
 
 type Snippet struct {
-	SnippetID   uint `gorm:"primaryKey;autoincrement"`
-	Title       string
-	Summary     string `gorm:"unique"`
-	Description string
-	Example     string
-	Tags        string
-	LanguageID  uint
-	Language    Language
+	SnippetID   uint     `json:"snippet_id" gorm:"primaryKey;autoincrement"`
+	Title       string   `json:"title"`
+	Summary     string   `json:"summary" gorm:"unique"`
+	Description string   `json:"description"`
+	Example     string   `json:"example"`
+	Tags        string   `json:"tags"`
+	LanguageID  uint     `json:"language_id"`
+	Language    Language `json:"language"`
 }
 
 func CreateSnippet(

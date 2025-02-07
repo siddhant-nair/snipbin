@@ -16,7 +16,11 @@ export default function CodeSnippet({ codeBlock }: { codeBlock: string }) {
     <Highlight code={codeBlock} language="js">
       {
         ({ tokens, getTokenProps }) => (
-          <pre style={{fontFamily: '"DM Mono", serif'}} className="overflow-scroll py-4">
+          <pre style={{fontFamily: '"DM Mono", serif', scrollbarGutter: "unset"}} 
+          // !whitespace-normal break-normal
+            className="
+            whitespace-pre break-words overflow-hidden
+            scroll-auto py-4">
             {tokens.map((line, i) => (
               <div key={i}>
                 {line.map((token, key) => { 

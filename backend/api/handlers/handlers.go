@@ -30,9 +30,8 @@ func NewHandler(userRepo *database.UserRepo) *Handler {
 	}
 }
 
-func (h *Handler) SetLanguage() {
-	language := "javascript"
-
+func (h *Handler) SetLanguage(chosenLanguage string) {
+	language := chosenLanguage /*get language from post body*/
 	langArray, err := h.userRepo.GetLanguageArray(language)
 
 	if err != nil {
@@ -44,6 +43,8 @@ func (h *Handler) SetLanguage() {
 
 func (h *Handler) GetAllSnippets(w http.ResponseWriter, r *http.Request) {
 	// language := "javascript"
+	// fmt.Println(r.PathValue("language"), "handlers.go line 46")
+	h.SetLanguage(r.PathValue("language"))
 
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)

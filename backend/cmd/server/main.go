@@ -50,8 +50,9 @@ func main() {
 	userRepo := database.NewUserRepo(db)
 	server := handlers.NewHandler(userRepo)
 
-	server.SetLanguage()
-	mux.HandleFunc("GET /", chainMiddleWare(server.GetAllSnippets, middleware...))
+	// mux.HandleFunc("POST /set-language", chainMiddleWare(server.SetLanguage, middleware...))
+	// mux.HandleFunc("GET /", chainMiddleWare(server.GetAllSnippets, middleware...))
+	mux.HandleFunc("GET /{language}", chainMiddleWare(server.GetAllSnippets, middleware...))
 
 	fmt.Println("Server running on localhost:8080")
 

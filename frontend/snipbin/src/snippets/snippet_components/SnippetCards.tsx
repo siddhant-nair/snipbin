@@ -2,10 +2,12 @@ import { CheckCheck, Copy, Maximize2 } from "lucide-react"
 import CodeSnippet from "./CodeSnippet"
 import { useState } from "react";
 
-export default function SnippetCards({ title, summary }: { title: string, summary: string }): JSX.Element {
+export default function SnippetCards({
+  title, summary, languageId }:
+  { title: string, summary: string, languageId: number }): JSX.Element {
 
   return (
-    // <div className="w-[100%] aspect-[5.25] bg-gray-custom p-4 rounded-2xl flex flex-col gap-3">
+    // <div className="w-[100%] max-w-[40rem] aspect-[3.75] bg-gray-custom p-4 rounded-2xl flex flex-col gap-3">
     <div className="w-[22rem] aspect-[2.25] bg-gray-custom p-4 rounded-2xl flex flex-col gap-3">
       <div id="card-header" className="flex h-14 px-2 items-center justify-between">
         <div id="card-title" className="w-2/3">
@@ -14,7 +16,7 @@ export default function SnippetCards({ title, summary }: { title: string, summar
         <div id="card-expand"><Maximize2 /></div>
       </div>
       <div id="code-summary" className="relative bg-black-custom flex px-3 h-4/5 justify-between items-center rounded-xl">
-       <CodeSnippet codeBlock={summary}/> 
+       <CodeSnippet codeBlock={summary} languageId={languageId}/> 
       <CopyCodeButton codeToCopy={summary}/>
         {/* {summary} */}
       </div>

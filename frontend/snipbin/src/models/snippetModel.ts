@@ -12,9 +12,9 @@ export interface SnippetModel {
 
 export class SnippetApis {
     // snippet!: Array<SnippetModel>;
-    url = 'http://localhost:8080/getallsnippets'
+    url = 'http://localhost:8080/'
 
-    async fetchSnippets(): Promise<SnippetModel[]> {
-        return await fetchApi<SnippetModel[]>(this.url)
+    async fetchSnippets(language: string): Promise<SnippetModel[]> {
+        return await fetchApi<SnippetModel[]>(this.url+language)
     }
 }

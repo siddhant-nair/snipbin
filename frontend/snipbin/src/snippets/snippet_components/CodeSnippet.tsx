@@ -1,19 +1,35 @@
 import { Highlight } from "prism-react-renderer"
 
-export default function CodeSnippet({ codeBlock }: { codeBlock: string }) {
+export default function CodeSnippet({ codeBlock, languageId}: { codeBlock: string, languageId: number}) {
+  const languageMap: { [key: number]: string } = {
+    1: "js",
+    2: "python",
+    3: "go",
+    4: "rust",
+  }
 
   function toBeHighlighted(categories: string[]): Object {
+    const orangeHighlight = ["method", "function", "keyword"]
+    const greenHighlight = ["property", "class-name", "namespace"]
+    // const blueHighlight = ["builtin"]
+    // if (orangeHighlight.includes)
+    
+
     for (let i = 0; i < categories.length; i++) {
-      // console.log(categories[i])
-      if (categories[i] == "method" || categories[i] == "function" || categories[i] == "keyword") {
+
+      if (orangeHighlight.includes(categories[i])) {
         return { color: "#F58219" }
+      } else if (greenHighlight.includes(categories[i])) {
+        return { color: "#f080a0" }
+        return { color: "#F6afef" }
       }
     }
-      return {}
+
+    return {}
   }
 
   return (
-    <Highlight code={codeBlock} language="js">
+    <Highlight code={codeBlock} language={languageMap[languageId]}>
       {
         ({ tokens, getTokenProps }) => (
           <pre style={{fontFamily: '"DM Mono", serif', scrollbarGutter: "unset"}} 
@@ -24,9 +40,10 @@ export default function CodeSnippet({ codeBlock }: { codeBlock: string }) {
             {tokens.map((line, i) => (
               <div key={i}>
                 {line.map((token, key) => { 
-                  console.log(token.types)
+                  // console.log(token.types)
                   return (
-                    <span key={key} {...getTokenProps({ token })}
+                    <span key={key} 
+                    {...getTokenProps({ token })}
                     style={toBeHighlighted(token.types)}
                     />
                   ) })}

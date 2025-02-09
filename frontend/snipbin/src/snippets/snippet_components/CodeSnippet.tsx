@@ -26,13 +26,13 @@ export default function CodeSnippet({ codeBlock }: { codeBlock: string }) {
                 {line.map((token, key) => { 
                   console.log(token.types)
                   return (
-                  <span key={key} {...getTokenProps({ token })}
+                    <span key={key} {...getTokenProps({ token })}
                     style={toBeHighlighted(token.types)}
-                  />
-                ) })}
+                    />
+                  ) })}
               </div>
             )
-            )}
+          )}
           </pre>
         )
       }

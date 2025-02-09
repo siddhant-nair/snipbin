@@ -20,12 +20,20 @@ export default function SnippetPage() {
 	useEffect(() => {
 		setSnippetData()
 	}, [])
-
+	
 	return (<>
-		{
-			Boolean(snippetList.length) && 
-			<SnippetCards title={snippetList[0].title} summary={snippetList[0].summary} />
+<div className="flex justify-center">
+
+		{/* <div className="w-full grid grid-cols-2 place-items-center px-3 gap-x-6 gap-y-6"> */}
+		<div className="w-fit grid grid-cols-3 place-items-center px-3 gap-x-6 gap-y-6">
+			{
+				Boolean(snippetList.length) &&
+				snippetList.map((e: SnippetModel, i: number) =>
+					<SnippetCards key={i} title={e.title} summary={e.summary} />
+			)
 		}
+		</div>
+		</div>
 	</>
 	)
 }

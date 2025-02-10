@@ -9,13 +9,19 @@ export default function SnippetPage() {
 	const snippetApis = new SnippetApis()
 
 	const urlParams = useParams()
-	const searchString = useOutletContext()
+	// const searchString: React.MutableRefObject<string> = useOutletContext()
+	const searchString: string = useOutletContext()
 
-	// console.log(urlParams.language)
+	// console.log(urlParams.searchString)
 
-	async function setSnippetData() {
+	async function setSnippetData(toSearch: string) {
+		let data: SnippetModel[];
 		try {
-			const data = await snippetApis.fetchSnippets(urlParams.language!)
+			if (toSearch == "") {
+				data = await snippetApis.fetchSnippets(urlParams.language!)
+			}else{
+				data = []
+			}
 			setSnippetList(data)
 			// console.log(data)
 		} catch (err) {
@@ -24,11 +30,12 @@ export default function SnippetPage() {
 	}
 
 	useEffect(() => {
-		setSnippetData()
-	}, [])
+		setSnippetData(searchString.trim())
+		
+	}, [searchString])
 
 	return (<>
-		{console.log("Snippet Page Rendered")}
+		{console.log(searchString)}
 		<div className="flex justify-center">
 
 			{/* <div className="w-full grid grid-cols-2 place-items-center px-16 gap-x-6 gap-y-6"> */}

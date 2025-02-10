@@ -52,6 +52,8 @@ func main() {
 
 	// mux.HandleFunc("POST /set-language", chainMiddleWare(server.SetLanguage, middleware...))
 	// mux.HandleFunc("GET /", chainMiddleWare(server.GetAllSnippets, middleware...))
+
+	// mux.HandleFunc("PUT /{language}", chainMiddleWare(server.SendSearchResult, middleware...))
 	mux.HandleFunc("GET /{language}", chainMiddleWare(server.GetAllSnippets, middleware...))
 
 	fmt.Println("Server running on localhost:8080")

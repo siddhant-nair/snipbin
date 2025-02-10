@@ -15,7 +15,7 @@ export default function MainLayout() {
     <header className="w-full px-pc py-7">
       <div className="flex w-full">
         <div id="some-logo"></div>
-        <SearchBar searchString={searchString} setSearchString={searchStringSetter} />
+        <SearchBar setSearchString={searchStringSetter} />
         <div id="language-switcher"></div>
       </div>
     </header>

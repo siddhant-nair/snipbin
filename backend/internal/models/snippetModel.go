@@ -7,8 +7,8 @@ type Snippet struct {
 	Description string   `json:"description"`
 	Example     string   `json:"example"`
 	Tags        string   `json:"tags"`
-	LanguageID  uint     `json:"language_id"`
-	Language    Language `json:"language"`
+	LanguageID  uint     `json:"language_fk"`
+	Language    Language `json:"-"`
 }
 
 func CreateSnippet(

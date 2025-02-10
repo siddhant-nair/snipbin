@@ -81,6 +81,7 @@ func showScores(searchString string, indexList *[]map[string]int) []Tuple[int, i
 }
 
 func main() {
+
 	data, err := os.ReadFile("../backend/data/js.json")
 
 	if err != nil {

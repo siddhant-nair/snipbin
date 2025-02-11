@@ -35,7 +35,7 @@ export default function SnippetPage() {
 		<div className="flex justify-center">
 
 			{/* <div className="w-full grid grid-cols-2 place-items-center px-16 gap-x-6 gap-y-6"> */}
-			<div className="w-fit grid grid-cols-3 place-items-center px-3 gap-x-6 gap-y-6">
+			<div className="w-full grid grid-cols-3 place-items-center px-pc gap-x-6 gap-y-6">
 				{
 					Boolean(snippetList.length) &&
 					snippetList.map((e: SnippetModel, i: number) =>

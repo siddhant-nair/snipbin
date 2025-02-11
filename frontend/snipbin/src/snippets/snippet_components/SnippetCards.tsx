@@ -8,7 +8,7 @@ export default function SnippetCards({
 
   return (
     // <div className="w-[100%] max-w-[40rem] aspect-[3.75] bg-gray-custom p-4 rounded-2xl flex flex-col gap-3">
-    <div className="w-[22rem] aspect-[2.25] bg-gray-custom p-4 rounded-2xl flex flex-col gap-3">
+    <div className="min-w-[22rem] w-full aspect-[2.25] bg-gray-custom p-4 rounded-2xl flex flex-col gap-3">
       <div id="card-header" className="flex h-14 px-2 items-center justify-between">
         <div id="card-title" className="w-2/3">
           {title}

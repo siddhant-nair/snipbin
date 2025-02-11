@@ -57,8 +57,10 @@ func main() {
 
 	server := handlers.NewHandler(userRepo)
 
-	mux.Handle("/{language}/search", chainMiddleWare(server.SendSearchResult, middleware...))
-	mux.Handle("GET /{language}", chainMiddleWare(server.GetAllSnippets, middleware...))
+	mux.Handle("GET /api/v1/languagelist", chainMiddleWare(server.FetchLanguages, middleware...))
+
+	mux.Handle("/api/v1/{language}/search", chainMiddleWare(server.SendSearchResult, middleware...))
+	mux.Handle("GET /api/v1/{language}", chainMiddleWare(server.GetAllSnippets, middleware...))
 
 	fmt.Println("Server running on localhost:8080")
 

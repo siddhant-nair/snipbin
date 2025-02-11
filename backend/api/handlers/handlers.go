@@ -56,9 +56,7 @@ func (h *Handler) SetLanguage(chosenLanguage string) {
 }
 
 func (h *Handler) GetAllSnippets(w http.ResponseWriter, r *http.Request) {
-	if r.PathValue("language") != h.languageName {
-		h.SetLanguage(r.PathValue("language"))
-	}
+	h.SetLanguage(r.PathValue("language"))
 
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
@@ -79,7 +77,7 @@ func (h *Handler) rankResults(searchString string) []models.Snippet {
 	for _, token := range searchStrTokens {
 		for i, snippet := range h.languageProcessed {
 			// fmt.Println(indexMap)
-			scoreCard[i].Second += int(snippet.IndexedScores[token])
+			scoreCard[i].Second += snippet.IndexedScores[token]
 		}
 	}
 
@@ -111,5 +109,15 @@ func (h *Handler) SendSearchResult(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 
-	json.NewEncoder(w).Encode(rankedList)
+	json.NewEncoder(w).Encode(rankedList[:5])
+}
+
+func (h *Handler) FetchLanguages(w http.ResponseWriter, _ *http.Request) {
+
+	langList := h.userRepo.GetLanguages()
+
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+
+	json.NewEncoder(w).Encode(langList)
 }

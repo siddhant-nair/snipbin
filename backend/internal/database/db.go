@@ -51,3 +51,13 @@ func (ur *UserRepo) GetProcessedArrays(language string) (snippetJoin, error) {
 
 	return *processedSnippets, res.Error
 }
+
+func (ur *UserRepo) GetLanguages() []*models.Language {
+	languageList := []*models.Language{}
+
+	for _, v := range ur.initLanguages {
+		languageList = append(languageList, v)
+	}
+
+	return languageList
+}

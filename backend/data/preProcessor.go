@@ -1,8 +1,6 @@
 package main
 
 import (
-	"encoding/json"
-	"fmt"
 	"math"
 	"strings"
 
@@ -33,14 +31,14 @@ func indexSnippet(snippet *models.Snippet) *models.ProcessedSnippet {
 		}
 	}
 
-	json, err := json.Marshal(indexMap)
+	// json, err := json.Marshal(indexMap)
 
-	if err != nil {
-		fmt.Println(err)
-	}
+	// if err != nil {
+	// 	fmt.Println(err)
+	// }
 
 	return &models.ProcessedSnippet{
-		IndexedScores: json,
+		IndexedScores: indexMap,
 		SnippetID:     snippet.SnippetID,
 		Snippet:       *snippet,
 	}

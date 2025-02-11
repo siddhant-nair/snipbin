@@ -4,20 +4,22 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+	"sort"
+	"strings"
 
 	"github.com/siddhant-nair/snipbin/internal/database"
 	"github.com/siddhant-nair/snipbin/internal/models"
 )
 
-type SnipperScore struct {
-	models.ProcessedSnippet
-	models.Snippet
+type Tuple[T1 any, T2 any] struct {
+	First  T1 `json:"snippet"`
+	Second T2 `json:"score"`
 }
 
 type Handler struct {
-	userRepo          *database.UserRepo
-	languageName      string
-	languageArray     []*models.Snippet
+	userRepo     *database.UserRepo
+	languageName string
+	// languageArray     []*models.Snippet
 	languageProcessed []*models.SnippetxProcessedSnippet
 
 	// languageProcessed []*models.ProcessedSnippet
@@ -33,13 +35,16 @@ type Handler struct {
 // 	SameSite: http.SameSiteLaxMode,
 // }
 
+func tokenisationCondition(r rune) bool {
+	return r == '.' || r == ' ' || r == ',' || r == '`' || r == '\n' || r == '(' || r == ')' || r == ':'
+}
+
 func NewHandler(userRepo *database.UserRepo) *Handler {
 	return &Handler{userRepo: userRepo}
 }
 
 func (h *Handler) SetLanguage(chosenLanguage string) {
-	language := chosenLanguage /*get language from post body*/
-	// langArray, err := h.userRepo.GetLanguageArray(language)
+	language := chosenLanguage
 	langProcessed, err := h.userRepo.GetProcessedArrays(language)
 
 	if err != nil {
@@ -47,13 +52,10 @@ func (h *Handler) SetLanguage(chosenLanguage string) {
 	}
 
 	h.languageName = language
-	// h.languageArray = langArray
 	h.languageProcessed = langProcessed
 }
 
 func (h *Handler) GetAllSnippets(w http.ResponseWriter, r *http.Request) {
-	// language := "javascript"
-	// fmt.Println(r.PathValue("language"), "handlers.go line 46")
 	if r.PathValue("language") != h.languageName {
 		h.SetLanguage(r.PathValue("language"))
 	}
@@ -65,9 +67,49 @@ func (h *Handler) GetAllSnippets(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(h.languageProcessed)
 }
 
-func (h *Handler) SendSearchResult(w http.Response, r *http.Request) {
-	if r.PathValue("language") != h.languageName {
-		h.SetLanguage(r.PathValue("language"))
+func (h *Handler) rankResults(searchString string) []models.Snippet {
+	scoreCard := []Tuple[models.Snippet, int]{}
+
+	for _, v := range h.languageProcessed {
+		scoreCard = append(scoreCard, Tuple[models.Snippet, int]{v.Snippet, 0})
 	}
 
+	searchStrTokens := strings.FieldsFunc(searchString, tokenisationCondition)
+
+	for _, token := range searchStrTokens {
+		for i, snippet := range h.languageProcessed {
+			// fmt.Println(indexMap)
+			scoreCard[i].Second += int(snippet.IndexedScores[token])
+		}
+	}
+
+	sort.Slice(scoreCard, func(i, j int) bool {
+		return scoreCard[i].Second > scoreCard[j].Second
+	})
+
+	rankedList := []models.Snippet{}
+
+	for _, v := range scoreCard {
+		if v.Second > 0 {
+			rankedList = append(rankedList, v.First)
+		}
+	}
+
+	return rankedList
+
+}
+
+func (h *Handler) SendSearchResult(w http.ResponseWriter, r *http.Request) {
+	h.SetLanguage(r.PathValue("language"))
+
+	var bodyJson map[string]string
+
+	json.NewDecoder(r.Body).Decode(&bodyJson)
+
+	rankedList := h.rankResults(bodyJson["searchString"])
+
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+
+	json.NewEncoder(w).Encode(rankedList)
 }

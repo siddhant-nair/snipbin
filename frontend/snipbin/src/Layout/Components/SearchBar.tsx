@@ -13,7 +13,7 @@ export default function SearchBar({ setSearchString }
     const debounceSetState = debounce((val: string = e.target.value) => {
       setSearchString(val)
     // }, 1750)
-    }, 7000)
+    }, 1000)
 
     debounceSetState();
   }

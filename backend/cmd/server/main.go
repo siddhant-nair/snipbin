@@ -8,6 +8,7 @@ import (
 
 	"github.com/siddhant-nair/snipbin/api/handlers"
 	"github.com/siddhant-nair/snipbin/internal/database"
+	"github.com/siddhant-nair/snipbin/internal/models"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 	// "github.com/siddhant-nair/snipbin/internal/models"
@@ -27,11 +28,11 @@ func chainMiddleWare(f http.HandlerFunc, middleware ...MiddleWare) http.HandlerF
 func enableCORS(next http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Access-Control-Allow-Origin", "*")
-		w.Header().Set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS")
-		w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+		w.Header().Set("Access-Control-Allow-Methods", "PUT, GET, POST, DELETE, OPTIONS")
+		w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
 
-		if r.Method == "OPTIONS" {
-			w.WriteHeader(http.StatusOK)
+		if r.Method == http.MethodOptions {
+			w.WriteHeader(http.StatusNoContent)
 			return
 		}
 		next(w, r)
@@ -47,14 +48,17 @@ func main() {
 	middleware := []MiddleWare{enableCORS}
 
 	mux := http.NewServeMux()
-	userRepo := database.NewUserRepo(db)
+	userRepo := database.NewUserRepo(db, &map[string]*models.Language{
+		"javascript": {LanguageID: 1, LanguageName: "Javascript"},
+		"python":     {LanguageID: 2, LanguageName: "Python"},
+		"go":         {LanguageID: 3, LanguageName: "Golang"},
+		"rust":       {LanguageID: 4, LanguageName: "Rust"},
+	})
+
 	server := handlers.NewHandler(userRepo)
 
-	// mux.HandleFunc("POST /set-language", chainMiddleWare(server.SetLanguage, middleware...))
-	// mux.HandleFunc("GET /", chainMiddleWare(server.GetAllSnippets, middleware...))
-
-	// mux.HandleFunc("PUT /{language}", chainMiddleWare(server.SendSearchResult, middleware...))
-	mux.HandleFunc("GET /{language}", chainMiddleWare(server.GetAllSnippets, middleware...))
+	mux.Handle("/{language}/search", chainMiddleWare(server.SendSearchResult, middleware...))
+	mux.Handle("GET /{language}", chainMiddleWare(server.GetAllSnippets, middleware...))
 
 	fmt.Println("Server running on localhost:8080")
 

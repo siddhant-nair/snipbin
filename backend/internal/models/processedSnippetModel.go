@@ -1,11 +1,9 @@
 package models
 
-import "gorm.io/datatypes"
-
 type ProcessedSnippet struct {
 	// gorm.Model
 	ProcessedSnippetID uint           `json:"processed_snippet_id" gorm:"primaryKey;autoincrement"`
-	IndexedScores      datatypes.JSON `json:"indexed_scores"`
+	IndexedScores      map[string]int `json:"indexed_scores" gorm:"serializer:json"`
 	SnippetID          uint           `json:"snippet_fk"`
 	Snippet            Snippet        `json:"-"`
 }

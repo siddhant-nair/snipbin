@@ -9,13 +9,14 @@ export async function fetchAllApi<T>(url: string): Promise<T> {
     // console.log(data)
 }
 
-export async function fetchSearchResultApi<T>(url: string, body: JSON): Promise<T> {
+export async function fetchSearchResultApi<T>(url: string, body: any): Promise<T> {
+    console.log(JSON.stringify(body))
     try {
         const response = await fetch(url, {
             method: 'PUT',
             body: JSON.stringify(body),
             headers: {
-                "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+                "Content-type": "application/json"
             }
         })
 

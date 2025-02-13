@@ -8,21 +8,21 @@ import (
 	"gorm.io/gorm"
 )
 
-var languageList = map[string]*models.Language{
-	"javascript": {LanguageID: 1, LanguageName: "Javascript"},
-	"python":     {LanguageID: 2, LanguageName: "Python"},
-	"go":         {LanguageID: 3, LanguageName: "Golang"},
-	"rust":       {LanguageID: 4, LanguageName: "Rust"},
-}
+// var languageList = map[string]*models.Language{
+// 	"javascript": {LanguageID: 1, LanguageName: "Javascript"},
+// 	"python":     {LanguageID: 2, LanguageName: "Python"},
+// 	"golang":     {LanguageID: 3, LanguageName: "Golang"},
+// 	"rust":       {LanguageID: 4, LanguageName: "Rust"},
+// }
 
 type UserRepo struct {
 	db            *gorm.DB
 	initLanguages map[string]*models.Language
 }
 
-func NewUserRepo(db *gorm.DB, langList *map[string]*models.Language) *UserRepo {
+func NewUserRepo(db *gorm.DB, langList map[string]*models.Language) *UserRepo {
 	return &UserRepo{db: db,
-		initLanguages: languageList,
+		initLanguages: langList,
 	}
 }
 

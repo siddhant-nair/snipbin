@@ -6,6 +6,7 @@ import (
 	"os"
 
 	"gorm.io/driver/sqlite" // Sqlite driver based on CGO
+	"gorm.io/gorm/clause"
 
 	"github.com/siddhant-nair/snipbin/internal/models"
 	// "github.com/glebarez/sqlite" // Pure go SQLite driver, checkout https://github.com/glebarez/sqlite for details
@@ -37,7 +38,7 @@ func createSnippetList(db *gorm.DB, language string) {
 		snippetList = append(snippetList, models.CreateSnippet(v, language))
 	}
 
-	db.Create(snippetList)
+	db.Clauses(clause.Insert{Modifier: "or IGNORE"}).Create(snippetList)
 }
 
 func createLanguageList(db *gorm.DB) {
@@ -49,7 +50,7 @@ func createLanguageList(db *gorm.DB) {
 
 	fmt.Println(languageArray)
 
-	db.Create(languageArray)
+	db.Clauses(clause.Insert{Modifier: "or IGNORE"}).Create(languageArray)
 }
 
 func QueryTrials(db *gorm.DB) {
@@ -73,10 +74,10 @@ func main() {
 
 	// insert := "language"
 	// insert := "snippets"
-	// insert := "all"
-	insert := ""
+	insert := "all"
+	// insert := ""
 
-	if amIQuerying := true; amIQuerying {
+	if amIQuerying := false; amIQuerying {
 		QueryTrials(db)
 		return
 	}
@@ -102,7 +103,7 @@ func main() {
 		// PreProcessor(db)
 
 	} else if insert == "all" {
-		db.AutoMigrate(&models.Language{}, models.Snippet{})
+		db.AutoMigrate(&models.Language{}, &models.Snippet{})
 
 		createLanguageList(db)
 

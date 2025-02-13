@@ -1,22 +1,24 @@
 import { useEffect, useState } from "react";
 import SnippetCards from "./snippet_components/SnippetCards";
 import { SnippetApis, SnippetModel } from "../models/snippetModel";
-import { useOutletContext, useParams } from "react-router-dom";
+import { useLoaderData, useOutletContext, useParams } from "react-router-dom";
 
 
 export default function SnippetPage() {
-	const [snippetList, setSnippetList] = useState<SnippetModel[]>([])
+	const data: SnippetModel[] = useLoaderData();
 	const snippetApis = new SnippetApis()
-
 	const urlParams = useParams()
 	const searchString: string = useOutletContext()
 
+	const [snippetList, setSnippetList] = useState<SnippetModel[]>(data)
+
 	async function setSnippetData(toSearch: string) {
-		let data: SnippetModel[];
 		try {
-			if (toSearch == "") {
+			let data: SnippetModel[];
+			if (searchString == "") {
 				data = await snippetApis.fetchSnippets(urlParams.language!)
-			}else{ 
+				console.log("wow")
+			} else {
 				data = await snippetApis.fetchSearchResult(urlParams.language!, toSearch)
 			}
 			setSnippetList(data)
@@ -27,11 +29,10 @@ export default function SnippetPage() {
 
 	useEffect(() => {
 		setSnippetData(searchString.trim())
-		
 	}, [searchString])
 
 	return (<>
-		{console.log(searchString)}
+		{/* {console.log(searchString)} */}
 		<div className="flex justify-center">
 
 			{/* <div className="w-full grid grid-cols-2 place-items-center px-16 gap-x-6 gap-y-6"> */}

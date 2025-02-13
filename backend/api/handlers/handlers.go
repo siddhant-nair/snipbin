@@ -3,6 +3,7 @@ package handlers
 import (
 	"encoding/json"
 	"fmt"
+	"math"
 	"net/http"
 	"sort"
 	"strings"
@@ -109,7 +110,7 @@ func (h *Handler) SendSearchResult(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 
-	json.NewEncoder(w).Encode(rankedList[:5])
+	json.NewEncoder(w).Encode(rankedList[:int(math.Min(float64(len(rankedList)), 5.00))])
 }
 
 func (h *Handler) FetchLanguages(w http.ResponseWriter, _ *http.Request) {

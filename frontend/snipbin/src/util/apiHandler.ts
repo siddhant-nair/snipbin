@@ -10,7 +10,7 @@ export async function fetchAllApi<T>(url: string): Promise<T> {
 }
 
 export async function fetchSearchResultApi<T>(url: string, body: any): Promise<T> {
-    console.log(JSON.stringify(body))
+    // console.log(JSON.stringify(body))
     try {
         const response = await fetch(url, {
             method: 'PUT',

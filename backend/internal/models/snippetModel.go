@@ -20,7 +20,7 @@ func CreateSnippet(
 		Description: snippetJson["description"].(string),
 		Example:     snippetJson["example"].(string),
 		Tags:        snippetJson["tags"].(string),
-		LanguageID:  (*Languages[language]).LanguageID,
+		LanguageID:  Languages[language].LanguageID,
 		Language:    *Languages[language],
 	}
 }

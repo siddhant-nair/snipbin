@@ -9,6 +9,7 @@ import (
 	"github.com/siddhant-nair/snipbin/api/handlers"
 	"github.com/siddhant-nair/snipbin/internal/database"
 	"github.com/siddhant-nair/snipbin/internal/models"
+	servestatic "github.com/siddhant-nair/snipbin/internal/serve_static"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 	// "github.com/siddhant-nair/snipbin/internal/models"
@@ -48,19 +49,21 @@ func main() {
 	middleware := []MiddleWare{enableCORS}
 
 	mux := http.NewServeMux()
-	userRepo := database.NewUserRepo(db, &map[string]*models.Language{
+	serveStatic := servestatic.SecureFileServer("public/language_logos")
+	userRepo := database.NewUserRepo(db, map[string]*models.Language{
 		"javascript": {LanguageID: 1, LanguageName: "Javascript"},
 		"python":     {LanguageID: 2, LanguageName: "Python"},
-		"go":         {LanguageID: 3, LanguageName: "Golang"},
+		"golang":     {LanguageID: 3, LanguageName: "Golang"},
 		"rust":       {LanguageID: 4, LanguageName: "Rust"},
 	})
 
 	server := handlers.NewHandler(userRepo)
 
-	mux.Handle("GET /api/v1/languagelist", chainMiddleWare(server.FetchLanguages, middleware...))
+	mux.Handle("GET /api/v1/media/assets/", http.StripPrefix("/api/v1/media/assets/", serveStatic))
 
-	mux.Handle("/api/v1/{language}/search", chainMiddleWare(server.SendSearchResult, middleware...))
-	mux.Handle("GET /api/v1/{language}", chainMiddleWare(server.GetAllSnippets, middleware...))
+	mux.HandleFunc("GET /api/v1/languagelist", chainMiddleWare(server.FetchLanguages, middleware...))
+	mux.HandleFunc("/api/v1/{language}/search", chainMiddleWare(server.SendSearchResult, middleware...))
+	mux.HandleFunc("GET /api/v1/{language}", chainMiddleWare(server.GetAllSnippets, middleware...))
 
 	fmt.Println("Server running on localhost:8080")
 

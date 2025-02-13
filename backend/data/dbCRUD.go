@@ -41,10 +41,10 @@ func createSnippetList(db *gorm.DB, language string) {
 	db.Clauses(clause.Insert{Modifier: "or IGNORE"}).Create(snippetList)
 }
 
-func createLanguageList(db *gorm.DB) {
+func createLanguageList(db *gorm.DB, languageList map[string]*models.Language) {
 	languageArray := []*models.Language{}
 
-	for _, v := range models.Languages {
+	for _, v := range languageList {
 		languageArray = append(languageArray, v)
 	}
 
@@ -53,9 +53,9 @@ func createLanguageList(db *gorm.DB) {
 	db.Clauses(clause.Insert{Modifier: "or IGNORE"}).Create(languageArray)
 }
 
-func QueryTrials(db *gorm.DB) {
+func QueryTrials(db *gorm.DB, languageList map[string]*models.Language) {
 
-	lang := *models.Languages["javascript"]
+	lang := languageList["javascript"]
 
 	var snipList []*models.Snippet
 
@@ -72,13 +72,20 @@ func main() {
 		panic("failed to connect to the database")
 	}
 
+	var languageList = map[string]*models.Language{
+		"javascript": {LanguageID: 1, LanguageName: "Javascript"},
+		"python":     {LanguageID: 2, LanguageName: "Python"},
+		"golang":     {LanguageID: 3, LanguageName: "Golang"},
+		"rust":       {LanguageID: 4, LanguageName: "Rust"},
+	}
+
 	// insert := "language"
 	// insert := "snippets"
 	insert := "all"
 	// insert := ""
 
 	if amIQuerying := false; amIQuerying {
-		QueryTrials(db)
+		QueryTrials(db, languageList)
 		return
 	}
 
@@ -89,14 +96,14 @@ func main() {
 
 	languages := [...]string{
 		"javascript",
-		"go",
+		"golang",
 		"python",
 		"rust",
 	}
 
 	if insert == "language" {
 		db.AutoMigrate(&models.Language{})
-		createLanguageList(db)
+		createLanguageList(db, languageList)
 	} else if insert == "snippets" {
 		db.AutoMigrate(&models.Snippet{})
 		createSnippetList(db, languages[1])
@@ -105,7 +112,7 @@ func main() {
 	} else if insert == "all" {
 		db.AutoMigrate(&models.Language{}, &models.Snippet{})
 
-		createLanguageList(db)
+		createLanguageList(db, languageList)
 
 		for i := range languages {
 			createSnippetList(db, languages[i])

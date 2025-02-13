@@ -14,14 +14,16 @@ type Snippet struct {
 func CreateSnippet(
 	snippetJson map[string]interface{}, language string) *Snippet {
 
+	languageList := GetLanguageList()
+
 	return &Snippet{
 		Title:       snippetJson["title"].(string),
 		Summary:     snippetJson["summary"].(string),
 		Description: snippetJson["description"].(string),
 		Example:     snippetJson["example"].(string),
 		Tags:        snippetJson["tags"].(string),
-		LanguageID:  Languages[language].LanguageID,
-		Language:    *Languages[language],
+		LanguageID:  languageList[language].LanguageID,
+		Language:    *languageList[language],
 	}
 }
 

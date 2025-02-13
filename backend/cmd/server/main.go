@@ -50,12 +50,7 @@ func main() {
 
 	mux := http.NewServeMux()
 	serveStatic := servestatic.SecureFileServer("public/language_logos")
-	userRepo := database.NewUserRepo(db, map[string]*models.Language{
-		"javascript": {LanguageID: 1, LanguageName: "Javascript"},
-		"python":     {LanguageID: 2, LanguageName: "Python"},
-		"golang":     {LanguageID: 3, LanguageName: "Golang"},
-		"rust":       {LanguageID: 4, LanguageName: "Rust"},
-	})
+	userRepo := database.NewUserRepo(db, models.GetLanguageList())
 
 	server := handlers.NewHandler(userRepo)
 

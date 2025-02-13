@@ -65,7 +65,7 @@ func QueryTrials(db *gorm.DB, languageList map[string]*models.Language) {
 }
 
 func main() {
-	db, err := gorm.Open(sqlite.Open("../snippetsDB.db"), &gorm.Config{
+	db, err := gorm.Open(sqlite.Open("../snippetsDB-dev.db"), &gorm.Config{
 		// Logger: logger.Default.LogMode(logger.Silent),
 	})
 	if err != nil {

@@ -4,6 +4,8 @@ import (
 	// "gorm.io/driver/sqlite" // Sqlite driver based on CGO
 	// "github.com/glebarez/sqlite" // Pure go SQLite driver, checkout https://github.com/glebarez/sqlite for details
 
+	"sort"
+
 	"github.com/siddhant-nair/snipbin/internal/models"
 	"gorm.io/gorm"
 )
@@ -58,6 +60,10 @@ func (ur *UserRepo) GetLanguages() []*models.Language {
 	for _, v := range ur.initLanguages {
 		languageList = append(languageList, v)
 	}
+
+	sort.Slice(languageList, func(i int, j int) bool {
+		return languageList[i].LanguageID < languageList[j].LanguageID
+	})
 
 	return languageList
 }

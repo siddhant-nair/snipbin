@@ -18,16 +18,15 @@ async function languageLoader(): Promise<any> {
 const router = createBrowserRouter([
 	{
 		path: '/',
+		element: <LanguagePage />,
+		loader: languageLoader,
+	},
+	{
+		path: "/:language",
 		element: <MainLayout />,
 		children: [
 			{
-				index: true,
-				element: <LanguagePage />,
-				loader: languageLoader,
-			},
-			{
-				path: "/:language",
-				index: true,
+				path:"/:language",
 				element: <SnippetPage />,
 				loader: snippetLoader,
 			}
@@ -36,7 +35,7 @@ const router = createBrowserRouter([
 ])
 
 createRoot(document.getElementById('root')!).render(
-	// <StrictMode>
+	<StrictMode>
 		<RouterProvider router={router} />
-	// </StrictMode>,
+	</StrictMode>,
 )

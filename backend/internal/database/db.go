@@ -48,7 +48,7 @@ func (ur *UserRepo) GetProcessedArrays(language string) (snippetJoin, error) {
 
 	res := ur.db.Table("processed_snippets").
 		// Preload("snippets").
-		Joins("INNER JOIN snippets ON snippets.snippet_id = processed_snippets.processed_snippet_id AND snippets.language_id = ?", ur.initLanguages[language].LanguageID).
+		Joins("INNER JOIN snippets ON snippets.snippet_id = processed_snippets.snippet_id AND snippets.language_id = ?", ur.initLanguages[language].LanguageID).
 		Scan(&processedSnippets)
 
 	return *processedSnippets, res.Error

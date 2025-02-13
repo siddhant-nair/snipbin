@@ -5,31 +5,33 @@ import { useLoaderData, useOutletContext, useParams } from "react-router-dom";
 
 
 export default function SnippetPage() {
-	const data: SnippetModel[] = useLoaderData();
-	const snippetApis = new SnippetApis()
-	const urlParams = useParams()
-	const searchString: string = useOutletContext()
+	// const data: SnippetModel[] = useLoaderData();
+	// const snippetApis = new SnippetApis()
+	// const urlParams = useParams()
+	// const searchString: string = useOutletContext()
 
-	const [snippetList, setSnippetList] = useState<SnippetModel[]>(data)
+	// const [snippetList, setSnippetList] = useState<SnippetModel[]>(data)
 
-	async function setSnippetData(toSearch: string) {
-		try {
-			let data: SnippetModel[];
-			if (searchString == "") {
-				data = await snippetApis.fetchSnippets(urlParams.language!)
-				console.log("wow")
-			} else {
-				data = await snippetApis.fetchSearchResult(urlParams.language!, toSearch)
-			}
-			setSnippetList(data)
-		} catch (err) {
-			console.log("error fetching snippets", err)
-		}
-	}
+	// async function setSnippetData(toSearch: string) {
+	// 	try {
+	// 		let data: SnippetModel[];
+	// 		if (searchString == "") {
+	// 			data = await snippetApis.fetchSnippets(urlParams.language!)
+	// 			console.log("wow")
+	// 		} else {
+	// 			data = await snippetApis.fetchSearchResult(urlParams.language!, toSearch)
+	// 		}
+	// 		setSnippetList(data)
+	// 	} catch (err) {
+	// 		console.log("error fetching snippets", err)
+	// 	}
+	// }
 
-	useEffect(() => {
-		setSnippetData(searchString.trim())
-	}, [searchString])
+	// useEffect(() => {
+	// 	setSnippetData(searchString.trim())
+	// }, [searchString])
+
+	const snippetList: SnippetModel[] = useOutletContext()
 
 	return (<>
 		{/* {console.log(searchString)} */}

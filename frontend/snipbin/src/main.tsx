@@ -24,11 +24,11 @@ const router = createBrowserRouter([
 	{
 		path: "/:language",
 		element: <MainLayout />,
+		loader: snippetLoader,
 		children: [
 			{
 				path:"/:language",
 				element: <SnippetPage />,
-				loader: snippetLoader,
 			}
 		]
 	}

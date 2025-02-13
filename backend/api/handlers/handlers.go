@@ -62,8 +62,10 @@ func (h *Handler) GetAllSnippets(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 
+	snippetLen := len(h.languageProcessed)
+
 	// json.NewEncoder(w).Encode(h.languageArray)
-	json.NewEncoder(w).Encode(h.languageProcessed)
+	json.NewEncoder(w).Encode(h.languageProcessed[:int(math.Min(20.00, float64(snippetLen)))])
 }
 
 func (h *Handler) rankResults(searchString string) []models.Snippet {
@@ -111,6 +113,7 @@ func (h *Handler) SendSearchResult(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 
 	json.NewEncoder(w).Encode(rankedList[:int(math.Min(float64(len(rankedList)), 5.00))])
+	// json.NewEncoder(w).Encode(rankedList)
 }
 
 func (h *Handler) FetchLanguages(w http.ResponseWriter, _ *http.Request) {

@@ -68,5 +68,288 @@
         "description": "This snippet demonstrates how to use `parseInt()` to convert a string to an integer. It optionally accepts a radix to specify the base of the number system.",
         "example": "const str = '42';\nconst num = parseInt(str, 10);\nconsole.log(num); // Output: 42",
         "tags": "number, parsing, javascript, parseInt"
+    },
+    {
+        "title": "Checking Array Inclusion with includes()",
+        "summary": "const result = array.includes(value);",
+        "description": "This snippet demonstrates the use of `includes()` to check if an array contains a specific value. It returns `true` if the value is found and `false` otherwise.",
+        "example": "const fruits = ['apple', 'banana', 'mango'];\nconsole.log(fruits.includes('banana')); // Output: true",
+        "tags": "array, includes, javascript, search"
+    },
+    {
+        "title": "Merging Arrays with concat()",
+        "summary": "const result = array1.concat(array2);",
+        "description": "This snippet illustrates how to use `concat()` to merge two or more arrays, creating a new array without modifying the original ones.",
+        "example": "const arr1 = [1, 2];\nconst arr2 = [3, 4];\nconst merged = arr1.concat(arr2);\nconsole.log(merged); // Output: [1, 2, 3, 4]",
+        "tags": "array, concat, javascript, merge"
+    },
+    {
+        "title": "Trimming Whitespace with trim()",
+        "summary": "const result = string.trim();",
+        "description": "This snippet shows how to use `trim()` to remove leading and trailing whitespace from a string.",
+        "example": "const str = '  Hello World  ';\nconsole.log(str.trim()); // Output: 'Hello World'",
+        "tags": "string, trim, javascript, whitespace"
+    },
+    {
+        "title": "Splitting a String with split()",
+        "summary": "const result = string.split(separator);",
+        "description": "This snippet demonstrates how to use `split()` to divide a string into an array of substrings based on a specified separator.",
+        "example": "const str = 'apple,banana,mango';\nconst fruits = str.split(',');\nconsole.log(fruits); // Output: ['apple', 'banana', 'mango']",
+        "tags": "string, split, javascript, array"
+    },
+    {
+        "title": "Joining Array Elements with join()",
+        "summary": "const result = array.join(separator);",
+        "description": "This snippet shows how to use `join()` to convert an array into a string by joining its elements with a specified separator.",
+        "example": "const words = ['Hello', 'World'];\nconst sentence = words.join(' ');\nconsole.log(sentence); // Output: 'Hello World'",
+        "tags": "array, join, javascript, string"
+    },
+    {
+        "title": "Getting Object Keys with Object.keys()",
+        "summary": "const result = Object.keys(object);",
+        "description": "This snippet illustrates the use of `Object.keys()` to retrieve an array of an object's keys.",
+        "example": "const user = { name: 'Alice', age: 25 };\nconsole.log(Object.keys(user)); // Output: ['name', 'age']",
+        "tags": "object, keys, javascript, iteration"
+    },
+    {
+        "title": "Getting Object Values with Object.values()",
+        "summary": "const result = Object.values(object);",
+        "description": "This snippet demonstrates how to use `Object.values()` to retrieve an array of an object's values.",
+        "example": "const user = { name: 'Alice', age: 25 };\nconsole.log(Object.values(user)); // Output: ['Alice', 25]",
+        "tags": "object, values, javascript, iteration"
+    },
+    {
+        "title": "Getting Object Entries with Object.entries()",
+        "summary": "const result = Object.entries(object);",
+        "description": "This snippet shows how to use `Object.entries()` to retrieve an array of key-value pairs from an object.",
+        "example": "const user = { name: 'Alice', age: 25 };\nconsole.log(Object.entries(user)); // Output: [['name', 'Alice'], ['age', 25]]",
+        "tags": "object, entries, javascript, iteration"
+    },
+    {
+        "title": "Rounding a Number with Math.round()",
+        "summary": "const result = Math.round(number);",
+        "description": "This snippet demonstrates how to use `Math.round()` to round a number to the nearest integer.",
+        "example": "console.log(Math.round(4.6)); // Output: 5\nconsole.log(Math.round(4.3)); // Output: 4",
+        "tags": "math, round, javascript, number"
+    },
+    {
+        "title": "Finding Maximum Value with Math.max()",
+        "summary": "const result = Math.max(...values);",
+        "description": "This snippet illustrates how to use `Math.max()` to find the largest value from a set of numbers.",
+        "example": "const numbers = [3, 7, 2, 9];\nconsole.log(Math.max(...numbers)); // Output: 9",
+        "tags": "math, max, javascript, number"
+    },
+    {
+        "title": "Finding Minimum Value with Math.min()",
+        "summary": "const result = Math.min(...values);",
+        "description": "This snippet demonstrates how to use `Math.min()` to find the smallest value from a set of numbers.",
+        "example": "const numbers = [3, 7, 2, 9];\nconsole.log(Math.min(...numbers)); // Output: 2",
+        "tags": "math, min, javascript, number"
+    },
+    {
+        "title": "Generating a Random Integer",
+        "summary": "const result = Math.floor(Math.random() * max);",
+        "description": "This snippet shows how to generate a random integer between 0 and a given maximum value.",
+        "example": "const randomInt = Math.floor(Math.random() * 10);\nconsole.log(randomInt); // Output: A number between 0 and 9",
+        "tags": "math, random, javascript, integer"
+    },
+    {
+        "title": "Checking if a String Starts With a Substring",
+        "summary": "const result = string.startsWith(substring);",
+        "description": "This snippet demonstrates how to use `startsWith()` to check if a string begins with a specified substring.",
+        "example": "const str = 'Hello World';\nconsole.log(str.startsWith('Hello')); // Output: true",
+        "tags": "string, startsWith, javascript, search"
+    },
+    {
+        "title": "Checking if a String Ends With a Substring",
+        "summary": "const result = string.endsWith(substring);",
+        "description": "This snippet illustrates the use of `endsWith()` to determine if a string ends with a given substring.",
+        "example": "const str = 'Hello World';\nconsole.log(str.endsWith('World')); // Output: true",
+        "tags": "string, endsWith, javascript, search"
+    },
+    {
+        "title": "Replacing Part of a String with replace()",
+        "summary": "const result = string.replace(oldValue, newValue);",
+        "description": "This snippet demonstrates how to use `replace()` to replace a portion of a string with another value.",
+        "example": "const str = 'Hello World';\nconst newStr = str.replace('World', 'JavaScript');\nconsole.log(newStr); // Output: 'Hello JavaScript'",
+        "tags": "string, replace, javascript, manipulation"
+    },
+    {
+        "title": "Reversing an Array",
+        "summary": "const result = array.reverse();",
+        "description": "This snippet illustrates the use of `reverse()` to reverse the order of elements in an array.",
+        "example": "const numbers = [1, 2, 3, 4];\nnumbers.reverse();\nconsole.log(numbers); // Output: [4, 3, 2, 1]",
+        "tags": "array, reverse, javascript, order"
+    },
+    {
+        "title": "Flattening an Array with flat()",
+        "summary": "const result = array.flat();",
+        "description": "This snippet shows how to use `flat()` to flatten a nested array structure into a single-level array.",
+        "example": "const nested = [1, [2, 3], [4, [5, 6]]];\nconsole.log(nested.flat(2)); // Output: [1, 2, 3, 4, 5, 6]",
+        "tags": "array, flat, javascript, flatten"
+    },
+    {
+        "title": "Checking if Every Element Meets a Condition",
+        "summary": "const result = array.every(() => {});",
+        "description": "This snippet demonstrates the use of `every()` to check if all elements in an array satisfy a given condition.",
+        "example": "const numbers = [2, 4, 6];\nconsole.log(numbers.every(num => num % 2 === 0)); // Output: true",
+        "tags": "array, every, javascript, validation"
+    },
+    {
+        "title": "Checking if Some Elements Meet a Condition",
+        "summary": "const result = array.some(() => {});",
+        "description": "This snippet illustrates the use of `some()` to check if at least one element in an array satisfies a given condition.",
+        "example": "const numbers = [1, 2, 3];\nconsole.log(numbers.some(num => num % 2 === 0)); // Output: true",
+        "tags": "array, some, javascript, validation"
+    },
+    {
+        "title": "Filling an Array with a Value",
+        "summary": "const result = array.fill(value, start, end);",
+        "description": "This snippet shows how to use `fill()` to populate an array with a specific value between given indices.",
+        "example": "const arr = [1, 2, 3, 4, 5];\narr.fill(0, 1, 4);\nconsole.log(arr); // Output: [1, 0, 0, 0, 5]",
+        "tags": "array, fill, javascript, manipulation"
+    },
+    {
+        "title": "Creating a New Array with Array.from()",
+        "summary": "const result = Array.from(iterable);",
+        "description": "This snippet demonstrates how to use `Array.from()` to create an array from an iterable, such as a string or a Set.",
+        "example": "const str = 'hello';\nconst letters = Array.from(str);\nconsole.log(letters); // Output: ['h', 'e', 'l', 'l', 'o']",
+        "tags": "array, from, javascript, iterable"
+    },
+    {
+        "title": "Creating an Array of a Fixed Length",
+        "summary": "const result = new Array(length).fill(value);",
+        "description": "This snippet illustrates how to create an array of a fixed length and initialize it with a specific value.",
+        "example": "const arr = new Array(5).fill(0);\nconsole.log(arr); // Output: [0, 0, 0, 0, 0]",
+        "tags": "array, fill, javascript, initialization"
+    },
+    {
+        "title": "Finding the Index of an Element with indexOf()",
+        "summary": "const result = array.indexOf(value);",
+        "description": "This snippet demonstrates how to use `indexOf()` to find the first occurrence of a value in an array.",
+        "example": "const fruits = ['apple', 'banana', 'mango'];\nconsole.log(fruits.indexOf('banana')); // Output: 1",
+        "tags": "array, indexOf, javascript, search"
+    },
+    {
+        "title": "Finding the Last Index of an Element with lastIndexOf()",
+        "summary": "const result = array.lastIndexOf(value);",
+        "description": "This snippet shows how to use `lastIndexOf()` to find the last occurrence of a value in an array.",
+        "example": "const numbers = [1, 2, 3, 2, 4];\nconsole.log(numbers.lastIndexOf(2)); // Output: 3",
+        "tags": "array, lastIndexOf, javascript, search"
+    },
+    {
+        "title": "Extracting a Portion of an Array with slice()",
+        "summary": "const result = array.slice(start, end);",
+        "description": "This snippet illustrates how to use `slice()` to extract a portion of an array without modifying the original array.",
+        "example": "const numbers = [1, 2, 3, 4, 5];\nconsole.log(numbers.slice(1, 4)); // Output: [2, 3, 4]",
+        "tags": "array, slice, javascript, extraction"
+    },
+    {
+        "title": "Removing Elements from an Array with splice()",
+        "summary": "const result = array.splice(start, deleteCount, ...items);",
+        "description": "This snippet demonstrates how to use `splice()` to remove or replace elements in an array.",
+        "example": "const numbers = [1, 2, 3, 4, 5];\nnumbers.splice(2, 2);\nconsole.log(numbers); // Output: [1, 2, 5]",
+        "tags": "array, splice, javascript, manipulation"
+    },
+    {
+        "title": "Converting a String to Uppercase",
+        "summary": "const result = string.toUpperCase();",
+        "description": "This snippet shows how to use `toUpperCase()` to convert a string to uppercase.",
+        "example": "const str = 'hello';\nconsole.log(str.toUpperCase()); // Output: 'HELLO'",
+        "tags": "string, uppercase, javascript, conversion"
+    },
+    {
+        "title": "Converting a String to Lowercase",
+        "summary": "const result = string.toLowerCase();",
+        "description": "This snippet illustrates how to use `toLowerCase()` to convert a string to lowercase.",
+        "example": "const str = 'HELLO';\nconsole.log(str.toLowerCase()); // Output: 'hello'",
+        "tags": "string, lowercase, javascript, conversion"
+    },
+    {
+        "title": "Getting the Character at a Position with charAt()",
+        "summary": "const result = string.charAt(index);",
+        "description": "This snippet demonstrates how to use `charAt()` to retrieve a character from a string at a specified index.",
+        "example": "const str = 'hello';\nconsole.log(str.charAt(1)); // Output: 'e'",
+        "tags": "string, charAt, javascript, indexing"
+    },
+    {
+        "title": "Checking if a String Contains a Substring",
+        "summary": "const result = string.includes(substring);",
+        "description": "This snippet shows how to use `includes()` to check if a string contains a specific substring.",
+        "example": "const str = 'hello world';\nconsole.log(str.includes('world')); // Output: true",
+        "tags": "string, includes, javascript, search"
+    },
+    {
+        "title": "Trimming Whitespace from a String",
+        "summary": "const result = string.trim();",
+        "description": "This snippet demonstrates how to use `trim()` to remove leading and trailing whitespace from a string.",
+        "example": "const str = '   hello world   ';\nconsole.log(str.trim()); // Output: 'hello world'",
+        "tags": "string, trim, javascript, whitespace"
+    },
+    {
+        "title": "Splitting a String into an Array",
+        "summary": "const result = string.split(separator);",
+        "description": "This snippet shows how to use `split()` to divide a string into an array of substrings.",
+        "example": "const str = 'hello world';\nconsole.log(str.split(' ')); // Output: ['hello', 'world']",
+        "tags": "string, split, javascript, conversion"
+    },
+    {
+        "title": "Joining an Array into a String",
+        "summary": "const result = array.join(separator);",
+        "description": "This snippet demonstrates how to use `join()` to merge an array of elements into a string.",
+        "example": "const words = ['hello', 'world'];\nconsole.log(words.join(' ')); // Output: 'hello world'",
+        "tags": "array, join, javascript, conversion"
+    },
+    {
+        "title": "Checking if an Array Includes a Value",
+        "summary": "const result = array.includes(value);",
+        "description": "This snippet illustrates how to use `includes()` to check if an array contains a specific value.",
+        "example": "const fruits = ['apple', 'banana', 'mango'];\nconsole.log(fruits.includes('banana')); // Output: true",
+        "tags": "array, includes, javascript, search"
+    },
+    {
+        "title": "Getting the Keys of an Object",
+        "summary": "const result = Object.keys(object);",
+        "description": "This snippet demonstrates how to use `Object.keys()` to retrieve an array of an object's keys.",
+        "example": "const obj = {a: 1, b: 2, c: 3};\nconsole.log(Object.keys(obj)); // Output: ['a', 'b', 'c']",
+        "tags": "object, keys, javascript, retrieval"
+    },
+    {
+        "title": "Getting the Values of an Object",
+        "summary": "const result = Object.values(object);",
+        "description": "This snippet shows how to use `Object.values()` to get an array of an object's values.",
+        "example": "const obj = {a: 1, b: 2, c: 3};\nconsole.log(Object.values(obj)); // Output: [1, 2, 3]",
+        "tags": "object, values, javascript, retrieval"
+    },
+    {
+        "title": "Getting Entries of an Object",
+        "summary": "const result = Object.entries(object);",
+        "description": "This snippet illustrates how to use `Object.entries()` to get an array of key-value pairs from an object.",
+        "example": "const obj = {a: 1, b: 2};\nconsole.log(Object.entries(obj)); // Output: [['a', 1], ['b', 2]]",
+        "tags": "object, entries, javascript, retrieval"
+    },
+    {
+        "title": "Merging Objects with Object.assign()",
+        "summary": "const result = Object.assign(target, ...sources);",
+        "description": "This snippet demonstrates how to use `Object.assign()` to merge multiple objects into one.",
+        "example": "const obj1 = {a: 1};\nconst obj2 = {b: 2};\nconsole.log(Object.assign({}, obj1, obj2)); // Output: {a: 1, b: 2}",
+        "tags": "object, assign, javascript, merging"
+    },
+    {
+        "title": "Freezing an Object with Object.freeze()",
+        "summary": "Object.freeze(object);",
+        "description": "This snippet shows how to use `Object.freeze()` to make an object immutable, preventing modifications.",
+        "example": "const obj = {a: 1};\nObject.freeze(obj);\nobj.a = 2;\nconsole.log(obj.a); // Output: 1",
+        "tags": "object, freeze, javascript, immutability"
+    },
+    {
+        "title": "Checking if a Value is an Array",
+        "summary": "const result = Array.isArray(value);",
+        "description": "This snippet illustrates how to use `Array.isArray()` to determine if a given value is an array.",
+        "example": "console.log(Array.isArray([1, 2, 3])); // Output: true\nconsole.log(Array.isArray('hello')); // Output: false",
+        "tags": "array, isArray, javascript, validation"
     }
 ]
+
+
+

@@ -16,7 +16,7 @@ func GetLanguageList() map[string]*Language {
 	return map[string]*Language{
 		"javascript": {LanguageID: 1, LanguageName: "Javascript"},
 		"python":     {LanguageID: 2, LanguageName: "Python"},
-		"golang":     {LanguageID: 3, LanguageName: "Golang"},
+		"go":         {LanguageID: 3, LanguageName: "Go"},
 		"rust":       {LanguageID: 4, LanguageName: "Rust"},
 	}
 }

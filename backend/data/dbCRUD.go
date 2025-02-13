@@ -72,12 +72,7 @@ func main() {
 		panic("failed to connect to the database")
 	}
 
-	var languageList = map[string]*models.Language{
-		"javascript": {LanguageID: 1, LanguageName: "Javascript"},
-		"python":     {LanguageID: 2, LanguageName: "Python"},
-		"golang":     {LanguageID: 3, LanguageName: "Golang"},
-		"rust":       {LanguageID: 4, LanguageName: "Rust"},
-	}
+	var languageList = models.GetLanguageList()
 
 	// insert := "language"
 	// insert := "snippets"
@@ -96,7 +91,7 @@ func main() {
 
 	languages := [...]string{
 		"javascript",
-		"golang",
+		"go",
 		"python",
 		"rust",
 	}

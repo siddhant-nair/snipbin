@@ -19,7 +19,7 @@ export default function SearchBar({ setSearchString }
   }
 
   return (
-    <div id="search-bar" className="w-4/8">
+    <div id="search-bar" className="w-full">
       <div className="h-12 w-full border-1 border-gray-600 flex items-center">
         <Search className="mx-2 text-gray-600" />
         <input

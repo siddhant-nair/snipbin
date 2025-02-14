@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import MainLayout from './Layout/MainLayout'
-import SnippetPage from './snippets/SnippetPage'
+import SnippetGrid from './snippets/SnippetGrid'
 import LanguagePage from './language/LanguagePage'
 import { SnippetApis } from './models/snippetModel'
 
@@ -28,7 +28,7 @@ const router = createBrowserRouter([
 		children: [
 			{
 				path:"/:language",
-				element: <SnippetPage />,
+				element: <SnippetGrid />,
 			}
 		]
 	}

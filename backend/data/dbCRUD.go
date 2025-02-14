@@ -15,7 +15,7 @@ import (
 
 func createSnippetList(db *gorm.DB, language string) {
 
-	jsonData, err := os.ReadFile(language + ".json")
+	jsonData, err := os.ReadFile("data_files/" + language + ".json")
 
 	if err != nil {
 		fmt.Println(err)
@@ -38,7 +38,8 @@ func createSnippetList(db *gorm.DB, language string) {
 		snippetList = append(snippetList, models.CreateSnippet(v, language))
 	}
 
-	db.Clauses(clause.Insert{Modifier: "or IGNORE"}).Create(snippetList)
+	res := db.Clauses(clause.Insert{Modifier: "or IGNORE"}).Create(snippetList)
+	fmt.Println(res.RowsAffected, "Rows affected in snippets for", language)
 }
 
 func createLanguageList(db *gorm.DB, languageList map[string]*models.Language) {
@@ -48,9 +49,10 @@ func createLanguageList(db *gorm.DB, languageList map[string]*models.Language) {
 		languageArray = append(languageArray, v)
 	}
 
-	fmt.Println(languageArray)
+	// fmt.Println(languageArray)
 
-	db.Clauses(clause.Insert{Modifier: "or IGNORE"}).Create(languageArray)
+	res := db.Clauses(clause.Insert{Modifier: "or IGNORE"}).Create(languageArray)
+	fmt.Println(res.RowsAffected, "Rows affected in Language")
 }
 
 func QueryTrials(db *gorm.DB, languageList map[string]*models.Language) {
@@ -61,7 +63,7 @@ func QueryTrials(db *gorm.DB, languageList map[string]*models.Language) {
 
 	db.Where(&models.Snippet{LanguageID: lang.LanguageID}).Find(&snipList)
 
-	fmt.Println(len(snipList))
+	// fmt.Println(len(snipList))
 }
 
 func main() {
@@ -94,6 +96,7 @@ func main() {
 		"go",
 		"python",
 		"rust",
+		"cpp",
 	}
 
 	if insert == "language" {

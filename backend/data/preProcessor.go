@@ -1,11 +1,13 @@
 package main
 
 import (
+	"fmt"
 	"math"
 	"strings"
 
 	"github.com/siddhant-nair/snipbin/internal/models"
 	"gorm.io/gorm"
+	"gorm.io/gorm/clause"
 )
 
 func tokenisationCondition(r rune) bool {
@@ -57,6 +59,6 @@ func PreProcessor(db *gorm.DB) {
 	// fmt.Println(processedList[1].IndexedScores)
 
 	db.AutoMigrate(&models.ProcessedSnippet{})
-	db.Create(processedList)
-
+	res := db.Clauses(clause.Insert{Modifier: "or IGNORE"}).Create(processedList)
+	fmt.Println(res.RowsAffected, "Rows affected preprocessed snippets")
 }

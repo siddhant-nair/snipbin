@@ -4,7 +4,7 @@ type ProcessedSnippet struct {
 	// gorm.Model
 	ProcessedSnippetID uint           `json:"processed_snippet_id" gorm:"primaryKey;autoincrement"`
 	IndexedScores      map[string]int `json:"indexed_scores" gorm:"serializer:json"`
-	SnippetID          uint           `json:"snippet_fk"`
+	SnippetID          uint           `json:"snippet_fk" gorm:"unique"`
 	Snippet            Snippet        `json:"-"`
 }
 

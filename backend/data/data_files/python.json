@@ -1,0 +1,422 @@
+[
+    {
+        "title": "Checking If a List Contains an Element",
+        "summary": "value in list",
+        "description": "Checks whether a given value exists in a list, returning `True` if found, otherwise `False`.",
+        "example": "numbers = [1, 2, 3, 4, 5]\nprint(3 in numbers)  # Output: True",
+        "tags": "list, contains, search, check, membership, python"
+    },
+    {
+        "title": "Finding the Index of an Element in a List",
+        "summary": "list.index(value)",
+        "description": "Returns the index of the first occurrence of a value in a list, raising a `ValueError` if not found.",
+        "example": "fruits = ['apple', 'banana', 'cherry']\nprint(fruits.index('banana'))  # Output: 1",
+        "tags": "list, index, search, find, lookup, python"
+    },
+    {
+        "title": "Sorting a List",
+        "summary": "sorted(list)",
+        "description": "Returns a new sorted list in ascending order without modifying the original list.",
+        "example": "numbers = [3, 1, 4, 2]\nprint(sorted(numbers))  # Output: [1, 2, 3, 4]",
+        "tags": "list, sort, order, ascending, sorted, python"
+    },
+    {
+        "title": "Reversing a List",
+        "summary": "list.reverse()",
+        "description": "Reverses the elements of a list in place without creating a new list.",
+        "example": "numbers = [1, 2, 3]\nnumbers.reverse()\nprint(numbers)  # Output: [3, 2, 1]",
+        "tags": "list, reverse, modify, swap, python"
+    },
+    {
+        "title": "Removing Duplicates from a List",
+        "summary": "list(set(list))",
+        "description": "Removes duplicate elements from a list by converting it to a set and back to a list.",
+        "example": "numbers = [1, 2, 2, 3, 4, 4]\nprint(list(set(numbers)))  # Output: [1, 2, 3, 4]",
+        "tags": "list, remove duplicates, unique, set, python"
+    },
+    {
+        "title": "Finding the Maximum Value in a List",
+        "summary": "max(list)",
+        "description": "Returns the largest element in a list.",
+        "example": "numbers = [5, 2, 9, 1]\nprint(max(numbers))  # Output: 9",
+        "tags": "list, max, find largest, comparison, python"
+    },
+    {
+        "title": "Finding the Minimum Value in a List",
+        "summary": "min(list)",
+        "description": "Returns the smallest element in a list.",
+        "example": "numbers = [5, 2, 9, 1]\nprint(min(numbers))  # Output: 1",
+        "tags": "list, min, find smallest, comparison, python"
+    },
+    {
+        "title": "Generating a Random Integer",
+        "summary": "random.randint(min, max)",
+        "description": "Generates a random integer between `min` and `max`, inclusive.",
+        "example": "import random\nprint(random.randint(1, 10))  # Output: Random number between 1 and 10",
+        "tags": "random, integer, generate, randint, python"
+    },
+    {
+        "title": "Shuffling a List Randomly",
+        "summary": "random.shuffle(list)",
+        "description": "Randomly rearranges the elements of a list in place.",
+        "example": "import random\nnumbers = [1, 2, 3, 4, 5]\nrandom.shuffle(numbers)\nprint(numbers)  # Output: [3, 1, 5, 4, 2] (example)",
+        "tags": "random, shuffle, list, reorder, python"
+    },
+    {
+        "title": "Getting the Current Timestamp",
+        "summary": "time.time()",
+        "description": "Returns the current Unix timestamp as the number of seconds since epoch.",
+        "example": "import time\nprint(time.time())  # Output: 1672531199.123 (example)",
+        "tags": "time, timestamp, unix, now, epoch, python"
+    },
+    {
+        "title": "Converting a String to Uppercase",
+        "summary": "string.upper()",
+        "description": "Returns a new string with all characters converted to uppercase.",
+        "example": "text = \"hello\"\nprint(text.upper())  # Output: HELLO",
+        "tags": "string, uppercase, transform, modify, python"
+    },
+    {
+        "title": "Converting a String to Lowercase",
+        "summary": "string.lower()",
+        "description": "Returns a new string with all characters converted to lowercase.",
+        "example": "text = \"HELLO\"\nprint(text.lower())  # Output: hello",
+        "tags": "string, lowercase, transform, modify, python"
+    },
+    {
+        "title": "Finding a Substring in a String",
+        "summary": "string.find(substring)",
+        "description": "Returns the index of the first occurrence of a substring, or `-1` if not found.",
+        "example": "text = \"hello world\"\nprint(text.find(\"world\"))  # Output: 6",
+        "tags": "string, find, substring, index, search, python"
+    },
+    {
+        "title": "Replacing Text in a String",
+        "summary": "string.replace(old, new)",
+        "description": "Returns a new string where all occurrences of `old` are replaced with `new`.",
+        "example": "text = \"Hello, World!\"\nprint(text.replace(\"World\", \"Python\"))  # Output: Hello, Python!",
+        "tags": "string, replace, modify, edit, python"
+    },
+    {
+        "title": "Splitting a String into a List",
+        "summary": "string.split(separator)",
+        "description": "Splits a string into a list of substrings based on a separator.",
+        "example": "text = \"apple,banana,grape\"\nprint(text.split(\",\"))  # Output: ['apple', 'banana', 'grape']",
+        "tags": "string, split, tokenize, delimiter, python"
+    },
+    {
+        "title": "Joining a List into a String",
+        "summary": "\"separator\".join(list)",
+        "description": "Joins elements of a list into a string using a specified separator.",
+        "example": "words = [\"Hello\", \"World\"]\nprint(\" \".join(words))  # Output: Hello World",
+        "tags": "string, join, concatenate, merge, python"
+    },
+    {
+        "title": "Reading a File",
+        "summary": "open(filename).read()",
+        "description": "Reads the entire contents of a file as a string.",
+        "example": "with open(\"file.txt\", \"r\") as f:\n    content = f.read()\nprint(content)",
+        "tags": "file, read, open, text, io, python"
+    },
+    {
+        "title": "Writing to a File",
+        "summary": "open(filename, \"w\").write(data)",
+        "description": "Writes a string to a file, overwriting existing content.",
+        "example": "with open(\"output.txt\", \"w\") as f:\n    f.write(\"Hello, File!\")",
+        "tags": "file, write, open, text, io, python"
+    },
+    {
+        "title": "Appending to a File",
+        "summary": "open(filename, \"a\").write(data)",
+        "description": "Appends a string to the end of a file without overwriting existing content.",
+        "example": "with open(\"output.txt\", \"a\") as f:\n    f.write(\"More text\\n\")",
+        "tags": "file, append, write, io, open, python"
+    },
+    {
+        "title": "Checking If a Dictionary Contains a Key",
+        "summary": "key in dictionary",
+        "description": "Checks if a dictionary contains a specific key, returning `True` if found.",
+        "example": "user = {\"name\": \"Alice\", \"age\": 25}\nprint(\"age\" in user)  # Output: True",
+        "tags": "dictionary, key, contains, check, lookup, python"
+    },
+    {
+        "title": "Merging Two Dictionaries",
+        "summary": "dict1.update(dict2)",
+        "description": "Merges two dictionaries by updating the first dictionary with the key-value pairs from the second.",
+        "example": "a = {\"x\": 1, \"y\": 2}\nb = {\"y\": 3, \"z\": 4}\na.update(b)\nprint(a)  # Output: {'x': 1, 'y': 3, 'z': 4}",
+        "tags": "dictionary, merge, update, combine, python"
+    },
+    {
+        "title": "Flattening a Nested List",
+        "summary": "[item for sublist in list for item in sublist]",
+        "description": "Flattens a list of lists into a single list using list comprehension.",
+        "example": "nested = [[1, 2], [3, 4], [5]]\nflat = [item for sublist in nested for item in sublist]\nprint(flat)  # Output: [1, 2, 3, 4, 5]",
+        "tags": "list, flatten, nested, comprehension, transform, python"
+    },
+    {
+        "title": "Finding Common Elements Between Two Lists",
+        "summary": "set(list1) & set(list2)",
+        "description": "Finds common elements between two lists by converting them to sets and using the `&` operator.",
+        "example": "a = [1, 2, 3]\nb = [2, 3, 4]\nprint(list(set(a) & set(b)))  # Output: [2, 3]",
+        "tags": "list, common, intersection, set, compare, python"
+    },
+    {
+        "title": "Filtering a List Based on a Condition",
+        "summary": "list(filter(function, list))",
+        "description": "Filters elements in a list based on a condition using `filter()`. Returns a new list.",
+        "example": "nums = [1, 2, 3, 4, 5]\nevens = list(filter(lambda x: x % 2 == 0, nums))\nprint(evens)  # Output: [2, 4]",
+        "tags": "list, filter, condition, lambda, python"
+    },
+    {
+        "title": "Swapping Two Variables",
+        "summary": "a, b = b, a",
+        "description": "Swaps the values of two variables without using a temporary variable.",
+        "example": "a, b = 5, 10\na, b = b, a\nprint(a, b)  # Output: 10, 5",
+        "tags": "variable, swap, exchange, tuple, python"
+    },
+    {
+        "title": "Generating a List of Squares",
+        "summary": "[x**2 for x in range(n)]",
+        "description": "Creates a list of squares of numbers from 0 to n-1 using list comprehension.",
+        "example": "print([x**2 for x in range(5)])  # Output: [0, 1, 4, 9, 16]",
+        "tags": "list, comprehension, square, range, transform, python"
+    },
+    {
+        "title": "Merging Two Lists Element-Wise",
+        "summary": "list(zip(list1, list2))",
+        "description": "Combines two lists element-wise into a list of tuples using `zip()`. Returns a new list.",
+        "example": "a = [1, 2, 3]\nb = ['a', 'b', 'c']\nprint(list(zip(a, b)))  # Output: [(1, 'a'), (2, 'b'), (3, 'c')]",
+        "tags": "list, merge, zip, tuple, combine, python"
+    },
+    {
+        "title": "Counting Frequency of Elements in a List",
+        "summary": "collections.Counter(list)",
+        "description": "Counts occurrences of each element in a list and returns a dictionary-like Counter object.",
+        "example": "from collections import Counter\nnums = [1, 2, 2, 3, 3, 3]\nprint(Counter(nums))  # Output: {1: 1, 2: 2, 3: 3}",
+        "tags": "list, count, frequency, occurrences, python"
+    },
+    {
+        "title": "Reversing a String Efficiently",
+        "summary": "string[::-1]",
+        "description": "Creates a reversed copy of a string using slicing.",
+        "example": "text = \"hello\"\nprint(text[::-1])  # Output: 'olleh'",
+        "tags": "string, reverse, slicing, modify, python"
+    },
+    {
+        "title": "Checking If a String Starts with a Substring",
+        "summary": "string.startswith(substring)",
+        "description": "Returns `True` if the string starts with the specified substring, otherwise `False`.",
+        "example": "text = \"hello world\"\nprint(text.startswith(\"hello\"))  # Output: True",
+        "tags": "string, startswith, check, match, search, python"
+    },
+    {
+        "title": "Checking If a String Ends with a Substring",
+        "summary": "string.endswith(substring)",
+        "description": "Returns `True` if the string ends with the specified substring, otherwise `False`.",
+        "example": "text = \"hello world\"\nprint(text.endswith(\"world\"))  # Output: True",
+        "tags": "string, endswith, check, match, search, python"
+    },
+    {
+        "title": "Generating a List of Even Numbers",
+        "summary": "list(range(start, stop, step))",
+        "description": "Creates a list of even numbers within a specified range using `range()`.",
+        "example": "print(list(range(2, 11, 2)))  # Output: [2, 4, 6, 8, 10]",
+        "tags": "list, range, even numbers, sequence, python"
+    },
+    {
+        "title": "Finding the Length of a Dictionary",
+        "summary": "len(dictionary)",
+        "description": "Returns the number of key-value pairs in a dictionary.",
+        "example": "data = {\"a\": 1, \"b\": 2, \"c\": 3}\nprint(len(data))  # Output: 3",
+        "tags": "dictionary, length, count, keys, python"
+    },
+    {
+        "title": "Reversing a Dictionary's Key-Value Pairs",
+        "summary": "{value: key for key, value in dictionary.items()}",
+        "description": "Creates a new dictionary by swapping keys and values using dictionary comprehension.",
+        "example": "data = {\"a\": 1, \"b\": 2, \"c\": 3}\nreversed_dict = {v: k for k, v in data.items()}\nprint(reversed_dict)  # Output: {1: 'a', 2: 'b', 3: 'c'}",
+        "tags": "dictionary, reverse, swap, keys, values, python"
+    },
+    {
+        "title": "Extracting Keys from a Dictionary",
+        "summary": "dictionary.keys()",
+        "description": "Returns a view object of all keys in a dictionary.",
+        "example": "data = {\"a\": 1, \"b\": 2, \"c\": 3}\nprint(list(data.keys()))  # Output: ['a', 'b', 'c']",
+        "tags": "dictionary, keys, extract, iterate, python"
+    },
+    {
+        "title": "Extracting Values from a Dictionary",
+        "summary": "dictionary.values()",
+        "description": "Returns a view object of all values in a dictionary.",
+        "example": "data = {\"a\": 1, \"b\": 2, \"c\": 3}\nprint(list(data.values()))  # Output: [1, 2, 3]",
+        "tags": "dictionary, values, extract, iterate, python"
+    },
+    {
+        "title": "Extracting Key-Value Pairs from a Dictionary",
+        "summary": "dictionary.items()",
+        "description": "Returns a view object containing tuples of key-value pairs.",
+        "example": "data = {\"a\": 1, \"b\": 2, \"c\": 3}\nprint(list(data.items()))  # Output: [('a', 1), ('b', 2), ('c', 3)]",
+        "tags": "dictionary, items, keys, values, tuples, python"
+    },
+    {
+        "title": "Finding the Factorial of a Number",
+        "summary": "math.factorial(n)",
+        "description": "Returns the factorial of `n` using the `math` module.",
+        "example": "import math\nprint(math.factorial(5))  # Output: 120",
+        "tags": "math, factorial, compute, multiply, python"
+    },
+    {
+        "title": "Finding the Greatest Common Divisor (GCD)",
+        "summary": "math.gcd(a, b)",
+        "description": "Returns the greatest common divisor (GCD) of two numbers.",
+        "example": "import math\nprint(math.gcd(48, 18))  # Output: 6",
+        "tags": "math, gcd, greatest common divisor, compute, python"
+    },
+    {
+        "title": "Finding the Least Common Multiple (LCM)",
+        "summary": "math.lcm(a, b)",
+        "description": "Returns the least common multiple (LCM) of two numbers.",
+        "example": "import math\nprint(math.lcm(4, 6))  # Output: 12",
+        "tags": "math, lcm, least common multiple, compute, python"
+    },
+    {
+        "title": "Checking If a Number is Prime",
+        "summary": "function to check if a number is prime",
+        "description": "Defines a function that checks if a number is prime by iterating up to its square root.",
+        "example": "def is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, int(n ** 0.5) + 1):\n        if n % i == 0:\n            return False\n    return True\nprint(is_prime(7))  # Output: True",
+        "tags": "math, prime, check, number, python"
+    },
+    {
+        "title": "Generating Fibonacci Sequence",
+        "summary": "function to generate Fibonacci sequence",
+        "description": "Generates a Fibonacci sequence up to `n` elements using iteration.",
+        "example": "def fibonacci(n):\n    seq = [0, 1]\n    for _ in range(n - 2):\n        seq.append(seq[-1] + seq[-2])\n    return seq\nprint(fibonacci(5))  # Output: [0, 1, 1, 2, 3]",
+        "tags": "math, fibonacci, sequence, generate, python"
+    },
+    {
+        "title": "Checking If a List is Sorted",
+        "summary": "list == sorted(list)",
+        "description": "Determines if a list is sorted by comparing it to its sorted version.",
+        "example": "numbers = [1, 2, 3, 4]\nprint(numbers == sorted(numbers))  # Output: True",
+        "tags": "list, check, sorted, compare, python"
+    },
+    {
+        "title": "Finding the Most Frequent Element in a List",
+        "summary": "max(set(list), key=list.count)",
+        "description": "Finds the most frequently occurring element in a list.",
+        "example": "numbers = [1, 3, 3, 2, 3, 1]\nprint(max(set(numbers), key=numbers.count))  # Output: 3",
+        "tags": "list, most common, frequency, count, python"
+    },
+    {
+        "title": "Removing Punctuation from a String",
+        "summary": "string.translate(str.maketrans('', '', string.punctuation))",
+        "description": "Removes all punctuation characters from a string using `str.translate()` and `string.punctuation`.",
+        "example": "import string\ntext = \"Hello, world!\"\nclean_text = text.translate(str.maketrans('', '', string.punctuation))\nprint(clean_text)  # Output: Hello world",
+        "tags": "string, remove punctuation, clean, translate, python"
+    },
+    {
+        "title": "Finding the Most Common Word in a Text",
+        "summary": "collections.Counter(text.split()).most_common(1)",
+        "description": "Finds the most frequently occurring word in a text using `collections.Counter()`.",
+        "example": "from collections import Counter\ntext = \"apple banana apple orange banana apple\"\nprint(Counter(text.split()).most_common(1))  # Output: [('apple', 3)]",
+        "tags": "text, count words, frequency, Counter, python"
+    },
+    {
+        "title": "Generating a UUID",
+        "summary": "uuid.uuid4()",
+        "description": "Generates a random unique identifier (UUID).",
+        "example": "import uuid\nprint(uuid.uuid4())  # Output: a random UUID like 'f47ac10b-58cc-4372-a567-0e02b2c3d479'",
+        "tags": "uuid, generate, unique id, identifier, python"
+    },
+    {
+        "title": "Checking If a List Is Empty",
+        "summary": "if not list",
+        "description": "Checks if a list is empty using `if not list`.",
+        "example": "numbers = []\nif not numbers:\n    print(\"List is empty\")  # Output: List is empty",
+        "tags": "list, check empty, condition, boolean, python"
+    },
+    {
+        "title": "Sorting a Dictionary by Values",
+        "summary": "sorted(dictionary.items(), key=lambda item: item[1])",
+        "description": "Sorts a dictionary by its values in ascending order.",
+        "example": "data = {'a': 3, 'b': 1, 'c': 2}\nsorted_data = dict(sorted(data.items(), key=lambda item: item[1]))\nprint(sorted_data)  # Output: {'b': 1, 'c': 2, 'a': 3}",
+        "tags": "dictionary, sort, values, lambda, python"
+    },
+    {
+        "title": "Converting a Datetime Object to a String",
+        "summary": "datetime.strftime(format)",
+        "description": "Formats a `datetime` object into a string based on the specified format.",
+        "example": "from datetime import datetime\ndt = datetime(2025, 2, 14, 15, 30)\nprint(dt.strftime('%Y-%m-%d %H:%M'))  # Output: '2025-02-14 15:30'",
+        "tags": "datetime, format, string, conversion, python"
+    },
+    {
+        "title": "Parsing a String to a Datetime Object",
+        "summary": "datetime.strptime(date_string, format)",
+        "description": "Parses a string representing a date into a `datetime` object.",
+        "example": "from datetime import datetime\ndt = datetime.strptime('2025-02-14', '%Y-%m-%d')\nprint(dt)  # Output: 2025-02-14 00:00:00",
+        "tags": "datetime, parse, string, conversion, python"
+    },
+    {
+        "title": "Calculating the Difference Between Two Dates",
+        "summary": "date1 - date2",
+        "description": "Finds the time difference between two `datetime` objects, returning a `timedelta` object.",
+        "example": "from datetime import datetime\nd1 = datetime(2025, 2, 14)\nd2 = datetime(2024, 2, 14)\nprint(d1 - d2)  # Output: 366 days, 0:00:00",
+        "tags": "datetime, difference, timedelta, subtract, python"
+    },
+    {
+        "title": "Getting the Current Working Directory",
+        "summary": "os.getcwd()",
+        "description": "Returns the absolute path of the current working directory.",
+        "example": "import os\nprint(os.getcwd())",
+        "tags": "os, directory, path, getcwd, python"
+    },
+    {
+        "title": "Creating a Directory",
+        "summary": "os.mkdir(directory)",
+        "description": "Creates a new directory in the file system.",
+        "example": "import os\nos.mkdir('new_folder')\nprint('Directory created')",
+        "tags": "os, directory, mkdir, create folder, python"
+    },
+    {
+        "title": "Getting a Random Choice from a List",
+        "summary": "random.choice(list)",
+        "description": "Selects a random element from a non-empty list.",
+        "example": "import random\noptions = ['red', 'blue', 'green']\nprint(random.choice(options))  # Output: 'blue' (example)",
+        "tags": "random, choice, select, list, python"
+    },
+    {
+        "title": "Shuffling a List",
+        "summary": "random.shuffle(list)",
+        "description": "Randomly rearranges the elements of a list in place.",
+        "example": "import random\nnums = [1, 2, 3, 4, 5]\nrandom.shuffle(nums)\nprint(nums)  # Output: [3, 5, 2, 1, 4] (example)",
+        "tags": "random, shuffle, list, rearrange, python"
+    },
+    {
+        "title": "Finding the Intersection of Two Lists",
+        "summary": "list(set(list1) & set(list2))",
+        "description": "Finds the common elements between two lists by converting them to sets and using the `&` operator.",
+        "example": "a = [1, 2, 3, 4]\nb = [3, 4, 5, 6]\nprint(list(set(a) & set(b)))  # Output: [3, 4]",
+        "tags": "list, intersection, common elements, set, python"
+    },
+    {
+        "title": "Finding the Symmetric Difference of Two Lists",
+        "summary": "list(set(list1) ^ set(list2))",
+        "description": "Finds elements that are in either list but not both.",
+        "example": "a = [1, 2, 3, 4]\nb = [3, 4, 5, 6]\nprint(list(set(a) ^ set(b)))  # Output: [1, 2, 5, 6]",
+        "tags": "list, symmetric difference, exclusive OR, python"
+    },
+    {
+        "title": "Converting a String to Title Case",
+        "summary": "string.title()",
+        "description": "Returns a new string with the first letter of each word capitalized.",
+        "example": "text = \"hello world\"\nprint(text.title())  # Output: 'Hello World'",
+        "tags": "string, title case, capitalize, format, python"
+    },
+    {
+        "title": "Removing Duplicate Elements While Preserving Order",
+        "summary": "dict.fromkeys(list)",
+        "description": "Creates a dictionary from a list to remove duplicates while maintaining order.",
+        "example": "nums = [1, 2, 2, 3, 3, 4]\nunique_nums = list(dict.fromkeys(nums))\nprint(unique_nums)  # Output: [1, 2, 3, 4]",
+        "tags": "list, unique, remove duplicates, order, python"
+    }
+]

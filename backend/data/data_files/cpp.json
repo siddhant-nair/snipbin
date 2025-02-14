@@ -1,0 +1,65 @@
+[
+    {
+        "title": "Checking If a Vector Contains an Element",
+        "summary": "std::find(vec.begin(), vec.end(), value) != vec.end()",
+        "description": "Uses `std::find` from `<algorithm>` to check if a value exists in a `std::vector`. Returns `true` if found, otherwise `false`.",
+        "example": "#include <iostream>\n#include <vector>\n#include <algorithm>\n\nint main() {\n    std::vector<int> nums = {1, 2, 3, 4, 5};\n    int target = 3;\n    bool found = std::find(nums.begin(), nums.end(), target) != nums.end();\n    std::cout << \"Found: \" << found << std::endl;\n    return 0;\n}",
+        "tags": "vector, search, contains, find, algorithm, c++"
+    },
+    {
+        "title": "Sorting a Vector",
+        "summary": "std::sort(vec.begin(), vec.end())",
+        "description": "Uses `std::sort` from `<algorithm>` to sort a vector in ascending order.",
+        "example": "#include <iostream>\n#include <vector>\n#include <algorithm>\n\nint main() {\n    std::vector<int> nums = {5, 2, 8, 1, 3};\n    std::sort(nums.begin(), nums.end());\n    for (int num : nums) {\n        std::cout << num << \" \";\n    }\n    return 0;\n}",
+        "tags": "vector, sort, algorithm, order, c++"
+    },
+    {
+        "title": "Reversing a String",
+        "summary": "std::reverse(str.begin(), str.end())",
+        "description": "Uses `std::reverse` from `<algorithm>` to reverse the characters of a string.",
+        "example": "#include <iostream>\n#include <string>\n#include <algorithm>\n\nint main() {\n    std::string text = \"hello\";\n    std::reverse(text.begin(), text.end());\n    std::cout << text; // Output: \"olleh\"\n    return 0;\n}",
+        "tags": "string, reverse, algorithm, manipulation, c++"
+    },
+    {
+        "title": "Finding Maximum in a Vector",
+        "summary": "*std::max_element(vec.begin(), vec.end())",
+        "description": "Uses `std::max_element` from `<algorithm>` to find the maximum value in a `std::vector`.",
+        "example": "#include <iostream>\n#include <vector>\n#include <algorithm>\n\nint main() {\n    std::vector<int> nums = {10, 20, 5, 30, 25};\n    int maxVal = *std::max_element(nums.begin(), nums.end());\n    std::cout << \"Max value: \" << maxVal;\n    return 0;\n}",
+        "tags": "vector, max, find, algorithm, c++"
+    },
+    {
+        "title": "Finding Minimum in a Vector",
+        "summary": "*std::min_element(vec.begin(), vec.end())",
+        "description": "Uses `std::min_element` from `<algorithm>` to find the minimum value in a `std::vector`.",
+        "example": "#include <iostream>\n#include <vector>\n#include <algorithm>\n\nint main() {\n    std::vector<int> nums = {10, 20, 5, 30, 25};\n    int minVal = *std::min_element(nums.begin(), nums.end());\n    std::cout << \"Min value: \" << minVal;\n    return 0;\n}",
+        "tags": "vector, min, find, algorithm, c++"
+    },
+    {
+        "title": "Reversing a Vector",
+        "summary": "std::reverse(vec.begin(), vec.end())",
+        "description": "Uses `std::reverse` from `<algorithm>` to reverse the elements of a vector.",
+        "example": "#include <iostream>\n#include <vector>\n#include <algorithm>\n\nint main() {\n    std::vector<int> nums = {1, 2, 3, 4, 5};\n    std::reverse(nums.begin(), nums.end());\n    for (int num : nums) {\n        std::cout << num << \" \";\n    }\n    return 0;\n}",
+        "tags": "vector, reverse, algorithm, modify, c++"
+    },
+    {
+        "title": "Checking If a String Contains a Substring",
+        "summary": "str.find(substring) != std::string::npos",
+        "description": "Uses `find()` to check if a substring exists within a string. Returns `true` if found.",
+        "example": "#include <iostream>\n#include <string>\n\nint main() {\n    std::string text = \"hello world\";\n    if (text.find(\"world\") != std::string::npos) {\n        std::cout << \"Substring found!\";\n    }\n    return 0;\n}",
+        "tags": "string, find, contains, search, c++"
+    },
+    {
+        "title": "Splitting a String Using a Delimiter",
+        "summary": "std::stringstream and getline()",
+        "description": "Uses `std::stringstream` and `getline()` to split a string by a delimiter and store the parts in a vector.",
+        "example": "#include <iostream>\n#include <sstream>\n#include <vector>\n\nint main() {\n    std::string text = \"apple,banana,grape\";\n    std::stringstream ss(text);\n    std::string item;\n    std::vector<std::string> words;\n    while (getline(ss, item, ',')) {\n        words.push_back(item);\n    }\n    for (const auto& word : words) {\n        std::cout << word << \" \";\n    }\n    return 0;\n}",
+        "tags": "string, split, delimiter, vector, c++"
+    },
+    {
+        "title": "Joining a Vector into a String",
+        "summary": "std::ostringstream and join logic",
+        "description": "Uses `std::ostringstream` to join elements of a vector into a single string with a separator.",
+        "example": "#include <iostream>\n#include <vector>\n#include <sstream>\n\nint main() {\n    std::vector<std::string> words = {\"apple\", \"banana\", \"grape\"};\n    std::ostringstream os;\n    for (size_t i = 0; i < words.size(); ++i) {\n        if (i > 0) os << \", \";\n        os << words[i];\n    }\n    std::cout << os.str(); // Output: \"apple, banana, grape\"\n    return 0;\n}",
+        "tags": "string, join, vector, ostringstream, c++"
+    }
+]

@@ -2,7 +2,7 @@ package models
 
 type Snippet struct {
 	SnippetID   uint     `json:"snippet_id" gorm:"primaryKey;autoincrement"`
-	Title       string   `json:"title" gorm:"unique"`
+	Title       string   `json:"title"`
 	Summary     string   `json:"summary" gorm:"unique"`
 	Description string   `json:"description"`
 	Example     string   `json:"example"`

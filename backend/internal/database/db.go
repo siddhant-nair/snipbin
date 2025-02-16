@@ -68,9 +68,9 @@ func (ur *UserRepo) GetLanguages() []*models.Language {
 	return languageList
 }
 
-func (ur *UserRepo) GetSnippetFromTitle(title string, langId uint) models.Snippet {
+func (ur *UserRepo) GetSnippetFromTitle(title string, langId uint) (models.Snippet, error) {
 	res := models.Snippet{}
 
-	ur.db.Where("UPPER(title) = ? AND language_id= ?", title, langId).First(&res)
-	return res
+	search := ur.db.Where("UPPER(title) = ? AND language_id= ?", title, langId).First(&res)
+	return res, search.Error
 }

@@ -1,27 +1,19 @@
-import { Outlet, useLoaderData, useLocation, useNavigate, useParams } from "react-router-dom"
+import { Outlet, useLoaderData, useParams } from "react-router-dom"
 import SearchBar from "./Components/SearchBar"
-import { useCallback, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { SnippetApis, SnippetModel } from "../models/snippetModel"
 import { ArrowLeftRight } from "lucide-react"
+import { DisplayStringContext, SearchStringContext } from "../context/searchBarContext"
 
 export default function MainLayout() {
 
 	const [searchString, setSetsearchString] = useState("")
-	const URL = useLocation();
-	const URLPaths = URL.pathname.split("/").slice(1);
-	const navigate = useNavigate()
-	// console.log(URLPaths)
-
-	const searchStringSetter = (val: string) => {
-		setSetsearchString(val)
-	}
-
 	const data: SnippetModel[] = useLoaderData();
 	const snippetApis = new SnippetApis()
 	const urlParams = useParams()
-
 	const [snippetList, setSnippetList] = useState<SnippetModel[]>(data)
-
+	const [displayString, setDispayString] = useState("")
+	
 	async function setSnippetData(toSearch: string) {
 		try {
 			let data: SnippetModel[];
@@ -40,27 +32,29 @@ export default function MainLayout() {
 		setSnippetData(searchString.trim())
 	}, [searchString])
 
-	return <>
-		{console.log(searchString)}
-		<header className="w-full px-pc py-7">
-			<div className="flex w-full justify-between items-center">
-				<div className="flex items-center w-5/9 gap-5">
-					<div id="some-logo" className="size-18 bg-white"></div>
-					<SearchBar setSearchString={searchStringSetter} />
-				</div>
-				<a href="/">
-					<div id="language-switcher" className="flex flex-col gap-3 items-center">
-						<div>
-							<img src={`http://localhost:8080/api/v1/media/assets/${urlParams.language}.svg`}
-								className="w-18 object-fill"
-								alt={urlParams.language} />
+	return (
+		<DisplayStringContext.Provider value={{ displayString, setDispayString }} >
+			<SearchStringContext.Provider value={setSetsearchString} >
+				<header className="w-full px-pc py-7">
+					<div className="flex w-full justify-between items-center">
+						<div className="flex items-center w-5/9 gap-5">
+							<div id="some-logo" className="size-18 bg-white"></div>
+							<SearchBar />
 						</div>
-						<ArrowLeftRight />
+						<a href="/">
+							<div id="language-switcher" className="flex flex-col gap-3 items-center">
+								<div>
+									<img src={`http://localhost:8080/api/v1/media/assets/${urlParams.language}.svg`}
+										className="w-15 object-fill"
+										alt={urlParams.language} />
+								</div>
+								<ArrowLeftRight />
+							</div>
+						</a>
 					</div>
-				</a>
-			</div>
-		</header>
-		<Outlet context={snippetList} />
-	</>
-
+				</header>
+				<Outlet context={snippetList} />
+			</SearchStringContext.Provider>
+		</DisplayStringContext.Provider>
+	)
 }

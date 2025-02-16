@@ -134,9 +134,24 @@ func (h *Handler) FetchSnippet(w http.ResponseWriter, r *http.Request) {
 
 	title := strings.ToUpper(strings.ReplaceAll(getTitle, "-", " "))
 
-	fmt.Println(title)
+	// fmt.Println(title)
 
-	snippet := h.userRepo.GetSnippetFromTitle(title, langID)
+	snippet, err := h.userRepo.GetSnippetFromTitle(title, langID)
+
+	if err != nil {
+		// errorHandler(w, r, http.StatusNotFound)
+		// w.Write([]byte("404 not found"))
+		w.WriteHeader(http.StatusNotFound)
+		json.NewEncoder(w).Encode(models.Snippet{})
+		return
+	}
 
 	json.NewEncoder(w).Encode(snippet)
 }
+
+// func errorHandler(w http.ResponseWriter, r *http.Request, status int) {
+// 	w.WriteHeader(status)
+// 	if status == http.StatusNotFound {
+// 		fmt.Fprint(w, "custom 404")
+// 	}
+// }

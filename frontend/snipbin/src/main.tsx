@@ -7,6 +7,7 @@ import SnippetGrid from './snippets/SnippetGrid'
 import LanguagePage from './language/LanguagePage'
 import { SnippetApis } from './models/snippetModel'
 import SnippetPage from './snippets/SnippetPage'
+import ErrorBoundary from './errors/ErrorPage'
 
 const snippetApis = new SnippetApis();
 
@@ -31,6 +32,7 @@ const router = createBrowserRouter([
 	{
 		path: "/:language",
 		element: <MainLayout />,
+		// errorElement: <ErrorBoundary />,
 		loader: snippetGridLoader,
 		children: [
 			{

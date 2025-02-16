@@ -6,8 +6,7 @@ export default function SnippetGrid() {
 
 	const snippetList: SnippetModel[] = useOutletContext()
 
-	return (<>
-		{/* {console.log(searchString)} */}
+	return (
 		<div className="flex justify-center">
 
 			{/* <div className="w-full grid grid-cols-2 place-items-center px-16 gap-x-6 gap-y-6"> */}
@@ -25,6 +24,5 @@ export default function SnippetGrid() {
 				}
 			</div>
 		</div>
-	</>
 	)
 }

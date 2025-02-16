@@ -1,21 +1,29 @@
 import { Search } from 'lucide-react'
-import { useState } from 'react'
+import { useContext } from 'react'
 import debounce from '../../util/debounce'
+import { DisplayStringContext, SearchStringContext } from '../../context/searchBarContext'
+import { useLocation, useNavigate } from 'react-router-dom'
 
-export default function SearchBar({ setSearchString }
-  : { setSearchString: (val: string) => void }
-) {
+export default function SearchBar() {
 
-  const [localSearchString, setLocalSearchString] = useState("")
+  const { displayString, setDispayString } = useContext(DisplayStringContext);
+  const setSearchString = useContext(SearchStringContext);
+  const navigate = useNavigate();
+  const URL = useLocation();
+  const pathArray: string[] = URL.pathname.split("/").slice(1);
+  // console.log(pathArray)
 
-  function handleSearchInput(e: React.ChangeEvent<HTMLInputElement>): void{
-    setLocalSearchString(e.target.value)
+  function handleSearchInput(e: React.ChangeEvent<HTMLInputElement>): void {
+    setDispayString(e.target.value);
     const debounceSetState = debounce((val: string = e.target.value) => {
-      setSearchString(val)
-    // }, 1750)
+      setSearchString(val);
+      // }, 1750)
     }, 1000)
-
     debounceSetState();
+
+    if (pathArray.length > 1 && pathArray[1] != "") {
+      navigate('')
+    }
   }
 
   return (
@@ -26,8 +34,9 @@ export default function SearchBar({ setSearchString }
           name="search-bar"
           className="h-full w-full outline-none"
           placeholder="Search For A Snippet"
-          value={localSearchString}
+          value={displayString}
           onChange={handleSearchInput}
+          autoComplete='off'
         />
       </div>
     </div>

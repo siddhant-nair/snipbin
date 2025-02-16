@@ -1,8 +1,9 @@
 import { CheckCheck, Copy, Maximize2 } from "lucide-react"
 import CodeSnippet from "./CodeSnippet"
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import slugify from "../../util/slugify";
+import { DisplayStringContext } from "../../context/searchBarContext";
 
 export default function SnippetCards({
   title,
@@ -16,6 +17,11 @@ export default function SnippetCards({
 ): JSX.Element {
 
   const navigate = useNavigate()
+  const { setDispayString } = useContext(DisplayStringContext)
+  function openCard(){
+    setDispayString("")
+    navigate(slugify(title))
+  }
 
   return (
     // <div className="w-[100%] max-w-[40rem] aspect-[3.75] bg-gray-custom p-4 rounded-2xl flex flex-col gap-3">
@@ -24,7 +30,7 @@ export default function SnippetCards({
         <div id="card-title" className="w-2/3">
           {title}
         </div>
-        <div id="card-expand" onClick={() => navigate(slugify(title))}>
+        <div id="card-expand" onClick={openCard} className="cursor-pointer">
           <Maximize2 />
         </div>
       </div>

@@ -58,7 +58,8 @@ func main() {
 
 	mux.HandleFunc("GET /api/v1/languagelist", chainMiddleWare(server.FetchLanguages, middleware...))
 	mux.HandleFunc("/api/v1/{language}/search", chainMiddleWare(server.SendSearchResult, middleware...))
-	mux.HandleFunc("GET /api/v1/{language}", chainMiddleWare(server.GetAllSnippets, middleware...))
+	mux.HandleFunc("/api/v1/{language}/{snippetTitle}", chainMiddleWare(server.FetchSnippet, middleware...))
+	mux.HandleFunc("GET /api/v1/{language}", chainMiddleWare(server.FetchAllSnippets, middleware...))
 
 	fmt.Println("Server running on localhost:8080")
 

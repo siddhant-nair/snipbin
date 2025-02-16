@@ -1,4 +1,4 @@
-export async function fetchAllApi<T>(url: string): Promise<T> {
+export async function fetchApi<T>(url: string): Promise<T> {
     try {
         const response = await fetch(url)
         const data = await response.json()
@@ -9,7 +9,7 @@ export async function fetchAllApi<T>(url: string): Promise<T> {
     // console.log(data)
 }
 
-export async function fetchSearchResultApi<T>(url: string, body: any): Promise<T> {
+export async function fetchFromPostApi<T>(url: string, body: any): Promise<T> {
     // console.log(JSON.stringify(body))
     try {
         const response = await fetch(url, {

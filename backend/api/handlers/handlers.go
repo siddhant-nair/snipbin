@@ -56,7 +56,7 @@ func (h *Handler) SetLanguage(chosenLanguage string) {
 	h.languageProcessed = langProcessed
 }
 
-func (h *Handler) GetAllSnippets(w http.ResponseWriter, r *http.Request) {
+func (h *Handler) FetchAllSnippets(w http.ResponseWriter, r *http.Request) {
 	h.SetLanguage(r.PathValue("language"))
 
 	w.Header().Set("Content-Type", "application/json")
@@ -124,4 +124,19 @@ func (h *Handler) FetchLanguages(w http.ResponseWriter, _ *http.Request) {
 	w.WriteHeader(http.StatusOK)
 
 	json.NewEncoder(w).Encode(langList)
+}
+
+func (h *Handler) FetchSnippet(w http.ResponseWriter, r *http.Request) {
+	getTitle := r.PathValue("snippetTitle")
+	languageFromUrl := r.PathValue("language")
+
+	langID := models.GetLanguageList()[languageFromUrl].LanguageID
+
+	title := strings.ToUpper(strings.ReplaceAll(getTitle, "-", " "))
+
+	fmt.Println(title)
+
+	snippet := h.userRepo.GetSnippetFromTitle(title, langID)
+
+	json.NewEncoder(w).Encode(snippet)
 }

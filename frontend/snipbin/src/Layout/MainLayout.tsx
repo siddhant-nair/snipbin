@@ -1,4 +1,4 @@
-import { Outlet, useLoaderData, useParams } from "react-router-dom"
+import { Outlet, useLoaderData, useLocation, useNavigate, useParams } from "react-router-dom"
 import SearchBar from "./Components/SearchBar"
 import { useCallback, useEffect, useState } from "react"
 import { SnippetApis, SnippetModel } from "../models/snippetModel"
@@ -7,11 +7,14 @@ import { ArrowLeftRight } from "lucide-react"
 export default function MainLayout() {
 
 	const [searchString, setSetsearchString] = useState("")
+	const URL = useLocation();
+	const URLPaths = URL.pathname.split("/").slice(1);
+	const navigate = useNavigate()
+	// console.log(URLPaths)
 
-	const searchStringSetter = useCallback((val: string) => {
+	const searchStringSetter = (val: string) => {
 		setSetsearchString(val)
-	}, [])
-
+	}
 
 	const data: SnippetModel[] = useLoaderData();
 	const snippetApis = new SnippetApis()
@@ -23,7 +26,7 @@ export default function MainLayout() {
 		try {
 			let data: SnippetModel[];
 			if (searchString == "") {
-				data = await snippetApis.fetchSnippets(urlParams.language!)
+				data = await snippetApis.fetchAllSnippets(urlParams.language!)
 			} else {
 				data = await snippetApis.fetchSearchResult(urlParams.language!, toSearch)
 			}
@@ -38,7 +41,7 @@ export default function MainLayout() {
 	}, [searchString])
 
 	return <>
-		{/* {console.log("main layout rendered")} */}
+		{console.log(searchString)}
 		<header className="w-full px-pc py-7">
 			<div className="flex w-full justify-between items-center">
 				<div className="flex items-center w-5/9 gap-5">

@@ -1,4 +1,4 @@
-import { fetchAllApi, fetchSearchResultApi } from "../util/apiHandler"
+import { fetchApi, fetchFromPostApi } from "../util/apiHandler"
 
 export interface SnippetModel {
     snippet_id: number
@@ -19,20 +19,24 @@ export class SnippetApis {
     // snippet!: Array<SnippetModel>;
     url = 'http://localhost:8080/api/v1'
 
-    fetchSnippets(language: string): Promise<SnippetModel[]> {
+    fetchAllSnippets(language: string): Promise<SnippetModel[]> {
         const fetchSnippetUrl = `${this.url}/${language}`
-        return fetchAllApi<SnippetModel[]>(fetchSnippetUrl)
+        return fetchApi<SnippetModel[]>(fetchSnippetUrl)
     }
 
     fetchSearchResult(language: string, searchString: string): Promise<SnippetModel[]> {
         const bodyJson: {searchString : string} = {"searchString" : searchString}
         const SearchUrl = `${this.url}/${language}/search`
-        return fetchSearchResultApi<SnippetModel[]>(SearchUrl, bodyJson)
+        return fetchFromPostApi<SnippetModel[]>(SearchUrl, bodyJson)
     }
 
     fetchLanguages(): Promise<LanguageModel[]> {
         const fetchLanguageUrl = `${this.url}/languagelist`
-        return fetchAllApi<LanguageModel[]>(fetchLanguageUrl)
+        return fetchApi<LanguageModel[]>(fetchLanguageUrl)
     }
 
+    fetchSnippet(language: string, snippetTitle: string): Promise<SnippetModel> {
+        const fetchSnippetUrl = `${this.url}/${language}/${snippetTitle}`
+        return fetchApi<SnippetModel>(fetchSnippetUrl) 
+    }
 }

@@ -6,6 +6,7 @@ export default function CodeSnippet({ codeBlock, languageId}: { codeBlock: strin
     2: "python",
     3: "go",
     4: "rust",
+    5: "cpp",
   }
 
   function toBeHighlighted(categories: string[]): Object {

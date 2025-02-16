@@ -25,7 +25,7 @@ export default function SearchBar({ setSearchString }
         <input
           name="search-bar"
           className="h-full w-full outline-none"
-          placeholder="Search For Something"
+          placeholder="Search For A Snippet"
           value={localSearchString}
           onChange={handleSearchInput}
         />

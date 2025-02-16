@@ -6,13 +6,20 @@ import MainLayout from './Layout/MainLayout'
 import SnippetGrid from './snippets/SnippetGrid'
 import LanguagePage from './language/LanguagePage'
 import { SnippetApis } from './models/snippetModel'
+import SnippetPage from './snippets/SnippetPage'
 
-async function snippetLoader({params: {language}}: any): Promise<any> {
-	return await new SnippetApis().fetchSnippets(language)
+const snippetApis = new SnippetApis();
+
+async function snippetGridLoader({params: {language}}: any): Promise<any> {
+	return await snippetApis.fetchAllSnippets(language)
 }
 
 async function languageLoader(): Promise<any> {
-	return await new SnippetApis().fetchLanguages()
+	return await snippetApis.fetchLanguages()
+}
+
+async function snippetLoader({params: {language, snippetTitle}}: any): Promise<any> {
+	return await snippetApis.fetchSnippet(language, snippetTitle)
 }
 
 const router = createBrowserRouter([
@@ -24,8 +31,13 @@ const router = createBrowserRouter([
 	{
 		path: "/:language",
 		element: <MainLayout />,
-		loader: snippetLoader,
+		loader: snippetGridLoader,
 		children: [
+			{
+				path:"/:language/:snippetTitle",
+				element: <SnippetPage/>,
+				loader: snippetLoader 
+			},
 			{
 				path:"/:language",
 				element: <SnippetGrid />,

@@ -10,7 +10,7 @@
         "title": "Short Variable Declaration",
         "summary": "name := value",
         "description": "Declares and initializes a variable using the `:=` shorthand without explicitly specifying its type.",
-        "example": "age := 25\nname := \"Alice\"",
+        "example": "age := 25\name := \"Alice\"",
         "tags": "variable, shorthand, type inference, assignment, golang"
     },
     {
@@ -281,70 +281,70 @@
     },
     {
         "title": "Checking If a String Contains a Substring",
-        "summary": "strings.Contains(str, substr)",
+        "summary": "res := strings.Contains(str, substr)",
         "description": "Checks if a string contains a given substring using the `strings` package.",
         "example": "import \"strings\"\nfmt.Println(strings.Contains(\"hello world\", \"world\")) // Output: true",
         "tags": "string, contains, search, substring, match, golang"
     },
     {
         "title": "Replacing Parts of a String",
-        "summary": "strings.ReplaceAll(str, old, new)",
+        "summary": "res := strings.ReplaceAll(str, old, new)",
         "description": "Replaces all occurrences of a substring with another substring.",
         "example": "import \"strings\"\nstr := \"Hello, World!\"\nnewStr := strings.ReplaceAll(str, \"World\", \"Gophers\")\nfmt.Println(newStr) // Output: Hello, Gophers!",
         "tags": "string, replace, modify, edit, substring, golang"
     },
     {
         "title": "Splitting a String into a Slice",
-        "summary": "strings.Split(str, separator)",
+        "summary": "res := strings.Split(str, separator)",
         "description": "Splits a string into a slice of substrings based on a delimiter.",
         "example": "import \"strings\"\nstr := \"apple,banana,grape\"\nfruits := strings.Split(str, \",\")\nfmt.Println(fruits) // Output: [apple banana grape]",
         "tags": "string, split, slice, delimiter, tokenize, golang"
     },
     {
         "title": "Joining a Slice into a String",
-        "summary": "strings.Join(slice, separator)",
+        "summary": "res := strings.Join(slice, separator)",
         "description": "Joins elements of a slice into a single string with a specified separator.",
         "example": "import \"strings\"\nfruits := []string{\"apple\", \"banana\", \"grape\"}\njoined := strings.Join(fruits, \"-\")\nfmt.Println(joined) // Output: apple-banana-grape",
         "tags": "slice, join, string, concatenate, merge, golang"
     },
     {
         "title": "Trimming Whitespace from a String",
-        "summary": "strings.TrimSpace(str)",
+        "summary": "res := strings.TrimSpace(str)",
         "description": "Removes leading and trailing whitespace from a string.",
         "example": "import \"strings\"\nstr := \"   hello world   \"\nfmt.Println(strings.TrimSpace(str)) // Output: hello world",
         "tags": "string, trim, whitespace, clean, format, golang"
     },
     {
         "title": "Converting a String to Lowercase",
-        "summary": "strings.ToLower(str)",
+        "summary": "res := strings.ToLower(str)",
         "description": "Converts a string to lowercase.",
         "example": "import \"strings\"\nfmt.Println(strings.ToLower(\"HELLO\")) // Output: hello",
         "tags": "string, lowercase, format, modify, golang"
     },
     {
         "title": "Converting a String to Uppercase",
-        "summary": "strings.ToUpper(str)",
+        "summary": "res := strings.ToUpper(str)",
         "description": "Converts a string to uppercase.",
         "example": "import \"strings\"\nfmt.Println(strings.ToUpper(\"hello\")) // Output: HELLO",
         "tags": "string, uppercase, format, modify, golang"
     },
     {
         "title": "Parsing a Float from a String",
-        "summary": "strconv.ParseFloat(str, bitSize)",
+        "summary": "err := strconv.ParseFloat(str, bitSize)",
         "description": "Converts a string into a floating-point number.",
         "example": "import \"strconv\"\nf, err := strconv.ParseFloat(\"3.14\", 64)\nif err == nil {\n    fmt.Println(f) // Output: 3.14\n}",
         "tags": "string, convert, parse, float, strconv, golang"
     },
     {
         "title": "Parsing an Integer from a String",
-        "summary": "strconv.Atoi(str)",
+        "summary": "err := strconv.Atoi(str)",
         "description": "Converts a string into an integer using `strconv.Atoi()`.",
         "example": "import \"strconv\"\nnum, err := strconv.Atoi(\"42\")\nif err == nil {\n    fmt.Println(num) // Output: 42\n}",
         "tags": "string, convert, parse, integer, strconv, golang"
     },
     {
         "title": "Generating a Random Integer",
-        "summary": "rand.Intn(max-min) + min",
+        "summary": "res := rand.Intn(max-min) + min",
         "description": "Generates a random integer between a specified range using the `math/rand` package.",
         "example": "import (\n    \"fmt\"\n    \"math/rand\"\n    \"time\"\n)\nrand.Seed(time.Now().UnixNano())\nnum := rand.Intn(10) + 1\nfmt.Println(num) // Output: Random number between 1 and 10",
         "tags": "random, integer, math/rand, generate, range, golang"

@@ -3,14 +3,14 @@ import { Highlight } from "prism-react-renderer"
 export default function CodeSnippet({ codeBlock, languageId}: { codeBlock: string, languageId: number}) {
   const languageMap: { [key: number]: string } = {
     1: "js",
-    2: "python",
+    2: "py",
     3: "go",
     4: "rust",
     5: "cpp",
   }
 
   function toBeHighlighted(categories: string[]): Object {
-    const orangeHighlight = ["method", "function", "keyword"]
+    const orangeHighlight = ["method", "function", "keyword", "builtin"]
     const greenHighlight = ["property", "class-name", "namespace"]
     // const blueHighlight = ["builtin"]
     // if (orangeHighlight.includes)

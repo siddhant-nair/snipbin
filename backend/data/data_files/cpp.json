@@ -61,5 +61,131 @@
         "description": "Uses `std::ostringstream` to join elements of a vector into a single string with a separator.",
         "example": "#include <iostream>\n#include <vector>\n#include <sstream>\n\nint main() {\n    std::vector<std::string> words = {\"apple\", \"banana\", \"grape\"};\n    std::ostringstream os;\n    for (size_t i = 0; i < words.size(); ++i) {\n        if (i > 0) os << \", \";\n        os << words[i];\n    }\n    std::cout << os.str(); // Output: \"apple, banana, grape\"\n    return 0;\n}",
         "tags": "string, join, vector, ostringstream, c++"
+    },
+        {
+        "title": "Converting a String to an Integer",
+        "summary": "int num = std::stoi(str);",
+        "description": "Converts a string to an integer using `stoi` function.",
+        "example": "std::string str = '42';\nint num = std::stoi(str);\nstd::cout << num;  // Output: 42",
+        "tags": "string, integer, convert, stoi, cpp"
+    },
+    {
+        "title": "Checking If a String is Empty",
+        "summary": "bool isEmpty = str.empty();",
+        "description": "Checks if a string is empty using the `empty` function.",
+        "example": "std::string str = '';\nbool isEmpty = str.empty();\nstd::cout << isEmpty;  // Output: 1",
+        "tags": "string, empty, check, cpp"
+    },
+    {
+        "title": "Finding the Length of a String",
+        "summary": "int length = str.length();",
+        "description": "Returns the length of a string.",
+        "example": "std::string str = 'Hello';\nint length = str.length();\nstd::cout << length;  // Output: 5",
+        "tags": "string, length, size, cpp"
+    },
+    {
+        "title": "Checking If a Number is Prime",
+        "summary": "bool isPrime = (n > 1) && std::none_of(2, n, [&n](int i) { return n % i == 0; });",
+        "description": "Checks if a number is prime.",
+        "example": "int n = 5;\nbool isPrime = (n > 1) && std::none_of(2, n, [&n](int i) { return n % i == 0; });\nstd::cout << isPrime;  // Output: 1",
+        "tags": "prime, number, check, math, cpp"
+    },
+    {
+        "title": "Swapping Two Variables",
+        "summary": "std::swap(a, b);",
+        "description": "Swaps the values of two variables.",
+        "example": "int a = 5, b = 10;\nstd::swap(a, b);\nstd::cout << a << ' ' << b;  // Output: 10 5",
+        "tags": "swap, variables, cpp"
+    },
+    {
+        "title": "Converting an Integer to a String",
+        "summary": "std::string str = std::to_string(num);",
+        "description": "Converts an integer to a string using `to_string` function.",
+        "example": "int num = 42;\nstd::string str = std::to_string(num);\nstd::cout << str;  // Output: '42'",
+        "tags": "integer, string, convert, to_string, cpp"
+    },
+    {
+        "title": "Finding the Sum of Elements in an Array",
+        "summary": "int sum = std::accumulate(arr, arr + size, 0);",
+        "description": "Calculates the sum of elements in an array using `accumulate`.",
+        "example": "int arr[] = {1, 2, 3, 4, 5};\nint size = 5;\nint sum = std::accumulate(arr, arr + size, 0);\nstd::cout << sum;  // Output: 15",
+        "tags": "array, sum, accumulate, cpp"
+    },
+    {
+        "title": "Checking If a Vector is Empty",
+        "summary": "bool isEmpty = vec.empty();",
+        "description": "Checks if a vector is empty using the `empty` function.",
+        "example": "std::vector<int> vec;\nbool isEmpty = vec.empty();\nstd::cout << isEmpty;  // Output: 1",
+        "tags": "vector, empty, check, cpp"
+    },
+    {
+        "title": "Finding the Maximum Value in an Array",
+        "summary": "int maxVal = *std::max_element(arr, arr + size);",
+        "description": "Finds the maximum value in an array.",
+        "example": "int arr[] = {1, 2, 3, 4, 5};\nint size = 5;\nint maxVal = *std::max_element(arr, arr + size);\nstd::cout << maxVal;  // Output: 5",
+        "tags": "array, max, element, find, cpp"
+    },
+    {
+        "title": "Reversing a Vector",
+        "summary": "std::reverse(vec.begin(), vec.end());",
+        "description": "Reverses the order of elements in a vector.",
+        "example": "std::vector<int> vec = {1, 2, 3, 4, 5};\nstd::reverse(vec.begin(), vec.end());\nfor (int i : vec) { std::cout << i << ' '; }  // Output: 5 4 3 2 1",
+        "tags": "vector, reverse, cpp"
+    },
+    {
+        "title": "Finding the Index of an Element in a Vector",
+        "summary": "int index = std::distance(vec.begin(), std::find(vec.begin(), vec.end(), element));",
+        "description": "Finds the index of an element in a vector.",
+        "example": "std::vector<int> vec = {1, 2, 3, 4};\nint element = 3;\nint index = std::distance(vec.begin(), std::find(vec.begin(), vec.end(), element));\nstd::cout << index;  // Output: 2",
+        "tags": "vector, index, element, find, cpp"
+    },
+    {
+        "title": "Concatenating Two Strings",
+        "summary": "std::string result = str1 + str2;",
+        "description": "Concatenates two strings.",
+        "example": "std::string str1 = 'Hello', str2 = ' World';\nstd::string result = str1 + str2;\nstd::cout << result;  // Output: 'Hello World'",
+        "tags": "string, concatenate, join, cpp"
+    },
+    {
+        "title": "Removing an Element from a Vector",
+        "summary": "vec.erase(std::remove(vec.begin(), vec.end(), element), vec.end());",
+        "description": "Removes a specified element from a vector.",
+        "example": "std::vector<int> vec = {1, 2, 3, 4, 5};\nint element = 3;\nvec.erase(std::remove(vec.begin(), vec.end(), element), vec.end());\nfor (int i : vec) { std::cout << i << ' '; }  // Output: 1 2 4 5",
+        "tags": "vector, remove, element, erase, cpp"
+    },
+    {
+        "title": "Comparing Two Strings",
+        "summary": "bool isEqual = (str1 == str2);",
+        "description": "Compares two strings for equality.",
+        "example": "std::string str1 = 'apple', str2 = 'apple';\nbool isEqual = (str1 == str2);\nstd::cout << isEqual;  // Output: 1",
+        "tags": "string, compare, equality, cpp"
+    },
+    {
+        "title": "Finding the Intersection of Two Arrays",
+        "summary": "std::set_intersection(arr1.begin(), arr1.end(), arr2.begin(), arr2.end(), intersection.begin());",
+        "description": "Finds the intersection of two arrays (common elements).",
+        "example": "std::vector<int> arr1 = {1, 2, 3, 4};\nstd::vector<int> arr2 = {3, 4, 5, 6};\nstd::vector<int> intersection(arr1.size() + arr2.size());\nstd::set_intersection(arr1.begin(), arr1.end(), arr2.begin(), arr2.end(), intersection.begin());\nfor (int i : intersection) { std::cout << i << ' '; }  // Output: 3 4",
+        "tags": "array, intersection, set, common, cpp"
+    },
+    {
+        "title": "Converting a Char to an Integer",
+        "summary": "int num = ch - '0';",
+        "description": "Converts a character representing a number to its corresponding integer value.",
+        "example": "char ch = '5';\nint num = ch - '0';\nstd::cout << num;  // Output: 5",
+        "tags": "char, integer, convert, cpp"
+    },
+    {
+        "title": "Generating Random Numbers in a Range",
+        "summary": "int randomNum = rand() % (max - min + 1) + min;",
+        "description": "Generates a random number within a given range [min, max].",
+        "example": "int min = 1, max = 10;\nint randomNum = rand() % (max - min + 1) + min;\nstd::cout << randomNum;",
+        "tags": "random, number, generate, range, cpp"
+    },
+    {
+        "title": "Finding the Difference Between Two Sets",
+        "summary": "std::set<int> difference;\nstd::set_difference(set1.begin(), set1.end(), set2.begin(), set2.end(), std::inserter(difference, difference.end()));",
+        "description": "Finds the difference between two sets.",
+        "example": "std::set<int> set1 = {1, 2, 3};\nstd::set<int> set2 = {2, 3, 4};\nstd::set<int> difference;\nstd::set_difference(set1.begin(), set1.end(), set2.begin(), set2.end(), std::inserter(difference, difference.end()));\nfor (int i : difference) { std::cout << i << ' '; }  // Output: 1",
+        "tags": "set, difference, cpp"
     }
 ]

@@ -83,3 +83,9 @@
   font-style: italic;
 }
 
+.bin-logo{
+  background-image: url("./assets/snipbin-logo.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}

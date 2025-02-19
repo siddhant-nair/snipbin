@@ -803,5 +803,145 @@
         "description": "Creates an array of sequential numbers from `start` to `end`, inclusive.",
         "example": "console.log(range(1, 5)); // Output: [1, 2, 3, 4, 5]",
         "tags": "array, range, generate, numbers, sequence, loop, javascript"
+    },
+    {
+        "title": "Creating a Proxy for Object Validation",
+        "summary": "const validatedObj = new Proxy(obj, { set(target, key, value) { } });",
+        "description": "Uses JavaScript Proxy to add custom validation logic when setting object properties,     providing advanced property access control.",
+        "example": "const user = new Proxy({}, {\n  set(target, key, value) {\n    if (key === 'age' && value <  0) {\n      throw new Error('Age cannot be negative');\n    }\n    target[key] = value;\n    return true;\n      }\n});",
+        "tags": "proxy, validation, object, advanced, javascript"
+    },
+    {
+        "title": "Implementing Memoization for Function Caching",
+        "summary": "const memoize = (fn) => { const cache = new Map(); };",
+        "description": "Creates a higher-order function that caches function results to improve performance for  expensive computations.",
+        "example": "const expensivecalculation = memoize((n) => {\n  console.log('Calculating...');\n  return n  * 2;\n});",
+        "tags": "memoization, caching, performance, function, optimization"
+    },
+    {
+        "title": "Creating a Custom Iterator",
+        "summary": "const customIterator = { [Symbol.iterator]() { } };",
+        "description": "Defines a custom iterator protocol to create iterable objects with control over          iteration behavior.",
+        "example": "const rangeIterator = {\n  start: 0,\n  end: 5,\n  [Symbol.iterator]() {\n    let current =  this.start;\n    return {\n      next() {\n        return current <= this.end\n          ? { value: current++,   done: false }\n          : { done: true };\n      }\n    };\n  }\n};",
+        "tags": "iterator, protocol, generator, custom, javascript"
+    },
+    {
+        "title": "Implementing Function Composition",
+        "summary": "const compose = (...fns) => x => fns.reduceRight((v, f) => f(v), x);",
+        "description": "Creates a function that composes multiple functions, applying them from right to left    in a functional programming style.",
+        "example": "const double = x => x * 2;\nconst increment = x => x + 1;\nconst composedFn = compose(double, increment);",
+        "tags": "functional, composition, higher-order, function, programming"
+    },
+    {
+        "title": "Using WeakMap for Private Variables",
+        "summary": "const privateProps = new WeakMap();",
+        "description": "Implements a mechanism for creating truly private variables and methods in JavaScript    classes.",
+        "example": "class SecureClass {\n  constructor(secret) {\n    privateProps.set(this, { secret });\n      }\n  getSecret() {\n    return privateProps.get(this).secret;\n  }\n}",
+        "tags": "weakmap, private, encapsulation, class, javascript"
+    },
+    {
+        "title": "Creating a Throttle Function",
+        "summary": "const throttle = (fn, delay) => { let shouldWait = false; };",
+        "description": "Implements a throttle mechanism to limit the rate of function execution, useful for      performance optimization.",
+        "example": "const throttledScroll = throttle(() => {\n  console.log('Scroll event');\n}, 1000);",
+        "tags": "throttle, performance, optimization, function, event"
+    },
+    {
+        "title": "Dynamic Import with Error Handling",
+        "summary": "const dynamicImport = async (modulePath) => { try { } catch {} };",
+        "description": "Provides a robust method for dynamically importing JavaScript modules with               comprehensive error handling.",
+        "example": "const loadModule = async (path) => {\n  try {\n    const module = await import(path);\n      return module;\n  } catch (error) {\n    console.error('Module load failed', error);\n  }\n};",
+        "tags": "dynamic import, module, async, error handling, javascript"
+    },
+    {
+        "title": "Creating a Cancelable Promise",
+        "summary": "const createCancelablePromise = () => { let cancel; };",
+        "description": "Implements a promise that can be canceled before its resolution, providing more control  over asynchronous operations.",
+        "example": "const { promise, cancel } = createCancelablePromise();\npromise.then(result =>               {}).catch(error => {});",
+        "tags": "promise, async, cancellation, control, javascript"
+    },
+    {
+        "title": "Implementing Debounce for Event Handling",
+        "summary": "const debounce = (fn, delay) => { let timeoutId; };",
+        "description": "Creates a debounce function that delays executing a function until after a specified     wait time.",
+        "example": "const debouncedSearch = debounce((query) => {\n  performSearch(query);\n}, 300);",
+        "tags": "debounce, event, performance, function, optimization"
+    },
+    {
+        "title": "Creating a Deep Clone Function",
+        "summary": "const deepClone = (obj) => JSON.parse(JSON.stringify(obj));",
+        "description": "Implements a method to create a deep clone of an object, handling nested structures      without reference.",
+        "example": "const originalObj = { a: 1, b: { c: 2 } };\nconst clonedObj = deepClone(originalObj);",
+        "tags": "clone, deep copy, object, utility, javascript"
+    },
+    {
+        "title": "Implementing Partial Application",
+        "summary": "const partial = (fn, ...presetArgs) => (...laterArgs) => fn(...presetArgs, ...laterArgs);",
+        "description": "Creates a function that partially applies arguments, enabling function currying and      partial execution.",
+        "example": "const multiply = (a, b) => a * b;\nconst double = partial(multiply, 2);",
+        "tags": "partial application, currying, function, functional, javascript"
+    },
+    {
+        "title": "Using Generators for Lazy Evaluation",
+        "summary": "function* lazySequence() { yield* []; }",
+        "description": "Demonstrates the use of generator functions for creating lazy-evaluated sequences with   minimal memory overhead.",
+        "example": "function* fibonacci() {\n  let [prev, curr] = [0, 1];\n  while (true) {\n    yield curr;\n   [prev, curr] = [curr, prev + curr];\n  }\n}",
+        "tags": "generator, lazy evaluation, sequence, iterator, javascript"
+    },
+    {
+        "title": "Creating a Type-Safe Object Mapper",
+        "summary": "const mapObject = (obj, mapper) => Object.fromEntries(Object.entries(obj).map(mapper));",
+        "description": "Provides a flexible way to transform object properties while maintaining type safety.",
+        "example": "const result = mapObject(\n  { a: 1, b: 2 },\n  ([key, value]) => [key, value * 2]\n);",
+        "tags": "object, mapping, transformation, functional, javascript"
+    },
+    {
+        "title": "Implementing a Simple State Machine",
+        "summary": "const createStateMachine = (initialState, transitions) => { };",
+        "description": "Creates a basic state machine with predefined state transitions and validation.",
+        "example": "const trafficLight = createStateMachine('red', {\n  red: { next: 'green' },\n  green: {      next: 'yellow' },\n  yellow: { next: 'red' }\n});",
+        "tags": "state machine, state, design pattern, logic, javascript"
+    },
+    {
+        "title": "Creating a Fluent Interface for Object Configuration",
+        "summary": "class ConfigBuilder { withX().withY().build(); }",
+        "description": "Implements a fluent interface pattern for creating complex objects with method           chaining.",
+        "example": "class UserBuilder {\n  constructor() { this.user = {}; }\n  withName(name) {\n               this.user.name = name;\n    return this;\n  }\n  build() { return this.user; }\n}",
+        "tags": "fluent interface, builder, design pattern, chaining, javascript"
+    },
+    {
+        "title": "Implementing a Simple Pub/Sub Pattern",
+        "summary": "const createPubSub = () => { const subscribers = {}; };",
+        "description": "Creates a basic publish-subscribe mechanism for decoupled event handling.",
+        "example": "const eventBus = createPubSub();\neventBus.subscribe('user:login', (data) =>                 {});\neventBus.publish('user:login', { userId: 123 });",
+        "tags": "pub/sub, events, design pattern, communication, javascript"
+    },
+    {
+        "title": "Creating a Recursive Flatten Function",
+        "summary": "const flattenDeep = (arr) => arr.reduce((acc, val) => [], []);",
+        "description": "Implements a deep flattening function that can handle nested arrays of arbitrary         depth.",
+        "example": "const nestedArray = [1, [2, [3, [4]]], 5];\nconst flattened = flattenDeep(nestedArray);",
+        "tags": "flatten, recursive, array, transformation, javascript"
+    },
+    {
+        "title": "Implementing Structural Equality Comparison",
+        "summary": "const isDeepEqual = (obj1, obj2) => { };",
+        "description": "Creates a function to perform deep equality comparison between complex objects.",
+        "example": "const result = isDeepEqual(\n  { a: 1, b: { c: 2 } },\n  { a: 1, b: { c: 2 } }\n);",
+        "tags": "comparison, deep equal, object, utility, javascript"
+    },
+    {
+        "title": "Creating a Simple Dependency Injection Container",
+        "summary": "const createContainer = () => { const services = new Map(); };",
+        "description": "Implements a basic dependency injection container for managing and resolving             dependencies.",
+        "example": "const container = createContainer();\ncontainer.register('logger', () => new                 Logger());\nconst logger = container.resolve('logger');",
+        "tags": "dependency injection, container, design pattern, inversion of control, javascript"
+    },
+    {
+        "title": "Implementing a Compose with Async Support",
+        "summary": "const composeAsync = (...fns) => x => fns.reduceRight((p, f) => p.then(f),                   Promise.resolve(x));",
+        "description": "Creates an async-aware function composition utility for handling promise-based function  chains.",
+        "example": "const fetchUser = async (id) => {};\nconst processUser = async (user) => {};\nconst          composedOperation = composeAsync(processUser, fetchUser);",
+        "tags": "async, composition, functional, promise, javascript"
     }
 ]

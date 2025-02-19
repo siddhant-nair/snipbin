@@ -32,7 +32,7 @@ const router = createBrowserRouter([
 	{
 		path: "/:language",
 		element: <MainLayout />,
-		// errorElement: <ErrorBoundary />,
+		errorElement: <ErrorBoundary />,
 		loader: snippetGridLoader,
 		children: [
 			{

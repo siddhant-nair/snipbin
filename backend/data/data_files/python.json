@@ -418,5 +418,110 @@
         "description": "Creates a dictionary from a list to remove duplicates while maintaining order.",
         "example": "nums = [1, 2, 2, 3, 3, 4]\nunique_nums = list(dict.fromkeys(nums))\nprint(unique_nums)  # Output: [1, 2, 3, 4]",
         "tags": "list, unique, remove duplicates, order, python"
+    },
+        {
+        "title": "Checking If a Number is Even or Odd",
+        "summary": "res = num % 2 == 0",
+        "description": "Determines if a number is even or odd using the modulo operator.",
+        "example": "num = 7\nprint(num % 2 == 0)  # Output: False",
+        "tags": "number, even, odd, check, condition, python"
+    },
+    {
+        "title": "Finding the First Non-Repeating Character in a String",
+        "summary": "res = next((ch for ch in s if s.count(ch) == 1), None)",
+        "description": "Finds and returns the first character in a string that does not repeat. Returns None if all characters repeat.",
+        "example": "s = 'swiss'\nprint(next((ch for ch in s if s.count(ch) == 1), None))  # Output: 'w'",
+        "tags": "string, unique, non-repeating, search, first, python"
+    },
+    {
+        "title": "Checking If All Elements in a List Are Unique",
+        "summary": "res = len(lst) == len(set(lst))",
+        "description": "Determines whether all elements in a list are unique by comparing the length of the list to the length of a set of the same elements.",
+        "example": "lst = [1, 2, 3, 4, 5]\nprint(len(lst) == len(set(lst)))  # Output: True",
+        "tags": "list, unique, check, duplicates, set, python"
+    },
+    {
+        "title": "Finding the First Duplicate in a List",
+        "summary": "res = next((x for i, x in enumerate(lst) if x in lst[:i]), None)",
+        "description": "Finds and returns the first duplicate element in a list. Returns None if no duplicates exist.",
+        "example": "lst = [1, 2, 3, 2, 4]\nprint(next((x for i, x in enumerate(lst) if x in lst[:i]), None))  # Output: 2",
+        "tags": "list, duplicate, first, find, repeat, python"
+    },
+    {
+        "title": "Swapping Keys and Values in a Dictionary",
+        "summary": "res = {v: k for k, v in d.items()}",
+        "description": "Creates a new dictionary by swapping the keys and values of an existing dictionary.",
+        "example": "d = {'a': 1, 'b': 2}\nprint({v: k for k, v in d.items()})  # Output: {1: 'a', 2: 'b'}",
+        "tags": "dictionary, swap, keys, values, invert, python"
+    },
+    {
+        "title": "Finding the Longest Word in a String",
+        "summary": "res = max(s.split(), key=len)",
+        "description": "Finds and returns the longest word in a given string.",
+        "example": "s = 'The quick brown fox jumps'\nprint(max(s.split(), key=len))  # Output: 'jumps'",
+        "tags": "string, longest, word, search, max, python"
+    },
+    {
+        "title": "Converting a List of Tuples to a Dictionary",
+        "summary": "res = dict(lst)",
+        "description": "Converts a list of key-value tuples into a dictionary.",
+        "example": "lst = [('a', 1), ('b', 2)]\nprint(dict(lst))  # Output: {'a': 1, 'b': 2}",
+        "tags": "list, tuple, dictionary, convert, key-value, python"
+    },
+    {
+        "title": "Finding the Median of a List",
+        "summary": "res = statistics.median(lst)",
+        "description": "Finds the median value of a list using the `statistics` module.",
+        "example": "import statistics\nlst = [1, 2, 3, 4, 5]\nprint(statistics.median(lst))  # Output: 3",
+        "tags": "list, median, statistics, math, center, python"
+    },
+    {
+        "title": "Flattening a List of Lists",
+        "summary": "res = [item for sublist in lst for item in sublist]",
+        "description": "Converts a nested list into a flat list using list comprehension.",
+        "example": "lst = [[1, 2], [3, 4]]\nprint([item for sublist in lst for item in sublist])  # Output: [1, 2, 3, 4]",
+        "tags": "list, flatten, nested, reduce, expand, python"
+    },
+    {
+        "title": "Getting the N Largest Elements in a List",
+        "summary": "res = heapq.nlargest(n, lst)",
+        "description": "Finds the `n` largest elements in a list using `heapq`.",
+        "example": "import heapq\nlst = [1, 5, 3, 8, 2]\nprint(heapq.nlargest(2, lst))  # Output: [8, 5]",
+        "tags": "list, largest, max, top, heapq, python"
+    },
+    {
+        "title": "Rotating a List Left by N Positions",
+        "summary": "res = lst[n:] + lst[:n]",
+        "description": "Rotates a list to the left by `n` positions.",
+        "example": "lst = [1, 2, 3, 4, 5]\nn = 2\nprint(lst[n:] + lst[:n])  # Output: [3, 4, 5, 1, 2]",
+        "tags": "list, rotate, shift, left, modify, python"
+    },
+    {
+        "title": "Grouping Elements in a List",
+        "summary": "res = [lst[i:i+n] for i in range(0, len(lst), n)]",
+        "description": "Splits a list into chunks of size `n`.",
+        "example": "lst = [1, 2, 3, 4, 5, 6]\nn = 2\nprint([lst[i:i+n] for i in range(0, len(lst), n)])  # Output: [[1, 2], [3, 4], [5, 6]]",
+        "tags": "list, group, chunk, split, partition, python"
+    },
+    {
+        "title": "Finding the Mode of a List",
+        "summary": "res = statistics.mode(lst)",
+        "description": "Finds the most frequently occurring value in a list.",
+        "example": "import statistics\nlst = [1, 2, 2, 3, 3, 3]\nprint(statistics.mode(lst))  # Output: 3",
+        "tags": "list, mode, statistics, frequency, common, python"
+    },
+    {
+        "title": "Finding the N Smallest Elements in a List",
+        "summary": "res = heapq.nsmallest(n, lst)",
+        "description": "Finds the `n` smallest elements in a list using `heapq`.",
+        "example": "import heapq\nlst = [5, 1, 8, 3, 2]\nprint(heapq.nsmallest(2, lst))  # Output: [1, 2]",
+        "tags": "list, smallest, min, top, heapq, python"
+    },
+    {
+        "title": "Reversing Words in a String",
+        "summary": "res = ' '.join(s.split()[::-1])",
+        "description": "Reverses the order of words in a string.",
+        "example": "s = 'Hello world'\nprint(' '.join(s.split()[::-1]))  # Output: 'world Hello'",
+        "tags": "string, reverse, words, split, join, python"
     }
 ]

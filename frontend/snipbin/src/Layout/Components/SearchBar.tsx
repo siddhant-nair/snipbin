@@ -36,6 +36,7 @@ export default function SearchBar() {
           placeholder="Search For A Snippet"
           value={displayString}
           onChange={handleSearchInput}
+          // onFocus={() => {setTimeout(() => {handleSearchInput}, 500)}}
           autoComplete='off'
         />
       </div>

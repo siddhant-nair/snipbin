@@ -38,7 +38,7 @@ export default function MainLayout() {
 				<header className="w-full px-pc py-7">
 					<div className="flex w-full justify-between items-center">
 						<div className="flex items-center w-5/9 gap-5">
-							<div id="some-logo" className="size-18 bg-white"></div>
+							<div id="some-logo" className="size-36 bin-logo"></div>
 							<SearchBar />
 						</div>
 						<a href="/">

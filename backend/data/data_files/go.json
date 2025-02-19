@@ -565,5 +565,236 @@
         "description": "Returns the sine of `x` (in radians).",
         "example": "import \"math\"\nfmt.Println(math.Sin(math.Pi / 2)) // Output: 1",
         "tags": "math, sine, trigonometry, radians, golang"
+    },
+        {
+        "title": "Creating an Unbuffered Channel",
+        "summary": "ch := make(chan int)",
+        "description": "Creates an unbuffered channel of integers to enable communication between goroutines.",
+        "example": "ch := make(chan int)\ngo func() { ch <- 42 }()\nfmt.Println(<-ch) // Output: 42",
+        "tags": "channel, unbuffered, goroutine, concurrency, communication, go"
+    },
+    {
+        "title": "Checking If a Slice Is Empty",
+        "summary": "isEmpty := len(slice) == 0",
+        "description": "Checks whether a given slice is empty by comparing its length to zero.",
+        "example": "nums := []int{}\nfmt.Println(len(nums) == 0) // Output: true",
+        "tags": "slice, check, empty, length, zero, go"
+    },
+    {
+        "title": "Finding the Index of an Element in a Slice",
+        "summary": "index := slices.Index(slice, value)",
+        "description": "Finds the index of a specific value in a slice using the slices package.",
+        "example": "nums := []int{10, 20, 30}\nindex := slices.Index(nums, 20)\nfmt.Println(index) // Output: 1",
+        "tags": "slice, index, find, search, element, go"
+    },
+    {
+        "title": "Checking If a Struct Has a Zero Value",
+        "summary": "isZero := reflect.DeepEqual(obj, MyStruct{})",
+        "description": "Compares a struct to its zero value to check if it is uninitialized.",
+        "example": "type Person struct { Name string }\np := Person{}\nfmt.Println(reflect.DeepEqual(p, Person{})) // Output: true",
+        "tags": "struct, zero, check, uninitialized, reflect, go"
+    },
+    {
+        "title": "Creating a Read-Only Channel",
+        "summary": "var ch <-chan int",
+        "description": "Declares a read-only channel that only allows receiving values.",
+        "example": "var ch <-chan int\nfmt.Println(ch) // Output: <nil>",
+        "tags": "channel, read-only, receive, goroutine, go"
+    },
+    {
+        "title": "Creating a Write-Only Channel",
+        "summary": "var ch chan<- int",
+        "description": "Declares a write-only channel that only allows sending values.",
+        "example": "var ch chan<- int\nfmt.Println(ch) // Output: <nil>",
+        "tags": "channel, write-only, send, goroutine, go"
+    },
+    {
+        "title": "Using a Defer Statement",
+        "summary": "defer fmt.Println(\"Executed last\")",
+        "description": "Defers the execution of a function until the surrounding function exits.",
+        "example": "fmt.Println(\"Start\")\ndefer fmt.Println(\"Executed last\")\nfmt.Println(\"End\")\n// Output:\n// Start\n// End\n// Executed last",
+        "tags": "defer, statement, function, delay, execution, go"
+    },
+    {
+        "title": "Using a Sync.Mutex for Locking",
+        "summary": "var mu sync.Mutex",
+        "description": "Declares a mutex to synchronize access to shared resources.",
+        "example": "var mu sync.Mutex\nmu.Lock()\nfmt.Println(\"Locked\")\nmu.Unlock()\nfmt.Println(\"Unlocked\")",
+        "tags": "mutex, lock, unlock, sync, concurrency, go"
+    },
+    {
+        "title": "Using a Sync.RWMutex for Read-Write Locking",
+        "summary": "var rw sync.RWMutex",
+        "description": "Declares a read-write mutex to allow multiple readers or one writer.",
+        "example": "var rw sync.RWMutex\nrw.RLock()\nfmt.Println(\"Read lock acquired\")\nrw.RUnlock()",
+        "tags": "mutex, read-write, lock, sync, concurrency, go"
+    },
+    {
+        "title": "Generating a Random String",
+        "summary": "randStr := randSeq(n)",
+        "description": "Generates a random string of length n using letters and digits.",
+        "example": "func randSeq(n int) string {\n    letters := \"abcdefghijklmnopqrstuvwxyz\"\n    b := make([]byte, n)\n    for i := range b {\n        b[i] = letters[rand.Intn(len(letters))]\n    }\n    return string(b)\n}\nfmt.Println(randSeq(5))",
+        "tags": "random, string, generate, characters, go"
+    },
+    {
+        "title": "Parsing JSON from a String",
+        "summary": "json.Unmarshal([]byte(jsonStr), &obj)",
+        "description": "Parses a JSON string into a Go struct using the encoding/json package.",
+        "example": "type Person struct { Name string }\nvar p Person\njsonStr := `{\"Name\": \"Alice\"}`\njson.Unmarshal([]byte(jsonStr), &p)\nfmt.Println(p.Name) // Output: Alice",
+        "tags": "json, parse, unmarshal, string, struct, go"
+    },
+    {
+        "title": "Encoding a Struct to JSON",
+        "summary": "jsonData, _ := json.Marshal(obj)",
+        "description": "Converts a struct to a JSON string using the encoding/json package.",
+        "example": "type Person struct { Name string }\np := Person{Name: \"Bob\"}\njsonData, _ := json.Marshal(p)\nfmt.Println(string(jsonData)) // Output: {\"Name\":\"Bob\"}",
+        "tags": "json, marshal, struct, encode, convert, go"
+    },
+    {
+        "title": "Getting the Current Unix Timestamp",
+        "summary": "timestamp := time.Now().Unix()",
+        "description": "Retrieves the current Unix timestamp in seconds.",
+        "example": "fmt.Println(time.Now().Unix())",
+        "tags": "time, timestamp, unix, current, go"
+    },
+    {
+        "title": "Creating a Custom Error",
+        "summary": "err := errors.New(\"custom error message\")",
+        "description": "Creates a new custom error using the errors package.",
+        "example": "import \"errors\"\nerr := errors.New(\"something went wrong\")\nfmt.Println(err)",
+        "tags": "error, custom, create, message, go"
+    },
+    {
+        "title": "Handling a Panic with Recover",
+        "summary": "defer func() { if r := recover(); r != nil { fmt.Println(\"Recovered\") } }()",
+        "description": "Catches and handles a panic using defer and recover.",
+        "example": "defer func() { if r := recover(); r != nil { fmt.Println(\"Recovered\") } }()\npanic(\"Something went wrong\")",
+        "tags": "panic, recover, error, exception, handle, go"
+    },
+    {
+        "title": "Sorting a Struct Slice by Field",
+        "summary": "sort.Slice(people, func(i, j int) bool { return people[i].Age < people[j].Age })",
+        "description": "Sorts a slice of structs by a specific field using sort.Slice.",
+        "example": "type Person struct { Name string; Age int }\npeople := []Person{{\"Alice\", 30}, {\"Bob\", 25}}\nsort.Slice(people, func(i, j int) bool { return people[i].Age < people[j].Age })\nfmt.Println(people)",
+        "tags": "sort, struct, slice, field, order, go"
+    },
+    {
+        "title": "Converting a Float to an Integer",
+        "summary": "intVal := int(floatVal)",
+        "description": "Converts a floating-point number to an integer by truncating decimals.",
+        "example": "floatVal := 3.99\nintVal := int(floatVal)\nfmt.Println(intVal) // Output: 3",
+        "tags": "float, integer, convert, truncate, go"
+    },
+    {
+        "title": "Reading Environment Variables",
+        "summary": "value := os.Getenv(\"MY_ENV\")",
+        "description": "Retrieves the value of an environment variable.",
+        "example": "fmt.Println(os.Getenv(\"PATH\"))",
+        "tags": "environment, variable, read, getenv, go"
+    },
+    {
+        "title": "Getting the Current Time",
+        "summary": "now := time.Now()",
+        "description": "Retrieves the current local time as a time.Time object.",
+        "example": "fmt.Println(time.Now())",
+        "tags": "time, now, current, datetime, go"
+    },
+    {
+        "title": "Checking If a Slice is Empty",
+        "summary": "isEmpty := len(slice) == 0",
+        "description": "Checks if a given slice is empty by comparing its length to zero.",
+        "example": "nums := []int{}\nfmt.Println(len(nums) == 0) // Output: true",
+        "tags": "slice, empty, check, length, condition, golang"
+    },
+    {
+        "title": "Finding the Index of an Element in a Slice",
+        "summary": "index := slices.Index(slice, value)",
+        "description": "Finds the index of the first occurrence of an element in a slice. Returns -1 if not found.",
+        "example": "nums := []int{10, 20, 30}\nfmt.Println(slices.Index(nums, 20)) // Output: 1",
+        "tags": "slice, find, index, search, element, golang"
+    },
+    {
+        "title": "Removing an Element from a Slice",
+        "summary": "slice = append(slice[:i], slice[i+1:]...)",
+        "description": "Removes an element at index `i` from a slice by using slicing and appending.",
+        "example": "nums := []int{1, 2, 3, 4}\ni := 2\nnums = append(nums[:i], nums[i+1:]...)\nfmt.Println(nums) // Output: [1 2 4]",
+        "tags": "slice, remove, delete, index, modify, golang"
+    },
+    {
+        "title": "Cloning a Slice",
+        "summary": "clone := append([]T(nil), original...)",
+        "description": "Creates a new copy of a slice without modifying the original.",
+        "example": "nums := []int{1, 2, 3}\nclone := append([]int(nil), nums...)\nfmt.Println(clone) // Output: [1 2 3]",
+        "tags": "slice, copy, clone, duplicate, new, golang"
+    },
+    {
+        "title": "Shuffling a Slice",
+        "summary": "rand.Shuffle(len(slice), func(i, j int) { slice[i], slice[j] = slice[j], slice[i] })",
+        "description": "Randomly shuffles the elements of a slice.",
+        "example": "nums := []int{1, 2, 3, 4, 5}\nrand.Shuffle(len(nums), func(i, j int) { nums[i], nums[j] = nums[j], nums[i] })\nfmt.Println(nums)",
+        "tags": "slice, shuffle, random, mix, order, golang"
+    },
+    {
+        "title": "Finding Unique Elements in a Slice",
+        "summary": "unique := make(map[T]struct{})",
+        "description": "Extracts unique elements from a slice using a map.",
+        "example": "nums := []int{1, 2, 2, 3, 4, 4}\nunique := make(map[int]struct{})\nfor _, num := range nums { unique[num] = struct{}{} }\nfmt.Println(len(unique)) // Output: 4",
+        "tags": "slice, unique, remove duplicates, map, set, golang"
+    },
+    {
+        "title": "Finding Common Elements in Two Slices",
+        "summary": "for _, val := range slice1 { if set[val] { common = append(common, val) } }",
+        "description": "Finds the common elements between two slices using a map.",
+        "example": "a := []int{1, 2, 3}\nb := []int{2, 3, 4}\ncommon := []int{}\nset := make(map[int]bool)\nfor _, v := range a { set[v] = true }\nfor _, v := range b { if set[v] { common = append(common, v) } }\nfmt.Println(common) // Output: [2 3]",
+        "tags": "slice, common, intersection, search, compare, golang"
+    },
+    {
+        "title": "Converting a Map to a Slice of Keys",
+        "summary": "keys := make([]T, 0, len(map))",
+        "description": "Extracts the keys from a map and stores them in a slice.",
+        "example": "m := map[string]int{\"a\": 1, \"b\": 2}\nkeys := make([]string, 0, len(m))\nfor k := range m { keys = append(keys, k) }\nfmt.Println(keys) // Output: [a b]",
+        "tags": "map, slice, keys, extract, list, golang"
+    },
+    {
+        "title": "Converting a Map to a Slice of Values",
+        "summary": "values := make([]T, 0, len(map))",
+        "description": "Extracts the values from a map and stores them in a slice.",
+        "example": "m := map[string]int{\"a\": 1, \"b\": 2}\nvalues := make([]int, 0, len(m))\nfor _, v := range m { values = append(values, v) }\nfmt.Println(values) // Output: [1 2]",
+        "tags": "map, slice, values, extract, list, golang"
+    },
+    {
+        "title": "Merging Two Maps",
+        "summary": "for k, v := range map2 { map1[k] = v }",
+        "description": "Combines two maps by adding key-value pairs from one map to another.",
+        "example": "m1 := map[string]int{\"a\": 1}\nm2 := map[string]int{\"b\": 2}\nfor k, v := range m2 { m1[k] = v }\nfmt.Println(m1) // Output: map[a:1 b:2]",
+        "tags": "map, merge, combine, union, golang"
+    },
+    {
+        "title": "Counting Occurrences of Elements in a Slice",
+        "summary": "countMap := make(map[T]int)",
+        "description": "Creates a frequency count of elements in a slice using a map.",
+        "example": "nums := []int{1, 2, 2, 3, 3, 3}\ncount := make(map[int]int)\nfor _, num := range nums { count[num]++ }\nfmt.Println(count) // Output: map[1:1 2:2 3:3]",
+        "tags": "slice, count, frequency, map, occurrences, golang"
+    },
+    {
+        "title": "Generating a Random String",
+        "summary": "randString := string(bytes)",
+        "description": "Generates a random alphanumeric string of a given length.",
+        "example": "const letters = \"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ\"\nb := make([]byte, 6)\nfor i := range b { b[i] = letters[rand.Intn(len(letters))] }\nfmt.Println(string(b))",
+        "tags": "random, string, generate, alphanumeric, golang"
+    },
+    {
+        "title": "Generating a UUID",
+        "summary": "uuid := uuid.New().String()",
+        "description": "Creates a unique identifier using the `github.com/google/uuid` package.",
+        "example": "import \"github.com/google/uuid\"\nfmt.Println(uuid.New().String())",
+        "tags": "uuid, generate, unique, identifier, random, golang"
+    },
+    {
+        "title": "Flattening a Slice of Slices",
+        "summary": "flat := append(slice1, slice2...)",
+        "description": "Flattens a slice of slices into a single slice.",
+        "example": "nested := [][]int{{1, 2}, {3, 4}}\nflat := []int{}\nfor _, sub := range nested { flat = append(flat, sub...) }\nfmt.Println(flat) // Output: [1 2 3 4]",
+        "tags": "slice, flatten, merge, combine, golang"
     }
 ]

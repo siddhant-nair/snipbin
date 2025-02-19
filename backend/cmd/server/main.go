@@ -5,7 +5,9 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 
+	"github.com/joho/godotenv"
 	"github.com/siddhant-nair/snipbin/api/handlers"
 	"github.com/siddhant-nair/snipbin/internal/database"
 	"github.com/siddhant-nair/snipbin/internal/models"
@@ -41,6 +43,13 @@ func enableCORS(next http.HandlerFunc) http.HandlerFunc {
 }
 
 func main() {
+	envErr := godotenv.Load()
+	PORT := os.Getenv("PORT")
+
+	if envErr != nil {
+		panic("Error loading .env file")
+	}
+
 	db, err := gorm.Open(sqlite.Open("snippetsDB.db"), &gorm.Config{})
 	if err != nil {
 		panic("failed to connect to the database")
@@ -61,8 +70,8 @@ func main() {
 	mux.HandleFunc("/api/v1/{language}/{snippetTitle}", chainMiddleWare(server.FetchSnippet, middleware...))
 	mux.HandleFunc("GET /api/v1/{language}", chainMiddleWare(server.FetchAllSnippets, middleware...))
 
-	fmt.Println("Server running on localhost:8080")
+	fmt.Println("Server running on localhost:" + PORT)
 
-	log.Fatal(http.ListenAndServe("localhost:8080", mux))
+	log.Fatal(http.ListenAndServe("localhost:"+PORT, mux))
 	// listen and serve on 0.0.0.0:8080
 }

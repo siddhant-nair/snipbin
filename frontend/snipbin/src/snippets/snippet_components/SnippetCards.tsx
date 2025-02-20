@@ -34,7 +34,8 @@ export default function SnippetCards({
           <Maximize2 />
         </div>
       </div>
-      <div id="code-summary" className="relative bg-black-custom flex px-3 h-4/5 justify-between items-center rounded-xl">
+      <div id="code-summary" className="relative bg-black-custom 
+        flex px-3 h-4/5 justify-between items-center rounded-xl">
         <CodeSnippet codeBlock={summary} languageId={languageId} />
         <CopyCodeButton codeToCopy={summary} />
         {/* {summary} */}

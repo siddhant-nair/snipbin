@@ -91,18 +91,26 @@
 }
 
 pre::-webkit-scrollbar {
-  height: 3px !important;
-  opacity: 0 !important;
+  height: 5px;
+  position: absolute;
 }
 
 pre::-webkit-scrollbar-thumb {
-  background: #606060 !important;
+  background: #606060;
+  opacity: 0 !important;
 }
 
-pre::-webkit-scrollbar:horizontal{
-  opacity: 0;
+pre::-webkit-scrollbar:hover {
+  height: 10px;
 }
 
-/* pre:hover > pre::-webkit-scrollbar:horizontal {
-  opacity: 100;
-} */
+pre{
+  overflow: hidden;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+pre:hover {
+  overflow-x: scroll;
+  margin-bottom: 0;
+}

@@ -943,5 +943,551 @@
         "description": "Creates an async-aware function composition utility for handling promise-based function  chains.",
         "example": "const fetchUser = async (id) => {};\nconst processUser = async (user) => {};\nconst          composedOperation = composeAsync(processUser, fetchUser);",
         "tags": "async, composition, functional, promise, javascript"
+    },
+    {
+        "title": "Removing All Whitespace from a String",
+        "summary": "const result = string.replace(/\\s+/g, '');",
+        "description": "Removes all spaces, tabs, and newlines from a string.",
+        "example": "const result = ' Hello World '.replace(/\\s+/g, '');\nconsole.log(result); // 'HelloWorld'",
+        "tags": "string, remove spaces, whitespace, trim, clean, javascript"
+    },
+    {
+        "title": "Padding a String to a Fixed Length",
+        "summary": "const result = string.padStart(length, char);",
+        "description": "Pads a string at the start until it reaches the specified length.",
+        "example": "const result = '42'.padStart(5, '0');\nconsole.log(result); // '00042'",
+        "tags": "string, pad, padding, length, format, javascript"
+    },
+    {
+        "title": "Padding a String at the End",
+        "summary": "const result = string.padEnd(length, char);",
+        "description": "Pads a string at the end until it reaches the specified length.",
+        "example": "const result = '42'.padEnd(5, '0');\nconsole.log(result); // '42000'",
+        "tags": "string, pad, padding, length, format, javascript"
+    },
+    {
+        "title": "Counting the Occurrences of a Character",
+        "summary": "const result = string.split(char).length - 1;",
+        "description": "Counts how many times a specific character appears in a string.",
+        "example": "const result = 'banana'.split('a').length - 1;\nconsole.log(result); // 3",
+        "tags": "string, count, occurrences, frequency, character, javascript"
+    },
+    {
+        "title": "Removing the First Character from a String",
+        "summary": "const result = string.slice(1);",
+        "description": "Removes the first character from a string and returns the rest.",
+        "example": "const result = 'Hello'.slice(1);\nconsole.log(result); // 'ello'",
+        "tags": "string, slice, remove, first, trim, javascript"
+    },
+    {
+        "title": "Removing the Last Character from a String",
+        "summary": "const result = string.slice(0, -1);",
+        "description": "Removes the last character from a string.",
+        "example": "const result = 'Hello'.slice(0, -1);\nconsole.log(result); // 'Hell'",
+        "tags": "string, slice, remove, last, trim, javascript"
+    },
+    {
+        "title": "Extracting Only Digits from a String",
+        "summary": "const result = string.replace(/\\D/g, '');",
+        "description": "Removes all non-numeric characters from a string, leaving only digits.",
+        "example": "const result = 'Phone: 123-456-7890'.replace(/\\D/g, '');\nconsole.log(result); // '1234567890'",
+        "tags": "string, digits, numbers, extract, clean, javascript"
+    },
+    {
+        "title": "Extracting Only Letters from a String",
+        "summary": "const result = string.replace(/[^a-zA-Z]/g, '');",
+        "description": "Removes all non-letter characters from a string.",
+        "example": "const result = 'H3ll0 W0rld!'.replace(/[^a-zA-Z]/g, '');\nconsole.log(result); // 'HllWrld'",
+        "tags": "string, letters, alphabets, extract, clean, javascript"
+    },
+    {
+        "title": "Extracting the First Word from a String",
+        "summary": "const result = string.split(' ')[0];",
+        "description": "Gets the first word from a space-separated string.",
+        "example": "const result = 'Hello world!'.split(' ')[0];\nconsole.log(result); // 'Hello'",
+        "tags": "string, first word, split, extract, find, javascript"
+    },
+    {
+        "title": "Extracting the Last Word from a String",
+        "summary": "const result = string.split(' ').pop();",
+        "description": "Gets the last word from a space-separated string.",
+        "example": "const result = 'Hello world!'.split(' ').pop();\nconsole.log(result); // 'world!'",
+        "tags": "string, last word, split, extract, find, javascript"
+    },
+    {
+        "title": "Swapping Case of All Letters",
+        "summary": "const result = string.replace(/./g, c => c === c.toUpperCase() ? c.toLowerCase() : c.toUpperCase());",
+        "description": "Converts uppercase letters to lowercase and vice versa.",
+        "example": "const result = 'Hello WORLD'.replace(/./g, c => c === c.toUpperCase() ? c.toLowerCase() : c.toUpperCase());\nconsole.log(result); // 'hELLO world'",
+        "tags": "string, swap case, toggle, uppercase, lowercase, javascript"
+    },
+    {
+        "title": "Removing Duplicates from a String",
+        "summary": "const result = [...new Set(string)].join('');",
+        "description": "Removes duplicate characters from a string while preserving order.",
+        "example": "const result = 'banana'.split('').filter((c, i, arr) => arr.indexOf(c) === i).join('');\nconsole.log(result); // 'ban'",
+        "tags": "string, remove duplicates, unique, characters, clean, javascript"
+    },
+    {
+        "title": "Reversing Words in a Sentence",
+        "summary": "const result = string.split(' ').reverse().join(' ');",
+        "description": "Reverses the order of words in a sentence while keeping words intact.",
+        "example": "const result = 'Hello world!'.split(' ').reverse().join(' ');\nconsole.log(result); // 'world! Hello'",
+        "tags": "string, reverse, words, sentence, order, javascript"
+    },
+    {
+        "title": "Finding the Longest Word in a String",
+        "summary": "const result = string.split(' ').reduce((a, b) => a.length >= b.length ? a : b, '');",
+        "description": "Finds the longest word in a space-separated string.",
+        "example": "const result = 'The quick brown fox'.split(' ').reduce((a, b) => a.length >= b.length ? a : b, '');\nconsole.log(result); // 'quick'",
+        "tags": "string, longest word, find, max, words, javascript"
+    },
+    {
+        "title": "Finding the Shortest Word in a String",
+        "summary": "const result = string.split(' ').reduce((a, b) => a.length <= b.length ? a : b, '');",
+        "description": "Finds the shortest word in a space-separated string.",
+        "example": "const result = 'The quick brown fox'.split(' ').reduce((a, b) => a.length <= b.length ? a : b, '');\nconsole.log(result); // 'The'",
+        "tags": "string, shortest word, find, min, words, javascript"
+    },
+    {
+        "title": "Generating a Random String of Letters",
+        "summary": "const result = Math.random().toString(36).slice(2);",
+        "description": "Creates a random alphanumeric string using base-36 encoding.",
+        "example": "const result = Math.random().toString(36).slice(2);\nconsole.log(result); // e.g., 'x3z4tq'",
+        "tags": "string, random, generate, unique, alphanumeric, javascript"
+    },
+    {
+        "title": "Getting the ASCII Code of a Character",
+        "summary": "const result = string.charCodeAt(index);",
+        "description": "Returns the ASCII/Unicode code of a character at a given index.",
+        "example": "const result = 'A'.charCodeAt(0);\nconsole.log(result); // 65",
+        "tags": "string, ASCII, char code, unicode, javascript"
+    },
+    {
+        "title": "Removing All Falsy Values from an Array",
+        "summary": "const result = array.filter(() => return Boolean);",
+        "description": "Removes all falsy values (`false`, `0`, `''`, `null`, `undefined`, `NaN`) from an array.",
+        "example": "const result = [0, 1, false, 2, '', 3].filter(Boolean);\nconsole.log(result); // [1, 2, 3]",
+        "tags": "array, filter, remove, falsy, clean, javascript"
+    },
+    {
+        "title": "Finding the Intersection of Two Arrays",
+        "summary": "const result = array1.filter(item => array2.includes(item));",
+        "description": "Finds common elements between two arrays.",
+        "example": "const result = [1, 2, 3].filter(item => [2, 3, 4].includes(item));\nconsole.log(result); // [2, 3]",
+        "tags": "array, intersection, common, filter, includes, javascript"
+    },
+    {
+        "title": "Finding the Difference Between Two Arrays",
+        "summary": "const result = array1.filter(item => !array2.includes(item));",
+        "description": "Finds elements in the first array that are not in the second.",
+        "example": "const result = [1, 2, 3, 4].filter(item => ![2, 3].includes(item));\nconsole.log(result); // [1, 4]",
+        "tags": "array, difference, filter, exclude, unique, javascript"
+    },
+    {
+        "title": "Removing Duplicate Values from an Array",
+        "summary": "const result = [...new Set(array)];",
+        "description": "Removes duplicate elements from an array while maintaining order.",
+        "example": "const result = [1, 2, 2, 3, 4, 4].filter((v, i, arr) => arr.indexOf(v) === i);\nconsole.log(result); // [1, 2, 3, 4]",
+        "tags": "array, unique, remove duplicates, filter, set, javascript"
+    },
+    {
+        "title": "Flattening a Nested Array",
+        "summary": "const result = array.flat(Infinity);",
+        "description": "Flattens a nested array structure into a single-level array.",
+        "example": "const result = [1, [2, [3, 4]], 5].flat(Infinity);\nconsole.log(result); // [1, 2, 3, 4, 5]",
+        "tags": "array, flatten, nested, flat, depth, javascript"
+    },
+    {
+        "title": "Generating an Array of Numbers in a Range",
+        "summary": "const result = Array.from({ length }, (_, i) => start + i);",
+        "description": "Creates an array of sequential numbers in a given range.",
+        "example": "const result = Array.from({ length: 5 }, (_, i) => i + 1);\nconsole.log(result); // [1, 2, 3, 4, 5]",
+        "tags": "array, generate, range, numbers, sequence, javascript"
+    },
+    {
+        "title": "Grouping Elements in an Array",
+        "summary": "const result = array.reduce((acc, val) => {...}, {});",
+        "description": "Groups array elements based on a condition or key.",
+        "example": "const result = ['apple', 'banana', 'apricot'].reduce((acc, val) => {\n  let key = val[0];\n  acc[key] = acc[key] || [];\n  acc[key].push(val);\n  return acc;\n}, {});\nconsole.log(result); // { a: ['apple', 'apricot'], b: ['banana'] }",
+        "tags": "array, group, reduce, categorize, key, javascript"
+    },
+    {
+        "title": "Getting Unique Elements from Multiple Arrays",
+        "summary": "const result = [...new Set([...array1, ...array2])];",
+        "description": "Merges multiple arrays and removes duplicate values.",
+        "example": "const result = [...new Set([1, 2, 3, 4].concat([3, 4, 5, 6]))];\nconsole.log(result); // [1, 2, 3, 4, 5, 6]",
+        "tags": "array, merge, unique, union, set, javascript"
+    },
+    {
+        "title": "Shuffling an Array Randomly",
+        "summary": "const result = array.sort(() => Math.random() - 0.5);",
+        "description": "Randomly shuffles the elements of an array.",
+        "example": "const result = [1, 2, 3, 4, 5].sort(() => Math.random() - 0.5);\nconsole.log(result); // [3, 5, 1, 2, 4] (random order)",
+        "tags": "array, shuffle, random, sort, mix, javascript"
+    },
+    {
+        "title": "Getting the Last Element of an Array",
+        "summary": "const result = array[array.length - 1];",
+        "description": "Retrieves the last element of an array.",
+        "example": "const result = [10, 20, 30, 40].slice(-1)[0];\nconsole.log(result); // 40",
+        "tags": "array, last element, index, retrieve, javascript"
+    },
+    {
+        "title": "Splitting an Array into Chunks",
+        "summary": "const result = Array.from({ length: Math.ceil(array.length / size) }, (_, i) => array.slice(i * size, i * size + size));",
+        "description": "Breaks an array into smaller arrays of a given size.",
+        "example": "const result = [1, 2, 3, 4, 5, 6].reduce((acc, _, i, arr) => (i % 2 === 0 ? acc.push(arr.slice(i, i + 2)) : acc, acc), []);\nconsole.log(result); // [[1, 2], [3, 4], [5, 6]]",
+        "tags": "array, split, chunks, divide, slice, javascript"
+    },
+    {
+        "title": "Checking If an Array Is Empty",
+        "summary": "const result = array.length === 0;",
+        "description": "Checks if an array contains any elements.",
+        "example": "const result = [].length === 0;\nconsole.log(result); // true",
+        "tags": "array, empty, check, length, javascript"
+    },
+    {
+        "title": "Finding the Most Frequent Element in an Array",
+        "summary": "const result = array.reduce((acc, val) => {...}, {});",
+        "description": "Finds the element that appears most frequently in an array.",
+        "example": "const result = [1, 2, 2, 3, 3, 3].reduce((acc, val, _, arr) => (arr.filter(v => v === val).length > (arr.filter(v => v === acc).length) ? val : acc), null);\nconsole.log(result); // 3",
+        "tags": "array, frequency, count, mode, find, javascript"
+    },
+    {
+        "title": "Reversing an Array Without Modifying It",
+        "summary": "const result = [...array].reverse();",
+        "description": "Creates a reversed copy of an array without modifying the original.",
+        "example": "const result = [...[1, 2, 3]].reverse();\nconsole.log(result); // [3, 2, 1]",
+        "tags": "array, reverse, copy, clone, javascript"
+    },
+    {
+        "title": "Checking If an Object Is Empty",
+        "summary": "const result = Object.keys(obj).length === 0;",
+        "description": "Determines whether an object has any properties.",
+        "example": "const result = Object.keys({}).length === 0;\nconsole.log(result); // true",
+        "tags": "object, empty, check, keys, length, javascript"
+    },
+    {
+        "title": "Merging Two Objects",
+        "summary": "const result = { ...obj1, ...obj2 };",
+        "description": "Combines two objects into one using the spread operator.",
+        "example": "const result = { ...{ a: 1 }, ...{ b: 2 } };\nconsole.log(result); // { a: 1, b: 2 }",
+        "tags": "object, merge, spread, combine, javascript"
+    },
+    {
+        "title": "Getting Object Keys as an Array",
+        "summary": "const result = Object.keys(obj);",
+        "description": "Retrieves an array of keys from an object.",
+        "example": "const result = Object.keys({ a: 1, b: 2 });\nconsole.log(result); // ['a', 'b']",
+        "tags": "object, keys, properties, retrieve, javascript"
+    },
+    {
+        "title": "Getting Object Values as an Array",
+        "summary": "const result = Object.values(obj);",
+        "description": "Extracts all values from an object into an array.",
+        "example": "const result = Object.values({ a: 1, b: 2 });\nconsole.log(result); // [1, 2]",
+        "tags": "object, values, properties, retrieve, javascript"
+    },
+    {
+        "title": "Getting Object Entries as Key-Value Pairs",
+        "summary": "const result = Object.entries(obj);",
+        "description": "Converts an object into an array of `[key, value]` pairs.",
+        "example": "const result = Object.entries({ a: 1, b: 2 });\nconsole.log(result); // [['a', 1], ['b', 2]]",
+        "tags": "object, entries, key-value, convert, javascript"
+    },
+    {
+        "title": "Checking If an Object Has a Key",
+        "summary": "const result = key in obj;",
+        "description": "Determines if an object contains a specific key.",
+        "example": "const result = 'a' in { a: 1, b: 2 };\nconsole.log(result); // true",
+        "tags": "object, check, key, has, in, javascript"
+    },
+    {
+        "title": "Deleting a Property from an Object",
+        "summary": "const result = delete obj.key;",
+        "description": "Removes a property from an object.",
+        "example": "const obj = { a: 1, b: 2 };\ndelete obj.a;\nconsole.log(obj); // { b: 2 }",
+        "tags": "object, delete, remove, property, javascript"
+    },
+    {
+        "title": "Freezing an Object to Prevent Modifications",
+        "summary": "const result = Object.freeze(obj);",
+        "description": "Prevents an object from being modified.",
+        "example": "const obj = Object.freeze({ a: 1 });\nobj.a = 2;\nconsole.log(obj.a); // 1",
+        "tags": "object, freeze, immutable, prevent, modify, javascript"
+    },
+    {
+        "title": "Cloning an Object Without Reference",
+        "summary": "const result = JSON.parse(JSON.stringify(obj));",
+        "description": "Creates a deep clone of an object, removing references.",
+        "example": "const obj = { a: 1 };\nconst result = JSON.parse(JSON.stringify(obj));\nconsole.log(result); // { a: 1 }",
+        "tags": "object, clone, deep copy, reference, javascript"
+    },
+    {
+        "title": "Merging Multiple Objects",
+        "summary": "const result = Object.assign({}, obj1, obj2);",
+        "description": "Combines multiple objects into one.",
+        "example": "const result = Object.assign({}, { a: 1 }, { b: 2 });\nconsole.log(result); // { a: 1, b: 2 }",
+        "tags": "object, merge, assign, combine, javascript"
+    },
+    {
+        "title": "Checking If an Object Has a Specific Property",
+        "summary": "const result = obj.hasOwnProperty(key);",
+        "description": "Checks if an object directly owns a given property.",
+        "example": "const result = { a: 1 }.hasOwnProperty('a');\nconsole.log(result); // true",
+        "tags": "object, hasOwnProperty, check, property, javascript"
+    },
+    {
+        "title": "Iterating Over Object Keys",
+        "summary": "Object.keys(obj).forEach(key => { ... });",
+        "description": "Loops through all keys in an object.",
+        "example": "Object.keys({ a: 1, b: 2 }).forEach(key => console.log(key));\n// 'a'\n// 'b'",
+        "tags": "object, iterate, keys, loop, forEach, javascript"
+    },
+    {
+        "title": "Iterating Over Object Entries",
+        "summary": "Object.entries(obj).forEach(([key, value]) => { ... });",
+        "description": "Loops through all key-value pairs in an object.",
+        "example": "Object.entries({ a: 1, b: 2 }).forEach(([k, v]) => console.log(k, v));\n// 'a', 1\n// 'b', 2",
+        "tags": "object, iterate, entries, loop, key-value, javascript"
+    },
+    {
+        "title": "Creating an Object with a Prototype",
+        "summary": "const result = Object.create(proto);",
+        "description": "Creates a new object with a specified prototype.",
+        "example": "const result = Object.create({ a: 1 });\nconsole.log(result.a); // 1",
+        "tags": "object, prototype, create, inherit, javascript"
+    },
+    {
+        "title": "Getting the Prototype of an Object",
+        "summary": "const result = Object.getPrototypeOf(obj);",
+        "description": "Retrieves the prototype of a given object.",
+        "example": "const result = Object.getPrototypeOf({});\nconsole.log(result); // {}",
+        "tags": "object, prototype, get, inheritance, javascript"
+    },
+    {
+        "title": "Setting the Prototype of an Object",
+        "summary": "Object.setPrototypeOf(obj, prototype);",
+        "description": "Manually sets the prototype of an object.",
+        "example": "const obj = {};\nObject.setPrototypeOf(obj, { a: 1 });\nconsole.log(obj.a); // 1",
+        "tags": "object, prototype, set, inheritance, javascript"
+    },
+    {
+        "title": "Getting the Property Names of an Object",
+        "summary": "const result = Reflect.ownKeys(obj);",
+        "description": "Retrieves all property names of an object, including non-enumerable ones.",
+        "example": "const result = Reflect.ownKeys({ a: 1, [Symbol()]: 2 });\nconsole.log(result); // ['a', Symbol()]",
+        "tags": "object, keys, properties, reflect, javascript"
+    },
+    {
+        "title": "Defining a Read-Only Property on an Object",
+        "summary": "Object.defineProperty(obj, key, { value, writable: false });",
+        "description": "Creates a property on an object that cannot be modified.",
+        "example": "const obj = {};\nObject.defineProperty(obj, 'a', { value: 1, writable: false });\nobj.a = 2;\nconsole.log(obj.a); // 1",
+        "tags": "object, define, property, read-only, javascript"
+    },
+    {
+        "title": "Creating a Getter and Setter for an Object Property",
+        "summary": "Object.defineProperty(obj, key, { get() {}, set() {} });",
+        "description": "Defines a getter and setter for a property in an object.",
+        "example": "const obj = {};\nObject.defineProperty(obj, 'a', { get() { return 42; } });\nconsole.log(obj.a); // 42",
+        "tags": "object, define, getter, setter, property, javascript"
+    },
+    {
+        "title": "Defining a Basic Class",
+        "summary": "class MyClass {}",
+        "description": "Creates a simple JavaScript class without any properties or methods.",
+        "example": "class MyClass {}\nconst obj = new MyClass();\nconsole.log(obj instanceof MyClass); // true",
+        "tags": "class, define, object, javascript"
+    },
+    {
+        "title": "Creating a Class with a Constructor",
+        "summary": "class MyClass { constructor() {} }",
+        "description": "Defines a class with a constructor that runs when a new instance is created.",
+        "example": "class MyClass {\n  constructor(name) {\n    this.name = name;\n  }\n}\nconst obj = new MyClass('Alice');\nconsole.log(obj.name); // 'Alice'",
+        "tags": "class, constructor, instance, javascript"
+    },
+    {
+        "title": "Adding a Method to a Class",
+        "summary": "class MyClass { method() {} }",
+        "description": "Defines a class with an instance method.",
+        "example": "class MyClass {\n  greet() {\n    return 'Hello';\n  }\n}\nconst obj = new MyClass();\nconsole.log(obj.greet()); // 'Hello'",
+        "tags": "class, method, function, instance, javascript"
+    },
+    {
+        "title": "Creating a Class with a Static Method",
+        "summary": "class MyClass { static method() {} }",
+        "description": "Defines a class with a static method that is called on the class itself, not instances.",
+        "example": "class MyClass {\n  static greet() {\n    return 'Hello';\n  }\n}\nconsole.log(MyClass.greet()); // 'Hello'",
+        "tags": "class, static, method, function, javascript"
+    },
+    {
+        "title": "Extending a Class (Inheritance)",
+        "summary": "class Child extends Parent {}",
+        "description": "Creates a new class that inherits from another class.",
+        "example": "class Parent {\n  greet() { return 'Hello'; }\n}\nclass Child extends Parent {}\nconst obj = new Child();\nconsole.log(obj.greet()); // 'Hello'",
+        "tags": "class, inheritance, extend, prototype, javascript"
+    },
+    {
+        "title": "Calling a Parent Class Constructor",
+        "summary": "class Child extends Parent { constructor() { super(); } }",
+        "description": "Uses `super()` to call the parent class constructor inside a subclass.",
+        "example": "class Parent {\n  constructor(name) {\n    this.name = name;\n  }\n}\nclass Child extends Parent {\n  constructor(name) {\n    super(name);\n  }\n}\nconst obj = new Child('Alice');\nconsole.log(obj.name); // 'Alice'",
+        "tags": "class, super, constructor, extend, javascript"
+    },
+    {
+        "title": "Overriding a Method in a Subclass",
+        "summary": "class Child extends Parent { method() {} }",
+        "description": "Redefines a method in a subclass, overriding the parent class method.",
+        "example": "class Parent {\n  greet() { return 'Hello from Parent'; }\n}\nclass Child extends Parent {\n  greet() { return 'Hello from Child'; }\n}\nconst obj = new Child();\nconsole.log(obj.greet()); // 'Hello from Child'",
+        "tags": "class, override, method, inheritance, javascript"
+    },
+    {
+        "title": "Using Getters in a Class",
+        "summary": "class MyClass { get prop() {} }",
+        "description": "Defines a getter to retrieve a computed property.",
+        "example": "class MyClass {\n  get greeting() {\n    return 'Hello';\n  }\n}\nconst obj = new MyClass();\nconsole.log(obj.greeting); // 'Hello'",
+        "tags": "class, getter, property, javascript"
+    },
+    {
+        "title": "Using Setters in a Class",
+        "summary": "class MyClass { set prop(value) {} }",
+        "description": "Defines a setter to modify a property dynamically.",
+        "example": "class MyClass {\n  set name(value) {\n    this._name = value.toUpperCase();\n  }\n  get name() {\n    return this._name;\n  }\n}\nconst obj = new MyClass();\nobj.name = 'alice';\nconsole.log(obj.name); // 'ALICE'",
+        "tags": "class, setter, property, javascript"
+    },
+    {
+        "title": "Creating Private Class Fields",
+        "summary": "class MyClass { #privateField; }",
+        "description": "Uses `#` to declare a private field inside a class.",
+        "example": "class MyClass {\n  #secret = 42;\n  getSecret() {\n    return this.#secret;\n  }\n}\nconst obj = new MyClass();\nconsole.log(obj.getSecret()); // 42",
+        "tags": "class, private, encapsulation, field, javascript"
+    },
+    {
+        "title": "Checking If an Instance Belongs to a Class",
+        "summary": "const result = obj instanceof Class;",
+        "description": "Determines whether an object is an instance of a specific class.",
+        "example": "class MyClass {}\nconst obj = new MyClass();\nconst result = obj instanceof MyClass;\nconsole.log(result); // true",
+        "tags": "class, instanceof, check, instance, javascript"
+    },
+    {
+        "title": "Creating an Abstract Base Class",
+        "summary": "class Base { constructor() { if (new.target === Base) throw new Error(); } }",
+        "description": "Prevents a base class from being instantiated directly.",
+        "example": "class Base {\n  constructor() {\n    if (new.target === Base) {\n      throw new Error('Cannot instantiate Base');\n    }\n  }\n}\nclass Derived extends Base {}\nconst obj = new Derived(); // Works\n// const obj2 = new Base(); // Error",
+        "tags": "class, abstract, base, prevent, javascript"
+    },
+    {
+        "title": "Using Symbol for Private Class Members",
+        "summary": "const privateProp = Symbol(); class MyClass { constructor() { this[privateProp] = 42; } }",
+        "description": "Uses `Symbol` to create pseudo-private properties in a class.",
+        "example": "const privateProp = Symbol();\nclass MyClass {\n  constructor() {\n    this[privateProp] = 42;\n  }\n  getSecret() {\n    return this[privateProp];\n  }\n}\nconst obj = new MyClass();\nconsole.log(obj.getSecret()); // 42",
+        "tags": "class, symbol, private, encapsulation, javascript"
+    },
+    {
+        "title": "Creating a Singleton Class",
+        "summary": "class Singleton { static instance = new Singleton(); }",
+        "description": "Ensures only one instance of a class exists.",
+        "example": "class Singleton {\n  constructor() {\n    if (!Singleton.instance) {\n      Singleton.instance = this;\n    }\n    return Singleton.instance;\n  }\n}\nconst obj1 = new Singleton();\nconst obj2 = new Singleton();\nconsole.log(obj1 === obj2); // true",
+        "tags": "class, singleton, pattern, javascript"
+    },
+    {
+        "title": "Checking If Two Objects Are Equal",
+        "summary": "const result = JSON.stringify(obj1) === JSON.stringify(obj2);",
+        "description": "Compares two objects for equality by converting them into JSON strings.",
+        "example": "const obj1 = { a: 1, b: 2 };\nconst obj2 = { a: 1, b: 2 };\nconst result = JSON.stringify(obj1) === JSON.stringify(obj2);\nconsole.log(result); // true",
+        "tags": "object, equality, compare, JSON, javascript"
+    },
+    {
+        "title": "Swapping Two Array Elements",
+        "summary": "[arr[i], arr[j]] = [arr[j], arr[i]];",
+        "description": "Swaps two elements in an array using destructuring assignment.",
+        "example": "let arr = [1, 2, 3, 4];\n[arr[0], arr[3]] = [arr[3], arr[0]];\nconsole.log(arr); // [4, 2, 3, 1]",
+        "tags": "array, swap, destructuring, javascript"
+    },
+    {
+        "title": "Removing a Key from an Object",
+        "summary": "const { key, ...newObj } = obj;",
+        "description": "Uses destructuring to remove a specific key from an object.",
+        "example": "const obj = { a: 1, b: 2, c: 3 };\nconst { b, ...newObj } = obj;\nconsole.log(newObj); // { a: 1, c: 3 }",
+        "tags": "object, remove, destructuring, javascript"
+    },
+    {
+        "title": "Generating a Random Float in a Range",
+        "summary": "const result = Math.random() * (max - min) + min;",
+        "description": "Generates a random floating-point number between a specified range.",
+        "example": "const result = Math.random() * (10 - 5) + 5;\nconsole.log(result); // Random float between 5 and 10",
+        "tags": "random, float, range, math, javascript"
+    },
+    {
+        "title": "Finding Common Elements in Two Arrays",
+        "summary": "const result = arr1.filter(v => arr2.includes(v));",
+        "description": "Finds common elements shared between two arrays.",
+        "example": "const arr1 = [1, 2, 3, 4];\nconst arr2 = [3, 4, 5, 6];\nconst result = arr1.filter(v => arr2.includes(v));\nconsole.log(result); // [3, 4]",
+        "tags": "array, intersection, filter, includes, javascript"
+    },
+    {
+        "title": "Removing Falsey Values from an Array",
+        "summary": "const result = arr.filter(Boolean);",
+        "description": "Removes falsey values (`false`, `0`, `''`, `null`, `undefined`, `NaN`) from an array.",
+        "example": "const arr = [0, 1, false, 2, '', 3, null];\nconst result = arr.filter(Boolean);\nconsole.log(result); // [1, 2, 3]",
+        "tags": "array, filter, truthy, cleanup, javascript"
+    },
+    {
+        "title": "Flattening a Nested Object",
+        "summary": "const flatten = (obj, prefix = '') => { ... };",
+        "description": "Converts a deeply nested object into a single-level object with dot notation keys.",
+        "example": "const obj = { a: { b: { c: 1 } } };\nconst flatten = (obj, prefix = '') => \n  Object.keys(obj).reduce((acc, key) => {\n    const prop = prefix ? `${prefix}.${key}` : key;\n    return typeof obj[key] === 'object' ? { ...acc, ...flatten(obj[key], prop) } : { ...acc, [prop]: obj[key] };\n  }, {});\nconsole.log(flatten(obj)); // { 'a.b.c': 1 }",
+        "tags": "object, flatten, recursion, deep, javascript"
+    },
+    {
+        "title": "Finding the First Non-Repeating Character",
+        "summary": "const result = str.split('').find(c => str.indexOf(c) === str.lastIndexOf(c));",
+        "description": "Finds the first character in a string that does not repeat.",
+        "example": "const str = 'swiss';\nconst result = str.split('').find(c => str.indexOf(c) === str.lastIndexOf(c));\nconsole.log(result); // 'w'",
+        "tags": "string, unique, character, find, javascript"
+    },
+    {
+        "title": "Getting Unique Characters from a String",
+        "summary": "const result = [...new Set(str)].join('');",
+        "description": "Removes duplicate characters from a string.",
+        "example": "const str = 'banana';\nconst result = [...new Set(str)].join('');\nconsole.log(result); // 'ban'",
+        "tags": "string, unique, set, remove duplicates, javascript"
+    },
+    {
+        "title": "Converting an Object to Query String",
+        "summary": "const result = new URLSearchParams(obj).toString();",
+        "description": "Transforms an object into a URL-encoded query string.",
+        "example": "const obj = { name: 'John', age: 30 };\nconst result = new URLSearchParams(obj).toString();\nconsole.log(result); // 'name=John&age=30'",
+        "tags": "object, query string, URL, convert, javascript"
+    },
+    {
+        "title": "Getting the Time Difference in Seconds",
+        "summary": "const result = (end - start) / 1000;",
+        "description": "Calculates the difference between two timestamps in seconds.",
+        "example": "const start = Date.now();\nsetTimeout(() => {\n  const end = Date.now();\n  const result = (end - start) / 1000;\n  console.log(result); // ~2 (if timeout was 2000ms)\n}, 2000);",
+        "tags": "time, difference, timestamp, seconds, javascript"
+    },
+    {
+        "title": "Checking If a Number Is Even",
+        "summary": "const result = num % 2 === 0;",
+        "description": "Determines if a number is even.",
+        "example": "const num = 10;\nconst result = num % 2 === 0;\nconsole.log(result); // true",
+        "tags": "number, even, modulus, check, javascript"
+    },
+    {
+        "title": "Checking If a String Is a Valid JSON",
+        "summary": "const result = (() => { try { JSON.parse(str); return true; } catch { return false; } })();",
+        "description": "Determines if a string is a valid JSON format.",
+        "example": "const str = '{\"name\": \"John\"}';\nconst result = (() => { try { JSON.parse(str); return true; } catch { return false; } })();\nconsole.log(result); // true",
+        "tags": "json, parse, validate, check, javascript"
+    },
+    {
+        "title": "Formatting a Number with Commas",
+        "summary": "const result = num.toLocaleString();",
+        "description": "Formats a number with thousands separators.",
+        "example": "const num = 1234567;\nconst result = num.toLocaleString();\nconsole.log(result); // '1,234,567'",
+        "tags": "number, format, comma, thousands, javascript"
     }
 ]

@@ -106,11 +106,12 @@ pre::-webkit-scrollbar:hover {
 
 pre{
   overflow: hidden;
-  margin-bottom: 5px;
-  margin-top: 5px;
+  margin: 5px 0;
+  -moz-margin: 0px;
 }
 
 pre:hover {
   overflow-x: scroll;
   margin-bottom: 0;
+  /* -moz-margin-margin: 5px; */
 }

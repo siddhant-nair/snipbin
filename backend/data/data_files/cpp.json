@@ -62,7 +62,7 @@
         "example": "#include <iostream>\n#include <vector>\n#include <sstream>\n\nint main() {\n    std::vector<std::string> words = {\"apple\", \"banana\", \"grape\"};\n    std::ostringstream os;\n    for (size_t i = 0; i < words.size(); ++i) {\n        if (i > 0) os << \", \";\n        os << words[i];\n    }\n    std::cout << os.str(); // Output: \"apple, banana, grape\"\n    return 0;\n}",
         "tags": "string, join, vector, ostringstream, c++"
     },
-        {
+    {
         "title": "Converting a String to an Integer",
         "summary": "int num = std::stoi(str);",
         "description": "Converts a string to an integer using `stoi` function.",
@@ -187,5 +187,453 @@
         "description": "Finds the difference between two sets.",
         "example": "std::set<int> set1 = {1, 2, 3};\nstd::set<int> set2 = {2, 3, 4};\nstd::set<int> difference;\nstd::set_difference(set1.begin(), set1.end(), set2.begin(), set2.end(), std::inserter(difference, difference.end()));\nfor (int i : difference) { std::cout << i << ' '; }  // Output: 1",
         "tags": "set, difference, cpp"
+    },
+    {
+        "title": "Initializing a Vector with Values",
+        "summary": "std::vector<int> vec = {1, 2, 3, 4, 5};",
+        "description": "Creates a `std::vector` and initializes it with predefined values.",
+        "example": "#include <iostream>\n#include <vector>\n\nint main() {\n    std::vector<int> vec = {1, 2, 3, 4, 5};\n    for (int num : vec) {\n        std::cout << num << \" \";\n    }\n    return 0;\n}",
+        "tags": "vector, initialization, c++"
+    },
+    {
+        "title": "Finding the Size of a Vector",
+        "summary": "vec.size()",
+        "description": "Uses the `.size()` method to get the number of elements in a `std::vector`.",
+        "example": "#include <iostream>\n#include <vector>\n\nint main() {\n    std::vector<int> vec = {1, 2, 3};\n    std::cout << \"Size: \" << vec.size();\n    return 0;\n}",
+        "tags": "vector, size, length, c++"
+    },
+    {
+        "title": "Checking If a Vector Is Empty",
+        "summary": "vec.empty()",
+        "description": "Uses the `.empty()` method to check if a `std::vector` has no elements.",
+        "example": "#include <iostream>\n#include <vector>\n\nint main() {\n    std::vector<int> vec;\n    std::cout << (vec.empty() ? \"Empty\" : \"Not empty\");\n    return 0;\n}",
+        "tags": "vector, empty, check, c++"
+    },
+    {
+        "title": "Pushing Elements to a Vector",
+        "summary": "vec.push_back(value)",
+        "description": "Adds an element to the end of a `std::vector` using `.push_back()`.",
+        "example": "#include <iostream>\n#include <vector>\n\nint main() {\n    std::vector<int> vec;\n    vec.push_back(10);\n    std::cout << vec[0];\n    return 0;\n}",
+        "tags": "vector, push_back, insert, c++"
+    },
+    {
+        "title": "Erasing an Element from a Vector",
+        "summary": "vec.erase(vec.begin() + index)",
+        "description": "Removes an element at a given index using `.erase()`.",
+        "example": "#include <iostream>\n#include <vector>\n\nint main() {\n    std::vector<int> vec = {1, 2, 3, 4};\n    vec.erase(vec.begin() + 1);\n    for (int num : vec) {\n        std::cout << num << \" \";\n    }\n    return 0;\n}",
+        "tags": "vector, erase, remove, c++"
+    },
+    {
+        "title": "Swapping Two Variables",
+        "summary": "std::swap(a, b)",
+        "description": "Uses `std::swap` to exchange the values of two variables.",
+        "example": "#include <iostream>\n#include <algorithm>\n\nint main() {\n    int a = 5, b = 10;\n    std::swap(a, b);\n    std::cout << \"a: \" << a << \", b: \" << b;\n    return 0;\n}",
+        "tags": "swap, algorithm, c++"
+    },
+    {
+        "title": "Finding the Maximum Element in a Vector",
+        "summary": "std::max_element(vec.begin(), vec.end())",
+        "description": "Finds the largest element in a `std::vector` using `std::max_element`.",
+        "example": "#include <iostream>\n#include <vector>\n#include <algorithm>\n\nint main() {\n    std::vector<int> vec = {1, 4, 3};\n    auto max_val = *std::max_element(vec.begin(), vec.end());\n    std::cout << \"Max: \" << max_val;\n    return 0;\n}",
+        "tags": "vector, max, algorithm, c++"
+    },
+    {
+        "title": "Finding the Minimum Element in a Vector",
+        "summary": "std::min_element(vec.begin(), vec.end())",
+        "description": "Finds the smallest element in a `std::vector` using `std::min_element`.",
+        "example": "#include <iostream>\n#include <vector>\n#include <algorithm>\n\nint main() {\n    std::vector<int> vec = {2, 5, 1};\n    auto min_val = *std::min_element(vec.begin(), vec.end());\n    std::cout << \"Min: \" << min_val;\n    return 0;\n}",
+        "tags": "vector, min, algorithm, c++"
+    },
+    {
+        "title": "Checking If a String Starts With a Substring",
+        "summary": "str.rfind(prefix, 0) == 0",
+        "description": "Uses `.rfind()` to check if a string starts with a given substring.",
+        "example": "#include <iostream>\n#include <string>\n\nint main() {\n    std::string str = \"hello world\";\n    bool starts_with = str.rfind(\"hello\", 0) == 0;\n    std::cout << starts_with;\n    return 0;\n}",
+        "tags": "string, startswith, rfind, c++"
+    },
+    {
+        "title": "Converting a Character to Lowercase",
+        "summary": "std::tolower(c)",
+        "description": "Converts an uppercase character to lowercase using `std::tolower`.",
+        "example": "#include <iostream>\n#include <cctype>\n\nint main() {\n    char c = 'A';\n    char lower = std::tolower(c);\n    std::cout << lower;\n    return 0;\n}",
+        "tags": "character, lowercase, ctype, c++"
+    },
+    {
+        "title": "Converting a Character to Uppercase",
+        "summary": "std::toupper(c)",
+        "description": "Converts a lowercase character to uppercase using `std::toupper`.",
+        "example": "#include <iostream>\n#include <cctype>\n\nint main() {\n    char c = 'b';\n    char upper = std::toupper(c);\n    std::cout << upper;\n    return 0;\n}",
+        "tags": "character, uppercase, ctype, c++"
+    },
+    {
+        "title": "Generating a Random Number",
+        "summary": "rand() % (max - min + 1) + min",
+        "description": "Generates a random integer within a given range using `rand()`.",
+        "example": "#include <iostream>\n#include <cstdlib>\n#include <ctime>\n\nint main() {\n    std::srand(std::time(0));\n    int randomNum = std::rand() % 100 + 1;\n    std::cout << \"Random: \" << randomNum;\n    return 0;\n}",
+        "tags": "random, number, c++"
+    },
+    {
+        "title": "Checking If a Number is Even",
+        "summary": "num % 2 == 0",
+        "description": "Uses the modulus operator `%` to check if a number is even.",
+        "example": "#include <iostream>\n\nint main() {\n    int num = 10;\n    bool isEven = (num % 2 == 0);\n    std::cout << \"Is even: \" << isEven << std::endl;\n    return 0;\n}",
+        "tags": "math, even, modulus, c++"
+    },
+    {
+        "title": "Checking If a Number is Odd",
+        "summary": "num % 2 != 0",
+        "description": "Uses the modulus operator `%` to check if a number is odd.",
+        "example": "#include <iostream>\n\nint main() {\n    int num = 7;\n    bool isOdd = (num % 2 != 0);\n    std::cout << \"Is odd: \" << isOdd << std::endl;\n    return 0;\n}",
+        "tags": "math, odd, modulus, c++"
+    },
+    {
+        "title": "Generating a Random Integer in a Range",
+        "summary": "rand() % (max - min + 1) + min",
+        "description": "Uses `rand()` from `<cstdlib>` to generate a random integer within a given range.",
+        "example": "#include <iostream>\n#include <cstdlib>\n#include <ctime>\n\nint main() {\n    std::srand(std::time(0));\n    int min = 1, max = 100;\n    int randomNum = rand() % (max - min + 1) + min;\n    std::cout << \"Random Number: \" << randomNum << std::endl;\n    return 0;\n}",
+        "tags": "random, number, range, c++"
+    },
+    {
+        "title": "Swapping Two Variables Without a Temporary Variable",
+        "summary": "a ^= b; b ^= a; a ^= b;",
+        "description": "Uses bitwise XOR to swap two integers without needing a temporary variable.",
+        "example": "#include <iostream>\n\nint main() {\n    int a = 5, b = 10;\n    a ^= b; b ^= a; a ^= b;\n    std::cout << \"a: \" << a << \", b: \" << b << std::endl;\n    return 0;\n}",
+        "tags": "swap, bitwise, xor, c++"
+    },
+    {
+        "title": "Checking If a Character is a Digit",
+        "summary": "std::isdigit(ch)",
+        "description": "Uses `std::isdigit` from `<cctype>` to check if a character is a numeric digit.",
+        "example": "#include <iostream>\n#include <cctype>\n\nint main() {\n    char ch = '5';\n    bool isDigit = std::isdigit(ch);\n    std::cout << \"Is digit: \" << isDigit << std::endl;\n    return 0;\n}",
+        "tags": "char, digit, check, c++"
+    },
+    {
+        "title": "Checking If a Character is an Alphabet Letter",
+        "summary": "std::isalpha(ch)",
+        "description": "Uses `std::isalpha` from `<cctype>` to check if a character is a letter.",
+        "example": "#include <iostream>\n#include <cctype>\n\nint main() {\n    char ch = 'A';\n    bool isAlpha = std::isalpha(ch);\n    std::cout << \"Is letter: \" << isAlpha << std::endl;\n    return 0;\n}",
+        "tags": "char, alpha, letter, check, c++"
+    },
+    {
+        "title": "Finding the Ceiling of a Number",
+        "summary": "std::ceil(value)",
+        "description": "Uses `std::ceil` from `<cmath>` to round a floating-point number up to the nearest integer.",
+        "example": "#include <iostream>\n#include <cmath>\n\nint main() {\n    double num = 4.3;\n    double result = std::ceil(num);\n    std::cout << \"Ceiling: \" << result << std::endl;\n    return 0;\n}",
+        "tags": "math, ceil, rounding, c++"
+    },
+    {
+        "title": "Finding the Floor of a Number",
+        "summary": "std::floor(value)",
+        "description": "Uses `std::floor` from `<cmath>` to round a floating-point number down to the nearest integer.",
+        "example": "#include <iostream>\n#include <cmath>\n\nint main() {\n    double num = 4.7;\n    double result = std::floor(num);\n    std::cout << \"Floor: \" << result << std::endl;\n    return 0;\n}",
+        "tags": "math, floor, rounding, c++"
+    },
+    {
+        "title": "Reversing an Array",
+        "summary": "std::reverse(arr.begin(), arr.end())",
+        "description": "Uses `std::reverse` from `<algorithm>` to reverse the order of elements in an array.",
+        "example": "#include <iostream>\n#include <vector>\n#include <algorithm>\n\nint main() {\n    std::vector<int> nums = {1, 2, 3, 4, 5};\n    std::reverse(nums.begin(), nums.end());\n    for (int num : nums) {\n        std::cout << num << \" \";\n    }\n    return 0;\n}",
+        "tags": "array, reverse, algorithm, c++"
+    },
+    {
+        "title": "Finding the First Occurrence of a Character in a String",
+        "summary": "str.find(ch)",
+        "description": "Uses `find` to locate the first occurrence of a character in a string.",
+        "example": "#include <iostream>\n#include <string>\n\nint main() {\n    std::string text = \"hello world\";\n    char ch = 'o';\n    size_t pos = text.find(ch);\n    std::cout << \"Position: \" << pos << std::endl;\n    return 0;\n}",
+        "tags": "string, find, character, search, c++"
+    },
+    {
+        "title": "Finding the Maximum of Two Numbers",
+        "summary": "std::max(a, b)",
+        "description": "Uses `std::max` from `<algorithm>` to find the larger of two numbers.",
+        "example": "#include <iostream>\n#include <algorithm>\n\nint main() {\n    int a = 10, b = 20;\n    int maxVal = std::max(a, b);\n    std::cout << \"Max: \" << maxVal << std::endl;\n    return 0;\n}",
+        "tags": "max, compare, algorithm, c++"
+    },
+    {
+        "title": "Finding the Minimum of Two Numbers",
+        "summary": "std::min(a, b)",
+        "description": "Uses `std::min` from `<algorithm>` to find the smaller of two numbers.",
+        "example": "#include <iostream>\n#include <algorithm>\n\nint main() {\n    int a = 10, b = 20;\n    int minVal = std::min(a, b);\n    std::cout << \"Min: \" << minVal << std::endl;\n    return 0;\n}",
+        "tags": "min, compare, algorithm, c++"
+    },
+    {
+        "title": "Computing the Power of a Number",
+        "summary": "std::pow(base, exponent)",
+        "description": "Uses `std::pow` from `<cmath>` to raise a number to a given power.",
+        "example": "#include <iostream>\n#include <cmath>\n\nint main() {\n    double base = 2.0, exponent = 3.0;\n    double result = std::pow(base, exponent);\n    std::cout << \"Power: \" << result << std::endl;\n    return 0;\n}",
+        "tags": "math, power, exponent, c++"
+    },
+    {
+        "title": "Checking If a Character is Uppercase",
+        "summary": "std::isupper(ch)",
+        "description": "Uses `std::isupper` from `<cctype>` to check if a character is uppercase.",
+        "example": "#include <iostream>\n#include <cctype>\n\nint main() {\n    char ch = 'A';\n    bool isUpper = std::isupper(ch);\n    std::cout << \"Is uppercase: \" << isUpper << std::endl;\n    return 0;\n}",
+        "tags": "char, uppercase, cctype, c++"
+    },
+    {
+        "title": "Checking If a Character is Lowercase",
+        "summary": "std::islower(ch)",
+        "description": "Uses `std::islower` from `<cctype>` to check if a character is lowercase.",
+        "example": "#include <iostream>\n#include <cctype>\n\nint main() {\n    char ch = 'a';\n    bool isLower = std::islower(ch);\n    std::cout << \"Is lowercase: \" << isLower << std::endl;\n    return 0;\n}",
+        "tags": "char, lowercase, cctype, c++"
+    },
+    {
+        "title": "Converting a String to Uppercase",
+        "summary": "std::transform(str.begin(), str.end(), str.begin(), ::toupper)",
+        "description": "Uses `std::transform` to convert a string to uppercase.",
+        "example": "#include <iostream>\n#include <string>\n#include <algorithm>\n\nint main() {\n    std::string text = \"hello\";\n    std::transform(text.begin(), text.end(), text.begin(), ::toupper);\n    std::cout << text;\n    return 0;\n}",
+        "tags": "string, uppercase, transform, c++"
+    },
+    {
+        "title": "Converting a String to Lowercase",
+        "summary": "std::transform(str.begin(), str.end(), str.begin(), ::tolower)",
+        "description": "Uses `std::transform` to convert a string to lowercase.",
+        "example": "#include <iostream>\n#include <string>\n#include <algorithm>\n\nint main() {\n    std::string text = \"HELLO\";\n    std::transform(text.begin(), text.end(), text.begin(), ::tolower);\n    std::cout << text;\n    return 0;\n}",
+        "tags": "string, lowercase, transform, c++"
+    },
+    {
+        "title": "Reversing a Number",
+        "summary": "Reverses the digits of an integer using a loop.",
+        "description": "Extracts digits using modulus and division to reverse a number.",
+        "example": "#include <iostream>\n\nint main() {\n    int num = 1234, reversed = 0;\n    while (num > 0) {\n        reversed = reversed * 10 + num % 10;\n        num /= 10;\n    }\n    std::cout << \"Reversed: \" << reversed << std::endl;\n    return 0;\n}",
+        "tags": "math, reverse, number, c++"
+    },
+    {
+        "title": "Finding the Length of a String",
+        "summary": "str.length()",
+        "description": "Uses `length()` method to find the number of characters in a string.",
+        "example": "#include <iostream>\n#include <string>\n\nint main() {\n    std::string text = \"hello\";\n    std::cout << \"Length: \" << text.length() << std::endl;\n    return 0;\n}",
+        "tags": "string, length, size, c++"
+    },
+    {
+        "title": "Calculating the Square Root of a Number",
+        "summary": "std::sqrt(value)",
+        "description": "Uses `std::sqrt` from `<cmath>` to compute the square root of a number.",
+        "example": "#include <iostream>\n#include <cmath>\n\nint main() {\n    double num = 25.0;\n    double result = std::sqrt(num);\n    std::cout << \"Square root: \" << result << std::endl;\n    return 0;\n}",
+        "tags": "math, sqrt, square root, c++"
+    },
+    {
+        "title": "Swapping Two Variables",
+        "summary": "std::swap(a, b)",
+        "description": "Uses `std::swap` from `<utility>` to exchange values of two variables.",
+        "example": "#include <iostream>\n#include <utility>\n\nint main() {\n    int a = 5, b = 10;\n    std::swap(a, b);\n    std::cout << \"a: \" << a << \", b: \" << b << std::endl;\n    return 0;\n}",
+        "tags": "swap, utility, exchange, c++"
+    },
+    {
+        "title": "Checking If a String Contains a Substring",
+        "summary": "str.find(substring) != std::string::npos",
+        "description": "Uses `find()` method to check if a substring exists in a string.",
+        "example": "#include <iostream>\n#include <string>\n\nint main() {\n    std::string text = \"hello world\";\n    bool found = text.find(\"world\") != std::string::npos;\n    std::cout << \"Found: \" << found << std::endl;\n    return 0;\n}",
+        "tags": "string, find, substring, search, c++"
+    },
+    {
+        "title": "Appending to a String",
+        "summary": "str.append(text)",
+        "description": "Uses `append()` to add text to the end of a string.",
+        "example": "#include <iostream>\n#include <string>\n\nint main() {\n    std::string text = \"Hello\";\n    text.append(\" World\");\n    std::cout << text;\n    return 0;\n}",
+        "tags": "string, append, concat, c++"
+    },
+    {
+        "title": "Erasing a Character from a String",
+        "summary": "str.erase(position, length)",
+        "description": "Uses `erase()` to remove characters from a string at a specified position.",
+        "example": "#include <iostream>\n#include <string>\n\nint main() {\n    std::string text = \"Hello World\";\n    text.erase(5, 1); // Removes space\n    std::cout << text;\n    return 0;\n}",
+        "tags": "string, erase, remove, c++"
+    },
+    {
+        "title": "Converting a Number to a String",
+        "summary": "std::to_string(num)",
+        "description": "Uses `std::to_string()` to convert a number to a string.",
+        "example": "#include <iostream>\n#include <string>\n\nint main() {\n    int num = 42;\n    std::string str = std::to_string(num);\n    std::cout << str;\n    return 0;\n}",
+        "tags": "convert, number, string, c++"
+    },
+    {
+        "title": "Converting a String to an Integer",
+        "summary": "std::stoi(str)",
+        "description": "Uses `std::stoi()` to convert a string to an integer.",
+        "example": "#include <iostream>\n#include <string>\n\nint main() {\n    std::string str = \"42\";\n    int num = std::stoi(str);\n    std::cout << num;\n    return 0;\n}",
+        "tags": "convert, string, integer, stoi, c++"
+    },
+    {
+        "title": "Checking If a String Is Numeric",
+        "summary": "std::all_of(str.begin(), str.end(), ::isdigit)",
+        "description": "Uses `std::all_of` to verify if all characters in a string are digits.",
+        "example": "#include <iostream>\n#include <string>\n#include <algorithm>\n#include <cctype>\n\nint main() {\n    std::string str = \"12345\";\n    bool isNumeric = std::all_of(str.begin(), str.end(), ::isdigit);\n    std::cout << \"Is Numeric: \" << isNumeric;\n    return 0;\n}",
+        "tags": "string, numeric, digits, check, c++"
+    },
+    {
+        "title": "Getting the Current Time",
+        "summary": "std::time(nullptr)",
+        "description": "Uses `std::time()` from `<ctime>` to get the current timestamp.",
+        "example": "#include <iostream>\n#include <ctime>\n\nint main() {\n    std::time_t now = std::time(nullptr);\n    std::cout << \"Current Time: \" << now;\n    return 0;\n}",
+        "tags": "time, timestamp, ctime, c++"
+    },
+    {
+        "title": "Generating a Random Integer",
+        "summary": "rand() % max",
+        "description": "Uses `rand()` from `<cstdlib>` to generate a random number within a range.",
+        "example": "#include <iostream>\n#include <cstdlib>\n#include <ctime>\n\nint main() {\n    std::srand(std::time(nullptr));\n    int randomNum = std::rand() % 100;\n    std::cout << \"Random: \" << randomNum;\n    return 0;\n}",
+        "tags": "random, number, srand, c++"
+    },
+    {
+        "title": "Sorting a Vector in Descending Order",
+        "summary": "std::sort(vec.begin(), vec.end(), std::greater<int>())",
+        "description": "Uses `std::sort()` with `std::greater<int>()` to sort a vector in descending order.",
+        "example": "#include <iostream>\n#include <vector>\n#include <algorithm>\n\nint main() {\n    std::vector<int> nums = {5, 2, 8, 1, 3};\n    std::sort(nums.begin(), nums.end(), std::greater<int>());\n    for (int num : nums) {\n        std::cout << num << \" \";\n    }\n    return 0;\n}",
+        "tags": "vector, sort, descending, algorithm, c++"
+    },
+    {
+        "title": "Calculating the Power of a Number",
+        "summary": "std::pow(base, exponent)",
+        "description": "Uses `<cmath>` to compute the power of a number.",
+        "example": "#include <iostream>\n#include <cmath>\nint main() {\n    double res = std::pow(2, 3); // 2^3 = 8\n    std::cout << res;\n    return 0;\n}",
+        "tags": "power, math, exponentiation, cmath, c++"
+    },
+    {
+        "title": "Finding the Greatest Common Divisor (GCD)",
+        "summary": "std::gcd(a, b)",
+        "description": "Uses `<numeric>` to find the greatest common divisor of two numbers.",
+        "example": "#include <iostream>\n#include <numeric>\nint main() {\n    int res = std::gcd(56, 98);\n    std::cout << res; // Output: 14\n    return 0;\n}",
+        "tags": "gcd, math, numeric, c++"
+    },
+    {
+        "title": "Finding the Least Common Multiple (LCM)",
+        "summary": "std::lcm(a, b)",
+        "description": "Uses `<numeric>` to find the least common multiple of two numbers.",
+        "example": "#include <iostream>\n#include <numeric>\nint main() {\n    int res = std::lcm(6, 8);\n    std::cout << res; // Output: 24\n    return 0;\n}",
+        "tags": "lcm, math, numeric, c++"
+    },
+    {
+        "title": "Checking If a Character is a Digit",
+        "summary": "std::isdigit(ch)",
+        "description": "Uses `<cctype>` to check if a character is a digit (0-9).",
+        "example": "#include <iostream>\n#include <cctype>\nint main() {\n    char ch = '5';\n    bool res = std::isdigit(ch);\n    std::cout << res; // Output: 1 (true)\n    return 0;\n}",
+        "tags": "character, digit, cctype, c++"
+    },
+    {
+        "title": "Checking If a Character is an Alphabet Letter",
+        "summary": "std::isalpha(ch)",
+        "description": "Uses `<cctype>` to check if a character is an alphabetic letter.",
+        "example": "#include <iostream>\n#include <cctype>\nint main() {\n    char ch = 'A';\n    bool res = std::isalpha(ch);\n    std::cout << res; // Output: 1 (true)\n    return 0;\n}",
+        "tags": "character, alphabet, cctype, c++"
+    },
+    {
+        "title": "Computing the Absolute Value",
+        "summary": "std::abs(value)",
+        "description": "Uses `<cmath>` to compute the absolute value of a number.",
+        "example": "#include <iostream>\n#include <cmath>\nint main() {\n    int res = std::abs(-42);\n    std::cout << res; // Output: 42\n    return 0;\n}",
+        "tags": "absolute, math, cmath, c++"
+    },
+    {
+        "title": "Finding the Square Root",
+        "summary": "std::sqrt(num)",
+        "description": "Uses `<cmath>` to compute the square root of a number.",
+        "example": "#include <iostream>\n#include <cmath>\nint main() {\n    double res = std::sqrt(16);\n    std::cout << res; // Output: 4\n    return 0;\n}",
+        "tags": "square root, math, cmath, c++"
+    },
+    {
+        "title": "Finding the Length of a Vector",
+        "summary": "vec.size()",
+        "description": "Uses `std::vector`'s `.size()` method to get the number of elements.",
+        "example": "#include <iostream>\n#include <vector>\nint main() {\n    std::vector<int> vec = {1, 2, 3, 4};\n    std::cout << vec.size(); // Output: 4\n    return 0;\n}",
+        "tags": "vector, size, length, c++"
+    },
+    {
+        "title": "Getting the First Element of a Vector",
+        "summary": "vec.front()",
+        "description": "Uses `std::vector`'s `.front()` method to get the first element.",
+        "example": "#include <iostream>\n#include <vector>\nint main() {\n    std::vector<int> vec = {10, 20, 30};\n    std::cout << vec.front(); // Output: 10\n    return 0;\n}",
+        "tags": "vector, front, first, c++"
+    },
+    {
+        "title": "Getting the Last Element of a Vector",
+        "summary": "vec.back()",
+        "description": "Uses `std::vector`'s `.back()` method to get the last element.",
+        "example": "#include <iostream>\n#include <vector>\nint main() {\n    std::vector<int> vec = {10, 20, 30};\n    std::cout << vec.back(); // Output: 30\n    return 0;\n}",
+        "tags": "vector, back, last, c++"
+    },
+    {
+        "title": "Appending an Element to a Vector",
+        "summary": "vec.push_back(value)",
+        "description": "Uses `std::vector`'s `.push_back()` method to append an element.",
+        "example": "#include <iostream>\n#include <vector>\nint main() {\n    std::vector<int> vec = {1, 2};\n    vec.push_back(3);\n    std::cout << vec.back(); // Output: 3\n    return 0;\n}",
+        "tags": "vector, push_back, append, c++"
+    },
+    {
+        "title": "Removing the Last Element from a Vector",
+        "summary": "vec.pop_back()",
+        "description": "Uses `std::vector`'s `.pop_back()` method to remove the last element.",
+        "example": "#include <iostream>\n#include <vector>\nint main() {\n    std::vector<int> vec = {1, 2, 3};\n    vec.pop_back();\n    std::cout << vec.back(); // Output: 2\n    return 0;\n}",
+        "tags": "vector, pop_back, remove, c++"
+    },
+    {
+        "title": "Clearing All Elements from a Vector",
+        "summary": "vec.clear()",
+        "description": "Uses `std::vector`'s `.clear()` method to remove all elements.",
+        "example": "#include <iostream>\n#include <vector>\nint main() {\n    std::vector<int> vec = {1, 2, 3};\n    vec.clear();\n    std::cout << vec.size(); // Output: 0\n    return 0;\n}",
+        "tags": "vector, clear, remove, c++"
+    },
+    {
+        "title": "Checking If a String is Uppercase",
+        "summary": "std::all_of(str.begin(), str.end(), ::isupper)",
+        "description": "Uses `<algorithm>` and `<cctype>` to check if all characters are uppercase.",
+        "example": "#include <iostream>\n#include <algorithm>\n#include <cctype>\nint main() {\n    std::string str = \"HELLO\";\n    bool res = std::all_of(str.begin(), str.end(), ::isupper);\n    std::cout << res; // Output: 1 (true)\n    return 0;\n}",
+        "tags": "string, uppercase, check, c++"
+    },
+    {
+        "title": "Finding the Size of a Vector",
+        "summary": "vec.size()",
+        "description": "Returns the number of elements in a `std::vector`.",
+        "example": "#include <iostream>\n#include <vector>\n\nint main() {\n    std::vector<int> nums = {1, 2, 3, 4, 5};\n    std::cout << \"Size: \" << nums.size() << std::endl;\n    return 0;\n}",
+        "tags": "vector, size, length, c++"
+    },
+    {
+        "title": "Checking If a Vector Is Empty",
+        "summary": "vec.empty()",
+        "description": "Checks if a `std::vector` is empty, returning `true` if it contains no elements.",
+        "example": "#include <iostream>\n#include <vector>\n\nint main() {\n    std::vector<int> nums;\n    if (nums.empty()) {\n        std::cout << \"Vector is empty\" << std::endl;\n    }\n    return 0;\n}",
+        "tags": "vector, empty, check, c++"
+    },
+    {
+        "title": "Erasing an Element from a Vector",
+        "summary": "vec.erase(vec.begin() + index)",
+        "description": "Removes an element at a specific index from a `std::vector`.",
+        "example": "#include <iostream>\n#include <vector>\n\nint main() {\n    std::vector<int> nums = {1, 2, 3, 4, 5};\n    nums.erase(nums.begin() + 2); // Removes element at index 2\n    for (int num : nums) {\n        std::cout << num << \" \";\n    }\n    return 0;\n}",
+        "tags": "vector, erase, remove, c++"
+    },
+    {
+        "title": "Inserting an Element into a Vector",
+        "summary": "vec.insert(vec.begin() + index, value)",
+        "description": "Inserts an element at a specified index in a `std::vector`.",
+        "example": "#include <iostream>\n#include <vector>\n\nint main() {\n    std::vector<int> nums = {1, 2, 4, 5};\n    nums.insert(nums.begin() + 2, 3); // Inserts 3 at index 2\n    for (int num : nums) {\n        std::cout << num << \" \";\n    }\n    return 0;\n}",
+        "tags": "vector, insert, add, c++"
+    },
+    {
+        "title": "Getting the First Element of a Vector",
+        "summary": "vec.front()",
+        "description": "Returns the first element of a `std::vector`.",
+        "example": "#include <iostream>\n#include <vector>\n\nint main() {\n    std::vector<int> nums = {10, 20, 30};\n    std::cout << \"First element: \" << nums.front() << std::endl;\n    return 0;\n}",
+        "tags": "vector, front, first, c++"
+    },
+    {
+        "title": "Getting the Last Element of a Vector",
+        "summary": "vec.back()",
+        "description": "Returns the last element of a `std::vector`.",
+        "example": "#include <iostream>\n#include <vector>\n\nint main() {\n    std::vector<int> nums = {10, 20, 30};\n    std::cout << \"Last element: \" << nums.back() << std::endl;\n    return 0;\n}",
+        "tags": "vector, back, last, c++"
+    },
+    {
+        "title": "Clearing a Vector",
+        "summary": "vec.clear()",
+        "description": "Removes all elements from a `std::vector`, making it empty.",
+        "example": "#include <iostream>\n#include <vector>\n\nint main() {\n    std::vector<int> nums = {1, 2, 3, 4};\n    nums.clear();\n    std::cout << \"Size after clear: \" << nums.size() << std::endl;\n    return 0;\n}",
+        "tags": "vector, clear, remove, c++"
+    },
+    {
+        "title": "Swapping Two Vectors",
+        "summary": "vec1.swap(vec2)",
+        "description": "Swaps the contents of two `std::vector` objects.",
+        "example": "#include <iostream>\n#include <vector>\n\nint main() {\n    std::vector<int> a = {1, 2, 3};\n    std::vector<int> b = {4, 5, 6};\n    a.swap(b);\n    for (int num : a) {\n        std::cout << num << \" \";\n    }\n    return 0;\n}",
+        "tags": "vector, swap, exchange, c++"
     }
 ]

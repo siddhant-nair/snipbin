@@ -108,11 +108,12 @@ func (h *Handler) SendSearchResult(w http.ResponseWriter, r *http.Request) {
 	json.NewDecoder(r.Body).Decode(&bodyJson)
 
 	rankedList := h.rankResults(bodyJson["searchString"])
+	truncatedList := rankedList[:int(math.Min(float64(len(rankedList)), 10.00))]
 
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 
-	json.NewEncoder(w).Encode(rankedList[:int(math.Min(float64(len(rankedList)), 5.00))])
+	json.NewEncoder(w).Encode(truncatedList)
 	// json.NewEncoder(w).Encode(rankedList)
 }
 

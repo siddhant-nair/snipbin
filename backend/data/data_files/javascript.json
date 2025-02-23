@@ -287,13 +287,6 @@
         "tags": "object, deep copy, JSON, cloning, javascript"
     },
     {
-        "title": "Removing Duplicates from an Array",
-        "summary": "const uniqueArray = [...new Set(array)];",
-        "description": "Creates a new array containing only unique values by converting the input array into a `Set` and spreading it back into an array.",
-        "example": "const numbers = [1, 2, 2, 3, 4, 4, 5];\nconst uniqueNumbers = [...new Set(numbers)];\nconsole.log(uniqueNumbers); // Output: [1, 2, 3, 4, 5]",
-        "tags": "array, set, unique, javascript, filtering, deduplication"
-    },
-    {
         "title": "Checking if an Array Includes a Value",
         "summary": "const result = array.includes(value);",
         "description": "Returns `true` if the specified value is found in the array; otherwise, returns `false`. Useful for checking the existence of an element.",
@@ -439,13 +432,6 @@
         "description": "Iterates over an object's properties (keys). Use `hasOwnProperty()` to avoid inherited properties.",
         "example": "const user = { name: 'Alice', age: 25 };\nfor (const key in user) {\n  console.log(`${key}: ${user[key]}`);\n}\n// Output: 'name: Alice', 'age: 25'",
         "tags": "object, loop, iterate, for in, keys, properties, javascript"
-    },
-    {
-        "title": "Shuffling an Array Randomly",
-        "summary": "array.sort(() => Math.random() - 0.5);",
-        "description": "Randomizes the order of elements in an array using the `sort()` method with a random comparator.",
-        "example": "const numbers = [1, 2, 3, 4, 5];\nnumbers.sort(() => Math.random() - 0.5);\nconsole.log(numbers); // Output: [3, 5, 1, 4, 2] (example)",
-        "tags": "array, shuffle, random, sort, mix, javascript"
     },
     {
         "title": "Reversing an Array",
@@ -1043,13 +1029,6 @@
         "tags": "array, difference, filter, exclude, unique, javascript"
     },
     {
-        "title": "Removing Duplicate Values from an Array",
-        "summary": "const result = [...new Set(array)];",
-        "description": "Removes duplicate elements from an array while maintaining order.",
-        "example": "const result = [1, 2, 2, 3, 4, 4].filter((v, i, arr) => arr.indexOf(v) === i);\nconsole.log(result); // [1, 2, 3, 4]",
-        "tags": "array, unique, remove duplicates, filter, set, javascript"
-    },
-    {
         "title": "Flattening a Nested Array",
         "summary": "const result = array.flat(Infinity);",
         "description": "Flattens a nested array structure into a single-level array.",
@@ -1447,5 +1426,355 @@
         "description": "Formats a number with thousands separators.",
         "example": "const num = 1234567;\nconst result = num.toLocaleString();\nconsole.log(result); // '1,234,567'",
         "tags": "number, format, comma, thousands, javascript"
+    },
+    {
+        "title": "Converting a Map to an Object",
+        "summary": "const obj = Object.fromEntries(map);",
+        "description": "Converts a `Map` to a plain JavaScript object using `Object.fromEntries()`, preserving key-value pairs.",
+        "example": "const map = new Map([[\"a\", 1], [\"b\", 2]]);\nconst obj = Object.fromEntries(map);\nconsole.log(obj); // Output: { a: 1, b: 2 }",
+        "tags": "map, object, conversion, javascript"
+    },
+    {
+        "title": "Converting an Object to a Map",
+        "summary": "const map = new Map(Object.entries(obj));",
+        "description": "Converts an object into a `Map` using `Object.entries()`, allowing use of `Map` methods.",
+        "example": "const obj = { name: \"Alice\", age: 25 };\nconst map = new Map(Object.entries(obj));\nconsole.log(map.get(\"name\")); // Output: \"Alice\"",
+        "tags": "object, map, conversion, javascript"
+    },
+    {
+        "title": "Checking If a Value Is a Plain Object",
+        "summary": "const isPlainObject = !!val && typeof val === \"object\" && val.constructor === Object;",
+        "description": "Checks if a value is an object but not an array or an instance of a class.",
+        "example": "console.log(isPlainObject({ key: \"value\" })); // Output: true\nconsole.log(isPlainObject([1, 2, 3])); // Output: false",
+        "tags": "object, type-check, javascript"
+    },
+    {
+        "title": "Cloning an Object Using Object.assign",
+        "summary": "const clone = Object.assign({}, obj);",
+        "description": "Creates a shallow copy of an object using `Object.assign()`.",
+        "example": "const person = { name: \"John\", age: 30 };\nconst copy = Object.assign({}, person);\nconsole.log(copy.name); // Output: \"John\"",
+        "tags": "object, cloning, javascript"
+    },
+    {
+        "title": "Checking If a String Is a Valid URL",
+        "summary": "const isValidURL = (() => { try { new URL(str); return true; } catch { return false; } })();",
+        "description": "Checks if a given string is a valid URL using the `URL` constructor.",
+        "example": "console.log(isValidURL(\"https://example.com\")); // Output: true\nconsole.log(isValidURL(\"invalid-url\")); // Output: false",
+        "tags": "string, url, validation, javascript"
+    },
+    {
+        "title": "Capitalizing the First Letter of a String",
+        "summary": "const capitalize = str.charAt(0).toUpperCase() + str.slice(1);",
+        "description": "Capitalizes the first letter of a string.",
+        "example": "console.log(capitalize(\"hello world\")); // Output: \"Hello world\"",
+        "tags": "string, capitalization, javascript"
+    },
+    {
+        "title": "Generating a Random Alphanumeric String",
+        "summary": "const randomString = Math.random().toString(36).substring(2, 2 + length);",
+        "description": "Generates a random alphanumeric string of the specified length.",
+        "example": "console.log(randomString(8)); // Output: \"g5j7h2x1\" (example)",
+        "tags": "string, random, javascript"
+    },
+    {
+        "title": "Checking If a Number Is Prime",
+        "summary": "const isPrime = num > 1 && [...Array(num).keys()].slice(2).every(i => num % i !== 0);",
+        "description": "Determines if a given number is prime.",
+        "example": "console.log(isPrime(11)); // Output: true\nconsole.log(isPrime(10)); // Output: false",
+        "tags": "number, prime, mathematics, javascript"
+    },
+    {
+        "title": "Summing All Values in an Object",
+        "summary": "const sumValues = Object.values(obj).reduce((sum, val) => sum + val, 0);",
+        "description": "Calculates the sum of all numeric values in an object.",
+        "example": "const scores = { math: 90, english: 85, science: 88 };\nconsole.log(sumValues(scores)); // Output: 263",
+        "tags": "object, sum, javascript"
+    },
+    {
+        "title": "Checking If a Year Is a Leap Year",
+        "summary": "const isLeapYear = (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;",
+        "description": "Determines if a given year is a leap year.",
+        "example": "console.log(isLeapYear(2024)); // Output: true\nconsole.log(isLeapYear(2023)); // Output: false",
+        "tags": "date, leap year, javascript"
+    },
+    {
+        "title": "Getting the Last Character of a String",
+        "summary": "const lastChar = str[str.length - 1];",
+        "description": "Retrieves the last character of a given string.",
+        "example": "const text = \"hello\";\nconst lastChar = text[text.length - 1];\nconsole.log(lastChar); // Output: \"o\"",
+        "tags": "string, last character, javascript"
+    },
+    {
+        "title": "Generating a Random Float in a Range",
+        "summary": "const randomFloat = Math.random() * (max - min) + min;",
+        "description": "Generates a random floating-point number within a given range.",
+        "example": "const min = 1.5, max = 5.5;\nconst randomFloat = Math.random() * (max - min) + min;\nconsole.log(randomFloat); // Output: 3.847 (example)",
+        "tags": "math, random, javascript"
+    },
+    {
+        "title": "Converting RGB to Hex",
+        "summary": "const hexColor = `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`;",
+        "description": "Converts RGB color values to a hexadecimal string.",
+        "example": "const r = 255, g = 165, b = 0;\nconst hexColor = `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`;\nconsole.log(hexColor); // Output: \"#ffa500\"",
+        "tags": "color, rgb, hex, javascript"
+    },
+    {
+        "title": "Converting Hex to RGB",
+        "summary": "const rgbArray = hex.match(/[a-f0-9]{2}/gi).map(x => parseInt(x, 16));",
+        "description": "Converts a hex color string to an array of RGB values.",
+        "example": "const hex = \"#ffa500\";\nconst rgbArray = hex.match(/[a-f0-9]{2}/gi).map(x => parseInt(x, 16));\nconsole.log(rgbArray); // Output: [255, 165, 0]",
+        "tags": "color, hex, rgb, javascript"
+    },
+    {
+        "title": "Calculating the Factorial of a Number",
+        "summary": "const factorial = n <= 1 ? 1 : n * factorial(n - 1);",
+        "description": "Computes the factorial of a given number using recursion.",
+        "example": "const n = 5;\nconst factorial = n <= 1 ? 1 : n * factorial(n - 1);\nconsole.log(factorial); // Output: 120",
+        "tags": "math, factorial, recursion, javascript"
+    },
+    {
+        "title": "Converting a String to Title Case",
+        "summary": "const titleCase = str.replace(/\\b\\w/g, char => char.toUpperCase());",
+        "description": "Converts a string into title case, capitalizing the first letter of each word.",
+        "example": "const text = \"hello world\";\nconst titleCase = text.replace(/\\b\\w/g, char => char.toUpperCase());\nconsole.log(titleCase); // Output: \"Hello World\"",
+        "tags": "string, title case, javascript"
+    },
+    {
+        "title": "Checking If a String Contains Only Digits",
+        "summary": "const isDigitsOnly = /^\\d+$/.test(str);",
+        "description": "Determines whether a string consists only of numeric digits.",
+        "example": "const text = \"12345\";\nconst isDigitsOnly = /^\\d+$/.test(text);\nconsole.log(isDigitsOnly); // Output: true",
+        "tags": "string, digits, regex, javascript"
+    },
+    {
+        "title": "Calculating the Sum of an Array",
+        "summary": "const sum = arr.reduce((acc, num) => acc + num, 0);",
+        "description": "Computes the sum of all elements in an array.",
+        "example": "const numbers = [1, 2, 3, 4, 5];\nconst sum = numbers.reduce((acc, num) => acc + num, 0);\nconsole.log(sum); // Output: 15",
+        "tags": "array, sum, javascript"
+    },
+    {
+        "title": "Finding the Average of an Array",
+        "summary": "const average = arr.reduce((acc, num) => acc + num, 0) / arr.length;",
+        "description": "Calculates the average value of an array.",
+        "example": "const numbers = [10, 20, 30, 40];\nconst average = numbers.reduce((acc, num) => acc + num, 0) / numbers.length;\nconsole.log(average); // Output: 25",
+        "tags": "array, average, javascript"
+    },
+    {
+        "title": "Removing Null and Undefined Values from an Array",
+        "summary": "const cleanArray = arr.filter(x => x != null);",
+        "description": "Removes null and undefined values from an array.",
+        "example": "const values = [1, null, 2, undefined, 3];\nconst cleanArray = values.filter(x => x != null);\nconsole.log(cleanArray); // Output: [1, 2, 3]",
+        "tags": "array, filter, null, undefined, javascript"
+    },
+    {
+        "title": "Finding Unique Values in an Array",
+        "summary": "const uniqueValues = [...new Set(arr)];",
+        "description": "Extracts unique values from an array.",
+        "example": "const numbers = [1, 2, 2, 3, 4, 4, 5];\nconst uniqueValues = [...new Set(numbers)];\nconsole.log(uniqueValues); // Output: [1, 2, 3, 4, 5]",
+        "tags": "array, unique, set, javascript"
+    },
+    {
+        "title": "Finding the First Non-Repeating Character in a String",
+        "summary": "const firstUnique = str.split('').find(char => str.indexOf(char) === str.lastIndexOf(char));",
+        "description": "Finds the first character in a string that does not repeat.",
+        "example": "const text = \"swiss\";\nconst firstUnique = text.split('').find(char => text.indexOf(char) === text.lastIndexOf(char));\nconsole.log(firstUnique); // Output: \"w\"",
+        "tags": "string, unique character, javascript"
+    },
+    {
+        "title": "Sorting an Array of Objects by a Property",
+        "summary": "const sortedArray = arr.sort((a, b) => a.property - b.property);",
+        "description": "Sorts an array of objects based on a given property.",
+        "example": "const people = [{name: \"Alice\", age: 30}, {name: \"Bob\", age: 25}];\nconst sortedArray = people.sort((a, b) => a.age - b.age);\nconsole.log(sortedArray); // Output: [{name: \"Bob\", age: 25}, {name: \"Alice\", age: 30}]",
+        "tags": "array, sort, objects, javascript"
+    },
+    {
+        "title": "Removing All Spaces from a String",
+        "summary": "const result = str.replace(/\\s+/g, '');",
+        "description": "Removes all spaces from a given string using a regular expression.",
+        "example": "const text = 'Hello World';\nconst result = text.replace(/\\s+/g, '');\nconsole.log(result); // Output: 'HelloWorld'",
+        "tags": "string, regex, remove, whitespace, javascript"
+    },
+    {
+        "title": "Getting the First N Characters of a String",
+        "summary": "const result = str.slice(0, n);",
+        "description": "Retrieves the first N characters from a given string using `slice()`.",
+        "example": "const text = 'Hello World';\nconst result = text.slice(0, 5);\nconsole.log(result); // Output: 'Hello'",
+        "tags": "string, slice, substring, extract, javascript"
+    },
+    {
+        "title": "Getting the Last N Characters of a String",
+        "summary": "const result = str.slice(-n);",
+        "description": "Retrieves the last N characters from a given string using `slice()`.",
+        "example": "const text = 'Hello World';\nconst result = text.slice(-5);\nconsole.log(result); // Output: 'World'",
+        "tags": "string, slice, substring, extract, javascript"
+    },
+    {
+        "title": "Replacing the First Occurrence in a String",
+        "summary": "const result = str.replace(pattern, replacement);",
+        "description": "Replaces the first occurrence of a pattern in a string with a given replacement.",
+        "example": "const text = 'Hello World';\nconst result = text.replace('Hello', 'Hi');\nconsole.log(result); // Output: 'Hi World'",
+        "tags": "string, replace, regex, text, javascript"
+    },
+    {
+        "title": "Replacing All Occurrences in a String",
+        "summary": "const result = str.replace(/pattern/g, replacement);",
+        "description": "Replaces all occurrences of a pattern in a string using a global regular expression.",
+        "example": "const text = 'Hello Hello World';\nconst result = text.replace(/Hello/g, 'Hi');\nconsole.log(result); // Output: 'Hi Hi World'",
+        "tags": "string, replace, regex, text, javascript"
+    },
+    {
+        "title": "Converting a String to an Array of Words",
+        "summary": "const result = str.split(/\\s+/);",
+        "description": "Splits a string into an array of words using whitespace as a delimiter.",
+        "example": "const text = 'Hello World';\nconst result = text.split(/\\s+/);\nconsole.log(result); // Output: ['Hello', 'World']",
+        "tags": "string, split, words, array, javascript"
+    },
+    {
+        "title": "Getting the First Word of a String",
+        "summary": "const result = str.split(' ')[0];",
+        "description": "Retrieves the first word of a string by splitting it at spaces and selecting the first element.",
+        "example": "const text = 'Hello World';\nconst result = text.split(' ')[0];\nconsole.log(result); // Output: 'Hello'",
+        "tags": "string, split, word, first, javascript"
+    },
+    {
+        "title": "Getting the Last Word of a String",
+        "summary": "const result = str.split(' ').slice(-1)[0];",
+        "description": "Retrieves the last word of a string by splitting it at spaces and selecting the last element.",
+        "example": "const text = 'Hello World';\nconst result = text.split(' ').slice(-1)[0];\nconsole.log(result); // Output: 'World'",
+        "tags": "string, split, word, last, javascript"
+    },
+    {
+        "title": "Checking If a String Contains Only Letters",
+        "summary": "const result = /^[A-Za-z]+$/.test(str);",
+        "description": "Checks if a string contains only alphabetic letters using a regular expression.",
+        "example": "const text = 'Hello';\nconst result = /^[A-Za-z]+$/.test(text);\nconsole.log(result); // Output: true",
+        "tags": "string, regex, letters, validation, javascript"
+    },
+    {
+        "title": "Checking If a String Contains Only Numbers",
+        "summary": "const result = /^\\d+$/.test(str);",
+        "description": "Checks if a string contains only numeric digits using a regular expression.",
+        "example": "const text = '12345';\nconst result = /^\\d+$/.test(text);\nconsole.log(result); // Output: true",
+        "tags": "string, regex, numbers, validation, javascript"
+    },
+    {
+        "title": "Converting a String to Camel Case",
+        "summary": "const result = str.replace(/[-_](\\w)/g, (_, c) => c.toUpperCase());",
+        "description": "Converts a kebab-case or snake_case string into camelCase.",
+        "example": "const text = 'hello-world';\nconst result = text.replace(/[-_](\\w)/g, (_, c) => c.toUpperCase());\nconsole.log(result); // Output: 'helloWorld'",
+        "tags": "string, camel case, formatting, text, javascript"
+    },
+    {
+        "title": "Converting a String to Kebab Case",
+        "summary": "const result = str.replace(/\\s+/g, '-').toLowerCase();",
+        "description": "Converts a given string into kebab-case by replacing spaces with hyphens and converting to lowercase.",
+        "example": "const text = 'Hello World';\nconst result = text.replace(/\\s+/g, '-').toLowerCase();\nconsole.log(result); // Output: 'hello-world'",
+        "tags": "string, kebab case, formatting, text, javascript"
+    },
+    {
+        "title": "Converting a String to Snake Case",
+        "summary": "const result = str.replace(/\\s+/g, '_').toLowerCase();",
+        "description": "Converts a given string into snake_case by replacing spaces with underscores and converting to lowercase.",
+        "example": "const text = 'Hello World';\nconst result = text.replace(/\\s+/g, '_').toLowerCase();\nconsole.log(result); // Output: 'hello_world'",
+        "tags": "string, snake case, formatting, text, javascript"
+    },
+    {
+        "title": "Checking If a String Is Empty",
+        "summary": "const result = str.length === 0;",
+        "description": "Checks if a string is empty by evaluating its length.",
+        "example": "const text = '';\nconst result = text.length === 0;\nconsole.log(result); // Output: true",
+        "tags": "string, empty, validation, check, javascript"
+    },
+    {
+        "title": "Checking If an Array Is Empty",
+        "summary": "const result = arr.length === 0;",
+        "description": "Checks if an array is empty by evaluating its length.",
+        "example": "const numbers = [];\nconst result = numbers.length === 0;\nconsole.log(result); // Output: true",
+        "tags": "array, check, empty, validation, javascript"
+    },
+    {
+        "title": "Getting the Length of a String",
+        "summary": "const result = str.length;",
+        "description": "Retrieves the length of a string.",
+        "example": "const text = 'Hello';\nconst result = text.length;\nconsole.log(result); // Output: 5",
+        "tags": "string, length, measure, javascript"
+    },
+    {
+        "title": "Getting the Length of an Array",
+        "summary": "const result = arr.length;",
+        "description": "Retrieves the number of elements in an array.",
+        "example": "const numbers = [1, 2, 3, 4, 5];\nconst result = numbers.length;\nconsole.log(result); // Output: 5",
+        "tags": "array, length, measure, javascript"
+    },
+    {
+        "title": "Getting the Middle Character of a String",
+        "summary": "const middle = str[Math.floor(str.length / 2)];",
+        "description": "Retrieves the middle character of a string by calculating the middle index.",
+        "example": "const word = 'hello';\nconsole.log(word[Math.floor(word.length / 2)]); // Output: 'l'",
+        "tags": "string, middle, index, javascript"
+    },
+    {
+        "title": "Finding the Hypotenuse of a Right Triangle",
+        "summary": "const hypotenuse = Math.hypot(a, b);",
+        "description": "Calculates the hypotenuse of a right triangle using `Math.hypot()`.",
+        "example": "const a = 3, b = 4;\nconsole.log(Math.hypot(a, b)); // Output: 5",
+        "tags": "math, hypotenuse, triangle, javascript"
+    },
+    {
+        "title": "Getting the File Extension from a Filename",
+        "summary": "const extension = filename.split('.').pop();",
+        "description": "Extracts the file extension from a filename string by splitting at the dot.",
+        "example": "const file = 'document.pdf';\nconsole.log(file.split('.').pop()); // Output: 'pdf'",
+        "tags": "string, file, extension, javascript"
+    },
+    {
+        "title": "Finding the Intersection of Multiple Arrays",
+        "summary": "const intersection = arrays.reduce((a, b) => a.filter(c => b.includes(c)));",
+        "description": "Finds common elements between multiple arrays using `reduce()` and `filter()`.",
+        "example": "const arr1 = [1, 2, 3], arr2 = [2, 3, 4], arr3 = [3, 4, 5];\nconsole.log([arr1, arr2, arr3].reduce((a, b) => a.filter(c => b.includes(c)))); // Output: [3]",
+        "tags": "array, intersection, filter, javascript"
+    },
+    {
+        "title": "Rotating an Array Left by One Position",
+        "summary": "const rotated = [...array.slice(1), array[0]];",
+        "description": "Moves the first element of an array to the end, effectively rotating it left.",
+        "example": "const numbers = [1, 2, 3, 4];\nconsole.log([...numbers.slice(1), numbers[0]]); // Output: [2, 3, 4, 1]",
+        "tags": "array, rotate, shift, javascript"
+    },
+    {
+        "title": "Converting a Set to an Object",
+        "summary": "const obj = Object.fromEntries([...set].map(v => [v, true]));",
+        "description": "Converts a `Set` into an object with keys from the set values and `true` as values.",
+        "example": "const mySet = new Set(['a', 'b', 'c']);\nconsole.log(Object.fromEntries([...mySet].map(v => [v, true]))); // Output: {a: true, b: true, c: true}",
+        "tags": "set, object, conversion, javascript"
+    },
+    {
+        "title": "Calculating the Difference Between Two Dates",
+        "summary": "const diff = Math.abs(date1 - date2) / (1000 * 60 * 60 * 24);",
+        "description": "Finds the difference between two dates in days by subtracting timestamps and converting.",
+        "example": "const date1 = new Date('2025-01-01');\nconst date2 = new Date('2025-01-10');\nconsole.log(Math.abs(date1 - date2) / (1000 * 60 * 60 * 24)); // Output: 9",
+        "tags": "date, difference, time, javascript"
+    },
+    {
+        "title": "Checking If a Variable Is a Function",
+        "summary": "const isFunction = typeof variable === 'function';",
+        "description": "Determines if a given variable is a function using `typeof`.",
+        "example": "const myFunc = () => {};\nconsole.log(typeof myFunc === 'function'); // Output: true",
+        "tags": "function, typeof, check, javascript"
+    },
+    {
+        "title": "Reversing a Number",
+        "summary": "const reversed = Number(String(number).split('').reverse().join(''));",
+        "description": "Reverses the digits of a number by converting it to a string, reversing, and converting back.",
+        "example": "const num = 12345;\nconsole.log(Number(String(num).split('').reverse().join(''))); // Output: 54321",
+        "tags": "number, reverse, string, javascript"
+    },
+    {
+        "title": "Finding the Most Frequent Character in a String",
+        "summary": "const mostFrequent = str.split('').reduce((a, c) => (a[c] = (a[c] || 0) + 1, a), {});",
+        "description": "Finds the character that appears the most times in a string.",
+        "example": "const text = 'banana';\nconst freq = text.split('').reduce((a, c) => (a[c] = (a[c] || 0) + 1, a), {});\nconsole.log(Object.keys(freq).reduce((a, b) => freq[a] > freq[b] ? a : b)); // Output: 'a'",
+        "tags": "string, frequency, character, javascript"
     }
 ]

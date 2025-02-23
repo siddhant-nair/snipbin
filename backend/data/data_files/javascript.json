@@ -673,128 +673,86 @@
     },
     {
         "title": "Capitalizing Every Word in a String",
-        "summary": "const titleCase = string.replace(/\\b\\w/g, c => c.toUpperCase());",
+        "summary": "const titleCased = string.replace(/\\b\\w/g, c => c.toUpperCase());",
         "description": "Transforms a string into title case by capitalizing the first letter of each word.",
-        "example": "console.log('hello world'.replace(/\\b\\w/g, c => c.toUpperCase())); // Output: 'Hello World'",
+        "example": "const text = \"hello world\";\nconst titleCased = text.replace(/\\b\\w/g, c => c.toUpperCase());\nconsole.log(titleCased); // \"Hello World\"",
         "tags": "string, capitalize, title case, formatting, words, javascript"
     },
     {
         "title": "Pausing Execution for a Delay",
         "summary": "await new Promise(resolve => setTimeout(resolve, ms));",
         "description": "Creates a delay using `setTimeout()` inside a `Promise`, allowing it to be used with `await` inside an async function.",
-        "example": "async function wait() {\n  console.log('Start');\n  await new Promise(resolve => setTimeout(resolve, 2000));\n  console.log('End after 2 seconds');\n}\nwait();",
+        "example": "async function wait() {\n    console.log(\"Start\");\n    await new Promise(resolve => setTimeout(resolve, 2000));\n    console.log(\"End after 2 seconds\");\n}\nwait();",
         "tags": "async, delay, timeout, pause, wait, sleep, javascript"
     },
     {
         "title": "Detecting Dark Mode Preference",
-        "summary": "const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;",
+        "summary": "const isDarkMode = window.matchMedia(\"(prefers-color-scheme: dark)\").matches;",
         "description": "Checks if the user’s system is set to dark mode using `matchMedia()`.",
-        "example": "console.log(window.matchMedia('(prefers-color-scheme: dark)').matches); // Output: true or false",
+        "example": "const isDarkMode = window.matchMedia(\"(prefers-color-scheme: dark)\").matches;\nconsole.log(isDarkMode ? \"Dark mode is enabled\" : \"Light mode is enabled\");",
         "tags": "dark mode, theme, matchMedia, detect, preference, javascript"
     },
     {
-        "title": "Detecting if a Variable is an Object",
-        "summary": "const isObject = value => value !== null && typeof value === 'object';",
-        "description": "Checks whether a value is a non-null object, excluding arrays and functions.",
-        "example": "console.log(isObject({})); // Output: true\nconsole.log(isObject([])); // Output: true\nconsole.log(isObject(null)); // Output: false",
+        "title": "Checking if a Variable is an Object",
+        "summary": "const isObject = value !== null && typeof value === 'object';",
+        "description": "Checks whether a value is a non-null object.",
+        "example": "console.log(isObject({})); // true\nconsole.log(isObject([])); // true\nconsole.log(isObject(null)); // false",
         "tags": "object, check type, typeof, validate, non-null, javascript"
     },
     {
         "title": "Reversing a String",
         "summary": "const reversed = string.split('').reverse().join('');",
-        "description": "Splits a string into an array, reverses the order, and joins it back into a new reversed string.",
-        "example": "console.log('hello'.split('').reverse().join('')); // Output: 'olleh'",
+        "description": "Reverses the characters in a string.",
+        "example": "const text = \"hello\";\nconst reversed = text.split('').reverse().join('');\nconsole.log(reversed); // \"olleh\"",
         "tags": "string, reverse, split, join, manipulate, text, javascript"
     },
     {
         "title": "Generating a UUID (v4)",
         "summary": "const uuid = crypto.randomUUID();",
         "description": "Creates a universally unique identifier (UUID v4) using the `crypto` API.",
-        "example": "console.log(crypto.randomUUID()); // Output: '550e8400-e29b-41d4-a716-446655440000' (example)",
+        "example": "const uuid = crypto.randomUUID();\nconsole.log(uuid); // Example output: '550e8400-e29b-41d4-a716-446655440000'",
         "tags": "uuid, generate, unique, identifier, random, javascript"
     },
     {
         "title": "Escaping HTML Special Characters",
         "summary": "const escaped = string.replace(/[&<>'\"]/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', \"'\": '&apos;', '\"': '&quot;' }[char]));",
         "description": "Replaces special HTML characters with their escaped entity equivalents to prevent XSS vulnerabilities.",
-        "example": "console.log('<div>Hello</div>'.replace(/[&<>'\"]/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', \"'\": '&apos;', '\"': '&quot;' }[char]))); // Output: '&lt;div&gt;Hello&lt;/div&gt;'",
+        "example": "const text = \"<div>Hello</div>\";\nconst escaped = text.replace(/[&<>'\"]/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', \"'\": '&apos;', '\"': '&quot;' }[char]));\nconsole.log(escaped); // \"&lt;div&gt;Hello&lt;/div&gt;\"",
         "tags": "html, escape, sanitize, security, xss, encode, javascript"
     },
     {
         "title": "Unescaping HTML Entities",
         "summary": "const unescaped = string.replace(/&(amp|lt|gt|quot|apos);/g, tag => ({ '&amp;': '&', '&lt;': '<', '&gt;': '>', '&quot;': '\"', '&apos;': \"'\" }[tag]));",
         "description": "Converts escaped HTML entities back into their original characters.",
-        "example": "console.log('&lt;div&gt;Hello&lt;/div&gt;'.replace(/&(amp|lt|gt|quot|apos);/g, tag => ({ '&amp;': '&', '&lt;': '<', '&gt;': '>', '&quot;': '\"', '&apos;': \"'\" }[tag]))); // Output: '<div>Hello</div>'",
+        "example": "const text = \"&lt;div&gt;Hello&lt;/div&gt;\";\nconst unescaped = text.replace(/&(amp|lt|gt|quot|apos);/g, tag => ({ '&amp;': '&', '&lt;': '<', '&gt;': '>', '&quot;': '\"', '&apos;': \"'\" }[tag]));\nconsole.log(unescaped); // \"<div>Hello</div>\"",
         "tags": "html, unescape, decode, security, xss, sanitize, javascript"
     },
     {
-        "title": "Reversing a String Efficiently",
-        "summary": "const reversed = [...string].reduce((acc, char) => char + acc, '');",
-        "description": "Reverses a string efficiently without converting it into an array explicitly, using `reduce()` to build the reversed string character by character.",
-        "example": "console.log([... 'hello'].reduce((acc, char) => char + acc, '')); // Output: 'olleh'",
-        "tags": "string, reverse, efficient, text, manipulation, javascript"
-    },
-    {
         "title": "Checking If an Array Is Sorted",
-        "summary": "const isSorted = array => array.every((val, i, arr) => i === 0 || arr[i - 1] <= val);",
-        "description": "Determines if an array is sorted in ascending order by checking if every element is greater than or equal to the previous one.",
-        "example": "console.log(isSorted([1, 2, 3, 4])); // Output: true\nconsole.log(isSorted([3, 2, 1])); // Output: false",
+        "summary": "const isSorted = array.every((val, i, arr) => i === 0 || arr[i - 1] <= val);",
+        "description": "Determines if an array is sorted in ascending order.",
+        "example": "const numbers = [1, 2, 3, 4];\nconst isSorted = numbers.every((val, i, arr) => i === 0 || arr[i - 1] <= val);\nconsole.log(isSorted); // true",
         "tags": "array, sorted, check, order, verify, ascending, javascript"
     },
     {
         "title": "Checking If Two Arrays Are Equal",
-        "summary": "const isEqual = (arr1, arr2) => JSON.stringify(arr1) === JSON.stringify(arr2);",
-        "description": "Compares two arrays by converting them to JSON strings. Works for primitive values but not for objects with different key orders.",
-        "example": "console.log(isEqual([1, 2, 3], [1, 2, 3])); // Output: true\nconsole.log(isEqual([1, 2, 3], [3, 2, 1])); // Output: false",
+        "summary": "const isEqual = JSON.stringify(arr1) === JSON.stringify(arr2);",
+        "description": "Compares two arrays by converting them to JSON strings.",
+        "example": "const arr1 = [1, 2, 3];\nconst arr2 = [1, 2, 3];\nconst isEqual = JSON.stringify(arr1) === JSON.stringify(arr2);\nconsole.log(isEqual); // true",
         "tags": "array, compare, equality, check, match, identical, javascript"
     },
     {
-        "title": "Finding the Mode (Most Frequent Element) in an Array",
-        "summary": "const mode = array => array.reduce((a, b, i, arr) => arr.filter(v => v === a).length >= arr.filter(v => v === b).length ? a : b);",
-        "description": "Finds the most frequently occurring element in an array. Returns the first mode found if multiple exist.",
-        "example": "console.log(mode([1, 2, 2, 3, 3, 3, 4])); // Output: 3",
-        "tags": "array, mode, most frequent, statistics, count, frequency, javascript"
-    },
-    {
-        "title": "Removing a Property from an Object",
-        "summary": "const { key, ...newObj } = object;",
-        "description": "Uses object destructuring to create a new object excluding a specified key, without mutating the original object.",
-        "example": "const user = { name: 'Alice', age: 25, city: 'NYC' };\nconst { age, ...filteredUser } = user;\nconsole.log(filteredUser); // Output: { name: 'Alice', city: 'NYC' }",
-        "tags": "object, remove property, destructuring, immutable, delete, filter, javascript"
-    },
-    {
-        "title": "Finding Unique Elements in an Array",
-        "summary": "const unique = array => array.filter((item, index, arr) => arr.indexOf(item) === index);",
-        "description": "Filters an array to retain only unique values without using a `Set`.",
-        "example": "console.log(unique([1, 2, 2, 3, 4, 4, 5])); // Output: [1, 2, 3, 4, 5]",
-        "tags": "array, unique, filter, remove duplicates, indexOf, javascript"
-    },
-    {
-        "title": "Checking If a Number Is Prime",
-        "summary": "const isPrime = num => num > 1 && [...Array(num).keys()].slice(2).every(i => num % i !== 0);",
-        "description": "Checks if a number is prime by testing divisibility up to its square root. Returns `true` if prime, `false` otherwise.",
-        "example": "console.log(isPrime(7)); // Output: true\nconsole.log(isPrime(10)); // Output: false",
-        "tags": "math, prime, check, number, divisibility, test, javascript"
-    },
-    {
-        "title": "Removing Duplicates While Preserving Order",
-        "summary": "const uniqueInOrder = array => [...new Map(array.map(item => [item, item])).values()];",
-        "description": "Removes duplicates while preserving the order of first occurrences using a `Map()` for key-value uniqueness.",
-        "example": "console.log(uniqueInOrder([1, 2, 2, 3, 3, 4, 5])); // Output: [1, 2, 3, 4, 5]",
-        "tags": "array, unique, remove duplicates, preserve order, map, javascript"
-    },
-    {
         "title": "Finding the First Duplicate in an Array",
-        "summary": "const firstDuplicate = array => array.find((num, i, arr) => arr.indexOf(num) !== i);",
-        "description": "Finds and returns the first repeating element in an array. Returns `undefined` if no duplicates are found.",
-        "example": "console.log(firstDuplicate([1, 2, 3, 2, 4, 5])); // Output: 2",
+        "summary": "const firstDuplicate = array.find((num, i, arr) => arr.indexOf(num) !== i);",
+        "description": "Finds and returns the first repeating element in an array.",
+        "example": "const numbers = [1, 2, 3, 2, 4, 5];\nconst firstDuplicate = numbers.find((num, i, arr) => arr.indexOf(num) !== i);\nconsole.log(firstDuplicate); // 2",
         "tags": "array, duplicate, find, repeat, first match, javascript"
     },
     {
         "title": "Detecting a Palindrome String",
-        "summary": "const isPalindrome = str => str === str.split('').reverse().join('');",
-        "description": "Checks if a string reads the same forward and backward. Returns `true` for palindromes, `false` otherwise.",
-        "example": "console.log(isPalindrome('racecar')); // Output: true\nconsole.log(isPalindrome('hello')); // Output: false",
+        "summary": "const isPalindrome = string === string.split('').reverse().join('');",
+        "description": "Checks if a string reads the same forward and backward.",
+        "example": "const word = \"racecar\";\nconst isPalindrome = word === word.split('').reverse().join('');\nconsole.log(isPalindrome); // true",
         "tags": "string, palindrome, check, reverse, symmetry, validation, javascript"
     },
     {
@@ -939,9 +897,9 @@
     },
     {
         "title": "Implementing a Compose with Async Support",
-        "summary": "const composeAsync = (...fns) => x => fns.reduceRight((p, f) => p.then(f),                   Promise.resolve(x));",
+        "summary": "const composeAsync = (...fns) => x => fns.reduceRight((p, f) => p.then(f),\nPromise.resolve(x));",
         "description": "Creates an async-aware function composition utility for handling promise-based function  chains.",
-        "example": "const fetchUser = async (id) => {};\nconst processUser = async (user) => {};\nconst          composedOperation = composeAsync(processUser, fetchUser);",
+        "example": "const fetchUser = async (id) => {};\nconst processUser = async (user) => {};\nconst composedOperation = composeAsync(processUser, fetchUser);",
         "tags": "async, composition, functional, promise, javascript"
     },
     {

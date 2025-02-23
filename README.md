@@ -10,3 +10,7 @@ Simple and straight forward. Just search for what you're looking for copy it.
 - Rust
 - C++
 
+### Snippet Files
+The data files are in: `backend/data/data_files`
+
+Consider Contributing and expanding the library (even if its 1 snippet at a time)!

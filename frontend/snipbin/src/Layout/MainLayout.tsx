@@ -1,4 +1,4 @@
-import { Outlet, useLoaderData, useParams } from "react-router-dom"
+import { Outlet, useLoaderData, useNavigate, useParams } from "react-router-dom"
 import SearchBar from "./Components/SearchBar"
 import { useEffect, useState } from "react"
 import { SnippetApis, SnippetModel } from "../models/snippetModel"
@@ -11,8 +11,9 @@ export default function MainLayout() {
 	const data: SnippetModel[] = useLoaderData();
 	const snippetApis = new SnippetApis()
 	const urlParams = useParams()
+	const navigate = useNavigate()
 	const [snippetList, setSnippetList] = useState<SnippetModel[]>(data)
-	const [displayString, setDispayString] = useState("")
+	const [displayString, setDisplayString] = useState("")
 	
 	async function setSnippetData(toSearch: string) {
 		try {
@@ -33,12 +34,14 @@ export default function MainLayout() {
 	}, [searchString])
 
 	return (
-		<DisplayStringContext.Provider value={{ displayString, setDispayString }} >
+		<DisplayStringContext.Provider value={{ displayString, setDisplayString }} >
 			<SearchStringContext.Provider value={setSetsearchString} >
 				<header className="w-full px-pc py-7">
 					<div className="flex w-full justify-between items-center">
 						<div className="flex items-center w-5/9 gap-5">
-							<div id="some-logo" className="size-36 bin-logo"></div>
+							<div id="some-logo" className="size-36 bin-logo cursor-pointer"
+								onClick={() => navigate('')}
+							/>
 							<SearchBar />
 						</div>
 						<a href="/">

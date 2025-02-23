@@ -17,9 +17,9 @@ export default function SnippetCards({
 ): JSX.Element {
 
   const navigate = useNavigate()
-  const { setDispayString } = useContext(DisplayStringContext)
+  const { setDisplayString } = useContext(DisplayStringContext)
   function openCard(){
-    setDispayString("")
+    setDisplayString("")
     navigate(slugify(title))
   }
 

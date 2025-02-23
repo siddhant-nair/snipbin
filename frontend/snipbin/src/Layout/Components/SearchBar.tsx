@@ -6,7 +6,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 
 export default function SearchBar() {
 
-  const { displayString, setDispayString } = useContext(DisplayStringContext);
+  const { displayString, setDisplayString } = useContext(DisplayStringContext);
   const setSearchString = useContext(SearchStringContext);
   const navigate = useNavigate();
   const URL = useLocation();
@@ -14,7 +14,7 @@ export default function SearchBar() {
   // console.log(pathArray)
 
   function handleSearchInput(e: React.ChangeEvent<HTMLInputElement>): void {
-    setDispayString(e.target.value);
+    setDisplayString(e.target.value);
     const debounceSetState = debounce((val: string = e.target.value) => {
       setSearchString(val);
       // }, 1750)

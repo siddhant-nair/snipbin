@@ -4,9 +4,9 @@ Trying to make a thorough, comprehensive and clean library for code snippets.
 Simple and straight forward. Just search for what you're looking for copy it.
 
 
-
-https://github.com/user-attachments/assets/fe7c3716-0fd4-4011-9801-fd8f93a7bafa
-
+| Just Search |
+| ------------------------- |
+<video src="https://github.com/user-attachments/assets/f58599d5-bb39-4a50-8b1f-4400ec2560ed"></video>
 
 
 ## Languages Added for Now

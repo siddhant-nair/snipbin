@@ -355,5 +355,202 @@
         "description": "Loops within another loop for multi-level iteration.",
         "example": "for (let i = 0; i < 2; i++) {\n  for (let j = 0; j < 3; j++) {\n    console.log(`${i}-${j}`);\n  }\n}\n// Output:\n// 0-0\n// 0-1\n// 0-2\n// 1-0\n// 1-1\n// 1-2",
         "tags": "loop, nested, multiple, iteration, javascript"
+    },
+
+    {
+        "title": "Adding Elements to a Set in JavaScript",
+        "summary": "set.add(value);",
+        "description": "Adds unique values to a Set. Duplicate values are ignored.",
+        "example": "const mySet = new Set();\nmySet.add('a');\nmySet.add(1);\nmySet.add(true);\nconsole.log(mySet); // Set { 'a', 1, true }",
+        "tags": "set, add, insert, unique, javascript"
+    },
+    {
+        "title": "Removing Elements from a Set in JavaScript",
+        "summary": "set.delete(value);",
+        "description": "Removes a specific value from a Set.",
+        "example": "const mySet = new Set([1, 'a', true]);\nmySet.delete('a');\nconsole.log(mySet); // Set { 1, true }",
+        "tags": "set, delete, remove, clear, javascript"
+    },
+    {
+        "title": "Checking If a Set Contains a Value in JavaScript",
+        "summary": "const exists = set.has(value);",
+        "description": "Returns true if the value exists in the Set, otherwise false.",
+        "example": "const mySet = new Set([1, 'a', true]);\nconsole.log(mySet.has('a')); // true\nconsole.log(mySet.has(false)); // false",
+        "tags": "set, has, contains, check, javascript"
+    },
+    {
+        "title": "Clearing All Elements from a Set in JavaScript",
+        "summary": "set.clear();",
+        "description": "Removes all elements from a Set.",
+        "example": "const mySet = new Set([1, 'a', true]);\nconsole.log(mySet.size); // 3\nmySet.clear();\nconsole.log(mySet.size); // 0",
+        "tags": "set, clear, empty, reset, javascript"
+    },
+    {
+        "title": "Getting the Size of a Set in JavaScript",
+        "summary": "const size = set.size;",
+        "description": "Returns the number of elements in a Set.",
+        "example": "const mySet = new Set([1, 'a', true]);\nconsole.log(mySet.size); // 3",
+        "tags": "set, size, length, count, javascript"
+    },
+    {
+        "title": "Iterating Over a Set in JavaScript",
+        "summary": "set.forEach(callback);",
+        "description": "Executes a provided function once for each value in the Set.",
+        "example": "const mySet = new Set([1, 'a', true]);\nmySet.forEach(value => console.log(value));\n// Output:\n// 1\n// 'a'\n// true",
+        "tags": "set, loop, iterate, foreach, javascript"
+    },
+    {
+        "title": "Using a While Loop in JavaScript",
+        "summary": "while (condition) { // code }",
+        "description": "Executes a block of code while a specified condition is true.",
+        "example": "let i = 0;\nwhile (i < 5) {\n  console.log(i);\n  i++;\n}\n// Output: 0 1 2 3 4",
+        "tags": "loop, while, iteration, repeat, javascript"
+    },
+    {
+        "title": "Reversing a Loop in JavaScript",
+        "summary": "for (let i = array.length - 1; i >= 0; i--) { // code }",
+        "description": "Loops through an array in reverse order.",
+        "example": "const fruits = ['apple', 'orange', 'banana'];\nfor (let i = fruits.length - 1; i >= 0; i--) {\n  console.log(`${i}: ${fruits[i]}`);\n}\n// Output:\n// 2: banana\n// 1: orange\n// 0: apple",
+        "tags": "loop, reverse, iterate, for, javascript"
+    },
+    {
+        "title": "Using a Do...While Loop in JavaScript",
+        "summary": "do { // code } while (condition);",
+        "description": "Executes a block of code at least once before checking the condition.",
+        "example": "let i = 0;\ndo {\n  console.log(i);\n  i++;\n} while (i < 5);\n// Output: 0 1 2 3 4",
+        "tags": "loop, do while, repeat, iteration, javascript"
+    },
+    {
+        "title": "Using a For Loop in JavaScript",
+        "summary": "for (let i = 0; i < n; i++) { // code }",
+        "description": "Executes a block of code a specific number of times.",
+        "example": "for (let i = 0; i < 4; i++) {\n  console.log(i);\n}\n// Output: 0 1 2 3",
+        "tags": "loop, for, iterate, count, javascript"
+    },
+    {
+        "title": "Looping Through an Array in JavaScript",
+        "summary": "for (let i = 0; i < array.length; i++) { // code }",
+        "description": "Iterates over an array using a traditional for loop.",
+        "example": "const numbers = [10, 20, 30];\nfor (let i = 0; i < numbers.length; i++) {\n  console.log(numbers[i]);\n}\n// Output: 10 20 30",
+        "tags": "loop, array, iterate, for, javascript"
+    },
+    {
+        "title": "Breaking a Loop in JavaScript",
+        "summary": "if (condition) { break; }",
+        "description": "Exits a loop immediately when a condition is met.",
+        "example": "for (let i = 0; i < 10; i++) {\n  if (i > 5) break;\n  console.log(i);\n}\n// Output: 0 1 2 3 4 5",
+        "tags": "loop, break, exit, stop, javascript"
+    },
+    {
+        "title": "Continuing to the Next Iteration in JavaScript",
+        "summary": "if (condition) { continue; }",
+        "description": "Skips the current iteration and moves to the next one.",
+        "example": "for (let i = 0; i < 5; i++) {\n  if (i === 2) continue;\n  console.log(i);\n}\n// Output: 0 1 3 4",
+        "tags": "loop, continue, skip, iteration, javascript"
+    },
+    {
+        "title": "Using a Nested Loop in JavaScript",
+        "summary": "for (let i = 0; i < n; i++) { for (let j = 0; j < m; j++) { // code } }",
+        "description": "Loops within another loop for multi-level iteration.",
+        "example": "for (let i = 0; i < 2; i++) {\n  for (let j = 0; j < 3; j++) {\n    console.log(`${i}-${j}`);\n  }\n}\n// Output:\n// 0-0\n// 0-1\n// 0-2\n// 1-0\n// 1-1\n// 1-2",
+        "tags": "loop, nested, multiple, iteration, javascript"
+    },
+    {
+        "title": "Using Valid Property Names in an Object",
+        "summary": "const obj = { 'valid key': 123, '+specialKey': 'value' };",
+        "description": "JavaScript object keys must be valid identifiers unless enclosed in quotes.",
+        "example": "const trainSchedule = {\n  'platform num': 10,\n  '+compartment': 'C'\n};\nconsole.log(trainSchedule['platform num']); // 10",
+        "tags": "object, property, keys, naming, javascript"
+    },
+    {
+        "title": "Accessing Non-Existent Properties in an Object",
+        "summary": "const value = obj.missingKey;",
+        "description": "If you try to access an object property that does not exist, JavaScript returns undefined.",
+        "example": "const classElection = { date: 'January 12' };\nconsole.log(classElection.place); // undefined",
+        "tags": "object, property, undefined, access, javascript"
+    },
+    {
+        "title": "Modifying and Deleting Object Properties",
+        "summary": "delete obj.property; obj.newProperty = 'value';",
+        "description": "Object properties can be modified or deleted, but reassigning an entire object declared with const is not allowed.",
+        "example": "const student = { name: 'Sheldon', score: 100, grade: 'A' };\ndelete student.score;\nstudent.grade = 'F';\nconsole.log(student); // { name: 'Sheldon', grade: 'F' }",
+        "tags": "object, modify, delete, properties, javascript"
+    },
+    {
+        "title": "Using Object Property Shorthand in JavaScript",
+        "summary": "const obj = { key };",
+        "description": "When defining an object, you can use shorthand notation if the property name matches the variable name.",
+        "example": "const activity = 'Surfing';\nconst beach = { activity };\nconsole.log(beach); // { activity: 'Surfing' }",
+        "tags": "object, shorthand, properties, javascript"
+    },
+    {
+        "title": "Destructuring an Object in JavaScript",
+        "summary": "const { key1, key2 } = obj;",
+        "description": "Destructuring syntax allows you to unpack values from objects into distinct variables.",
+        "example": "const person = { name: 'Tom', age: '22' };\nconst { name, age } = person;\nconsole.log(name); // 'Tom'",
+        "tags": "object, destructuring, properties, variables, javascript"
+    },
+    {
+        "title": "Using the Delete Operator in JavaScript",
+        "summary": "delete obj.key;",
+        "description": "The delete operator removes a property from an object.",
+        "example": "const person = { firstName: 'Matilda', age: 27, hobby: 'knitting' };\ndelete person.hobby;\nconsole.log(person); // { firstName: 'Matilda', age: 27 }",
+        "tags": "object, delete, remove, properties, javascript"
+    },
+    {
+        "title": "Passing Objects as Function Arguments",
+        "summary": "function modify(obj) { obj.key = 'newValue'; }",
+        "description": "Objects are passed by reference in JavaScript, meaning changes inside a function persist outside.",
+        "example": "const origObj = { color: 'blue' };\nconst changeItUp = (obj) => { obj.color = 'red'; };\nchangeItUp(origObj);\nconsole.log(origObj.color); // 'red'",
+        "tags": "object, function, arguments, reference, javascript"
+    },
+    {
+        "title": "Using Object Methods in JavaScript",
+        "summary": "const obj = { method() { return 'Hello'; } };",
+        "description": "An object method is a function stored as a property inside an object.",
+        "example": "const engine = {\n  start(adverb) { console.log(`The engine starts ${adverb}...`); },\n  sputter: () => console.log('The engine sputters...')\n};\nengine.start('noisily');",
+        "tags": "object, method, function, javascript"
+    },
+    {
+        "title": "Using the 'this' Keyword in JavaScript Objects",
+        "summary": "const obj = { key: 'value', method() { return this.key; } };",
+        "description": "The 'this' keyword in an object refers to the object itself.",
+        "example": "const cat = { name: 'Pipey', age: 8, whatName() { return this.name; } };\nconsole.log(cat.whatName()); // 'Pipey'",
+        "tags": "object, this, method, properties, javascript"
+    },
+    {
+        "title": "Using Factory Functions to Create Objects",
+        "summary": "const factory = (key) => ({ key });",
+        "description": "Factory functions return new objects dynamically with specified properties.",
+        "example": "const dogFactory = (name, age, breed) => ({ name, age, breed, bark() { console.log('Woof!'); } });\nconst dog = dogFactory('Max', 3, 'Beagle');\ndog.bark();",
+        "tags": "object, factory function, constructor, javascript"
+    },
+    {
+        "title": "Using JavaScript Classes",
+        "summary": "class MyClass { constructor(prop) { this.prop = prop; } }",
+        "description": "Classes in JavaScript provide a structured way to create objects.",
+        "example": "class Song { constructor(title, artist) { this.title = title; this.artist = artist; } }\nconst mySong = new Song('Bohemian Rhapsody', 'Queen');\nconsole.log(mySong.title);",
+        "tags": "class, constructor, javascript, OOP"
+    },
+    {
+        "title": "Using Static Methods in JavaScript Classes",
+        "summary": "class MyClass { static method() { return 'Hello'; } }",
+        "description": "Static methods belong to the class itself, not instances of the class.",
+        "example": "class Dog {\n  static bark() { console.log('Woof!'); }\n}\nDog.bark();",
+        "tags": "class, static, method, javascript"
+    },
+    {
+        "title": "Using Class Methods in JavaScript",
+        "summary": "class MyClass { method() { return 'Hello'; } }",
+        "description": "Class methods define functions that operate on instances of a class.",
+        "example": "class Song { play() { console.log('Playing!'); } stop() { console.log('Stopping!'); } }\nconst mySong = new Song();\nmySong.play();",
+        "tags": "class, method, function, javascript"
+    },
+    {
+        "title": "Using Class Inheritance in JavaScript",
+        "summary": "class Child extends Parent { constructor() { super(); } }",
+        "description": "JavaScript classes support inheritance using the 'extends' keyword.",
+        "example": "class Media { constructor(info) { this.publishDate = info.publishDate; this.name = info.name; } }\nclass Song extends Media { constructor(songData) { super(songData); this.artist = songData.artist; } }\nconst mySong = new Song({ artist: 'Queen', name: 'Bohemian Rhapsody', publishDate: 1975 });",
+        "tags": "class, inheritance, extends, super, javascript"
     }
 ]

@@ -1,0 +1,471 @@
+[
+    {
+        "title": "Compiling and Running a Rust Program",
+        "summary": "rustc filename.rs && ./filename",
+        "description": "Compiles and runs a Rust program from the command line.",
+        "example": "$ rustc Hello_World.rs && ./Hello_World",
+        "tags": "rust, compile, run, execute, CLI, shell"
+    },
+    {
+        "title": "Printing Formatted Output in Rust",
+        "summary": "println!(\"{} is {}\", variable1, variable2);",
+        "description": "Prints formatted output using Rust's println! macro.",
+        "example": "println!(\"The answer is {}\", 42); // The answer is 42",
+        "tags": "rust, print, format, stdout, debugging"
+    },
+    {
+        "title": "Declaring a Variable in Rust",
+        "summary": "let variable_name = value;",
+        "description": "Declares an immutable variable in Rust.",
+        "example": "let name = \"Rust\";\nprintln!(\"Hello, {}!\", name); // Hello, Rust!",
+        "tags": "rust, variable, declare, immutable, assign"
+    },
+    {
+        "title": "Declaring a Mutable Variable in Rust",
+        "summary": "let mut variable_name = value;",
+        "description": "Declares a mutable variable in Rust that can be reassigned.",
+        "example": "let mut counter = 0;\ncounter += 1;\nprintln!(\"Counter: {}\", counter); // Counter: 1",
+        "tags": "rust, variable, mutable, update, assign"
+    },
+    {
+        "title": "Defining a Function in Rust",
+        "summary": "fn function_name() { // function body }",
+        "description": "Defines a simple function in Rust.",
+        "example": "fn greet() {\n    println!(\"Hello, Rust!\");\n}\ngreet(); // Hello, Rust!",
+        "tags": "rust, function, define, callable, fn"
+    },
+    {
+        "title": "Returning a Value from a Function in Rust",
+        "summary": "fn function_name() -> ReturnType { value }",
+        "description": "Defines a function that returns a value in Rust.",
+        "example": "fn get_number() -> i32 {\n    42\n}\nprintln!(\"The number is: {}\", get_number()); // The number is: 42",
+        "tags": "rust, function, return, value, fn"
+    },
+    {
+        "title": "Using a Constant in Rust",
+        "summary": "const CONSTANT_NAME: Type = value;",
+        "description": "Defines a constant in Rust with a fixed value.",
+        "example": "const PI: f64 = 3.14159;\nprintln!(\"Value of PI: {}\", PI); // Value of PI: 3.14159",
+        "tags": "rust, constant, define, fixed, immutable"
+    },
+    {
+        "title": "Using a Boolean in Rust",
+        "summary": "let is_true: bool = true;",
+        "description": "Declares a boolean variable in Rust.",
+        "example": "let is_rust_fun: bool = true;\nprintln!(\"Is Rust fun? {}\", is_rust_fun); // Is Rust fun? true",
+        "tags": "rust, boolean, bool, true, false"
+    },
+    {
+        "title": "Declaring an Integer Variable in Rust",
+        "summary": "let number: i32 = value;",
+        "description": "Declares an integer variable in Rust.",
+        "example": "let num: i32 = 10;\nprintln!(\"Number: {}\", num); // Number: 10",
+        "tags": "rust, integer, number, declare, i32"
+    },
+    {
+        "title": "Declaring a Floating-Point Variable in Rust",
+        "summary": "let number: f64 = value;",
+        "description": "Declares a floating-point variable in Rust.",
+        "example": "let pi: f64 = 3.14;\nprintln!(\"Pi: {}\", pi); // Pi: 3.14",
+        "tags": "rust, float, f64, number, decimal"
+    },
+    {
+        "title": "Declaring a Character Variable in Rust",
+        "summary": "let letter: char = 'A';",
+        "description": "Declares a character variable in Rust.",
+        "example": "let letter: char = 'R';\nprintln!(\"Letter: {}\", letter); // Letter: R",
+        "tags": "rust, char, character, declare, single"
+    },
+    {
+        "title": "Declaring a String Literal in Rust",
+        "summary": "let text: &str = \"value\";",
+        "description": "Declares a string literal in Rust.",
+        "example": "let greeting: &str = \"Hello\";\nprintln!(\"{}\", greeting); // Hello",
+        "tags": "rust, string, literal, declare, text"
+    },
+    {
+        "title": "Creating an Array in Rust",
+        "summary": "let array: [Type; size] = [values];",
+        "description": "Declares an array in Rust with a fixed size.",
+        "example": "let numbers: [i32; 3] = [1, 2, 3];\nprintln!(\"First number: {}\", numbers[0]); // First number: 1",
+        "tags": "rust, array, fixed, list, index"
+    },
+    {
+        "title": "Creating a Mutable Array in Rust",
+        "summary": "let mut array: [Type; size] = [values];",
+        "description": "Declares a mutable array in Rust that can be modified.",
+        "example": "let mut numbers: [i32; 3] = [1, 2, 3];\nnumbers[1] = 10;\nprintln!(\"Updated: {}\", numbers[1]); // Updated: 10",
+        "tags": "rust, array, mutable, modify, index"
+    },
+    {
+        "title": "Creating a Vector in Rust",
+        "summary": "let vector = vec![values];",
+        "description": "Declares a dynamic vector in Rust.",
+        "example": "let mut numbers = vec![1, 2, 3];\nnumbers.push(4);\nprintln!(\"Vector: {:?}\", numbers); // Vector: [1, 2, 3, 4]",
+        "tags": "rust, vector, dynamic, list, push"
+    },
+    {
+        "title": "Slicing an Array in Rust",
+        "summary": "let slice = &array[start..end];",
+        "description": "Creates a slice from an existing array in Rust.",
+        "example": "let numbers = [1, 2, 3, 4, 5];\nlet slice = &numbers[1..4];\nprintln!(\"Slice: {:?}\", slice); // Slice: [2, 3, 4]",
+        "tags": "rust, slice, array, range, subset"
+    },
+    {
+        "title": "Using a Tuple in Rust",
+        "summary": "let tuple: (Type1, Type2) = (value1, value2);",
+        "description": "Declares a tuple with multiple types in Rust.",
+        "example": "let person: (&str, i32) = (\"Alice\", 25);\nprintln!(\"Name: {}, Age: {}\", person.0, person.1); // Name: Alice, Age: 25",
+        "tags": "rust, tuple, multiple, struct, values"
+    },
+    {
+        "title": "Extracting Values from a Tuple in Rust",
+        "summary": "let (var1, var2) = tuple;",
+        "description": "Destructures a tuple into individual variables.",
+        "example": "let person = (\"Alice\", 25);\nlet (name, age) = person;\nprintln!(\"{} is {} years old\", name, age); // Alice is 25 years old",
+        "tags": "rust, tuple, destructure, extract, unpack"
+    },
+    {
+        "title": "Creating a Tuple in Rust",
+        "summary": "let tuple = (1, 'A', \"Cool\", 78, true);",
+        "description": "Defines a tuple containing multiple data types in Rust.",
+        "example": "let tuple = (1, 'A', \"Cool\", 78, true);\nprintln!(\"{:?}\", tuple); // (1, 'A', \"Cool\", 78, true)",
+        "tags": "tuple, rust, multiple values, structuring, composite types"
+    },
+    {
+        "title": "Creating a String Literal in Rust",
+        "summary": "let cs: &str = \"cheat sheet\";",
+        "description": "Defines a string literal in Rust using an immutable reference.",
+        "example": "let cs: &str = \"cheat sheet\";\nprintln!(\"Share {cs} for developers\"); // Share cheat sheet for developers",
+        "tags": "string, rust, literal, immutable, reference"
+    },
+    {
+        "title": "Creating an Empty String Object in Rust",
+        "summary": "let my_string = String::new();",
+        "description": "Initializes an empty string object in Rust.",
+        "example": "let my_string = String::new();\nprintln!(\"{}\", my_string); // Prints an empty string",
+        "tags": "string, rust, empty, initialize, new"
+    },
+    {
+        "title": "Converting a String Literal to a String Object in Rust",
+        "summary": "let S_string = a_string.to_string();",
+        "description": "Converts a string slice to a String object in Rust.",
+        "example": "let a_string = \"Hello\";\nlet S_string = a_string.to_string();\nprintln!(\"{}\", S_string); // Hello",
+        "tags": "string, rust, conversion, to_string, immutable"
+    },
+    {
+        "title": "Creating a String Object from a Literal in Rust",
+        "summary": "let lang = String::from(\"Rust\");",
+        "description": "Creates a Rust string object from a string literal.",
+        "example": "let lang = String::from(\"Rust\");\nprintln!(\"First language is {lang}\"); // First language is Rust",
+        "tags": "string, rust, from, conversion, object"
+    },
+    {
+        "title": "Checking the Capacity of a String in Rust",
+        "summary": "rand.capacity();",
+        "description": "Returns the allocated capacity (in bytes) of a Rust string.",
+        "example": "let rand = String::from(\"Random String\");\nprintln!(\"{}\", rand.capacity()); // 13",
+        "tags": "string, rust, capacity, memory, allocation"
+    },
+    {
+        "title": "Checking If a String Contains a Substring in Rust",
+        "summary": "name.contains(\"Element\");",
+        "description": "Checks whether a string contains a specified substring.",
+        "example": "let name = String::from(\"ElementalX\");\nprintln!(\"{}\", name.contains(\"Element\")); // true",
+        "tags": "string, rust, contains, search, substring"
+    },
+    {
+        "title": "Appending a Single Character to a String in Rust",
+        "summary": "half_text.push('f');",
+        "description": "Adds a single character to the end of a Rust string.",
+        "example": "let mut half_text = String::from(\"Hal\");\nhalf_text.push('f');\nprintln!(\"{}\", half_text); // Half",
+        "tags": "string, rust, push, append, character"
+    },
+    {
+        "title": "Appending a String to Another String in Rust",
+        "summary": "hi.push_str(\"How are you doing??\");",
+        "description": "Appends an entire string to another string in Rust.",
+        "example": "let mut hi = String::from(\"Hey there...\");\nhi.push_str(\"How are you doing??\");\nprintln!(\"{}\", hi); // Hey there...How are you doing??",
+        "tags": "string, rust, push_str, append, concatenate"
+    },
+    {
+        "title": "Performing Comparison Operations in Rust",
+        "summary": "let equal_to = e == f;",
+        "description": "Performs various comparison operations between two values in Rust.",
+        "example": "let (e, f) = (1, 100);\nlet greater = f > e;\nlet less = f < e;\nlet greater_equal = f >= e;\nlet less_equal = e <= f;\nlet equal_to = e == f;\nlet not_equal_to = e != f;\nprintln!(\"{}\", equal_to); // false",
+        "tags": "comparison, rust, operators, greater, equal"
+    },
+    {
+        "title": "Performing Arithmetic Operations in Rust",
+        "summary": "let sum: i32 = a + b;",
+        "description": "Performs basic arithmetic operations on integers in Rust.",
+        "example": "let (a, b) = (4, 5);\nlet sum: i32 = a + b;\nlet subtraction: i32 = a - b;\nlet multiplication: i32 = a * b;\nlet division: i32 = a / b;\nlet modulus: i32 = a % b;\nprintln!(\"{}\", sum); // 9",
+        "tags": "arithmetic, rust, addition, subtraction, multiplication, division"
+    },
+    {
+        "title": "Performing Bitwise Operations in Rust",
+        "summary": "let bitwise_and = g & h;",
+        "description": "Performs bitwise operations such as AND, OR, XOR, and shifts.",
+        "example": "let (g, h) = (0x1, 0x2);\nlet bitwise_and = g & h;\nlet bitwise_or = g | h;\nlet bitwise_xor = g ^ h;\nlet right_shift = g >> 2;\nlet left_shift = h << 4;\nprintln!(\"{}\", bitwise_and); // 0",
+        "tags": "bitwise, rust, and, or, xor, shift"
+    },
+    {
+        "title": "Performing Logical Operations in Rust",
+        "summary": "let and = c && d;",
+        "description": "Performs logical operations (AND, OR, NOT) on boolean values.",
+        "example": "let (c, d) = (true, false);\nlet and = c && d;\nlet or = c || d;\nlet not = !c;\nprintln!(\"{}\", or); // true",
+        "tags": "logical, rust, boolean, and, or, not"
+    },
+    {
+        "title": "Using Compound Assignment Operators in Rust",
+        "summary": "k += l;",
+        "description": "Demonstrates compound assignment operators in Rust.",
+        "example": "let mut k = 9;\nlet mut l = k;\nk += l;\nk -= l;\nk /= l;\nk *= l;\nk |= l;\nprintln!(\"{}\", k); // 9",
+        "tags": "assignment, rust, compound, operators, arithmetic"
+    },
+    {
+        "title": "Creating a Tuple in Rust",
+        "summary": "let tuple = (1, 'A', \"Cool\", 78, true);",
+        "description": "Defines a tuple containing multiple data types in Rust.",
+        "example": "let tuple = (1, 'A', \"Cool\", 78, true);\nprintln!(\"{:?}\", tuple); // (1, 'A', \"Cool\", 78, true)",
+        "tags": "tuple, rust, multiple values, structuring, composite types"
+    },
+    {
+        "title": "Creating a String Literal in Rust",
+        "summary": "let cs: &str = \"cheat sheet\";",
+        "description": "Defines a string literal in Rust using an immutable reference.",
+        "example": "let cs: &str = \"cheat sheet\";\nprintln!(\"Share {cs} for developers\"); // Share cheat sheet for developers",
+        "tags": "string, rust, literal, immutable, reference"
+    },
+    {
+        "title": "Creating an Empty String Object in Rust",
+        "summary": "let my_string = String::new();",
+        "description": "Initializes an empty string object in Rust.",
+        "example": "let my_string = String::new();\nprintln!(\"{}\", my_string); // Prints an empty string",
+        "tags": "string, rust, empty, initialize, new"
+    },
+    {
+        "title": "Converting a String Literal to a String Object in Rust",
+        "summary": "let S_string = a_string.to_string();",
+        "description": "Converts a string slice to a String object in Rust.",
+        "example": "let a_string = \"Hello\";\nlet S_string = a_string.to_string();\nprintln!(\"{}\", S_string); // Hello",
+        "tags": "string, rust, conversion, to_string, immutable"
+    },
+    {
+        "title": "Creating a String Object from a Literal in Rust",
+        "summary": "let lang = String::from(\"Rust\");",
+        "description": "Creates a Rust string object from a string literal.",
+        "example": "let lang = String::from(\"Rust\");\nprintln!(\"First language is {lang}\"); // First language is Rust",
+        "tags": "string, rust, from, conversion, object"
+    },
+    {
+        "title": "Checking the Capacity of a String in Rust",
+        "summary": "rand.capacity();",
+        "description": "Returns the allocated capacity (in bytes) of a Rust string.",
+        "example": "let rand = String::from(\"Random String\");\nprintln!(\"{}\", rand.capacity()); // 13",
+        "tags": "string, rust, capacity, memory, allocation"
+    },
+    {
+        "title": "Checking If a String Contains a Substring in Rust",
+        "summary": "name.contains(\"Element\");",
+        "description": "Checks whether a string contains a specified substring.",
+        "example": "let name = String::from(\"ElementalX\");\nprintln!(\"{}\", name.contains(\"Element\")); // true",
+        "tags": "string, rust, contains, search, substring"
+    },
+    {
+        "title": "Appending a Single Character to a String in Rust",
+        "summary": "half_text.push('f');",
+        "description": "Adds a single character to the end of a Rust string.",
+        "example": "let mut half_text = String::from(\"Hal\");\nhalf_text.push('f');\nprintln!(\"{}\", half_text); // Half",
+        "tags": "string, rust, push, append, character"
+    },
+    {
+        "title": "Appending a String to Another String in Rust",
+        "summary": "hi.push_str(\"How are you doing??\");",
+        "description": "Appends an entire string to another string in Rust.",
+        "example": "let mut hi = String::from(\"Hey there...\");\nhi.push_str(\"How are you doing??\");\nprintln!(\"{}\", hi); // Hey there...How are you doing??",
+        "tags": "string, rust, push_str, append, concatenate"
+    },
+    {
+        "title": "Performing Comparison Operations in Rust",
+        "summary": "let equal_to = e == f;",
+        "description": "Performs various comparison operations between two values in Rust.",
+        "example": "let (e, f) = (1, 100);\nlet greater = f > e;\nlet less = f < e;\nlet greater_equal = f >= e;\nlet less_equal = e <= f;\nlet equal_to = e == f;\nlet not_equal_to = e != f;\nprintln!(\"{}\", equal_to); // false",
+        "tags": "comparison, rust, operators, greater, equal"
+    },
+    {
+        "title": "Performing Arithmetic Operations in Rust",
+        "summary": "let sum: i32 = a + b;",
+        "description": "Performs basic arithmetic operations on integers in Rust.",
+        "example": "let (a, b) = (4, 5);\nlet sum: i32 = a + b;\nlet subtraction: i32 = a - b;\nlet multiplication: i32 = a * b;\nlet division: i32 = a / b;\nlet modulus: i32 = a % b;\nprintln!(\"{}\", sum); // 9",
+        "tags": "arithmetic, rust, addition, subtraction, multiplication, division"
+    },
+    {
+        "title": "Performing Bitwise Operations in Rust",
+        "summary": "let bitwise_and = g & h;",
+        "description": "Performs bitwise operations such as AND, OR, XOR, and shifts.",
+        "example": "let (g, h) = (0x1, 0x2);\nlet bitwise_and = g & h;\nlet bitwise_or = g | h;\nlet bitwise_xor = g ^ h;\nlet right_shift = g >> 2;\nlet left_shift = h << 4;\nprintln!(\"{}\", bitwise_and); // 0",
+        "tags": "bitwise, rust, and, or, xor, shift"
+    },
+    {
+        "title": "Performing Logical Operations in Rust",
+        "summary": "let and = c && d;",
+        "description": "Performs logical operations (AND, OR, NOT) on boolean values.",
+        "example": "let (c, d) = (true, false);\nlet and = c && d;\nlet or = c || d;\nlet not = !c;\nprintln!(\"{}\", or); // true",
+        "tags": "logical, rust, boolean, and, or, not"
+    },
+    {
+        "title": "Using Compound Assignment Operators in Rust",
+        "summary": "k += l;",
+        "description": "Demonstrates compound assignment operators in Rust.",
+        "example": "let mut k = 9;\nlet mut l = k;\nk += l;\nk -= l;\nk /= l;\nk *= l;\nk |= l;\nprintln!(\"{}\", k); // 9",
+        "tags": "assignment, rust, compound, operators, arithmetic"
+    },
+    {
+        "title": "Using an If Expression in Rust",
+        "summary": "if condition { /* code */ }",
+        "description": "Executes a block of code only if the given condition evaluates to true.",
+        "example": "let case1: i32 = 81;\nlet case2: i32 = 82;\n\nif case1 < case2 {\n  println!(\"case1 is greater than case2\");\n}",
+        "tags": "rust, if statement, condition, flow control"
+    },
+    {
+        "title": "Using an If...Else Expression in Rust",
+        "summary": "if condition { /* code */ } else { /* code */ }",
+        "description": "Executes one block of code if the condition is true and another if it is false.",
+        "example": "let case3 = 8;\nlet case4 = 9;\n\nif case3 >= case4 {\n    println!(\"case3 is better than case4\");\n} else {\n    println!(\"case4 is greater than case3\");\n}",
+        "tags": "rust, if else, branching, flow control"
+    },
+    {
+        "title": "Using an If...Else If...Else Expression in Rust",
+        "summary": "if condition1 { /* code */ } else if condition2 { /* code */ } else { /* code */ }",
+        "description": "Allows multiple conditions to be checked sequentially, executing the first true branch.",
+        "example": "let foo = 12;\nlet bar = 13;\n\nif foo == bar {\n    println!(\"foo is equal to bar\");\n} else if foo < bar {\n    println!(\"foo less than bar\");\n} else if foo != bar {\n    println!(\"foo is not equal to bar\");\n} else {\n    println!(\"Nothing\");\n}",
+        "tags": "rust, if else, multiple conditions, branching"
+    },
+    {
+        "title": "Using If Let Expression in Rust",
+        "summary": "if let pattern = value { /* code */ }",
+        "description": "Matches a value against a pattern and executes the block only if the match succeeds.",
+        "example": "let mut arr1: [i64; 3] = [1, 2, 3];\nif let [1, 2, _] = arr1 {\n    println!(\"Works with array\");\n}\n\nlet tuple_1 = (\"India\", 7, 90, 90.432);\nif let (_, 7, 9, 78.99) = tuple_1 {\n    println!(\"Works with tuples too\");\n}",
+        "tags": "rust, if let, pattern matching, flow control"
+    },
+    {
+        "title": "Using a Match Expression in Rust",
+        "summary": "match value { pattern1 => { /* code */ }, pattern2 => { /* code */ }, _ => { /* default code */ } }",
+        "description": "Compares a value against multiple patterns and executes the corresponding block.",
+        "example": "let day_of_week = 2;\nmatch day_of_week {\n    1 => { println!(\"It's Monday my dudes\"); }\n    2 => { println!(\"It's Tuesday my dudes\"); }\n    3 => { println!(\"It's Wednesday my dudes\"); }\n    4 => { println!(\"It's Thursday my dudes\"); }\n    5 => { println!(\"It's Friday my dudes\"); }\n    6 => { println!(\"It's Saturday my dudes\"); }\n    7 => { println!(\"It's Sunday my dudes\"); }\n    _ => { println!(\"Default!\"); }\n};",
+        "tags": "rust, match, pattern matching, switch case, branching"
+    },
+    {
+        "title": "Using a Nested If Expression in Rust",
+        "summary": "if condition1 { if condition2 { /* code */ } }",
+        "description": "Allows conditions to be nested within each other, checking multiple levels.",
+        "example": "let nested_conditions = 89;\nif nested_conditions == 89 {\n    let just_a_value = 98;\n    if just_a_value >= 97 {\n        println!(\"Greater than 97\");\n    }\n}",
+        "tags": "rust, nested if, conditional logic, flow control"
+    },
+    {
+        "title": "Using a For Loop in Rust",
+        "summary": "for variable in range { /* code */ }",
+        "description": "Iterates over a range of values, executing the block for each value.",
+        "example": "for mut i in 0..15 {\n    i -= 1;\n    println!(\"The value of i is : {i}\");\n}",
+        "tags": "rust, for loop, iteration, loop"
+    },
+    {
+        "title": "Using a While Loop in Rust",
+        "summary": "while condition { /* code */ }",
+        "description": "Executes a block repeatedly while the given condition remains true.",
+        "example": "let mut check = 0;\nwhile check < 11 {\n    println!(\"Check is : {check}\");\n    check += 1;\n    println!(\"After incrementing: {check}\");\n    if check == 10 {\n        break; // stop while\n    }\n}",
+        "tags": "rust, while loop, iteration, loop"
+    },
+    {
+        "title": "Using the Loop Keyword in Rust",
+        "summary": "loop { /* code */ }",
+        "description": "Creates an infinite loop that runs until explicitly broken.",
+        "example": "loop {\n    println!(\"hello world forever!\");\n}",
+        "tags": "rust, loop, infinite loop, flow control"
+    },
+    {
+        "title": "Using the Break Statement in a Loop",
+        "summary": "if condition { break; }",
+        "description": "Demonstrates the use of the `break` statement to exit a loop when a condition is met.",
+        "example": "let mut i = 1;\nloop {\n    println!(\"i is {i}\");\n    if i > 100 {\n        break;\n    }\n    i *= 2;\n}",
+        "tags": "rust, loop, break, control flow"
+    },
+    {
+        "title": "Using the Continue Statement in a Loop",
+        "summary": "if condition { continue; }",
+        "description": "Demonstrates the use of the `continue` statement to skip the current iteration in a loop.",
+        "example": "for (v, c) in (0..10 + 1).enumerate() {\n    println!(\"The {c} number loop\");\n    if v == 9 {\n        println!(\"Here we go continue?\");\n        continue;\n    }\n    println!(\"The value of v is : {v}\");\n}",
+        "tags": "rust, loop, continue, control flow"
+    },
+    {
+        "title": "Defining a Basic Function",
+        "summary": "fn function_name() { /* code */ }",
+        "description": "Demonstrates how to define and call a basic function in Rust.",
+        "example": "fn print_message() {\n    println!(\"Hello, CheatSheets.zip!\");\n}\n\nfn main() {\n    print_message();\n}",
+        "tags": "rust, function, definition, call"
+    },
+    {
+        "title": "Passing Arguments by Value",
+        "summary": "fn function_name(param: Type) -> ReturnType { param }",
+        "description": "Shows how to pass arguments by value in Rust functions.",
+        "example": "fn cal_rect(x: u32, y: u32) -> u32 {\n    x * y\n}\n\nfn main() {\n    let result = cal_rect(10, 20);\n    println!(\"Calc: {}\", result);\n}",
+        "tags": "rust, function, arguments, pass by value"
+    },
+    {
+        "title": "Passing Arguments by Reference",
+        "summary": "fn function_name(param: &mut Type) { *param = value; }",
+        "description": "Demonstrates how to pass arguments by reference to modify values.",
+        "example": "fn power_of_three(by_ref: &mut i32) {\n    *by_ref = *by_ref * *by_ref;\n}\n\nfn main() {\n    let mut num = 3;\n    power_of_three(&mut num);\n    println!(\"{}\", num);\n}",
+        "tags": "rust, function, pass by reference, borrowing"
+    },
+    {
+        "title": "Returning Multiple Values from a Function",
+        "summary": "fn function_name() -> (Type, Type) { (val1, val2) }",
+        "description": "Shows how to return multiple values from a function using tuples.",
+        "example": "fn calculate(radius: &mut f64, pi: &mut f64) -> (f64, f64) {\n    let perimeter = 2.0 * *pi * *radius;\n    let area = *pi * *radius * *radius;\n    (area, perimeter)\n}\n\nfn main() {\n    let (mut radius, mut pi) = (3.0, 3.14);\n    let (area, perimeter) = calculate(&mut radius, &mut pi);\n    println!(\"Area: {area}, Perimeter: {perimeter}\");\n}",
+        "tags": "rust, function, return, multiple values"
+    },
+    {
+        "title": "Passing an Array as a Function Argument",
+        "summary": "fn function_name(array: [Type; SIZE]) { /* code */ }",
+        "description": "Shows how to pass an array as an argument to a function in Rust.",
+        "example": "fn print_arrays(mut array: [i32; 5]) {\n    array[0] = 89;\n    println!(\"The elements: {:?}\", array);\n}\n\nfn main() {\n    let array = [1, 2, 3, 4, 6];\n    print_arrays(array);\n}",
+        "tags": "rust, function, array, pass array"
+    },
+    {
+        "title": "Returning an Array from a Function",
+        "summary": "fn function_name() -> [Type; SIZE] { array }",
+        "description": "Demonstrates how to return an array from a function in Rust.",
+        "example": "fn multiply(mut arr: [i32; 5]) -> [i32; 5] {\n    arr[2] = 90;\n    for i in 0..5 {\n        arr[i] *= arr[2];\n    }\n    arr\n}\n\nfn main() {\n    let arr = [2, 4, 6, 8, 10];\n    let result = multiply(arr);\n    println!(\"Array: {:?}\", result);\n}",
+        "tags": "rust, function, return array, modify array"
+    },
+    {
+        "title": "Performing Type Casting",
+        "summary": "let new_var: NewType = old_var as NewType;",
+        "description": "Demonstrates how to perform type casting in Rust using the `as` keyword.",
+        "example": "let a_int = 90;\nlet type_cast = a_int as f64;",
+        "tags": "rust, type casting, conversion, as keyword"
+    },
+    {
+        "title": "Borrowing a Variable",
+        "summary": "let borrowed_var = &var;",
+        "description": "Shows how to borrow a variable in Rust using the `&` operator.",
+        "example": "let foo = 4;\nlet borrowed_foo = &foo;\nprintln!(\"{}\", borrowed_foo);",
+        "tags": "rust, borrowing, reference, ownership"
+    },
+    {
+        "title": "Dereferencing a Pointer",
+        "summary": "let value = *pointer;",
+        "description": "Demonstrates how to dereference a pointer using the `*` operator in Rust.",
+        "example": "let mut borrow = 10;\nlet deref = &mut borrow;\nprintln!(\"{}\", *deref);",
+        "tags": "rust, dereferencing, pointer, reference"
+    },
+    {
+        "title": "Understanding Variable Scope",
+        "summary": "{ let var = value; } // scoped variable",
+        "description": "Illustrates how variables are scoped in Rust and how they are not accessible outside their block.",
+        "example": "{\n    let a_number = 1;\n}\nprintln!(\"{}\", a_number); // Error: a_number is out of scope",
+        "tags": "rust, variable scope, ownership, lifetime"
+    }
+]

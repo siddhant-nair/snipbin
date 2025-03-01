@@ -1,0 +1,359 @@
+[
+    {
+        "title": "Printing Output to Console in Go",
+        "summary": "fmt.Println(value)",
+        "description": "Prints a value to the console using Go.",
+        "example": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, world!\")\n}",
+        "tags": "go, golang, print, console, output"
+    },
+    {
+        "title": "Declaring Variables in Go",
+        "summary": "var name type = value",
+        "description": "Declares a variable in Go using explicit or inferred types.",
+        "example": "var s string = \"Go\"\nvar a, b int = 1, 2\nvar flag = true\nc := \"Short declaration\"\nnum := 10",
+        "tags": "go, golang, variables, declare, types"
+    },
+    {
+        "title": "Defining and Calling a Function in Go",
+        "summary": "func functionName(parameters) returnType {}",
+        "description": "Defines a function in Go and calls it.",
+        "example": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    say(\"Hello!\")\n}\n\nfunc say(message string) {\n    fmt.Println(\"Message:\", message)\n}",
+        "tags": "go, golang, functions, define, call"
+    },
+    {
+        "title": "Writing Comments in Go",
+        "summary": "// Single-line comment",
+        "description": "Uses comments in Go to describe code.",
+        "example": "// This is a single-line comment\n/* This is a\nmulti-line comment */",
+        "tags": "go, golang, comments, documentation, readability"
+    },
+    {
+        "title": "Using an If Statement in Go",
+        "summary": "if condition {}",
+        "description": "Executes a block of code if a condition is true.",
+        "example": "if x > 5 {\n    fmt.Println(\"Greater than 5\")\n}",
+        "tags": "go, golang, if statement, condition, logic"
+    },
+    {
+        "title": "Working with Strings in Go",
+        "summary": "str := string1 + string2",
+        "description": "Performs string operations such as concatenation and slicing.",
+        "example": "s1 := \"Hello\" + \" World\"\ns2 := `Multiline\nString`\nfmt.Println(len(s1))\nfmt.Println(s1[0:5])",
+        "tags": "go, golang, strings, concatenate, substring"
+    },
+    {
+        "title": "Declaring Numeric Variables in Go",
+        "summary": "num := value",
+        "description": "Declares different numeric types in Go.",
+        "example": "num := 10       // int\nnum := 3.14     // float64\nnum := 2 + 3i   // complex128",
+        "tags": "go, golang, numbers, integer, float, complex"
+    },
+    {
+        "title": "Using Boolean Operators in Go",
+        "summary": "result := condition1 && condition2",
+        "description": "Performs logical operations using AND, OR, and NOT.",
+        "example": "fmt.Println(true && false)\nfmt.Println(true || false)\nfmt.Println(!true)",
+        "tags": "go, golang, boolean, logical operators, conditions"
+    },
+    {
+        "title": "Declaring and Accessing an Array in Go",
+        "summary": "arr := [...]type{values}",
+        "description": "Declares and accesses elements of an array in Go.",
+        "example": "arr := [...]int{1, 2, 3, 4, 5}\nfmt.Println(len(arr))\nfmt.Println(arr[0:3])",
+        "tags": "go, golang, arrays, indexing, length"
+    },
+    {
+        "title": "Creating a 2D Array in Go",
+        "summary": "var matrix [rows][cols]type",
+        "description": "Declares and initializes a two-dimensional array.",
+        "example": "var matrix [2][3]int\nmatrix[0][1] = 5\nfmt.Println(matrix)",
+        "tags": "go, golang, 2d array, matrix, nested loop"
+    },
+    {
+        "title": "Using Pointers in Go",
+        "summary": "var ptr *type = &variable",
+        "description": "Demonstrates how to use pointers to reference memory locations.",
+        "example": "func getPointer() *int {\n    value := 10\n    return &value\n}\n\nfunc main() {\n    p := getPointer()\n    fmt.Println(*p)\n}",
+        "tags": "go, golang, pointers, memory, references"
+    },
+    {
+        "title": "Creating and Modifying a Slice in Go",
+        "summary": "slice := make([]type, size)",
+        "description": "Declares a slice and modifies it using append.",
+        "example": "slice := make([]int, 3)\nslice[0] = 1\nslice = append(slice, 4, 5)\nfmt.Println(slice)",
+        "tags": "go, golang, slice, append, indexing"
+    },
+    {
+        "title": "Declaring a Constant in Go",
+        "summary": "const name type = value",
+        "description": "Defines a constant value in Go that cannot be changed.",
+        "example": "const s string = \"constant\"\nconst n = 500000000\nconst d = 3e20 / n\nfmt.Println(d)",
+        "tags": "go, golang, constant, declare, immutable"
+    },
+    {
+        "title": "Converting a Variable Between Types in Go",
+        "summary": "converted := type(variable)",
+        "description": "Converts a variable from one type to another in Go.",
+        "example": "i := 90\nf := float64(i)\nu := uint(i)\ns := string(i) // Converts to character 'Z'",
+        "tags": "go, golang, type conversion, cast, convert"
+    },
+    {
+        "title": "Converting an Integer to a String in Go",
+        "summary": "str := strconv.Itoa(integer)",
+        "description": "Converts an integer to a string using strconv package.",
+        "example": "import \"strconv\"\ni := 90\ns := strconv.Itoa(i)\nfmt.Println(s) // Outputs: \"90\"",
+        "tags": "go, golang, int to string, conversion, strconv"
+    },
+    {
+        "title": "Checking If a String Contains a Substring in Go",
+        "summary": "exists := strings.Contains(string, substring)",
+        "description": "Checks whether a string contains a specific substring.",
+        "example": "import \"strings\"\nresult := strings.Contains(\"test\", \"es\")\nfmt.Println(result) // Outputs: true",
+        "tags": "go, golang, string, contains, substring, check"
+    },
+    {
+        "title": "Getting the Length of a String in Go",
+        "summary": "length := len(string)",
+        "description": "Finds the number of characters in a string.",
+        "example": "length := len(\"hello\")\nfmt.Println(length) // Outputs: 5",
+        "tags": "go, golang, string, length, count, characters"
+    },
+    {
+        "title": "Formatting Output in Go",
+        "summary": "fmt.Printf(format, values)",
+        "description": "Formats and prints values using fmt.Printf.",
+        "example": "fmt.Printf(\"%d %s %f\\n\", 123, \"text\", 3.14)",
+        "tags": "go, golang, printf, format, print, output"
+    },
+    {
+        "title": "Using an If-Else Statement in Go",
+        "summary": "if condition {} else {}",
+        "description": "Executes different code blocks based on a condition.",
+        "example": "a := 10\nif a > 20 {\n    fmt.Println(\">\")\n} else if a < 20 {\n    fmt.Println(\"<\")\n} else {\n    fmt.Println(\"=\")\n}",
+        "tags": "go, golang, if, else, condition, logic"
+    },
+    {
+        "title": "Using a Switch Statement in Go",
+        "summary": "switch variable { case value: }",
+        "description": "Executes different blocks of code based on a switch condition.",
+        "example": "x := 42.0\nswitch x {\ncase 0:\ncase 1, 2:\n    fmt.Println(\"Multiple matches\")\ncase 42:\n    fmt.Println(\"reached\")\ndefault:\n    fmt.Println(\"Optional\")\n}",
+        "tags": "go, golang, switch, case, condition, flow control"
+    },
+    {
+        "title": "Iterating with a For Loop in Go",
+        "summary": "for i := start; i < end; i++ {}",
+        "description": "Loops through a range of values using a for loop.",
+        "example": "for i := 0; i <= 10; i++ {\n    fmt.Println(\"i:\", i)\n}",
+        "tags": "go, golang, for loop, iterate, loop"
+    },
+    {
+        "title": "Iterating Over a Slice Using For-Range in Go",
+        "summary": "for index, value := range slice {}",
+        "description": "Loops through elements of a slice using for-range.",
+        "example": "nums := []int{2, 3, 4}\nsum := 0\nfor _, num := range nums {\n    sum += num\n}\nfmt.Println(\"sum:\", sum)",
+        "tags": "go, golang, for range, iterate, loop, slice"
+    },
+    {
+        "title": "Simulating a While Loop Using For in Go",
+        "summary": "for condition {}",
+        "description": "Uses a for loop to simulate a while loop in Go.",
+        "example": "i := 1\nfor i <= 3 {\n    fmt.Println(i)\n    i++\n}",
+        "tags": "go, golang, while loop, for loop, iteration"
+    },
+    {
+        "title": "Skipping Iterations in a Loop Using Continue in Go",
+        "summary": "for i := 0; i < n; i++ { if condition { continue }; /* logic */ }",
+        "description": "Uses the 'continue' keyword to skip specific iterations in a loop.",
+        "example": "for i := 0; i < 10; i++ {\n    if i%2 == 0 {\n        continue\n    }\n    fmt.Println(i) // Outputs: 1, 3, 5, 7, 9\n}",
+        "tags": "loop, continue, iteration, skip, Go"
+    },
+    {
+        "title": "Breaking Out of a Loop in Go",
+        "summary": "for { /* logic */ if condition { break } }",
+        "description": "Uses the 'break' keyword to exit a loop when a condition is met.",
+        "example": "for i := 0; i < 10; i++ {\n    if i == 5 {\n        break\n    }\n    fmt.Println(i) // Outputs: 0, 1, 2, 3, 4\n}",
+        "tags": "loop, break, exit, condition, Go"
+    },
+    {
+        "title": "Defining a Struct in Go",
+        "summary": "type StructName struct { Field1 Type1; Field2 Type2 }",
+        "description": "Defines a struct with named fields of different types.",
+        "example": "type Person struct {\n    Name string\n    Age  int\n}\np := Person{Name: \"Alice\", Age: 30}\nfmt.Println(p.Name, p.Age) // Outputs: Alice 30",
+        "tags": "struct, definition, fields, Go"
+    },
+    {
+        "title": "Creating and Modifying a Map in Go",
+        "summary": "m := map[KeyType]ValueType{\"key\": value}; m[\"key\"] = newValue",
+        "description": "Creates a map and modifies its values.",
+        "example": "m := map[string]int{\"apple\": 5, \"banana\": 3}\nm[\"banana\"] = 10\nfmt.Println(m) // Outputs: map[apple:5 banana:10]",
+        "tags": "map, create, modify, keys, values, Go"
+    },
+    {
+        "title": "Checking If a Key Exists in a Map in Go",
+        "summary": "_, exists := m[\"key\"]",
+        "description": "Checks if a key exists in a map using the second return value.",
+        "example": "m := map[string]int{\"apple\": 5}\n_, exists := m[\"banana\"]\nfmt.Println(exists) // Outputs: false",
+        "tags": "map, key, exists, check, Go"
+    },
+    {
+        "title": "Creating a Pointer to a Struct in Go",
+        "summary": "p := &StructName{Field1: value1, Field2: value2}",
+        "description": "Creates a pointer to a struct and modifies its fields.",
+        "example": "type Point struct {\n    X, Y int\n}\np := &Point{1, 2}\np.X = 5\nfmt.Println(p.X, p.Y) // Outputs: 5 2",
+        "tags": "pointer, struct, reference, modify, Go"
+    },
+    {
+        "title": "Declaring a Function with Multiple Parameters in Go",
+        "summary": "func FunctionName(param1 Type1, param2 Type2) ReturnType { return value }",
+        "description": "Defines a function with multiple parameters and a return value.",
+        "example": "func add(a int, b int) int {\n    return a + b\n}\nfmt.Println(add(3, 4)) // Outputs: 7",
+        "tags": "function, parameters, return, Go"
+    },
+    {
+        "title": "Returning Multiple Values from a Function in Go",
+        "summary": "func FunctionName() (Type1, Type2) { return value1, value2 }",
+        "description": "Defines a function that returns multiple values.",
+        "example": "func coordinates() (int, int) {\n    return 10, 20\n}\nx, y := coordinates()\nfmt.Println(x, y) // Outputs: 10 20",
+        "tags": "function, return, multiple, values, Go"
+    },
+    {
+        "title": "Using Variadic Functions in Go",
+        "summary": "func FunctionName(params ...Type) { /* logic */ }",
+        "description": "Creates a function that takes a variable number of arguments.",
+        "example": "func sum(nums ...int) {\n    total := 0\n    for _, num := range nums {\n        total += num\n    }\n    fmt.Println(total)\n}\nsum(1, 2, 3) // Outputs: 6",
+        "tags": "function, variadic, arguments, Go"
+    },
+    {
+        "title": "Assigning an Anonymous Function to a Variable in Go",
+        "summary": "varName := func(params) ReturnType { return value }",
+        "description": "Stores an anonymous function in a variable and calls it.",
+        "example": "add := func(a, b int) int {\n    return a + b\n}\nfmt.Println(add(3, 4)) // Outputs: 7",
+        "tags": "function, anonymous, assign, variable, Go"
+    },
+    {
+        "title": "Creating a Closure in Go",
+        "summary": "func scope() func() int { outer_var := 2; return func() int { return outer_var } }",
+        "description": "Defines a closure in Go, where an inner function retains access to a variable from an enclosing function.",
+        "example": "func scope() func() int {\n    outer_var := 2\n    return func() int { return outer_var }\n}\nfmt.Println(scope()()) // Output: 2",
+        "tags": "closure, function, scope, retain, go"
+    },
+    {
+        "title": "Modifying an Outer Variable in a Closure",
+        "summary": "func outer() (func() int, int) { outer_var := 2; inner := func() int { outer_var += 99; return outer_var }; inner(); return inner, outer_var }",
+        "description": "Shows how a closure can modify an outer variable and how the state persists between function calls.",
+        "example": "func outer() (func() int, int) {\n    outer_var := 2\n    inner := func() int {\n        outer_var += 99\n        return outer_var\n    }\n    inner()\n    return inner, outer_var\n}\ninner, val := outer()\nfmt.Println(inner()) // Output: 200\nfmt.Println(val)     // Output: 101",
+        "tags": "closure, function, state, modify, go"
+    },
+    {
+        "title": "Importing Packages in Go",
+        "summary": "import \"fmt\"\nimport \"math/rand\"",
+        "description": "Imports standard Go packages individually or using grouped syntax.",
+        "example": "import (\n    \"fmt\"        // gives fmt.Println\n    \"math/rand\"  // gives rand.Intn\n)\nfmt.Println(rand.Intn(100))",
+        "tags": "import, package, standard, go"
+    },
+    {
+        "title": "Using Aliases for Imports in Go",
+        "summary": "import r \"math/rand\"",
+        "description": "Defines an alias for an imported package, making it easier to reference in the code.",
+        "example": "import (\n    \"fmt\"\n    r \"math/rand\"\n)\nfmt.Println(r.Intn(100))",
+        "tags": "import, alias, package, rename, go"
+    },
+    {
+        "title": "Declaring a Package in Go",
+        "summary": "package main",
+        "description": "Defines a package in Go. The `main` package is required for executable programs.",
+        "example": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "tags": "package, main, go, executable"
+    },
+    {
+        "title": "Exporting Functions in Go",
+        "summary": "func Hello() { ... }",
+        "description": "Functions that start with a capital letter are exported and can be used in other packages.",
+        "example": "package greetings\n\nfunc Hello() {\n    fmt.Println(\"Hello from the greetings package!\")\n}",
+        "tags": "export, function, capital, go"
+    },
+    {
+        "title": "Creating a Goroutine in Go",
+        "summary": "go func() { fmt.Println(\"Hello, Goroutine!\") }()",
+        "description": "Runs a function concurrently as a goroutine.",
+        "example": "package main\n\nimport (\n    \"fmt\"\n    \"time\"\n)\n\nfunc f(from string) {\n    for i := 0; i < 3; i++ {\n        fmt.Println(from, \":\", i)\n    }\n}\n\nfunc main() {\n    go f(\"goroutine\")\n    time.Sleep(time.Second)\n    fmt.Println(\"done\")\n}",
+        "tags": "goroutine, concurrency, async, go"
+    },
+    {
+        "title": "Using a WaitGroup in Go",
+        "summary": "var wg sync.WaitGroup; wg.Add(1); go func() { defer wg.Done(); fmt.Println(\"Task complete\") }(); wg.Wait()",
+        "description": "Synchronizes goroutines using `sync.WaitGroup`, ensuring all tasks finish before proceeding.",
+        "example": "package main\n\nimport (\n    \"fmt\"\n    \"sync\"\n    \"time\"\n)\n\nfunc w(id int, wg *sync.WaitGroup) {\n    defer wg.Done()\n    fmt.Printf(\"%d starting\\n\", id)\n    time.Sleep(time.Second)\n    fmt.Printf(\"%d done\\n\", id)\n}\n\nfunc main() {\n    var wg sync.WaitGroup\n    for i := 1; i <= 5; i++ {\n        wg.Add(1)\n        go w(i, &wg)\n    }\n    wg.Wait()\n}",
+        "tags": "goroutine, concurrency, waitgroup, sync, go"
+    },
+    {
+        "title": "Closing a Channel in Go",
+        "summary": "close(ch)",
+        "description": "Closes a channel to signal that no more values will be sent.",
+        "example": "ch := make(chan int)\ngo func() {\n    ch <- 1\n    ch <- 2\n    ch <- 3\n    close(ch)\n}()\nfor val := range ch {\n    fmt.Println(val)\n}",
+        "tags": "channel, close, range, signal, go"
+    },
+    {
+        "title": "Using a Buffered Channel in Go",
+        "summary": "ch := make(chan int, 2); ch <- 1; ch <- 2",
+        "description": "Creates a buffered channel that allows a limited number of elements to be sent before blocking.",
+        "example": "ch := make(chan int, 2)\nch <- 1\nch <- 2\nfmt.Println(<-ch)\nfmt.Println(<-ch)",
+        "tags": "channel, buffer, blocking, go"
+    },
+    {
+        "title": "Deferring a Function Call in Go",
+        "summary": "defer fmt.Println(\"Done\")",
+        "description": "Defers the execution of a function until the surrounding function returns.",
+        "example": "func main() {\n  defer fmt.Println(\"Done\")\n  fmt.Println(\"Working...\")\n}\n// Output:\n// Working...\n// Done",
+        "tags": "go, defer, function, execution, delay"
+    },
+    {
+        "title": "Using Defer with an Anonymous Function in Go",
+        "summary": "defer func() { fmt.Println(\"Done\") }()",
+        "description": "Uses an anonymous function with defer to execute code at the end of the function scope.",
+        "example": "func main() {\n  defer func() {\n    fmt.Println(\"Done\")\n  }()\n  fmt.Println(\"Working...\")\n}\n// Output:\n// Working...\n// Done",
+        "tags": "go, defer, anonymous function, function, execution"
+    },
+    {
+        "title": "Deferring a Function with Pointer Arguments in Go",
+        "summary": "defer func(d *int64) { fmt.Printf(\"& %v Unix Sec\\n\", *d) }(&d)",
+        "description": "Demonstrates how defer interacts with pointers by capturing the final value of a variable.",
+        "example": "func main() {\n  var d = int64(0)\n  defer func(d *int64) {\n    fmt.Printf(\"& %v Unix Sec\\n\", *d)\n  }(&d)\n  fmt.Print(\"Done \")\n  d = time.Now().Unix()\n}\n// Output:\n// Done & 0 Unix Sec",
+        "tags": "go, defer, pointer, function, execution"
+    },
+    {
+        "title": "Defining and Using a Method with a Value Receiver in Go",
+        "summary": "func (v Vertex) Abs() float64 { return math.Sqrt(v.X * v.X + v.Y * v.Y) }",
+        "description": "Defines a method on a struct using a value receiver.",
+        "example": "type Vertex struct {\n  X, Y float64\n}\n\nfunc (v Vertex) Abs() float64 {\n  return math.Sqrt(v.X * v.X + v.Y * v.Y)\n}\n\nfunc main() {\n  v := Vertex{1, 2}\n  fmt.Println(v.Abs())\n}\n",
+        "tags": "go, method, struct, receiver, value receiver"
+    },
+    {
+        "title": "Using a Pointer Receiver to Modify a Struct in Go",
+        "summary": "func (v *Vertex) Scale(f float64) { v.X = v.X * f; v.Y = v.Y * f }",
+        "description": "Defines a method with a pointer receiver to modify the struct's fields.",
+        "example": "type Vertex struct {\n  X, Y float64\n}\n\nfunc (v *Vertex) Scale(f float64) {\n  v.X = v.X * f\n  v.Y = v.Y * f\n}\n\nfunc main() {\n  v := Vertex{6, 12}\n  v.Scale(0.5)\n  fmt.Println(v)\n}\n",
+        "tags": "go, method, pointer receiver, struct, modify"
+    },
+    {
+        "title": "Implementing an Interface in Go",
+        "summary": "type Shape interface { Area() float64; Perimeter() float64 }",
+        "description": "Defines an interface and implements it using a struct.",
+        "example": "type Shape interface {\n  Area() float64\n  Perimeter() float64\n}\n\ntype Rectangle struct {\n  Length, Width float64\n}\n\nfunc (r Rectangle) Area() float64 {\n  return r.Length * r.Width\n}\n\nfunc (r Rectangle) Perimeter() float64 {\n  return 2 * (r.Length + r.Width)\n}\n\nfunc main() {\n  var r Shape = Rectangle{Length: 3, Width: 4}\n  fmt.Printf(\"Type of r: %T, Area: %v, Perimeter: %v.\\n\", r, r.Area(), r.Perimeter())\n}\n",
+        "tags": "go, interface, struct, methods, implementation"
+    },
+    {
+        "title": "Using Generics in Go to Find the Maximum Value",
+        "summary": "func Max[T comparable](a, b T) T { if a > b { return a }; return b }",
+        "description": "Defines a generic function that returns the maximum of two comparable values.",
+        "example": "type comparable interface {\n  int | float64 | string\n}\n\nfunc Max[T comparable](a, b T) T {\n  if a > b {\n    return a\n  }\n  return b\n}\n\nfunc main() {\n  fmt.Println(\"Max integer:\", Max(10, 20))\n  fmt.Println(\"Max float:\", Max(3.14, 2.71))\n  fmt.Println(\"Max string:\", Max(\"apple\", \"banana\"))\n}\n",
+        "tags": "go, generics, max, comparable, function"
+    },
+    {
+        "title": "Using Generics to Define a Struct with Multiple Types in Go",
+        "summary": "type Pair[T, U any] struct { First T; Second U }",
+        "description": "Defines a generic struct that can hold a pair of values of different types.",
+        "example": "type Pair[T, U any] struct {\n  First  T\n  Second U\n}\n\nfunc main() {\n  pair := Pair[int, string]{First: 42, Second: \"hello\"}\n\n  fmt.Println(\"First:\", pair.First)\n  fmt.Println(\"Second:\", pair.Second)\n  fmt.Println(\"Type of First:\", reflect.TypeOf(pair.First))\n  fmt.Println(\"Type of Second:\", reflect.TypeOf(pair.Second))\n}\n",
+        "tags": "go, generics, struct, types, pair"
+    }
+]

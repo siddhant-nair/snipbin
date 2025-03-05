@@ -36,6 +36,7 @@ export default function CodeSnippet({ codeBlock, languageId}: { codeBlock: strin
           <pre style={{fontFamily: '"DM Mono", serif', scrollbarGutter: "unset"}} 
           // !whitespace-normal break-normal
             className="
+            preview-code
             whitespace-pre break-words overflow-x-scroll py-4">
             {tokens.map((line, i) => (
               <div key={i}>

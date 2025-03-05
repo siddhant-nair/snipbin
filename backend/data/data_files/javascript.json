@@ -1,115 +1,122 @@
 [
     {
-        "title": "Logging Messages to the Console",
-        "summary": "console.log(message);\nconsole.warn(message);\nconsole.error(error);",
-        "description": "Prints messages to the console with different log levels: log, warn, and error.",
-        "example": "console.log('Hello world!');\nconsole.warn('hello %s', 'CheatSheets.zip');\nconsole.error(new Error('Oops!'));",
-        "tags": "console, log, debug, error, warning, message, javascript"
+        "title": "Log Output to Console",
+        "summary": "console.log(message);",
+        "description": "Prints a message to the console.",
+        "example": "console.log('Hello world!');",
+        "tags": "console, log, output, debug, print, javascript"
     },
     {
-        "title": "Declaring Numbers in JavaScript",
-        "summary": "let number = integer;\nlet price = float;",
-        "description": "Defines numbers in JavaScript as either integers or floating-point values.",
+        "title": "Log Warning to Console",
+        "summary": "console.warn(message);",
+        "description": "Prints a warning message to the console.",
+        "example": "console.warn('This is a warning!');",
+        "tags": "console, warn, warning, debug, log, javascript"
+    },
+    {
+        "title": "Log Error to Console",
+        "summary": "console.error(message);",
+        "description": "Prints an error message to the console.",
+        "example": "console.error(new Error('Something went wrong!'));",
+        "tags": "console, error, log, debug, print, javascript"
+    },
+    {
+        "title": "Declare and Initialize Numbers",
+        "summary": "let num = value;",
+        "description": "Declares and initializes a number variable.",
         "example": "let amount = 6;\nlet price = 4.99;",
-        "tags": "number, integer, float, decimal, variable, javascript"
+        "tags": "number, declare, initialize, variable, javascript"
     },
     {
-        "title": "Declaring Variables in JavaScript",
-        "summary": "let variableName = value;\nconst constantName = value;\nvar oldVariable = value;",
-        "description": "Declares variables using let, const, or var, each with different scoping rules.",
-        "example": "let x = null;\nlet name = 'Tammy';\nconst found = false;\nconsole.log(name, found, x);\nvar a;\nconsole.log(a); // undefined",
-        "tags": "variable, let, const, var, null, undefined, boolean, javascript"
+        "title": "Declare and Initialize Variables",
+        "summary": "let variableName = value;",
+        "description": "Declares and initializes variables with different data types.",
+        "example": "let x = null;\nlet name = 'Tammy';\nconst found = false;",
+        "tags": "variable, declare, initialize, let, const, javascript"
     },
     {
-        "title": "Finding the Length of a String",
+        "title": "Find Length of a String",
         "summary": "const length = string.length;",
         "description": "Gets the number of characters in a string.",
-        "example": "let text = 'Hello, World!';\nconsole.log(text.length); // 13",
-        "tags": "string, length, count, characters, javascript"
+        "example": "let single = 'Wheres my bandit hat?';\nconsole.log(single.length); // 21",
+        "tags": "string, length, size, characters, count, javascript"
     },
     {
-        "title": "Using Arithmetic Operators in JavaScript",
-        "summary": "let result = a + b;\nresult = a - b;\nresult = a * b;\nresult = a / b;\nresult = a % b;",
-        "description": "Performs arithmetic operations including addition, subtraction, multiplication, division, and modulo.",
-        "example": "let sum = 5 + 5;\nlet difference = 10 - 5;\nlet product = 5 * 10;\nlet quotient = 10 / 5;\nlet remainder = 10 % 3;",
-        "tags": "arithmetic, addition, subtraction, multiplication, division, modulo, javascript"
+        "title": "Basic Arithmetic Operations",
+        "summary": "const result = a OPERATOR b;",
+        "description": "Performs addition, subtraction, multiplication, division, and modulo operations.",
+        "example": "5 + 5; // 10\n10 - 5; // 5\n5 * 10; // 50\n10 / 5; // 2\n10 % 5; // 0",
+        "tags": "arithmetic, operators, math, addition, subtraction, multiplication, division, modulo, javascript"
     },
     {
-        "title": "Writing Comments in JavaScript",
-        "summary": "// Single-line comment\n/* Multi-line comment */",
-        "description": "Uses `//` for single-line comments and `/* */` for multi-line comments.",
-        "example": "// This is a single-line comment\n/* This is a\nmulti-line comment */",
-        "tags": "comment, documentation, single-line, multi-line, javascript"
+        "title": "Add a Comment in JavaScript",
+        "summary": "// This is a comment",
+        "description": "Adds a single-line or multi-line comment to the code.",
+        "example": "// This line will denote a comment\n/*\nThe below configuration must be\nchanged before deployment.\n*/",
+        "tags": "comment, documentation, explain, notes, javascript"
     },
     {
-        "title": "Using Assignment Operators in JavaScript",
-        "summary": "variable = value;\nvariable += increment;",
-        "description": "Assigns values to variables and updates them using shorthand assignment operators.",
-        "example": "let number = 100;\nnumber += 10;\nconsole.log(number); // 110",
-        "tags": "assignment, operator, increment, update, javascript"
+        "title": "Use Assignment Operators",
+        "summary": "variable OPERATOR= value;",
+        "description": "Performs assignment operations with shorthand syntax.",
+        "example": "let number = 100;\nnumber += 10; // 110\nnumber -= 5; // 105",
+        "tags": "assignment, operators, shorthand, addition, subtraction, javascript"
     },
     {
-        "title": "Interpolating Strings Using Template Literals",
+        "title": "String Interpolation with Template Literals",
         "summary": "const message = `Text ${variable}`;",
-        "description": "Uses template literals (backticks) to embed variables inside strings.",
+        "description": "Interpolates variables into strings using template literals.",
         "example": "let age = 7;\nconsole.log(`Tommy is ${age} years old.`);",
-        "tags": "string, interpolation, template literals, backticks, javascript"
+        "tags": "string, interpolation, template literals, concatenate, javascript"
     },
     {
-        "title": "Declaring a Variable with let in JavaScript",
+        "title": "Declare a Variable with let",
         "summary": "let variableName;",
-        "description": "Declares a block-scoped variable using `let`.",
+        "description": "Declares a variable using the let keyword.",
         "example": "let count;\nconsole.log(count); // undefined\ncount = 10;\nconsole.log(count); // 10",
-        "tags": "variable, let, declaration, block scope, javascript"
+        "tags": "variable, declare, let, scope, javascript"
     },
     {
-        "title": "Declaring a Constant with const in JavaScript",
-        "summary": "const constantName = value;",
-        "description": "Declares a constant whose value cannot be reassigned.",
-        "example": "const numberOfColumns = 4;\n// numberOfColumns = 8; // TypeError",
-        "tags": "constant, const, immutable, declaration, javascript"
+        "title": "Declare a Constant with const",
+        "summary": "const variableName = value;",
+        "description": "Declares a constant variable that cannot be reassigned.",
+        "example": "const numberOfColumns = 4;",
+        "tags": "constant, const, immutable, declare, javascript"
     },
     {
-        "title": "Using an if Statement in JavaScript",
-        "summary": "if (condition) { statement; }",
-        "description": "Executes a block of code only if the condition is true.",
+        "title": "Use an if Statement",
+        "summary": "if (condition) { statement }",
+        "description": "Executes code if a condition is true.",
         "example": "const isMailSent = true;\nif (isMailSent) {\n  console.log('Mail sent to recipient');\n}",
-        "tags": "if statement, condition, boolean, control flow, javascript"
+        "tags": "condition, if, statement, logic, javascript"
     },
     {
-        "title": "Using the Ternary Operator in JavaScript",
-        "summary": "const result = condition ? valueIfTrue : valueIfFalse;",
-        "description": "Uses a concise syntax for conditional expressions.",
-        "example": "let x = 1;\nlet result = x === 1 ? 'Yes' : 'No';\nconsole.log(result); // 'Yes'",
-        "tags": "ternary, conditional, operator, shorthand, javascript"
+        "title": "Use Ternary Operator for Conditional Statements",
+        "summary": "const result = condition ? trueValue : falseValue;",
+        "description": "Evaluates a condition and returns a value based on it.",
+        "example": "var x = 1;\nconst result = x == 1 ? true : false;",
+        "tags": "ternary, condition, shorthand, if else, javascript"
     },
     {
-        "title": "Using Logical OR Operator in JavaScript",
-        "summary": "const result = value1 || value2;",
-        "description": "Returns the first truthy value or the last falsy value.",
-        "example": "console.log(true || false); // true\nconsole.log(10 > 5 || 10 > 20); // true",
-        "tags": "logical OR, boolean, condition, operator, javascript"
+        "title": "Logical OR Operator",
+        "summary": "const result = condition1 || condition2;",
+        "description": "Returns true if at least one condition is true.",
+        "example": "true || false; // true\n10 > 5 || 10 > 20; // true",
+        "tags": "logical, or, operator, boolean, javascript"
     },
     {
-        "title": "Using Logical AND Operator in JavaScript",
-        "summary": "const result = value1 && value2;",
-        "description": "Returns the first falsy value or the last truthy value.",
-        "example": "console.log(true && true); // true\nconsole.log(1 > 2 && 2 > 1); // false",
-        "tags": "logical AND, boolean, condition, operator, javascript"
+        "title": "Logical AND Operator",
+        "summary": "const result = condition1 && condition2;",
+        "description": "Returns true if both conditions are true.",
+        "example": "true && true; // true\n4 === 4 && 3 > 1; // true",
+        "tags": "logical, and, operator, boolean, javascript"
     },
     {
-        "title": "Using Logical NOT Operator in JavaScript",
-        "summary": "const result = !value;",
-        "description": "Negates a boolean value, converting truthy values to false and falsy values to true.",
-        "example": "let lateToWork = true;\nlet oppositeValue = !lateToWork;\nconsole.log(oppositeValue); // false",
-        "tags": "logical NOT, boolean, negate, condition, javascript"
-    },
-    {
-        "title": "Using Comparison Operators in JavaScript",
-        "summary": "const result = a > b;\nresult = a < b;\nresult = a >= b;\nresult = a <= b;\nresult = a === b;\nresult = a !== b;",
-        "description": "Compares two values and returns a boolean result.",
-        "example": "console.log(1 > 3); // false\nconsole.log(3 > 1); // true\nconsole.log(1 === '1'); // false",
-        "tags": "comparison, greater than, less than, equality, operator, javascript"
+        "title": "Comparison Operators",
+        "summary": "const result = a OPERATOR b;",
+        "description": "Performs comparison operations between two values.",
+        "example": "1 > 3; // false\n3 > 1; // true\n1 === '1'; // false",
+        "tags": "comparison, operators, greater, less, equal, javascript"
     },
     {
         "title": "Using the Nullish Coalescing Operator in JavaScript",

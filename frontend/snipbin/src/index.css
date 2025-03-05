@@ -90,27 +90,27 @@
   background-repeat: no-repeat;
 }
 
-pre::-webkit-scrollbar {
+#code-summary > pre::-webkit-scrollbar {
   height: 5px;
   position: absolute;
 }
 
-pre::-webkit-scrollbar-thumb {
+#code-summary > pre::-webkit-scrollbar-thumb {
   background: #606060;
   opacity: 0 !important;
 }
 
-pre::-webkit-scrollbar:hover {
+#code-summary > pre::-webkit-scrollbar:hover {
   height: 10px;
 }
 
-pre{
+#code-summary > pre{
   overflow: hidden;
   margin: 5px 0;
   -moz-margin: 0px;
 }
 
-pre:hover {
+#code-summary > pre:hover {
   overflow-x: scroll;
   margin-bottom: 0;
   /* -moz-margin-margin: 5px; */

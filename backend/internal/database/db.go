@@ -71,6 +71,8 @@ func (ur *UserRepo) GetLanguages() []*models.Language {
 func (ur *UserRepo) GetSnippetFromTitle(title string, langId uint) (models.Snippet, error) {
 	res := models.Snippet{}
 
-	search := ur.db.Where("REPLACE(UPPER(title), '-', ' ') = ? AND language_id= ?", title, langId).First(&res)
+	// fmt.Println(title)
+
+	search := ur.db.Where("REPLACE(REPLACE(REPLACE(UPPER(title), '-', ' '), '::', ' '), \"'\", '') = ? AND language_id= ?", title, langId).First(&res)
 	return res, search.Error
 }

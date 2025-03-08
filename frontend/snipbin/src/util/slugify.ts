@@ -1,6 +1,6 @@
 export default function slugify(str: string) : string {
 
-    console.log(str)
+    // console.log(str)
 
     str = str.replace(/^\s+|\s+$/g, ''); // trim leading/trailing white space
     str = str.toLowerCase(); // convert string to lowercase

@@ -30,12 +30,12 @@ func chainMiddleWare(f http.HandlerFunc, middleware ...MiddleWare) http.HandlerF
 
 func enableCORS(next http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Set("Access-Control-Allow-Origin", "*")
+		w.Header().Set("Access-Control-Allow-Origin", "http://localhost:3333")
 		w.Header().Set("Access-Control-Allow-Methods", "PUT, GET, POST, DELETE, OPTIONS")
-		w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
+		w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 
 		if r.Method == http.MethodOptions {
-			w.WriteHeader(http.StatusNoContent)
+			w.WriteHeader(http.StatusOK)
 			return
 		}
 		next(w, r)
@@ -72,6 +72,6 @@ func main() {
 
 	fmt.Println("Server running on localhost:" + PORT)
 
-	log.Fatal(http.ListenAndServe("localhost:"+PORT, mux))
+	log.Fatal(http.ListenAndServe(":"+PORT, mux))
 	// listen and serve on 0.0.0.0:8080
 }

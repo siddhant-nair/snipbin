@@ -25,7 +25,7 @@ export function SearchHeader({ language }: { language: string }) {
 			<a href="/">
 				<div id="language-switcher" className="flex flex-col gap-3 items-center">
 					<div>
-						<img src={`http://localhost:8080/api/v1/media/assets/${language}.svg`}
+						<img src={`/api/v1/media/assets/${language}.svg`}
 							className="w-15 object-fill"
 							alt={language} />
 					</div>

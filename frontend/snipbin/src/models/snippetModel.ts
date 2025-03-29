@@ -17,7 +17,7 @@ export interface LanguageModel {
 
 export class SnippetApis {
     // snippet!: Array<SnippetModel>;
-    url = 'http://localhost:8080/api/v1'
+    url = '/api/v1'
 
     fetchAllSnippets(language: string): Promise<SnippetModel[]> {
         const fetchSnippetUrl = `${this.url}/${language}`

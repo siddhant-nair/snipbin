@@ -1,0 +1,1577 @@
+[
+    {
+        "title": "Declaring and Initializing Variables",
+        "summary": "var name type = value",
+        "description": "Creates a variable with a specific type and assigns a value. If the type is omitted, Go infers it automatically.",
+        "example": "var age int = 25\nvar name = \"Alice\" // Type inferred",
+        "tags": "variable, declaration, initialization, type inference, assignment, golang"
+    },
+    {
+        "title": "Short Variable Declaration",
+        "summary": "name := value",
+        "description": "Declares and initializes a variable using the `:=` shorthand without explicitly specifying its type.",
+        "example": "age := 25\name := \"Alice\"",
+        "tags": "variable, shorthand, type inference, assignment, golang"
+    },
+    {
+        "title": "Constant Declaration",
+        "summary": "const name type = value",
+        "description": "Declares an immutable constant using the `const` keyword. Constants must be assigned at compile time.",
+        "example": "const Pi float64 = 3.14159\nconst Greeting = \"Hello, Go!\"",
+        "tags": "constant, immutable, compile-time, declaration, golang"
+    },
+    {
+        "title": "Printing Output to Console",
+        "summary": "fmt.Println(values)",
+        "description": "Prints values to the console using `fmt.Println()`, automatically adding spaces between arguments and a newline at the end.",
+        "example": "fmt.Println(\"Hello, World!\")\nage := 30\nfmt.Println(\"Age:\", age)",
+        "tags": "print, console, output, fmt, display, log, golang"
+    },
+    {
+        "title": "Reading User Input",
+        "summary": "fmt.Scan(&variable)",
+        "description": "Reads user input from the standard input and stores it in a variable.",
+        "example": "var name string\nfmt.Print(\"Enter your name: \")\nfmt.Scan(&name)\nfmt.Println(\"Hello,\", name)",
+        "tags": "input, user input, scan, console, fmt, golang"
+    },
+    {
+        "title": "Basic If Statement",
+        "summary": "if condition { statements }",
+        "description": "Executes a block of code if the given condition evaluates to `true`. Curly braces `{}` are required in Go.",
+        "example": "age := 18\nif age >= 18 {\n    fmt.Println(\"Adult\")\n}",
+        "tags": "if statement, condition, branching, logic, golang"
+    },
+    {
+        "title": "If-Else Statement",
+        "summary": "if condition { statements } else { statements }",
+        "description": "Executes one block of code if the condition is `true`, otherwise executes the `else` block.",
+        "example": "age := 16\nif age >= 18 {\n    fmt.Println(\"Adult\")\n} else {\n    fmt.Println(\"Minor\")\n}",
+        "tags": "if else, condition, branching, logic, alternative, golang"
+    },
+    {
+        "title": "Switch Statement",
+        "summary": "switch value { case condition: statements }",
+        "description": "Evaluates an expression and executes the first matching `case`. The `default` case runs if no match is found.",
+        "example": "day := \"Monday\"\nswitch day {\ncase \"Monday\":\n    fmt.Println(\"Start of the week!\")\ncase \"Friday\":\n    fmt.Println(\"Weekend is near!\")\ndefault:\n    fmt.Println(\"A regular day.\")\n}",
+        "tags": "switch, case, branching, control flow, golang"
+    },
+    {
+        "title": "For Loop with Counter",
+        "summary": "for initialization; condition; increment { statements }",
+        "description": "Executes a block of code multiple times while updating a loop variable.",
+        "example": "for i := 0; i < 5; i++ {\n    fmt.Println(\"Iteration:\", i)\n}",
+        "tags": "for loop, iteration, loop, counter, control flow, golang"
+    },
+    {
+        "title": "Range-Based For Loop",
+        "summary": "for index, value := range collection { statements }",
+        "description": "Iterates over slices, arrays, or maps, retrieving both index and value.",
+        "example": "nums := []int{1, 2, 3}\nfor i, num := range nums {\n    fmt.Println(\"Index:\", i, \"Value:\", num)\n}",
+        "tags": "range, loop, iteration, slice, array, collection, golang"
+    },
+    {
+        "title": "Defining a Function",
+        "summary": "func functionName(parameters) returnType { statements }",
+        "description": "Declares a function with optional parameters and a return type.",
+        "example": "func add(a int, b int) int {\n    return a + b\n}\nfmt.Println(add(3, 4)) // Output: 7",
+        "tags": "function, parameters, return, definition, golang"
+    },
+    {
+        "title": "Returning Multiple Values from a Function",
+        "summary": "func functionName() (type1, type2) { return value1, value2 }",
+        "description": "Go functions can return multiple values, which can be assigned to multiple variables.",
+        "example": "func divide(a, b int) (int, int) {\n    return a / b, a % b\n}\nquotient, remainder := divide(10, 3)\nfmt.Println(quotient, remainder) // Output: 3 1",
+        "tags": "function, multiple return, return values, tuple, golang"
+    },
+    {
+        "title": "Anonymous Function",
+        "summary": "func() { statements }()",
+        "description": "Declares and immediately executes an anonymous function.",
+        "example": "func() {\n    fmt.Println(\"Hello from an anonymous function!\")\n}()",
+        "tags": "anonymous function, lambda, immediate execution, golang"
+    },
+    {
+        "title": "Defining a Struct",
+        "summary": "type StructName struct { fields }",
+        "description": "Defines a struct to group related data fields together.",
+        "example": "type Person struct {\n    Name string\n    Age  int\n}\np := Person{Name: \"Alice\", Age: 25}\nfmt.Println(p)",
+        "tags": "struct, type, data structure, fields, golang"
+    },
+    {
+        "title": "Adding Methods to a Struct",
+        "summary": "func (receiver Type) methodName(parameters) returnType { statements }",
+        "description": "Defines a method that operates on a struct, with a receiver parameter.",
+        "example": "type Person struct {\n    Name string\n}\nfunc (p Person) Greet() {\n    fmt.Println(\"Hello,\", p.Name)\n}\np := Person{Name: \"Alice\"}\np.Greet() // Output: Hello, Alice",
+        "tags": "struct, method, receiver, function, golang"
+    },
+    {
+        "title": "Using an Interface",
+        "summary": "type InterfaceName interface { MethodSignatures }",
+        "description": "Defines an interface specifying method signatures that types must implement.",
+        "example": "type Speaker interface {\n    Speak() string\n}\ntype Person struct {\n    Name string\n}\nfunc (p Person) Speak() string {\n    return \"Hello, I am \" + p.Name\n}\np := Person{Name: \"Alice\"}\nfmt.Println(p.Speak())",
+        "tags": "interface, method, polymorphism, abstraction, golang"
+    },
+    {
+        "title": "Using Goroutines",
+        "summary": "go functionName(arguments)",
+        "description": "Runs a function concurrently as a goroutine using the `go` keyword.",
+        "example": "func hello() {\n    fmt.Println(\"Hello from a goroutine!\")\n}\ngo hello()",
+        "tags": "goroutine, concurrency, parallelism, asynchronous, golang"
+    },
+    {
+        "title": "Checking If a Number Is Even or Odd",
+        "summary": "if num%2 == 0 { ... } else { ... }",
+        "description": "Determines if a number is even or odd using the modulo operator `%`.",
+        "example": "num := 7\nif num%2 == 0 {\n    fmt.Println(\"Even\")\n} else {\n    fmt.Println(\"Odd\")\n}",
+        "tags": "number, even, odd, modulo, check, condition, golang"
+    },
+    {
+        "title": "Finding the Length of a Slice",
+        "summary": "len(slice)",
+        "description": "Retrieves the number of elements in a slice using `len()`.",
+        "example": "numbers := []int{1, 2, 3, 4, 5}\nfmt.Println(len(numbers)) // Output: 5",
+        "tags": "slice, length, count, measure, array, golang"
+    },
+    {
+        "title": "Appending Elements to a Slice",
+        "summary": "slice = append(slice, values...)",
+        "description": "Adds new elements to the end of a slice using `append()`.",
+        "example": "numbers := []int{1, 2, 3}\nnumbers = append(numbers, 4, 5)\nfmt.Println(numbers) // Output: [1, 2, 3, 4, 5]",
+        "tags": "slice, append, grow, modify, array, golang"
+    },
+    {
+        "title": "Iterating Over a Map",
+        "summary": "for key, value := range map { ... }",
+        "description": "Loops through a map, retrieving both keys and values.",
+        "example": "ages := map[string]int{\"Alice\": 25, \"Bob\": 30}\nfor name, age := range ages {\n    fmt.Println(name, \"is\", age, \"years old\")\n}",
+        "tags": "map, iterate, loop, key-value, range, golang"
+    },
+    {
+        "title": "Deleting a Key from a Map",
+        "summary": "delete(map, key)",
+        "description": "Removes a key-value pair from a map using `delete()`.",
+        "example": "ages := map[string]int{\"Alice\": 25, \"Bob\": 30}\ndelete(ages, \"Bob\")\nfmt.Println(ages) // Output: map[Alice:25]",
+        "tags": "map, delete, key-value, remove, cleanup, golang"
+    },
+    {
+        "title": "Checking If a Key Exists in a Map",
+        "summary": "value, exists := map[key]",
+        "description": "Checks if a key is present in a map using the second return value.",
+        "example": "ages := map[string]int{\"Alice\": 25}\n_, exists := ages[\"Bob\"]\nfmt.Println(exists) // Output: false",
+        "tags": "map, exists, check, key, lookup, golang"
+    },
+    {
+        "title": "Creating and Using a Goroutine",
+        "summary": "go functionName(arguments)",
+        "description": "Runs a function concurrently as a goroutine using the `go` keyword.",
+        "example": "func hello() {\n    fmt.Println(\"Hello from a goroutine!\")\n}\ngo hello()",
+        "tags": "goroutine, concurrency, parallelism, asynchronous, golang"
+    },
+    {
+        "title": "Using a Buffered Channel",
+        "summary": "ch := make(chan type, capacity)",
+        "description": "Creates a buffered channel that allows sending values without immediate reception.",
+        "example": "ch := make(chan int, 2)\nch \u003C- 1\nch \u003C- 2\nfmt.Println(\u003C-ch, \u003C-ch) // Output: 1 2",
+        "tags": "channel, buffered, concurrency, goroutine, golang"
+    },
+    {
+        "title": "Reading from Multiple Channels",
+        "summary": "select { case value := \u003C-channel1: ... case value := \u003C-channel2: ... }",
+        "description": "Uses a `select` statement to listen on multiple channels and execute the first one that receives a value.",
+        "example": "ch1 := make(chan string)\nch2 := make(chan string)\ngo func() { ch1 \u003C- \"Hello from ch1\" }()\ngo func() { ch2 \u003C- \"Hello from ch2\" }()\nselect {\ncase msg := \u003C-ch1:\n    fmt.Println(msg)\ncase msg := \u003C-ch2:\n    fmt.Println(msg)\n}",
+        "tags": "channel, select, concurrency, non-blocking, goroutine, golang"
+    },
+    {
+        "title": "Creating a WaitGroup for Concurrency",
+        "summary": "var wg sync.WaitGroup",
+        "description": "Uses a `WaitGroup` to synchronize multiple goroutines, ensuring all finish before the program exits.",
+        "example": "var wg sync.WaitGroup\nwg.Add(2)\ngo func() {\n    fmt.Println(\"Task 1\")\n    wg.Done()\n}()\ngo func() {\n    fmt.Println(\"Task 2\")\n    wg.Done()\n}()\nwg.Wait()\nfmt.Println(\"All tasks completed!\")",
+        "tags": "goroutine, waitgroup, concurrency, sync, wait, golang"
+    },
+    {
+        "title": "Reading a File",
+        "summary": "data, err := os.ReadFile(filename)",
+        "description": "Reads the contents of a file into a byte slice.",
+        "example": "data, err := os.ReadFile(\"file.txt\")\nif err != nil {\n    fmt.Println(\"Error reading file\")\n}\nfmt.Println(string(data))",
+        "tags": "file, read, os, io, filesystem, golang"
+    },
+    {
+        "title": "Writing to a File",
+        "summary": "os.WriteFile(filename, data, perm)",
+        "description": "Writes data to a file using `os.WriteFile()`.",
+        "example": "content := []byte(\"Hello, File!\")\nos.WriteFile(\"output.txt\", content, 0644)",
+        "tags": "file, write, os, io, filesystem, golang"
+    },
+    {
+        "title": "Checking If a File Exists",
+        "summary": "_, err := os.Stat(filename)",
+        "description": "Checks whether a file exists by using `os.Stat()`.",
+        "example": "_, err := os.Stat(\"file.txt\")\nif err == nil {\n    fmt.Println(\"File exists\")\n} else if os.IsNotExist(err) {\n    fmt.Println(\"File does not exist\")\n}",
+        "tags": "file, exists, check, stat, os, golang"
+    },
+    {
+        "title": "Splitting a String",
+        "summary": "strings.Split(string, separator)",
+        "description": "Splits a string into a slice of substrings based on a delimiter.",
+        "example": "parts := strings.Split(\"a,b,c\", \",\")\nfmt.Println(parts) // Output: [\"a\" \"b\" \"c\"]",
+        "tags": "string, split, slice, tokenize, delimiter, golang"
+    },
+    {
+        "title": "Joining a Slice into a String",
+        "summary": "strings.Join(slice, separator)",
+        "description": "Combines a slice of strings into a single string, separated by the specified delimiter.",
+        "example": "words := []string{\"Go\", \"is\", \"fun\"}\nresult := strings.Join(words, \" \")\nfmt.Println(result) // Output: \"Go is fun\"",
+        "tags": "string, join, slice, concatenate, delimiter, golang"
+    },
+    {
+        "title": "Checking If a String Contains a Substring",
+        "summary": "strings.Contains(string, substring)",
+        "description": "Returns `true` if the given substring is found in the string, otherwise `false`.",
+        "example": "fmt.Println(strings.Contains(\"golang\", \"go\")) // Output: true",
+        "tags": "string, contains, substring, search, find, golang"
+    },
+    {
+        "title": "Replacing Substrings in a String",
+        "summary": "strings.ReplaceAll(string, old, new)",
+        "description": "Replaces all occurrences of `old` with `new` in a string.",
+        "example": "fmt.Println(strings.ReplaceAll(\"hello world\", \"world\", \"Go\")) // Output: \"hello Go\"",
+        "tags": "string, replace, modify, search, text, golang"
+    },
+    {
+        "title": "Checking If a Slice Contains an Element",
+        "summary": "for _, v := range slice { if v == target { ... } }",
+        "description": "Loops through a slice to check if it contains a specific element.",
+        "example": "numbers := []int{1, 2, 3, 4, 5}\ntarget := 3\nfound := false\nfor _, v := range numbers {\n    if v == target {\n        found = true\n        break\n    }\n}\nfmt.Println(\"Found:\", found) // Output: Found: true",
+        "tags": "slice, search, contains, loop, range, golang"
+    },
+    {
+        "title": "Copying a Slice",
+        "summary": "copy(dest, src)",
+        "description": "Copies elements from one slice into another, up to the length of the destination slice.",
+        "example": "src := []int{1, 2, 3}\ndest := make([]int, len(src))\ncopy(dest, src)\nfmt.Println(dest) // Output: [1, 2, 3]",
+        "tags": "slice, copy, duplicate, memory, data, golang"
+    },
+    {
+        "title": "Sorting a Slice",
+        "summary": "sort.Ints(slice)",
+        "description": "Sorts an integer slice in ascending order using the `sort` package.",
+        "example": "import \"sort\"\nnumbers := []int{4, 2, 5, 1, 3}\nsort.Ints(numbers)\nfmt.Println(numbers) // Output: [1, 2, 3, 4, 5]",
+        "tags": "slice, sort, order, ascending, sort package, golang"
+    },
+    {
+        "title": "Reversing a Slice",
+        "summary": "for i, j := 0, len(slice)-1; i < j; i, j = i+1, j-1 { slice[i], slice[j] = slice[j], slice[i] }",
+        "description": "Reverses a slice in place by swapping elements.",
+        "example": "numbers := []int{1, 2, 3, 4, 5}\nfor i, j := 0, len(numbers)-1; i < j; i, j = i+1, j-1 {\n    numbers[i], numbers[j] = numbers[j], numbers[i]\n}\nfmt.Println(numbers) // Output: [5, 4, 3, 2, 1]",
+        "tags": "slice, reverse, modify, swap, golang"
+    },
+    {
+        "title": "Finding the Maximum Value in a Slice",
+        "summary": "max := slice[0]; for _, v := range slice { if v > max { max = v } }",
+        "description": "Finds the largest number in a slice by iterating through it.",
+        "example": "numbers := []int{3, 7, 2, 9, 5}\nmax := numbers[0]\nfor _, v := range numbers {\n    if v > max {\n        max = v\n    }\n}\nfmt.Println(\"Max:\", max) // Output: Max: 9",
+        "tags": "slice, max, find largest, iteration, loop, golang"
+    },
+    {
+        "title": "Finding the Minimum Value in a Slice",
+        "summary": "min := slice[0]; for _, v := range slice { if v < min { min = v } }",
+        "description": "Finds the smallest number in a slice by iterating through it.",
+        "example": "numbers := []int{3, 7, 2, 9, 5}\nmin := numbers[0]\nfor _, v := range numbers {\n    if v < min {\n        min = v\n    }\n}\nfmt.Println(\"Min:\", min) // Output: Min: 2",
+        "tags": "slice, min, find smallest, iteration, loop, golang"
+    },
+    {
+        "title": "Checking If a String Contains a Substring",
+        "summary": "res := strings.Contains(str, substr)",
+        "description": "Checks if a string contains a given substring using the `strings` package.",
+        "example": "import \"strings\"\nfmt.Println(strings.Contains(\"hello world\", \"world\")) // Output: true",
+        "tags": "string, contains, search, substring, match, golang"
+    },
+    {
+        "title": "Replacing Parts of a String",
+        "summary": "res := strings.ReplaceAll(str, old, new)",
+        "description": "Replaces all occurrences of a substring with another substring.",
+        "example": "import \"strings\"\nstr := \"Hello, World!\"\nnewStr := strings.ReplaceAll(str, \"World\", \"Gophers\")\nfmt.Println(newStr) // Output: Hello, Gophers!",
+        "tags": "string, replace, modify, edit, substring, golang"
+    },
+    {
+        "title": "Splitting a String into a Slice",
+        "summary": "res := strings.Split(str, separator)",
+        "description": "Splits a string into a slice of substrings based on a delimiter.",
+        "example": "import \"strings\"\nstr := \"apple,banana,grape\"\nfruits := strings.Split(str, \",\")\nfmt.Println(fruits) // Output: [apple banana grape]",
+        "tags": "string, split, slice, delimiter, tokenize, golang"
+    },
+    {
+        "title": "Joining a Slice into a String",
+        "summary": "res := strings.Join(slice, separator)",
+        "description": "Joins elements of a slice into a single string with a specified separator.",
+        "example": "import \"strings\"\nfruits := []string{\"apple\", \"banana\", \"grape\"}\njoined := strings.Join(fruits, \"-\")\nfmt.Println(joined) // Output: apple-banana-grape",
+        "tags": "slice, join, string, concatenate, merge, golang"
+    },
+    {
+        "title": "Trimming Whitespace from a String",
+        "summary": "res := strings.TrimSpace(str)",
+        "description": "Removes leading and trailing whitespace from a string.",
+        "example": "import \"strings\"\nstr := \"   hello world   \"\nfmt.Println(strings.TrimSpace(str)) // Output: hello world",
+        "tags": "string, trim, whitespace, clean, format, golang"
+    },
+    {
+        "title": "Converting a String to Lowercase",
+        "summary": "res := strings.ToLower(str)",
+        "description": "Converts a string to lowercase.",
+        "example": "import \"strings\"\nfmt.Println(strings.ToLower(\"HELLO\")) // Output: hello",
+        "tags": "string, lowercase, format, modify, golang"
+    },
+    {
+        "title": "Converting a String to Uppercase",
+        "summary": "res := strings.ToUpper(str)",
+        "description": "Converts a string to uppercase.",
+        "example": "import \"strings\"\nfmt.Println(strings.ToUpper(\"hello\")) // Output: HELLO",
+        "tags": "string, uppercase, format, modify, golang"
+    },
+    {
+        "title": "Parsing a Float from a String",
+        "summary": "err := strconv.ParseFloat(str, bitSize)",
+        "description": "Converts a string into a floating-point number.",
+        "example": "import \"strconv\"\nf, err := strconv.ParseFloat(\"3.14\", 64)\nif err == nil {\n    fmt.Println(f) // Output: 3.14\n}",
+        "tags": "string, convert, parse, float, strconv, golang"
+    },
+    {
+        "title": "Parsing an Integer from a String",
+        "summary": "err := strconv.Atoi(str)",
+        "description": "Converts a string into an integer using `strconv.Atoi()`.",
+        "example": "import \"strconv\"\nnum, err := strconv.Atoi(\"42\")\nif err == nil {\n    fmt.Println(num) // Output: 42\n}",
+        "tags": "string, convert, parse, integer, strconv, golang"
+    },
+    {
+        "title": "Generating a Random Integer",
+        "summary": "res := rand.Intn(max-min) + min",
+        "description": "Generates a random integer between a specified range using the `math/rand` package.",
+        "example": "import (\n    \"fmt\"\n    \"math/rand\"\n    \"time\"\n)\nrand.Seed(time.Now().UnixNano())\nnum := rand.Intn(10) + 1\nfmt.Println(num) // Output: Random number between 1 and 10",
+        "tags": "random, integer, math/rand, generate, range, golang"
+    },
+    {
+        "title": "Checking If a File Exists",
+        "summary": "os.Stat(filename)",
+        "description": "Determines whether a file exists by checking for an error when calling `os.Stat()`.",
+        "example": "import \"os\"\n_, err := os.Stat(\"file.txt\")\nif os.IsNotExist(err) {\n    fmt.Println(\"File does not exist\")\n} else {\n    fmt.Println(\"File exists\")\n}",
+        "tags": "file, check, exists, os, stat, golang"
+    },
+    {
+        "title": "Reading a File Line by Line",
+        "summary": "bufio.NewScanner(file)",
+        "description": "Reads a file line by line using `bufio.Scanner`.",
+        "example": "import (\n    \"bufio\"\n    \"fmt\"\n    \"os\"\n)\nfile, _ := os.Open(\"file.txt\")\ndefer file.Close()\nscanner := bufio.NewScanner(file)\nfor scanner.Scan() {\n    fmt.Println(scanner.Text())\n}",
+        "tags": "file, read, bufio, scanner, line-by-line, golang"
+    },
+    {
+        "title": "Creating a Temporary File",
+        "summary": "os.CreateTemp(dir, pattern)",
+        "description": "Creates a temporary file in a specified directory using `os.CreateTemp()`.",
+        "example": "import \"os\"\ntempFile, _ := os.CreateTemp(\"./\", \"temp-*.txt\")\ndefer os.Remove(tempFile.Name())\nfmt.Println(\"Temp file created:\", tempFile.Name())",
+        "tags": "file, temp, create, os, temporary, golang"
+    },
+    {
+        "title": "Converting an Integer to a String",
+        "summary": "strconv.Itoa(num)",
+        "description": "Converts an integer to a string using `strconv.Itoa()`.",
+        "example": "import \"strconv\"\nnum := 42\nstr := strconv.Itoa(num)\nfmt.Println(str) // Output: \"42\"",
+        "tags": "integer, string, convert, strconv, format, golang"
+    },
+    {
+        "title": "Converting a String to a Boolean",
+        "summary": "strconv.ParseBool(str)",
+        "description": "Converts a string to a boolean value. Returns `true` for `\"1\"`, `\"t\"`, `\"T\"`, `\"true\"`, `\"TRUE\"`, `\"True\"`.",
+        "example": "import \"strconv\"\nb, err := strconv.ParseBool(\"true\")\nfmt.Println(b) // Output: true",
+        "tags": "string, boolean, convert, strconv, parse, golang"
+    },
+    {
+        "title": "Getting the Current Working Directory",
+        "summary": "os.Getwd()",
+        "description": "Returns the absolute path of the current working directory.",
+        "example": "import \"os\"\ndir, _ := os.Getwd()\nfmt.Println(\"Current Directory:\", dir)",
+        "tags": "directory, cwd, path, os, getwd, golang"
+    },
+    {
+        "title": "Creating a New Directory",
+        "summary": "os.Mkdir(path, perm)",
+        "description": "Creates a new directory with the specified path and permissions.",
+        "example": "import \"os\"\nos.Mkdir(\"new_folder\", 0755)\nfmt.Println(\"Directory created\")",
+        "tags": "directory, create, os, mkdir, permissions, golang"
+    },
+    {
+        "title": "Checking If a Directory Exists",
+        "summary": "os.Stat(path)",
+        "description": "Checks whether a given directory exists using `os.Stat()`.",
+        "example": "import \"os\"\ninfo, err := os.Stat(\"my_folder\")\nif err == nil && info.IsDir() {\n    fmt.Println(\"Directory exists\")\n} else {\n    fmt.Println(\"Directory does not exist\")\n}",
+        "tags": "directory, check, exists, stat, os, golang"
+    },
+    {
+        "title": "Getting the Current Timestamp",
+        "summary": "time.Now().Unix()",
+        "description": "Returns the current timestamp as the number of seconds since the Unix epoch.",
+        "example": "import \"time\"\nfmt.Println(time.Now().Unix()) // Output: 1672531199 (example)",
+        "tags": "time, timestamp, unix, now, epoch, golang"
+    },
+    {
+        "title": "Sleeping for a Duration",
+        "summary": "time.Sleep(duration)",
+        "description": "Pauses execution for a given duration using `time.Sleep()`.",
+        "example": "import \"time\"\nfmt.Println(\"Start\")\ntime.Sleep(2 * time.Second)\nfmt.Println(\"End after 2 seconds\")",
+        "tags": "sleep, delay, pause, wait, time, golang"
+    },
+    {
+        "title": "Getting the Number of CPU Cores",
+        "summary": "runtime.NumCPU()",
+        "description": "Returns the number of logical CPU cores available to the program.",
+        "example": "import (\n    \"fmt\"\n    \"runtime\"\n)\nfmt.Println(\"CPU Cores:\", runtime.NumCPU())",
+        "tags": "cpu, cores, runtime, system, performance, golang"
+    },
+    {
+        "title": "Fetching Data from a URL",
+        "summary": "http.Get(url)",
+        "description": "Sends an HTTP GET request to a URL and reads the response body.",
+        "example": "import (\n    \"fmt\"\n    \"io/ioutil\"\n    \"net/http\"\n)\nresp, _ := http.Get(\"https://example.com\")\ndefer resp.Body.Close()\nbody, _ := ioutil.ReadAll(resp.Body)\nfmt.Println(string(body))",
+        "tags": "http, get, request, fetch, client, golang"
+    },
+    {
+        "title": "Encoding JSON Data",
+        "summary": "json.Marshal(data)",
+        "description": "Converts a Go struct into a JSON-formatted string.",
+        "example": "import (\n    \"encoding/json\"\n    \"fmt\"\n)\ntype Person struct {\n    Name string `json:\"name\"`\n    Age  int    `json:\"age\"`\n}\np := Person{Name: \"Alice\", Age: 30}\ndata, _ := json.Marshal(p)\nfmt.Println(string(data)) // Output: {\"name\":\"Alice\",\"age\":30}",
+        "tags": "json, marshal, encode, struct, format, golang"
+    },
+    {
+        "title": "Decoding JSON Data",
+        "summary": "json.Unmarshal(data, &variable)",
+        "description": "Parses a JSON-formatted string into a Go struct.",
+        "example": "import (\n    \"encoding/json\"\n    \"fmt\"\n)\ntype Person struct {\n    Name string `json:\"name\"`\n    Age  int    `json:\"age\"`\n}\njsonData := `{\"name\":\"Alice\",\"age\":30}`\nvar p Person\njson.Unmarshal([]byte(jsonData), &p)\nfmt.Println(p.Name, p.Age) // Output: Alice 30",
+        "tags": "json, unmarshal, decode, struct, parse, golang"
+    },
+    {
+        "title": "Creating a Goroutine with a Function",
+        "summary": "go functionName()",
+        "description": "Runs a function concurrently using a goroutine.",
+        "example": "func printMessage() {\n    fmt.Println(\"Hello from Goroutine!\")\n}\ngo printMessage()",
+        "tags": "goroutine, concurrency, async, parallel, threading, golang"
+    },
+    {
+        "title": "Creating a Buffered Channel",
+        "summary": "ch := make(chan type, capacity)",
+        "description": "Creates a channel with a buffer, allowing multiple values to be sent without blocking.",
+        "example": "ch := make(chan int, 3)\nch <- 1\nch <- 2\nfmt.Println(<-ch) // Output: 1",
+        "tags": "channel, buffered, goroutine, concurrency, sync, golang"
+    },
+    {
+        "title": "Closing a Channel",
+        "summary": "close(channel)",
+        "description": "Closes a channel to prevent further sends while still allowing receives.",
+        "example": "ch := make(chan int)\ngo func() {\n    ch <- 5\n    close(ch)\n}()\nfmt.Println(<-ch)",
+        "tags": "channel, close, sync, goroutine, golang"
+    },
+    {
+        "title": "Using Select with Channels",
+        "summary": "select { case <-ch1: ... case <-ch2: ... }",
+        "description": "Waits on multiple channels and executes the case that is ready first.",
+        "example": "ch1 := make(chan string)\nch2 := make(chan string)\ngo func() { ch1 <- \"Message 1\" }()\ngo func() { ch2 <- \"Message 2\" }()\nselect {\ncase msg := <-ch1:\n    fmt.Println(msg)\ncase msg := <-ch2:\n    fmt.Println(msg)\n}",
+        "tags": "channel, select, async, goroutine, sync, golang"
+    },
+    {
+        "title": "Sorting Strings in a Slice",
+        "summary": "sort.Strings(slice)",
+        "description": "Sorts a slice of strings alphabetically.",
+        "example": "import \"sort\"\nnames := []string{\"Bob\", \"Alice\", \"Charlie\"}\nsort.Strings(names)\nfmt.Println(names) // Output: [Alice Bob Charlie]",
+        "tags": "sort, strings, slice, order, golang"
+    },
+    {
+        "title": "Sorting Integers in a Slice",
+        "summary": "sort.Ints(slice)",
+        "description": "Sorts a slice of integers in ascending order.",
+        "example": "import \"sort\"\nnumbers := []int{4, 1, 3, 2}\nsort.Ints(numbers)\nfmt.Println(numbers) // Output: [1, 2, 3, 4]",
+        "tags": "sort, integers, slice, order, golang"
+    },
+    {
+        "title": "Generating a Random Float",
+        "summary": "rand.Float64()",
+        "description": "Returns a random floating-point number between 0.0 and 1.0.",
+        "example": "import (\n    \"fmt\"\n    \"math/rand\"\n)\nfmt.Println(rand.Float64())",
+        "tags": "random, float, math, generate, golang"
+    },
+    {
+        "title": "Measuring Execution Time",
+        "summary": "defer timeTrack(startTime)",
+        "description": "Calculates the time taken for function execution using `time.Since()`.",
+        "example": "import \"time\"\nstart := time.Now()\ntime.Sleep(2 * time.Second)\nfmt.Println(\"Execution Time:\", time.Since(start))",
+        "tags": "time, measure, duration, performance, golang"
+    },
+    {
+        "title": "Finding Substrings with Index",
+        "summary": "strings.Index(str, substr)",
+        "description": "Returns the index of the first occurrence of a substring, or -1 if not found.",
+        "example": "import \"strings\"\nindex := strings.Index(\"hello world\", \"world\")\nfmt.Println(index) // Output: 6",
+        "tags": "string, search, index, substring, golang"
+    },
+    {
+        "title": "Finding the Last Occurrence of a Substring",
+        "summary": "strings.LastIndex(str, substr)",
+        "description": "Returns the index of the last occurrence of a substring, or -1 if not found.",
+        "example": "import \"strings\"\nindex := strings.LastIndex(\"hello hello world\", \"hello\")\nfmt.Println(index) // Output: 6",
+        "tags": "string, search, last index, substring, golang"
+    },
+    {
+        "title": "Converting a Struct to JSON",
+        "summary": "json.Marshal(struct)",
+        "description": "Encodes a Go struct into a JSON-formatted string.",
+        "example": "import (\n    \"encoding/json\"\n    \"fmt\"\n)\ntype Person struct {\n    Name string `json:\"name\"`\n    Age  int    `json:\"age\"`\n}\np := Person{Name: \"Alice\", Age: 30}\ndata, _ := json.Marshal(p)\nfmt.Println(string(data))",
+        "tags": "json, struct, encode, marshal, golang"
+    },
+    {
+        "title": "Decoding JSON into a Struct",
+        "summary": "json.Unmarshal(data, &struct)",
+        "description": "Parses JSON-formatted data into a Go struct.",
+        "example": "import (\n    \"encoding/json\"\n    \"fmt\"\n)\ntype Person struct {\n    Name string `json:\"name\"`\n    Age  int    `json:\"age\"`\n}\njsonData := `{\"name\":\"Alice\",\"age\":30}`\nvar p Person\njson.Unmarshal([]byte(jsonData), &p)\nfmt.Println(p.Name, p.Age)",
+        "tags": "json, struct, decode, unmarshal, golang"
+    },
+    {
+        "title": "Creating a Mutex for Synchronization",
+        "summary": "var mu sync.Mutex",
+        "description": "Uses a mutex to prevent race conditions in concurrent operations.",
+        "example": "import (\n    \"fmt\"\n    \"sync\"\n)\nvar mu sync.Mutex\nvar count int\nfunc increment() {\n    mu.Lock()\n    count++\n    mu.Unlock()\n}\nincrement()",
+        "tags": "mutex, sync, concurrency, lock, unlock, golang"
+    },
+    {
+        "title": "Finding the Absolute Value of a Number",
+        "summary": "math.Abs(x)",
+        "description": "Returns the absolute value of a floating-point number.",
+        "example": "import \"math\"\nfmt.Println(math.Abs(-42.5)) // Output: 42.5",
+        "tags": "math, absolute, abs, number, golang"
+    },
+    {
+        "title": "Calculating the Square Root",
+        "summary": "math.Sqrt(x)",
+        "description": "Computes the square root of a number.",
+        "example": "import \"math\"\nfmt.Println(math.Sqrt(16)) // Output: 4",
+        "tags": "math, sqrt, square root, number, golang"
+    },
+    {
+        "title": "Calculating the Power of a Number",
+        "summary": "math.Pow(x, y)",
+        "description": "Raises a number `x` to the power `y`.",
+        "example": "import \"math\"\nfmt.Println(math.Pow(2, 3)) // Output: 8",
+        "tags": "math, power, exponent, number, golang"
+    },
+    {
+        "title": "Computing the Sine of an Angle",
+        "summary": "math.Sin(x)",
+        "description": "Returns the sine of `x` (in radians).",
+        "example": "import \"math\"\nfmt.Println(math.Sin(math.Pi / 2)) // Output: 1",
+        "tags": "math, sine, trigonometry, radians, golang"
+    },
+    {
+        "title": "Creating an Unbuffered Channel",
+        "summary": "ch := make(chan int)",
+        "description": "Creates an unbuffered channel of integers to enable communication between goroutines.",
+        "example": "ch := make(chan int)\ngo func() { ch <- 42 }()\nfmt.Println(<-ch) // Output: 42",
+        "tags": "channel, unbuffered, goroutine, concurrency, communication, go"
+    },
+    {
+        "title": "Checking If a Slice Is Empty",
+        "summary": "isEmpty := len(slice) == 0",
+        "description": "Checks whether a given slice is empty by comparing its length to zero.",
+        "example": "nums := []int{}\nfmt.Println(len(nums) == 0) // Output: true",
+        "tags": "slice, check, empty, length, zero, go"
+    },
+    {
+        "title": "Finding the Index of an Element in a Slice",
+        "summary": "index := slices.Index(slice, value)",
+        "description": "Finds the index of a specific value in a slice using the slices package.",
+        "example": "nums := []int{10, 20, 30}\nindex := slices.Index(nums, 20)\nfmt.Println(index) // Output: 1",
+        "tags": "slice, index, find, search, element, go"
+    },
+    {
+        "title": "Checking If a Struct Has a Zero Value",
+        "summary": "isZero := reflect.DeepEqual(obj, MyStruct{})",
+        "description": "Compares a struct to its zero value to check if it is uninitialized.",
+        "example": "type Person struct { Name string }\np := Person{}\nfmt.Println(reflect.DeepEqual(p, Person{})) // Output: true",
+        "tags": "struct, zero, check, uninitialized, reflect, go"
+    },
+    {
+        "title": "Creating a Read-Only Channel",
+        "summary": "var ch <-chan int",
+        "description": "Declares a read-only channel that only allows receiving values.",
+        "example": "var ch <-chan int\nfmt.Println(ch) // Output: <nil>",
+        "tags": "channel, read-only, receive, goroutine, go"
+    },
+    {
+        "title": "Creating a Write-Only Channel",
+        "summary": "var ch chan<- int",
+        "description": "Declares a write-only channel that only allows sending values.",
+        "example": "var ch chan<- int\nfmt.Println(ch) // Output: <nil>",
+        "tags": "channel, write-only, send, goroutine, go"
+    },
+    {
+        "title": "Using a Defer Statement",
+        "summary": "defer fmt.Println(\"Executed last\")",
+        "description": "Defers the execution of a function until the surrounding function exits.",
+        "example": "fmt.Println(\"Start\")\ndefer fmt.Println(\"Executed last\")\nfmt.Println(\"End\")\n// Output:\n// Start\n// End\n// Executed last",
+        "tags": "defer, statement, function, delay, execution, go"
+    },
+    {
+        "title": "Using a Sync.Mutex for Locking",
+        "summary": "var mu sync.Mutex",
+        "description": "Declares a mutex to synchronize access to shared resources.",
+        "example": "var mu sync.Mutex\nmu.Lock()\nfmt.Println(\"Locked\")\nmu.Unlock()\nfmt.Println(\"Unlocked\")",
+        "tags": "mutex, lock, unlock, sync, concurrency, go"
+    },
+    {
+        "title": "Using a Sync.RWMutex for Read-Write Locking",
+        "summary": "var rw sync.RWMutex",
+        "description": "Declares a read-write mutex to allow multiple readers or one writer.",
+        "example": "var rw sync.RWMutex\nrw.RLock()\nfmt.Println(\"Read lock acquired\")\nrw.RUnlock()",
+        "tags": "mutex, read-write, lock, sync, concurrency, go"
+    },
+    {
+        "title": "Generating a Random String",
+        "summary": "randStr := randSeq(n)",
+        "description": "Generates a random string of length n using letters and digits.",
+        "example": "func randSeq(n int) string {\n    letters := \"abcdefghijklmnopqrstuvwxyz\"\n    b := make([]byte, n)\n    for i := range b {\n        b[i] = letters[rand.Intn(len(letters))]\n    }\n    return string(b)\n}\nfmt.Println(randSeq(5))",
+        "tags": "random, string, generate, characters, go"
+    },
+    {
+        "title": "Parsing JSON from a String",
+        "summary": "json.Unmarshal([]byte(jsonStr), &obj)",
+        "description": "Parses a JSON string into a Go struct using the encoding/json package.",
+        "example": "type Person struct { Name string }\nvar p Person\njsonStr := `{\"Name\": \"Alice\"}`\njson.Unmarshal([]byte(jsonStr), &p)\nfmt.Println(p.Name) // Output: Alice",
+        "tags": "json, parse, unmarshal, string, struct, go"
+    },
+    {
+        "title": "Encoding a Struct to JSON",
+        "summary": "jsonData, _ := json.Marshal(obj)",
+        "description": "Converts a struct to a JSON string using the encoding/json package.",
+        "example": "type Person struct { Name string }\np := Person{Name: \"Bob\"}\njsonData, _ := json.Marshal(p)\nfmt.Println(string(jsonData)) // Output: {\"Name\":\"Bob\"}",
+        "tags": "json, marshal, struct, encode, convert, go"
+    },
+    {
+        "title": "Getting the Current Unix Timestamp",
+        "summary": "timestamp := time.Now().Unix()",
+        "description": "Retrieves the current Unix timestamp in seconds.",
+        "example": "fmt.Println(time.Now().Unix())",
+        "tags": "time, timestamp, unix, current, go"
+    },
+    {
+        "title": "Creating a Custom Error",
+        "summary": "err := errors.New(\"custom error message\")",
+        "description": "Creates a new custom error using the errors package.",
+        "example": "import \"errors\"\nerr := errors.New(\"something went wrong\")\nfmt.Println(err)",
+        "tags": "error, custom, create, message, go"
+    },
+    {
+        "title": "Handling a Panic with Recover",
+        "summary": "defer func() { if r := recover(); r != nil { fmt.Println(\"Recovered\") } }()",
+        "description": "Catches and handles a panic using defer and recover.",
+        "example": "defer func() { if r := recover(); r != nil { fmt.Println(\"Recovered\") } }()\npanic(\"Something went wrong\")",
+        "tags": "panic, recover, error, exception, handle, go"
+    },
+    {
+        "title": "Sorting a Struct Slice by Field",
+        "summary": "sort.Slice(people, func(i, j int) bool { return people[i].Age < people[j].Age })",
+        "description": "Sorts a slice of structs by a specific field using sort.Slice.",
+        "example": "type Person struct { Name string; Age int }\npeople := []Person{{\"Alice\", 30}, {\"Bob\", 25}}\nsort.Slice(people, func(i, j int) bool { return people[i].Age < people[j].Age })\nfmt.Println(people)",
+        "tags": "sort, struct, slice, field, order, go"
+    },
+    {
+        "title": "Converting a Float to an Integer",
+        "summary": "intVal := int(floatVal)",
+        "description": "Converts a floating-point number to an integer by truncating decimals.",
+        "example": "floatVal := 3.99\nintVal := int(floatVal)\nfmt.Println(intVal) // Output: 3",
+        "tags": "float, integer, convert, truncate, go"
+    },
+    {
+        "title": "Reading Environment Variables",
+        "summary": "value := os.Getenv(\"MY_ENV\")",
+        "description": "Retrieves the value of an environment variable.",
+        "example": "fmt.Println(os.Getenv(\"PATH\"))",
+        "tags": "environment, variable, read, getenv, go"
+    },
+    {
+        "title": "Getting the Current Time",
+        "summary": "now := time.Now()",
+        "description": "Retrieves the current local time as a time.Time object.",
+        "example": "fmt.Println(time.Now())",
+        "tags": "time, now, current, datetime, go"
+    },
+    {
+        "title": "Checking If a Slice is Empty",
+        "summary": "isEmpty := len(slice) == 0",
+        "description": "Checks if a given slice is empty by comparing its length to zero.",
+        "example": "nums := []int{}\nfmt.Println(len(nums) == 0) // Output: true",
+        "tags": "slice, empty, check, length, condition, golang"
+    },
+    {
+        "title": "Finding the Index of an Element in a Slice",
+        "summary": "index := slices.Index(slice, value)",
+        "description": "Finds the index of the first occurrence of an element in a slice. Returns -1 if not found.",
+        "example": "nums := []int{10, 20, 30}\nfmt.Println(slices.Index(nums, 20)) // Output: 1",
+        "tags": "slice, find, index, search, element, golang"
+    },
+    {
+        "title": "Removing an Element from a Slice",
+        "summary": "slice = append(slice[:i], slice[i+1:]...)",
+        "description": "Removes an element at index `i` from a slice by using slicing and appending.",
+        "example": "nums := []int{1, 2, 3, 4}\ni := 2\nnums = append(nums[:i], nums[i+1:]...)\nfmt.Println(nums) // Output: [1 2 4]",
+        "tags": "slice, remove, delete, index, modify, golang"
+    },
+    {
+        "title": "Cloning a Slice",
+        "summary": "clone := append([]T(nil), original...)",
+        "description": "Creates a new copy of a slice without modifying the original.",
+        "example": "nums := []int{1, 2, 3}\nclone := append([]int(nil), nums...)\nfmt.Println(clone) // Output: [1 2 3]",
+        "tags": "slice, copy, clone, duplicate, new, golang"
+    },
+    {
+        "title": "Shuffling a Slice",
+        "summary": "rand.Shuffle(len(slice), func(i, j int) { slice[i], slice[j] = slice[j], slice[i] })",
+        "description": "Randomly shuffles the elements of a slice.",
+        "example": "nums := []int{1, 2, 3, 4, 5}\nrand.Shuffle(len(nums), func(i, j int) { nums[i], nums[j] = nums[j], nums[i] })\nfmt.Println(nums)",
+        "tags": "slice, shuffle, random, mix, order, golang"
+    },
+    {
+        "title": "Finding Unique Elements in a Slice",
+        "summary": "unique := make(map[T]struct{})",
+        "description": "Extracts unique elements from a slice using a map.",
+        "example": "nums := []int{1, 2, 2, 3, 4, 4}\nunique := make(map[int]struct{})\nfor _, num := range nums { unique[num] = struct{}{} }\nfmt.Println(len(unique)) // Output: 4",
+        "tags": "slice, unique, remove duplicates, map, set, golang"
+    },
+    {
+        "title": "Finding Common Elements in Two Slices",
+        "summary": "for _, val := range slice1 { if set[val] { common = append(common, val) } }",
+        "description": "Finds the common elements between two slices using a map.",
+        "example": "a := []int{1, 2, 3}\nb := []int{2, 3, 4}\ncommon := []int{}\nset := make(map[int]bool)\nfor _, v := range a { set[v] = true }\nfor _, v := range b { if set[v] { common = append(common, v) } }\nfmt.Println(common) // Output: [2 3]",
+        "tags": "slice, common, intersection, search, compare, golang"
+    },
+    {
+        "title": "Converting a Map to a Slice of Keys",
+        "summary": "keys := make([]T, 0, len(map))",
+        "description": "Extracts the keys from a map and stores them in a slice.",
+        "example": "m := map[string]int{\"a\": 1, \"b\": 2}\nkeys := make([]string, 0, len(m))\nfor k := range m { keys = append(keys, k) }\nfmt.Println(keys) // Output: [a b]",
+        "tags": "map, slice, keys, extract, list, golang"
+    },
+    {
+        "title": "Converting a Map to a Slice of Values",
+        "summary": "values := make([]T, 0, len(map))",
+        "description": "Extracts the values from a map and stores them in a slice.",
+        "example": "m := map[string]int{\"a\": 1, \"b\": 2}\nvalues := make([]int, 0, len(m))\nfor _, v := range m { values = append(values, v) }\nfmt.Println(values) // Output: [1 2]",
+        "tags": "map, slice, values, extract, list, golang"
+    },
+    {
+        "title": "Merging Two Maps",
+        "summary": "for k, v := range map2 { map1[k] = v }",
+        "description": "Combines two maps by adding key-value pairs from one map to another.",
+        "example": "m1 := map[string]int{\"a\": 1}\nm2 := map[string]int{\"b\": 2}\nfor k, v := range m2 { m1[k] = v }\nfmt.Println(m1) // Output: map[a:1 b:2]",
+        "tags": "map, merge, combine, union, golang"
+    },
+    {
+        "title": "Counting Occurrences of Elements in a Slice",
+        "summary": "countMap := make(map[T]int)",
+        "description": "Creates a frequency count of elements in a slice using a map.",
+        "example": "nums := []int{1, 2, 2, 3, 3, 3}\ncount := make(map[int]int)\nfor _, num := range nums { count[num]++ }\nfmt.Println(count) // Output: map[1:1 2:2 3:3]",
+        "tags": "slice, count, frequency, map, occurrences, golang"
+    },
+    {
+        "title": "Generating a Random String",
+        "summary": "randString := string(bytes)",
+        "description": "Generates a random alphanumeric string of a given length.",
+        "example": "const letters = \"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ\"\nb := make([]byte, 6)\nfor i := range b { b[i] = letters[rand.Intn(len(letters))] }\nfmt.Println(string(b))",
+        "tags": "random, string, generate, alphanumeric, golang"
+    },
+    {
+        "title": "Generating a UUID",
+        "summary": "uuid := uuid.New().String()",
+        "description": "Creates a unique identifier using the `github.com/google/uuid` package.",
+        "example": "import \"github.com/google/uuid\"\nfmt.Println(uuid.New().String())",
+        "tags": "uuid, generate, unique, identifier, random, golang"
+    },
+    {
+        "title": "Flattening a Slice of Slices",
+        "summary": "flat := append(slice1, slice2...)",
+        "description": "Flattens a slice of slices into a single slice.",
+        "example": "nested := [][]int{{1, 2}, {3, 4}}\nflat := []int{}\nfor _, sub := range nested { flat = append(flat, sub...) }\nfmt.Println(flat) // Output: [1 2 3 4]",
+        "tags": "slice, flatten, merge, combine, golang"
+    },
+    {
+        "title": "Using a Pointer",
+        "summary": "var ptr *int = &value",
+        "description": "Declares a pointer to an integer and assigns it the memory address of an existing integer variable.",
+        "example": "var num int = 42\nvar ptr *int = &num // Pointer to num",
+        "tags": "pointer, memory, address, reference, golang"
+    },
+    {
+        "title": "Dereferencing a Pointer",
+        "summary": "*ptr",
+        "description": "Accesses the value stored at the memory address that a pointer is pointing to.",
+        "example": "var num int = 42\nvar ptr *int = &num\nfmt.Println(*ptr) // Prints 42",
+        "tags": "pointer, dereference, memory, reference, golang"
+    },
+    {
+        "title": "Creating a New Pointer",
+        "summary": "ptr := new(int)",
+        "description": "Allocates memory for an integer and returns a pointer to it using the `new` function.",
+        "example": "ptr := new(int)\n*ptr = 100\nfmt.Println(*ptr) // Prints 100",
+        "tags": "pointer, memory allocation, new, golang"
+    },
+    {
+        "title": "Using a Defer with Multiple Calls",
+        "summary": "defer fmt.Println()",
+        "description": "Multiple defer statements execute in last-in, first-out (LIFO) order.",
+        "example": "defer fmt.Println(\"First\")\ndefer fmt.Println(\"Second\")\ndefer fmt.Println(\"Third\") // Executes Third, then Second, then First",
+        "tags": "defer, execution order, LIFO, golang"
+    },
+    {
+        "title": "Using a Type Alias",
+        "summary": "type alias = existingType",
+        "description": "Defines an alias for an existing type, making it easier to use or read in the codebase.",
+        "example": "type Age int\nvar myAge Age = 30",
+        "tags": "type alias, readability, type declaration, golang"
+    },
+    {
+        "title": "Creating a Custom Type",
+        "summary": "type name struct {}",
+        "description": "Declares a new custom struct type that can hold multiple related fields.",
+        "example": "type Person struct {\n    Name string\n    Age  int\n}\nvar p = Person{Name: \"Alice\", Age: 25}",
+        "tags": "struct, custom type, declaration, golang"
+    },
+    {
+        "title": "Using a Type Assertion",
+        "summary": "value.(type)",
+        "description": "Extracts the underlying type from an interface using a type assertion.",
+        "example": "var i interface{} = \"Hello\"\ns, ok := i.(string)\nfmt.Println(s, ok) // Prints Hello true",
+        "tags": "type assertion, interface, type extraction, golang"
+    },
+    {
+        "title": "Using a Type Switch",
+        "summary": "switch value.(type) {}",
+        "description": "Checks the dynamic type of an interface and executes the matching case block.",
+        "example": "var x interface{} = 10\nswitch v := x.(type) {\ncase int:\n    fmt.Println(\"Integer\", v)\ncase string:\n    fmt.Println(\"String\", v)\n}",
+        "tags": "type switch, interface, type checking, golang"
+    },
+    {
+        "title": "Using a Map with Structs",
+        "summary": "map[keyType]structType",
+        "description": "Defines a map where the values are struct types, allowing organized data storage.",
+        "example": "type Person struct {\n    Name string\n    Age  int\n}\npeople := map[string]Person{\"alice\": {\"Alice\", 25}}",
+        "tags": "map, struct, data storage, golang"
+    },
+    {
+        "title": "Embedding Structs",
+        "summary": "type StructA struct { StructB }",
+        "description": "Allows one struct to be embedded within another, inheriting its fields and methods.",
+        "example": "type Address struct {\n    City string\n}\ntype Person struct {\n    Name string\n    Address\n}\np := Person{Name: \"Alice\", Address: Address{City: \"NY\"}}",
+        "tags": "struct, embedding, inheritance, golang"
+    },
+    {
+        "title": "Using a Read-Only Channel",
+        "summary": "chan<- type",
+        "description": "Defines a channel that can only receive values but not send them.",
+        "example": "func sendData(ch chan<- int) {\n    ch <- 10\n}",
+        "tags": "channel, concurrency, read-only, golang"
+    },
+    {
+        "title": "Using a Write-Only Channel",
+        "summary": "<-chan type",
+        "description": "Defines a channel that can only send values but not receive them.",
+        "example": "func receiveData(ch <-chan int) {\n    fmt.Println(<-ch)\n}",
+        "tags": "channel, concurrency, write-only, golang"
+    },
+    {
+        "title": "Creating a Buffered Channel",
+        "summary": "make(chan type, size)",
+        "description": "Creates a buffered channel that can hold a limited number of values before blocking.",
+        "example": "ch := make(chan int, 3)\nch <- 1\nch <- 2\nfmt.Println(<-ch)",
+        "tags": "channel, buffer, concurrency, golang"
+    },
+    {
+        "title": "Using Select for Multiple Channels",
+        "summary": "select { case <-ch: }",
+        "description": "Waits for multiple channels and executes the first available case.",
+        "example": "select {\ncase msg := <-ch1:\n    fmt.Println(\"Received from ch1:\", msg)\ncase msg := <-ch2:\n    fmt.Println(\"Received from ch2:\", msg)\n}",
+        "tags": "channel, select, concurrency, golang"
+    },
+    {
+        "title": "Creating a Mutex for Synchronization",
+        "summary": "var mu sync.Mutex",
+        "description": "Uses a mutex to synchronize access to shared resources in concurrent execution.",
+        "example": "var mu sync.Mutex\nmu.Lock()\ndefer mu.Unlock()",
+        "tags": "mutex, synchronization, concurrency, golang"
+    },
+    {
+        "title": "Using RWMutex for Read/Write Locking",
+        "summary": "var rw sync.RWMutex",
+        "description": "Provides separate locks for reading and writing to optimize concurrent access.",
+        "example": "var rw sync.RWMutex\nrw.RLock()\ndefer rw.RUnlock()",
+        "tags": "mutex, read-write lock, concurrency, golang"
+    },
+    {
+        "title": "Generating a UUID",
+        "summary": "uuid.New()",
+        "description": "Generates a unique identifier using the `uuid` package.",
+        "example": "id := uuid.New()\nfmt.Println(id)",
+        "tags": "UUID, unique identifier, random, golang"
+    },
+    {
+        "title": "Shuffling a Slice",
+        "summary": "rand.Shuffle(len(slice), swapFunc)",
+        "description": "Randomly shuffles elements in a slice using the `rand.Shuffle` function.",
+        "example": "rand.Shuffle(len(nums), func(i, j int) { nums[i], nums[j] = nums[j], nums[i] })",
+        "tags": "shuffle, slice, random, golang"
+    },
+    {
+        "title": "Flattening a Slice of Slices",
+        "summary": "append(flat, slice...)",
+        "description": "Combines multiple slices into a single slice using the `append` function.",
+        "example": "var result []int\nslices := [][]int{{1, 2}, {3, 4}}\nfor _, s := range slices {\n    result = append(result, s...)\n}",
+        "tags": "slice, flatten, merge, golang"
+    },
+    {
+        "title": "Parsing a Duration",
+        "summary": "time.ParseDuration(\"1h30m\")",
+        "description": "Parses a duration string into a `time.Duration` value.",
+        "example": "d, _ := time.ParseDuration(\"1h30m\")\nfmt.Println(d.Minutes()) // 90",
+        "tags": "time, duration, parsing, golang"
+    },
+    {
+        "title": "Creating an Unbuffered Channel",
+        "summary": "ch := make(chan int)",
+        "description": "Creates an unbuffered channel that blocks until both sender and receiver are ready.",
+        "example": "ch := make(chan int)\ngo func() { ch <- 42 }()\nfmt.Println(<-ch) // Prints 42",
+        "tags": "channel, unbuffered, concurrency, goroutine, golang"
+    },
+    {
+        "title": "Checking If a Slice Is Empty",
+        "summary": "len(slice) == 0",
+        "description": "Checks if a slice contains no elements by verifying its length.",
+        "example": "nums := []int{}\nfmt.Println(len(nums) == 0) // Prints true",
+        "tags": "slice, length, empty, check, golang"
+    },
+    {
+        "title": "Finding the Index of an Element in a Slice",
+        "summary": "for i, v := range slice {}",
+        "description": "Iterates over a slice to find the index of a specific element.",
+        "example": "nums := []int{10, 20, 30}\nfor i, v := range nums {\n    if v == 20 {\n        fmt.Println(i) // Prints 1\n    }\n}",
+        "tags": "slice, index, search, iteration, golang"
+    },
+    {
+        "title": "Checking If a Struct Has a Zero Value",
+        "summary": "reflect.DeepEqual(struct, emptyStruct)",
+        "description": "Compares a struct with its zero value to determine if it is empty.",
+        "example": "type Person struct { Name string }\np := Person{}\nfmt.Println(reflect.DeepEqual(p, Person{})) // Prints true",
+        "tags": "struct, zero value, comparison, reflection, golang"
+    },
+    {
+        "title": "Using a Defer Statement",
+        "summary": "defer function()",
+        "description": "Schedules a function call to execute after the surrounding function completes.",
+        "example": "defer fmt.Println(\"This runs last\")\nfmt.Println(\"This runs first\")",
+        "tags": "defer, function call, execution order, golang"
+    },
+    {
+        "title": "Using a Sync.Mutex for Locking",
+        "summary": "var mu sync.Mutex",
+        "description": "Uses a `sync.Mutex` to prevent concurrent access to shared resources.",
+        "example": "var mu sync.Mutex\nmu.Lock()\n// Critical section\nmu.Unlock()",
+        "tags": "mutex, locking, synchronization, concurrency, golang"
+    },
+    {
+        "title": "Using a Sync.RWMutex for Read-Write Locking",
+        "summary": "var rw sync.RWMutex",
+        "description": "Provides separate locks for read and write operations for improved performance.",
+        "example": "var rw sync.RWMutex\nrw.RLock()\n// Read operation\nrw.RUnlock()",
+        "tags": "mutex, read-write lock, synchronization, concurrency, golang"
+    },
+    {
+        "title": "Generating a Random String",
+        "summary": "rand.Intn(len(chars))",
+        "description": "Generates a random string using a predefined set of characters.",
+        "example": "chars := \"abcdefghijklmnopqrstuvwxyz\"\ns := string(chars[rand.Intn(len(chars))])\nfmt.Println(s)",
+        "tags": "random, string, generation, golang"
+    },
+    {
+        "title": "Parsing JSON from a String",
+        "summary": "json.Unmarshal([]byte(data), &structVar)",
+        "description": "Decodes JSON-formatted data from a string into a Go struct.",
+        "example": "data := `{\"name\": \"Alice\"}`\nvar p Person\njson.Unmarshal([]byte(data), &p)",
+        "tags": "json, unmarshal, parsing, data, golang"
+    },
+    {
+        "title": "Encoding a Struct to JSON",
+        "summary": "json.Marshal(structVar)",
+        "description": "Converts a Go struct into a JSON-formatted string.",
+        "example": "p := Person{Name: \"Alice\"}\ndata, _ := json.Marshal(p)\nfmt.Println(string(data))",
+        "tags": "json, marshal, encoding, serialization, golang"
+    },
+    {
+        "title": "Getting the Current Unix Timestamp",
+        "summary": "time.Now().Unix()",
+        "description": "Retrieves the current Unix timestamp, representing the number of seconds since 1970-01-01.",
+        "example": "timestamp := time.Now().Unix()\nfmt.Println(timestamp)",
+        "tags": "time, timestamp, unix, current time, golang"
+    },
+    {
+        "title": "Creating a Custom Error",
+        "summary": "errors.New(\"message\")",
+        "description": "Creates a new error value using the `errors.New` function.",
+        "example": "err := errors.New(\"something went wrong\")\nfmt.Println(err)",
+        "tags": "error, custom, handling, golang"
+    },
+    {
+        "title": "Handling a Panic with Recover",
+        "summary": "recover()",
+        "description": "Recovers from a panic to prevent the program from crashing.",
+        "example": "defer func() { if r := recover(); r != nil { fmt.Println(\"Recovered from\", r) } }()\npanic(\"something bad happened\")",
+        "tags": "panic, recover, error handling, golang"
+    },
+    {
+        "title": "Sorting a Struct Slice by Field",
+        "summary": "sort.Slice(slice, func(i, j int) bool {})",
+        "description": "Sorts a slice of structs based on a specific field.",
+        "example": "sort.Slice(people, func(i, j int) bool { return people[i].Age < people[j].Age })",
+        "tags": "slice, sorting, struct, golang"
+    },
+    {
+        "title": "Converting a Float to an Integer",
+        "summary": "int(floatVar)",
+        "description": "Casts a floating-point number to an integer, truncating the decimal part.",
+        "example": "f := 3.99\ni := int(f)\nfmt.Println(i) // Prints 3",
+        "tags": "float, integer, conversion, truncation, golang"
+    },
+    {
+        "title": "Reading Environment Variables",
+        "summary": "os.Getenv(\"VAR_NAME\")",
+        "description": "Retrieves the value of an environment variable.",
+        "example": "path := os.Getenv(\"HOME\")\nfmt.Println(path)",
+        "tags": "environment, variable, read, golang"
+    },
+    {
+        "title": "Getting the Current Time",
+        "summary": "time.Now()",
+        "description": "Retrieves the current date and time as a `time.Time` object.",
+        "example": "now := time.Now()\nfmt.Println(now)",
+        "tags": "time, current, timestamp, datetime, golang"
+    },
+    {
+        "title": "Removing an Element from a Slice",
+        "summary": "append(slice[:i], slice[i+1:]...)",
+        "description": "Removes an element at index `i` from a slice by slicing around it.",
+        "example": "nums := []int{1, 2, 3, 4}\nnums = append(nums[:2], nums[3:]...)\nfmt.Println(nums) // [1, 2, 4]",
+        "tags": "slice, remove, deletion, index, golang"
+    },
+    {
+        "title": "Cloning a Slice",
+        "summary": "copy(newSlice, oldSlice)",
+        "description": "Creates a copy of a slice using the `copy` function.",
+        "example": "nums := []int{1, 2, 3}\ncopyNums := make([]int, len(nums))\ncopy(copyNums, nums)\nfmt.Println(copyNums)",
+        "tags": "slice, copy, clone, golang"
+    },
+    {
+        "title": "Finding Unique Elements in a Slice",
+        "summary": "map[value]bool",
+        "description": "Uses a map to find unique elements in a slice.",
+        "example": "nums := []int{1, 2, 2, 3, 4, 4}\nunique := make(map[int]bool)\nfor _, v := range nums { unique[v] = true }\nfmt.Println(unique)",
+        "tags": "slice, unique, map, filter, golang"
+    },
+    {
+        "title": "Finding the Length of a String",
+        "summary": "len(str)",
+        "description": "Gets the number of characters in a string using the `len` function.",
+        "example": "s := \"hello\"\nfmt.Println(len(s)) // Prints 5",
+        "tags": "string, length, size, golang"
+    },
+    {
+        "title": "Finding the First Character of a String",
+        "summary": "str[0]",
+        "description": "Accesses the first character of a string using indexing.",
+        "example": "s := \"hello\"\nfmt.Println(string(s[0])) // Prints 'h'",
+        "tags": "string, indexing, first character, golang"
+    },
+    {
+        "title": "Finding the Last Character of a String",
+        "summary": "str[len(str)-1]",
+        "description": "Retrieves the last character of a string using its length.",
+        "example": "s := \"hello\"\nfmt.Println(string(s[len(s)-1])) // Prints 'o'",
+        "tags": "string, last character, indexing, golang"
+    },
+    {
+        "title": "Converting a Byte Slice to a String",
+        "summary": "string(bytes)",
+        "description": "Converts a slice of bytes into a string.",
+        "example": "b := []byte{72, 101, 108, 108, 111}\nfmt.Println(string(b)) // Prints 'Hello'",
+        "tags": "string, byte slice, conversion, golang"
+    },
+    {
+        "title": "Converting a String to a Byte Slice",
+        "summary": "[]byte(str)",
+        "description": "Converts a string into a slice of bytes.",
+        "example": "s := \"hello\"\nb := []byte(s)\nfmt.Println(b) // Prints [104 101 108 108 111]",
+        "tags": "string, byte slice, conversion, golang"
+    },
+    {
+        "title": "Getting the Type of a Variable",
+        "summary": "fmt.Sprintf(\"%T\", var)",
+        "description": "Determines the type of a variable using `fmt.Sprintf`.",
+        "example": "x := 42\nfmt.Println(fmt.Sprintf(\"%T\", x)) // Prints 'int'",
+        "tags": "variable, type, fmt, golang"
+    },
+    {
+        "title": "Checking If a String Starts with a Prefix",
+        "summary": "strings.HasPrefix(str, prefix)",
+        "description": "Checks if a string begins with a specific prefix.",
+        "example": "fmt.Println(strings.HasPrefix(\"golang\", \"go\")) // Prints true",
+        "tags": "string, prefix, check, strings, golang"
+    },
+    {
+        "title": "Checking If a String Ends with a Suffix",
+        "summary": "strings.HasSuffix(str, suffix)",
+        "description": "Checks if a string ends with a specific suffix.",
+        "example": "fmt.Println(strings.HasSuffix(\"golang\", \"lang\")) // Prints true",
+        "tags": "string, suffix, check, strings, golang"
+    },
+    {
+        "title": "Converting a Boolean to a String",
+        "summary": "strconv.FormatBool(boolVar)",
+        "description": "Converts a boolean value to a string representation.",
+        "example": "s := strconv.FormatBool(true)\nfmt.Println(s) // Prints 'true'",
+        "tags": "boolean, string, conversion, strconv, golang"
+    },
+    {
+        "title": "Parsing a Boolean from a String",
+        "summary": "strconv.ParseBool(str)",
+        "description": "Parses a string into a boolean value.",
+        "example": "b, _ := strconv.ParseBool(\"true\")\nfmt.Println(b) // Prints true",
+        "tags": "boolean, string, parsing, strconv, golang"
+    },
+    {
+        "title": "Swapping Two Variables",
+        "summary": "a, b = b, a",
+        "description": "Swaps the values of two variables in a single line.",
+        "example": "a, b := 1, 2\na, b = b, a\nfmt.Println(a, b) // Prints '2 1'",
+        "tags": "swap, variables, assignment, golang"
+    },
+    {
+        "title": "Converting an Integer to a Float",
+        "summary": "float64(intVar)",
+        "description": "Casts an integer to a floating-point number.",
+        "example": "i := 42\nf := float64(i)\nfmt.Println(f) // Prints 42.0",
+        "tags": "integer, float, conversion, golang"
+    },
+    {
+        "title": "Finding the Number of Digits in an Integer",
+        "summary": "len(strconv.Itoa(num))",
+        "description": "Determines the number of digits in an integer.",
+        "example": "num := 12345\nfmt.Println(len(strconv.Itoa(num))) // Prints 5",
+        "tags": "integer, digits, count, strconv, golang"
+    },
+    {
+        "title": "Checking If a Number Is Positive",
+        "summary": "num > 0",
+        "description": "Determines whether a number is positive.",
+        "example": "num := 10\nfmt.Println(num > 0) // Prints true",
+        "tags": "number, check, positive, comparison, golang"
+    },
+    {
+        "title": "Checking If a Number Is Negative",
+        "summary": "num < 0",
+        "description": "Determines whether a number is negative.",
+        "example": "num := -5\nfmt.Println(num < 0) // Prints true",
+        "tags": "number, check, negative, comparison, golang"
+    },
+    {
+        "title": "Computing the Logarithm of a Number",
+        "summary": "math.Log(num)",
+        "description": "Computes the natural logarithm (base e) of a number.",
+        "example": "fmt.Println(math.Log(10))",
+        "tags": "math, logarithm, computation, golang"
+    },
+    {
+        "title": "Computing the Exponential Function",
+        "summary": "math.Exp(num)",
+        "description": "Computes the exponential function e^x.",
+        "example": "fmt.Println(math.Exp(2))",
+        "tags": "math, exponential, computation, golang"
+    },
+    {
+        "title": "Computing the Remainder of Division",
+        "summary": "math.Mod(x, y)",
+        "description": "Calculates the remainder of division using floating-point numbers.",
+        "example": "fmt.Println(math.Mod(10.5, 3)) // Prints 1.5",
+        "tags": "math, modulo, remainder, computation, golang"
+    },
+    {
+        "title": "Finding the Absolute Difference Between Two Numbers",
+        "summary": "math.Abs(a - b)",
+        "description": "Computes the absolute difference between two numbers.",
+        "example": "fmt.Println(math.Abs(10 - 15)) // Prints 5",
+        "tags": "math, absolute, difference, golang"
+    },
+    {
+        "title": "Generating a Random Boolean",
+        "summary": "rand.Intn(2) == 1",
+        "description": "Generates a random boolean value (true or false).",
+        "example": "fmt.Println(rand.Intn(2) == 1)",
+        "tags": "random, boolean, generation, golang"
+    },
+    {
+        "title": "Finding the Ceiling of a Number",
+        "summary": "res := math.Ceil(num)",
+        "description": "Returns the smallest integer greater than or equal to a given number.",
+        "example": "num := 4.3\nres := math.Ceil(num)\nfmt.Println(res) // Prints 5",
+        "tags": "math, ceiling, rounding, golang"
+    },
+    {
+        "title": "Finding the Floor of a Number",
+        "summary": "res := math.Floor(num)",
+        "description": "Returns the largest integer less than or equal to a given number.",
+        "example": "num := 4.9\nres := math.Floor(num)\nfmt.Println(res) // Prints 4",
+        "tags": "math, floor, rounding, golang"
+    },
+    {
+        "title": "Rounding a Number to the Nearest Integer",
+        "summary": "res := math.Round(num)",
+        "description": "Rounds a floating-point number to the nearest integer.",
+        "example": "num := 4.5\nres := math.Round(num)\nfmt.Println(res) // Prints 5",
+        "tags": "math, rounding, nearest integer, golang"
+    },
+    {
+        "title": "Calculating the Modulus of Two Numbers",
+        "summary": "res := a % b",
+        "description": "Finds the remainder when dividing one integer by another.",
+        "example": "a, b := 10, 3\nres := a % b\nfmt.Println(res) // Prints 1",
+        "tags": "math, modulus, remainder, golang"
+    },
+    {
+        "title": "Generating a Random Float Between 0 and 1",
+        "summary": "res := rand.Float64()",
+        "description": "Generates a random floating-point number between 0 and 1.",
+        "example": "res := rand.Float64()\nfmt.Println(res) // Prints a random float between 0 and 1",
+        "tags": "random, float, math, golang"
+    },
+    {
+        "title": "Getting the Current Year",
+        "summary": "res := time.Now().Year()",
+        "description": "Retrieves the current year from the system clock.",
+        "example": "res := time.Now().Year()\nfmt.Println(res) // Prints the current year",
+        "tags": "time, date, year, golang"
+    },
+    {
+        "title": "Parsing a Date String",
+        "summary": "res, err := time.Parse(layout, dateStr)",
+        "description": "Parses a date string into a time.Time object using a specific layout.",
+        "example": "layout := \"2006-01-02\"\ndateStr := \"2025-02-23\"\nres, err := time.Parse(layout, dateStr)\nif err == nil {\n    fmt.Println(res)\n}",
+        "tags": "time, parsing, date, golang"
+    },
+    {
+        "title": "Checking If a Rune Is a Letter",
+        "summary": "res := unicode.IsLetter(r)",
+        "description": "Checks if a given rune is a letter.",
+        "example": "r := 'A'\nres := unicode.IsLetter(r)\nfmt.Println(res) // Prints true",
+        "tags": "unicode, letter, rune, validation, golang"
+    },
+    {
+        "title": "Checking If a Rune Is a Digit",
+        "summary": "res := unicode.IsDigit(r)",
+        "description": "Checks if a given rune is a numeric digit.",
+        "example": "r := '5'\nres := unicode.IsDigit(r)\nfmt.Println(res) // Prints true",
+        "tags": "unicode, digit, rune, validation, golang"
+    },
+    {
+        "title": "Converting a Rune to Lowercase",
+        "summary": "res := unicode.ToLower(r)",
+        "description": "Converts an uppercase rune to lowercase.",
+        "example": "r := 'A'\nres := unicode.ToLower(r)\nfmt.Println(res) // Prints 'a'",
+        "tags": "unicode, lowercase, conversion, golang"
+    },
+    {
+        "title": "Calculating the Length of a Map",
+        "summary": "res := len(myMap)",
+        "description": "Returns the number of key-value pairs in a map.",
+        "example": "myMap := map[string]int{\"a\": 1, \"b\": 2}\nres := len(myMap)\nfmt.Println(res) // Prints 2",
+        "tags": "map, length, size, golang"
+    },
+    {
+        "title": "Creating a Ticker",
+        "summary": "res := time.NewTicker(duration)",
+        "description": "Creates a new ticker that sends a message on a channel at intervals.",
+        "example": "ticker := time.NewTicker(1 * time.Second)\ndefer ticker.Stop()\nfor range ticker.C {\n    fmt.Println(\"Tick\")\n}",
+        "tags": "time, ticker, interval, golang"
+    },
+    {
+        "title": "Waiting for a Duration",
+        "summary": "time.Sleep(duration)",
+        "description": "Pauses execution for the specified duration.",
+        "example": "time.Sleep(2 * time.Second)\nfmt.Println(\"Waited 2 seconds\")",
+        "tags": "time, sleep, delay, golang"
+    },
+    {
+        "title": "Checking If a File Is a Directory",
+        "summary": "res := fileInfo.IsDir()",
+        "description": "Determines whether a given file path is a directory.",
+        "example": "fileInfo, err := os.Stat(\"/path/to/dir\")\nif err == nil {\n    res := fileInfo.IsDir()\n    fmt.Println(res)\n}",
+        "tags": "file, directory, check, golang"
+    },
+    {
+        "title": "Getting the Current User's Home Directory",
+        "summary": "res, err := os.UserHomeDir()",
+        "description": "Retrieves the home directory of the current user.",
+        "example": "res, err := os.UserHomeDir()\nif err == nil {\n    fmt.Println(res)\n}",
+        "tags": "os, home directory, user, golang"
+    },
+    {
+        "title": "Getting the Length of a Channel",
+        "summary": "res := len(myChan)",
+        "description": "Returns the number of elements currently buffered in a channel.",
+        "example": "myChan := make(chan int, 5)\nmyChan <- 1\nres := len(myChan)\nfmt.Println(res) // Prints 1",
+        "tags": "channel, length, buffering, golang"
+    },
+    {
+        "title": "Checking If a File Is Readable",
+        "summary": "res := os.Open(filePath)",
+        "description": "Attempts to open a file to determine if it is readable.",
+        "example": "filePath := \"test.txt\"\nf, err := os.Open(filePath)\nif err == nil {\n    res := true\n    f.Close()\n} else {\n    res := false\n}\nfmt.Println(res)",
+        "tags": "file, read, check, golang"
+    },
+    {
+        "title": "Finding the Type of an Interface",
+        "summary": "res := reflect.TypeOf(value)",
+        "description": "Retrieves the type of a variable using reflection.",
+        "example": "res := reflect.TypeOf(42)\nfmt.Println(res) // Prints 'int'",
+        "tags": "reflection, type, interface, golang"
+    },
+    {
+        "title": "Checking If a String Contains a Substring",
+        "summary": "res := strings.Contains(str, substr)",
+        "description": "Checks if a string contains a specified substring.",
+        "example": "str := \"hello world\"\nsubstr := \"world\"\nres := strings.Contains(str, substr)\nfmt.Println(res) // Prints true",
+        "tags": "string, contains, substring, golang"
+    },
+    {
+        "title": "Checking If a String Has a Prefix",
+        "summary": "res := strings.HasPrefix(str, prefix)",
+        "description": "Checks if a string starts with a specified prefix.",
+        "example": "str := \"golang\"\nprefix := \"go\"\nres := strings.HasPrefix(str, prefix)\nfmt.Println(res) // Prints true",
+        "tags": "string, prefix, check, golang"
+    },
+    {
+        "title": "Checking If a String Has a Suffix",
+        "summary": "res := strings.HasSuffix(str, suffix)",
+        "description": "Checks if a string ends with a specified suffix.",
+        "example": "str := \"golang\"\nsuffix := \"lang\"\nres := strings.HasSuffix(str, suffix)\nfmt.Println(res) // Prints true",
+        "tags": "string, suffix, check, golang"
+    },
+    {
+        "title": "Trimming Spaces from a String",
+        "summary": "res := strings.TrimSpace(str)",
+        "description": "Removes leading and trailing spaces from a string.",
+        "example": "str := \"  hello world  \"\nres := strings.TrimSpace(str)\nfmt.Println(res) // Prints 'hello world'",
+        "tags": "string, trim, whitespace, golang"
+    },
+    {
+        "title": "Splitting a String by a Delimiter",
+        "summary": "res := strings.Split(str, delimiter)",
+        "description": "Splits a string into a slice using a specified delimiter.",
+        "example": "str := \"a,b,c\"\ndelimiter := \",\"\nres := strings.Split(str, delimiter)\nfmt.Println(res) // Prints ['a', 'b', 'c']",
+        "tags": "string, split, delimiter, golang"
+    },
+    {
+        "title": "Joining a Slice of Strings",
+        "summary": "res := strings.Join(slice, separator)",
+        "description": "Joins a slice of strings into a single string with a separator.",
+        "example": "slice := []string{\"a\", \"b\", \"c\"}\nseparator := \",\"\nres := strings.Join(slice, separator)\nfmt.Println(res) // Prints 'a,b,c'",
+        "tags": "string, join, slice, golang"
+    },
+    {
+        "title": "Replacing Substrings in a String",
+        "summary": "res := strings.ReplaceAll(str, old, new)",
+        "description": "Replaces all occurrences of a substring in a string.",
+        "example": "str := \"hello world\"\nres := strings.ReplaceAll(str, \"world\", \"golang\")\nfmt.Println(res) // Prints 'hello golang'",
+        "tags": "string, replace, substring, golang"
+    },
+    {
+        "title": "Converting a String to Uppercase",
+        "summary": "res := strings.ToUpper(str)",
+        "description": "Converts a string to uppercase.",
+        "example": "str := \"golang\"\nres := strings.ToUpper(str)\nfmt.Println(res) // Prints 'GOLANG'",
+        "tags": "string, uppercase, conversion, golang"
+    },
+    {
+        "title": "Converting a String to Lowercase",
+        "summary": "res := strings.ToLower(str)",
+        "description": "Converts a string to lowercase.",
+        "example": "str := \"GOLANG\"\nres := strings.ToLower(str)\nfmt.Println(res) // Prints 'golang'",
+        "tags": "string, lowercase, conversion, golang"
+    },
+    {
+        "title": "Reversing a String",
+        "summary": "res := reverseString(str)",
+        "description": "Reverses the characters in a string.",
+        "example": "func reverseString(s string) string {\n    runes := []rune(s)\n    for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {\n        runes[i], runes[j] = runes[j], runes[i]\n    }\n    return string(runes)\n}\nres := reverseString(\"hello\")\nfmt.Println(res) // Prints 'olleh'",
+        "tags": "string, reverse, manipulation, golang"
+    },
+    {
+        "title": "Checking If Two Strings Are Equal (Case Insensitive)",
+        "summary": "res := strings.EqualFold(str1, str2)",
+        "description": "Checks if two strings are equal, ignoring case differences.",
+        "example": "str1 := \"GoLang\"\nstr2 := \"golang\"\nres := strings.EqualFold(str1, str2)\nfmt.Println(res) // Prints true",
+        "tags": "string, equality, case-insensitive, golang"
+    },
+    {
+        "title": "Counting Substring Occurrences",
+        "summary": "res := strings.Count(str, substr)",
+        "description": "Counts the number of times a substring appears in a string.",
+        "example": "str := \"banana\"\nsubstr := \"a\"\nres := strings.Count(str, substr)\nfmt.Println(res) // Prints 3",
+        "tags": "string, count, substring, golang"
+    },
+    {
+        "title": "Checking If a Map Contains a Key",
+        "summary": "_, res := myMap[key]",
+        "description": "Checks if a key exists in a map.",
+        "example": "myMap := map[string]int{\"a\": 1, \"b\": 2}\nkey := \"a\"\n_, res := myMap[key]\nfmt.Println(res) // Prints true",
+        "tags": "map, key, check, golang"
+    },
+    {
+        "title": "Finding the Ceiling of a Number",
+        "summary": "res := math.Ceil(num)",
+        "description": "Finds the smallest integer greater than or equal to a given float using `math.Ceil`.",
+        "example": "num := 4.3\nres := math.Ceil(num) // res = 5",
+        "tags": "math, ceil, round up, golang"
+    },
+    {
+        "title": "Finding the Floor of a Number",
+        "summary": "res := math.Floor(num)",
+        "description": "Finds the largest integer less than or equal to a given float using `math.Floor`.",
+        "example": "num := 4.9\nres := math.Floor(num) // res = 4",
+        "tags": "math, floor, round down, golang"
+    },
+    {
+        "title": "Calculating the Remainder of Division",
+        "summary": "res := math.Mod(x, y)",
+        "description": "Calculates the remainder of `x` divided by `y` using `math.Mod`.",
+        "example": "x, y := 10.5, 3.2\nres := math.Mod(x, y) // res = 0.9",
+        "tags": "math, remainder, modulus, golang"
+    },
+    {
+        "title": "Computing the Natural Logarithm",
+        "summary": "res := math.Log(num)",
+        "description": "Computes the natural logarithm of a number using `math.Log`.",
+        "example": "num := 10.0\nres := math.Log(num) // res ≈ 2.3026",
+        "tags": "math, logarithm, natural log, golang"
+    },
+    {
+        "title": "Computing the Base-10 Logarithm",
+        "summary": "res := math.Log10(num)",
+        "description": "Computes the base-10 logarithm of a number using `math.Log10`.",
+        "example": "num := 100.0\nres := math.Log10(num) // res = 2",
+        "tags": "math, logarithm, base 10, golang"
+    },
+    {
+        "title": "Computing the Base-2 Logarithm",
+        "summary": "res := math.Log2(num)",
+        "description": "Computes the base-2 logarithm of a number using `math.Log2`.",
+        "example": "num := 8.0\nres := math.Log2(num) // res = 3",
+        "tags": "math, logarithm, base 2, golang"
+    },
+    {
+        "title": "Computing the Exponential Function",
+        "summary": "res := math.Exp(num)",
+        "description": "Computes e^x (exponential function) using `math.Exp`.",
+        "example": "num := 2.0\nres := math.Exp(num) // res ≈ 7.389",
+        "tags": "math, exponential, exponent, golang"
+    },
+    {
+        "title": "Computing the Sine of an Angle",
+        "summary": "res := math.Sin(angle)",
+        "description": "Computes the sine of an angle in radians using `math.Sin`.",
+        "example": "angle := math.Pi / 2\nres := math.Sin(angle) // res = 1",
+        "tags": "math, sine, trigonometry, golang"
+    },
+    {
+        "title": "Computing the Cosine of an Angle",
+        "summary": "res := math.Cos(angle)",
+        "description": "Computes the cosine of an angle in radians using `math.Cos`.",
+        "example": "angle := 0.0\nres := math.Cos(angle) // res = 1",
+        "tags": "math, cosine, trigonometry, golang"
+    },
+    {
+        "title": "Computing the Tangent of an Angle",
+        "summary": "res := math.Tan(angle)",
+        "description": "Computes the tangent of an angle in radians using `math.Tan`.",
+        "example": "angle := math.Pi / 4\nres := math.Tan(angle) // res ≈ 1",
+        "tags": "math, tangent, trigonometry, golang"
+    },
+    {
+        "title": "Computing the Inverse Sine",
+        "summary": "res := math.Asin(value)",
+        "description": "Computes the arcsine (inverse sine) of a value using `math.Asin`.",
+        "example": "value := 0.5\nres := math.Asin(value) // res ≈ 0.5236 (30 degrees)",
+        "tags": "math, arcsine, inverse trigonometry, golang"
+    },
+    {
+        "title": "Computing the Inverse Cosine",
+        "summary": "res := math.Acos(value)",
+        "description": "Computes the arccosine (inverse cosine) of a value using `math.Acos`.",
+        "example": "value := 0.5\nres := math.Acos(value) // res ≈ 1.0472 (60 degrees)",
+        "tags": "math, arccosine, inverse trigonometry, golang"
+    },
+    {
+        "title": "Computing the Inverse Tangent",
+        "summary": "res := math.Atan(value)",
+        "description": "Computes the arctangent (inverse tangent) of a value using `math.Atan`.",
+        "example": "value := 1.0\nres := math.Atan(value) // res ≈ 0.7854 (45 degrees)",
+        "tags": "math, arctangent, inverse trigonometry, golang"
+    },
+    {
+        "title": "Computing the Hyperbolic Sine",
+        "summary": "res := math.Sinh(value)",
+        "description": "Computes the hyperbolic sine of a value using `math.Sinh`.",
+        "example": "value := 1.0\nres := math.Sinh(value) // res ≈ 1.1752",
+        "tags": "math, hyperbolic sine, hyperbolic, golang"
+    },
+    {
+        "title": "Computing the Hyperbolic Cosine",
+        "summary": "res := math.Cosh(value)",
+        "description": "Computes the hyperbolic cosine of a value using `math.Cosh`.",
+        "example": "value := 1.0\nres := math.Cosh(value) // res ≈ 1.5431",
+        "tags": "math, hyperbolic cosine, hyperbolic, golang"
+    },
+    {
+        "title": "Computing the Hyperbolic Tangent",
+        "summary": "res := math.Tanh(value)",
+        "description": "Computes the hyperbolic tangent of a value using `math.Tanh`.",
+        "example": "value := 1.0\nres := math.Tanh(value) // res ≈ 0.7616",
+        "tags": "math, hyperbolic tangent, hyperbolic, golang"
+    },
+    {
+        "title": "Computing the Cube Root",
+        "summary": "res := math.Cbrt(num)",
+        "description": "Computes the cube root of a number using `math.Cbrt`.",
+        "example": "num := 27.0\nres := math.Cbrt(num) // res = 3",
+        "tags": "math, cube root, power, golang"
+    },
+    {
+        "title": "Computing the Greatest Common Divisor",
+        "summary": "res := math.Gcd(a, b)",
+        "description": "Computes the greatest common divisor of two integers using `math.Gcd`.",
+        "example": "a, b := 36, 48\nres := math.Gcd(a, b) // res = 12",
+        "tags": "math, gcd, greatest common divisor, golang"
+    },
+    {
+        "title": "Rounding a Float to the Nearest Integer",
+        "summary": "res := math.Round(num)",
+        "description": "Rounds a floating-point number to the nearest integer using `math.Round`.",
+        "example": "num := 4.6\nres := math.Round(num) // res = 5",
+        "tags": "math, rounding, float, golang"
+    },
+    {
+        "title": "Getting the Sign of a Number",
+        "summary": "res := math.Copysign(1, num)",
+        "description": "Gets the sign of a number using `math.Copysign`.",
+        "example": "num := -42.5\nres := math.Copysign(1, num) // res = -1",
+        "tags": "math, sign, copysign, golang"
+    }
+]

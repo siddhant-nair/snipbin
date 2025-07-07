@@ -1,0 +1,814 @@
+[
+    {
+        "title": "Log Output to Console",
+        "summary": "console.log(message);",
+        "description": "Prints a message to the console.",
+        "example": "console.log('Hello world!');",
+        "tags": "console, log, output, debug, print, javascript"
+    },
+    {
+        "title": "Log Warning to Console",
+        "summary": "console.warn(message);",
+        "description": "Prints a warning message to the console.",
+        "example": "console.warn('This is a warning!');",
+        "tags": "console, warn, warning, debug, log, javascript"
+    },
+    {
+        "title": "Log Error to Console",
+        "summary": "console.error(message);",
+        "description": "Prints an error message to the console.",
+        "example": "console.error(new Error('Something went wrong!'));",
+        "tags": "console, error, log, debug, print, javascript"
+    },
+    {
+        "title": "Declare and Initialize Numbers",
+        "summary": "let num = value;",
+        "description": "Declares and initializes a number variable.",
+        "example": "let amount = 6;\nlet price = 4.99;",
+        "tags": "number, declare, initialize, variable, javascript"
+    },
+    {
+        "title": "Declare and Initialize Variables",
+        "summary": "let variableName = value;",
+        "description": "Declares and initializes variables with different data types.",
+        "example": "let x = null;\nlet name = 'Tammy';\nconst found = false;",
+        "tags": "variable, declare, initialize, let, const, javascript"
+    },
+    {
+        "title": "Find Length of a String",
+        "summary": "const length = string.length;",
+        "description": "Gets the number of characters in a string.",
+        "example": "let single = 'Wheres my bandit hat?';\nconsole.log(single.length); // 21",
+        "tags": "string, length, size, characters, count, javascript"
+    },
+    {
+        "title": "Basic Arithmetic Operations",
+        "summary": "const result = a OPERATOR b;",
+        "description": "Performs addition, subtraction, multiplication, division, and modulo operations.",
+        "example": "5 + 5; // 10\n10 - 5; // 5\n5 * 10; // 50\n10 / 5; // 2\n10 % 5; // 0",
+        "tags": "arithmetic, operators, math, addition, subtraction, multiplication, division, modulo, javascript"
+    },
+    {
+        "title": "Add a Comment in JavaScript",
+        "summary": "// This is a comment",
+        "description": "Adds a single-line or multi-line comment to the code.",
+        "example": "// This line will denote a comment\n/*\nThe below configuration must be\nchanged before deployment.\n*/",
+        "tags": "comment, documentation, explain, notes, javascript"
+    },
+    {
+        "title": "Use Assignment Operators",
+        "summary": "variable OPERATOR= value;",
+        "description": "Performs assignment operations with shorthand syntax.",
+        "example": "let number = 100;\nnumber += 10; // 110\nnumber -= 5; // 105",
+        "tags": "assignment, operators, shorthand, addition, subtraction, javascript"
+    },
+    {
+        "title": "String Interpolation with Template Literals",
+        "summary": "const message = `Text ${variable}`;",
+        "description": "Interpolates variables into strings using template literals.",
+        "example": "let age = 7;\nconsole.log(`Tommy is ${age} years old.`);",
+        "tags": "string, interpolation, template literals, concatenate, javascript"
+    },
+    {
+        "title": "Declare a Variable with let",
+        "summary": "let variableName;",
+        "description": "Declares a variable using the let keyword.",
+        "example": "let count;\nconsole.log(count); // undefined\ncount = 10;\nconsole.log(count); // 10",
+        "tags": "variable, declare, let, scope, javascript"
+    },
+    {
+        "title": "Declare a Constant with const",
+        "summary": "const variableName = value;",
+        "description": "Declares a constant variable that cannot be reassigned.",
+        "example": "const numberOfColumns = 4;",
+        "tags": "constant, const, immutable, declare, javascript"
+    },
+    {
+        "title": "Use an if Statement",
+        "summary": "if (condition) { statement }",
+        "description": "Executes code if a condition is true.",
+        "example": "const isMailSent = true;\nif (isMailSent) {\n  console.log('Mail sent to recipient');\n}",
+        "tags": "condition, if, statement, logic, javascript"
+    },
+    {
+        "title": "Use Ternary Operator for Conditional Statements",
+        "summary": "const result = condition ? trueValue : falseValue;",
+        "description": "Evaluates a condition and returns a value based on it.",
+        "example": "var x = 1;\nconst result = x == 1 ? true : false;",
+        "tags": "ternary, condition, shorthand, if else, javascript"
+    },
+    {
+        "title": "Logical OR Operator",
+        "summary": "const result = condition1 || condition2;",
+        "description": "Returns true if at least one condition is true.",
+        "example": "true || false; // true\n10 > 5 || 10 > 20; // true",
+        "tags": "logical, or, operator, boolean, javascript"
+    },
+    {
+        "title": "Logical AND Operator",
+        "summary": "const result = condition1 && condition2;",
+        "description": "Returns true if both conditions are true.",
+        "example": "true && true; // true\n4 === 4 && 3 > 1; // true",
+        "tags": "logical, and, operator, boolean, javascript"
+    },
+    {
+        "title": "Comparison Operators",
+        "summary": "const result = a OPERATOR b;",
+        "description": "Performs comparison operations between two values.",
+        "example": "1 > 3; // false\n3 > 1; // true\n1 === '1'; // false",
+        "tags": "comparison, operators, greater, less, equal, javascript"
+    },
+    {
+        "title": "Using the Nullish Coalescing Operator in JavaScript",
+        "summary": "const result = value ?? defaultValue;",
+        "description": "Returns the right-hand value if the left-hand value is null or undefined.",
+        "example": "const message = null ?? 'Hello';\nconsole.log(message); // 'Hello'",
+        "tags": "nullish, coalescing, operator, javascript, undefined, default"
+    },
+    {
+        "title": "Using else if Statement in JavaScript",
+        "summary": "if (condition1) { ... } else if (condition2) { ... } else { ... }",
+        "description": "Executes different code blocks based on multiple conditions.",
+        "example": "const num = 15;\nif (num > 20) {\n  console.log('Large');\n} else if (num > 10) {\n  console.log('Medium');\n} else {\n  console.log('Small');\n}\n// 'Medium'",
+        "tags": "if, else if, conditionals, branching, javascript, statement"
+    },
+    {
+        "title": "Using switch Statement in JavaScript",
+        "summary": "switch (expression) { case value1: ... break; default: ... }",
+        "description": "Executes different code blocks based on the value of an expression.",
+        "example": "const food = 'pizza';\nswitch (food) {\n  case 'apple':\n    console.log('Fruit');\n    break;\n  case 'pizza':\n    console.log('Fast food');\n    break;\n  default:\n    console.log('Unknown');\n}\n// 'Fast food'",
+        "tags": "switch, case, conditionals, javascript, statement, branching"
+    },
+    {
+        "title": "Understanding == vs === in JavaScript",
+        "summary": "Use == for loose equality and === for strict equality.",
+        "description": "The == operator compares values after type conversion, whereas === checks both value and type.",
+        "example": "console.log(0 == false); // true\nconsole.log(0 === false); // false",
+        "tags": "equality, strict equality, loose equality, javascript, comparison"
+    },
+    {
+        "title": "Defining and Calling Functions in JavaScript",
+        "summary": "function functionName(parameters) { return value; }",
+        "description": "Defines a reusable block of code using functions.",
+        "example": "function sum(a, b) {\n  return a + b;\n}\nconsole.log(sum(3, 5)); // 8",
+        "tags": "function, javascript, define, call, return, parameters"
+    },
+    {
+        "title": "Using Anonymous Functions in JavaScript",
+        "summary": "const variableName = function(parameters) { return value; };",
+        "description": "Defines functions without a name and assigns them to a variable.",
+        "example": "const greet = function(name) {\n  return `Hello, ${name}`;\n};\nconsole.log(greet('Alice')); // 'Hello, Alice'",
+        "tags": "anonymous, function, javascript, variable, expression"
+    },
+    {
+        "title": "Using Arrow Functions in JavaScript",
+        "summary": "const functionName = (parameters) => { return value; };",
+        "description": "Defines functions using ES6 arrow syntax, making them more concise.",
+        "example": "const square = (num) => num * num;\nconsole.log(square(4)); // 16",
+        "tags": "arrow function, es6, javascript, lambda, shorthand"
+    },
+    {
+        "title": "Using the return Keyword in JavaScript",
+        "summary": "return value;",
+        "description": "Specifies the value a function should return.",
+        "example": "function multiply(a, b) {\n  return a * b;\n}\nconsole.log(multiply(4, 5)); // 20",
+        "tags": "return, function, javascript, value, output"
+    },
+    {
+        "title": "Calling a Function in JavaScript",
+        "summary": "functionName(arguments);",
+        "description": "Executes a function and passes arguments if required.",
+        "example": "function greet(name) {\n  return `Hello, ${name}`;\n}\nconsole.log(greet('Bob')); // 'Hello, Bob'",
+        "tags": "call, function, javascript, execute, arguments"
+    },
+    {
+        "title": "Using Function Expressions in JavaScript",
+        "summary": "const variableName = function(parameters) { return value; };",
+        "description": "Defines functions as expressions and assigns them to variables.",
+        "example": "const add = function(a, b) {\n  return a + b;\n};\nconsole.log(add(2, 3)); // 5",
+        "tags": "function, expression, javascript, variable, assignment"
+    },
+    {
+        "title": "Defining Function Parameters in JavaScript",
+        "summary": "function functionName(parameter1, parameter2) { return value; }",
+        "description": "Specifies input values that a function can accept.",
+        "example": "function greet(name) {\n  return `Hello, ${name}!`;\n}\nconsole.log(greet('John')); // 'Hello, John!'",
+        "tags": "function, parameter, input, javascript, argument"
+    },
+    {
+        "title": "Declaring a Function in JavaScript",
+        "summary": "function add(num1, num2) { return num1 + num2; }",
+        "description": "Defines a reusable block of code using a function declaration.",
+        "example": "function add(num1, num2) {\n  return num1 + num2;\n}\nconsole.log(add(5, 3)); // 8",
+        "tags": "function, declare, declaration, define, javascript"
+    },
+    {
+        "title": "Understanding Scope in JavaScript",
+        "summary": "var pizzaName = 'Margarita';",
+        "description": "Variables defined inside a function are local, while those outside are global.",
+        "example": "function myFunction() {\n  var pizzaName = 'Margarita';\n  // Code here can use pizzaName\n}\n// Code here can't use pizzaName",
+        "tags": "scope, variable, function, local, global, javascript"
+    },
+    {
+        "title": "Using Block Scoped Variables in JavaScript",
+        "summary": "const statusMessage = 'Logged in.';",
+        "description": "Variables inside a block `{}` cannot be accessed outside of it.",
+        "example": "const isLoggedIn = true;\nif (isLoggedIn) {\n  const statusMessage = 'Logged in.';\n}\n// console.log(statusMessage); // ReferenceError",
+        "tags": "block scope, let, const, variable, javascript"
+    },
+    {
+        "title": "Using Global Variables in JavaScript",
+        "summary": "const color = 'blue';",
+        "description": "Global variables can be accessed anywhere in the script.",
+        "example": "const color = 'blue';\nfunction printColor() {\n  console.log(color);\n}\nprintColor(); // 'blue'",
+        "tags": "global variable, scope, javascript"
+    },
+    {
+        "title": "Difference Between let and var in JavaScript",
+        "summary": "let i = 0;\nvar j = 0;",
+        "description": "let is block-scoped while var is function-scoped.",
+        "example": "for (let i = 0; i < 3; i++) {}\n// console.log(i); // ReferenceError\n\nfor (var j = 0; j < 3; j++) {}\nconsole.log(j); // 3",
+        "tags": "let, var, scope, function scope, block scope, javascript"
+    },
+    {
+        "title": "Fixing Loop Closure Issues in JavaScript",
+        "summary": "for (let j = 0; j < 3; j++) { setTimeout(() => console.log(j), 10); }",
+        "description": "Using let ensures each iteration has its own scope.",
+        "example": "for (let j = 0; j < 3; j++) {\n  setTimeout(() => console.log(j), 10);\n} // Prints 0, 1, 2",
+        "tags": "loop, closure, setTimeout, let, var, javascript"
+    },
+    {
+        "title": "Creating an Array in JavaScript",
+        "summary": "const fruits = ['apple', 'orange', 'banana'];",
+        "description": "Arrays can store multiple values in a single variable.",
+        "example": "const fruits = ['apple', 'orange', 'banana'];",
+        "tags": "array, create, javascript, list, elements"
+    },
+    {
+        "title": "Getting the Length of an Array in JavaScript",
+        "summary": "const length = array.length;",
+        "description": "Use the .length property to get the number of elements in an array.",
+        "example": "const numbers = [1, 2, 3, 4];\nconsole.log(numbers.length); // 4",
+        "tags": "array, length, size, count, javascript"
+    },
+    {
+        "title": "Accessing Elements in an Array in JavaScript",
+        "summary": "const element = array[index];",
+        "description": "Retrieve elements from an array using their index.",
+        "example": "const myArray = [100, 200, 300];\nconsole.log(myArray[0]); // 100",
+        "tags": "array, index, access, element, javascript"
+    },
+    {
+        "title": "Adding Elements to the End of an Array in JavaScript",
+        "summary": "array.push(element);",
+        "description": "The push method adds elements to the end of an array.",
+        "example": "const cart = ['apple', 'orange'];\ncart.push('pear');",
+        "tags": "array, push, add, javascript"
+    },
+    {
+        "title": "Adding Elements to a Set in JavaScript",
+        "summary": "set.add(value);",
+        "description": "Adds unique values to a Set. Duplicate values are ignored.",
+        "example": "const mySet = new Set();\nmySet.add('a');\nmySet.add(1);\nmySet.add(true);\nconsole.log(mySet); // Set { 'a', 1, true }",
+        "tags": "set, add, insert, unique, javascript"
+    },
+    {
+        "title": "Removing Elements from a Set in JavaScript",
+        "summary": "set.delete(value);",
+        "description": "Removes a specific value from a Set.",
+        "example": "const mySet = new Set([1, 'a', true]);\nmySet.delete('a');\nconsole.log(mySet); // Set { 1, true }",
+        "tags": "set, delete, remove, clear, javascript"
+    },
+    {
+        "title": "Checking If a Set Contains a Value in JavaScript",
+        "summary": "const exists = set.has(value);",
+        "description": "Returns true if the value exists in the Set, otherwise false.",
+        "example": "const mySet = new Set([1, 'a', true]);\nconsole.log(mySet.has('a')); // true\nconsole.log(mySet.has(false)); // false",
+        "tags": "set, has, contains, check, javascript"
+    },
+    {
+        "title": "Clearing All Elements from a Set in JavaScript",
+        "summary": "set.clear();",
+        "description": "Removes all elements from a Set.",
+        "example": "const mySet = new Set([1, 'a', true]);\nconsole.log(mySet.size); // 3\nmySet.clear();\nconsole.log(mySet.size); // 0",
+        "tags": "set, clear, empty, reset, javascript"
+    },
+    {
+        "title": "Getting the Size of a Set in JavaScript",
+        "summary": "const size = set.size;",
+        "description": "Returns the number of elements in a Set.",
+        "example": "const mySet = new Set([1, 'a', true]);\nconsole.log(mySet.size); // 3",
+        "tags": "set, size, length, count, javascript"
+    },
+    {
+        "title": "Iterating Over a Set in JavaScript",
+        "summary": "set.forEach(callback);",
+        "description": "Executes a provided function once for each value in the Set.",
+        "example": "const mySet = new Set([1, 'a', true]);\nmySet.forEach(value => console.log(value));\n// Output:\n// 1\n// 'a'\n// true",
+        "tags": "set, loop, iterate, foreach, javascript"
+    },
+    {
+        "title": "Using a While Loop in JavaScript",
+        "summary": "while (condition) { // code }",
+        "description": "Executes a block of code while a specified condition is true.",
+        "example": "let i = 0;\nwhile (i < 5) {\n  console.log(i);\n  i++;\n}\n// Output: 0 1 2 3 4",
+        "tags": "loop, while, iteration, repeat, javascript"
+    },
+    {
+        "title": "Reversing a Loop in JavaScript",
+        "summary": "for (let i = array.length - 1; i >= 0; i--) { // code }",
+        "description": "Loops through an array in reverse order.",
+        "example": "const fruits = ['apple', 'orange', 'banana'];\nfor (let i = fruits.length - 1; i >= 0; i--) {\n  console.log(`${i}: ${fruits[i]}`);\n}\n// Output:\n// 2: banana\n// 1: orange\n// 0: apple",
+        "tags": "loop, reverse, iterate, for, javascript"
+    },
+    {
+        "title": "Using a Do...While Loop in JavaScript",
+        "summary": "do { // code } while (condition);",
+        "description": "Executes a block of code at least once before checking the condition.",
+        "example": "let i = 0;\ndo {\n  console.log(i);\n  i++;\n} while (i < 5);\n// Output: 0 1 2 3 4",
+        "tags": "loop, do while, repeat, iteration, javascript"
+    },
+    {
+        "title": "Using a For Loop in JavaScript",
+        "summary": "for (let i = 0; i < n; i++) { // code }",
+        "description": "Executes a block of code a specific number of times.",
+        "example": "for (let i = 0; i < 4; i++) {\n  console.log(i);\n}\n// Output: 0 1 2 3",
+        "tags": "loop, for, iterate, count, javascript"
+    },
+    {
+        "title": "Looping Through an Array in JavaScript",
+        "summary": "for (let i = 0; i < array.length; i++) { // code }",
+        "description": "Iterates over an array using a traditional for loop.",
+        "example": "const numbers = [10, 20, 30];\nfor (let i = 0; i < numbers.length; i++) {\n  console.log(numbers[i]);\n}\n// Output: 10 20 30",
+        "tags": "loop, array, iterate, for, javascript"
+    },
+    {
+        "title": "Breaking a Loop in JavaScript",
+        "summary": "if (condition) { break; }",
+        "description": "Exits a loop immediately when a condition is met.",
+        "example": "for (let i = 0; i < 10; i++) {\n  if (i > 5) break;\n  console.log(i);\n}\n// Output: 0 1 2 3 4 5",
+        "tags": "loop, break, exit, stop, javascript"
+    },
+    {
+        "title": "Continuing to the Next Iteration in JavaScript",
+        "summary": "if (condition) { continue; }",
+        "description": "Skips the current iteration and moves to the next one.",
+        "example": "for (let i = 0; i < 5; i++) {\n  if (i === 2) continue;\n  console.log(i);\n}\n// Output: 0 1 3 4",
+        "tags": "loop, continue, skip, iteration, javascript"
+    },
+    {
+        "title": "Using a Nested Loop in JavaScript",
+        "summary": "for (let i = 0; i < n; i++) { for (let j = 0; j < m; j++) { // code } }",
+        "description": "Loops within another loop for multi-level iteration.",
+        "example": "for (let i = 0; i < 2; i++) {\n  for (let j = 0; j < 3; j++) {\n    console.log(`${i}-${j}`);\n  }\n}\n// Output:\n// 0-0\n// 0-1\n// 0-2\n// 1-0\n// 1-1\n// 1-2",
+        "tags": "loop, nested, multiple, iteration, javascript"
+    },
+    {
+        "title": "Adding Elements to a Set in JavaScript",
+        "summary": "set.add(value);",
+        "description": "Adds unique values to a Set. Duplicate values are ignored.",
+        "example": "const mySet = new Set();\nmySet.add('a');\nmySet.add(1);\nmySet.add(true);\nconsole.log(mySet); // Set { 'a', 1, true }",
+        "tags": "set, add, insert, unique, javascript"
+    },
+    {
+        "title": "Removing Elements from a Set in JavaScript",
+        "summary": "set.delete(value);",
+        "description": "Removes a specific value from a Set.",
+        "example": "const mySet = new Set([1, 'a', true]);\nmySet.delete('a');\nconsole.log(mySet); // Set { 1, true }",
+        "tags": "set, delete, remove, clear, javascript"
+    },
+    {
+        "title": "Checking If a Set Contains a Value in JavaScript",
+        "summary": "const exists = set.has(value);",
+        "description": "Returns true if the value exists in the Set, otherwise false.",
+        "example": "const mySet = new Set([1, 'a', true]);\nconsole.log(mySet.has('a')); // true\nconsole.log(mySet.has(false)); // false",
+        "tags": "set, has, contains, check, javascript"
+    },
+    {
+        "title": "Clearing All Elements from a Set in JavaScript",
+        "summary": "set.clear();",
+        "description": "Removes all elements from a Set.",
+        "example": "const mySet = new Set([1, 'a', true]);\nconsole.log(mySet.size); // 3\nmySet.clear();\nconsole.log(mySet.size); // 0",
+        "tags": "set, clear, empty, reset, javascript"
+    },
+    {
+        "title": "Getting the Size of a Set in JavaScript",
+        "summary": "const size = set.size;",
+        "description": "Returns the number of elements in a Set.",
+        "example": "const mySet = new Set([1, 'a', true]);\nconsole.log(mySet.size); // 3",
+        "tags": "set, size, length, count, javascript"
+    },
+    {
+        "title": "Iterating Over a Set in JavaScript",
+        "summary": "set.forEach(callback);",
+        "description": "Executes a provided function once for each value in the Set.",
+        "example": "const mySet = new Set([1, 'a', true]);\nmySet.forEach(value => console.log(value));\n// Output:\n// 1\n// 'a'\n// true",
+        "tags": "set, loop, iterate, foreach, javascript"
+    },
+    {
+        "title": "Using a While Loop in JavaScript",
+        "summary": "while (condition) { // code }",
+        "description": "Executes a block of code while a specified condition is true.",
+        "example": "let i = 0;\nwhile (i < 5) {\n  console.log(i);\n  i++;\n}\n// Output: 0 1 2 3 4",
+        "tags": "loop, while, iteration, repeat, javascript"
+    },
+    {
+        "title": "Reversing a Loop in JavaScript",
+        "summary": "for (let i = array.length - 1; i >= 0; i--) { // code }",
+        "description": "Loops through an array in reverse order.",
+        "example": "const fruits = ['apple', 'orange', 'banana'];\nfor (let i = fruits.length - 1; i >= 0; i--) {\n  console.log(`${i}: ${fruits[i]}`);\n}\n// Output:\n// 2: banana\n// 1: orange\n// 0: apple",
+        "tags": "loop, reverse, iterate, for, javascript"
+    },
+    {
+        "title": "Using a Do...While Loop in JavaScript",
+        "summary": "do { // code } while (condition);",
+        "description": "Executes a block of code at least once before checking the condition.",
+        "example": "let i = 0;\ndo {\n  console.log(i);\n  i++;\n} while (i < 5);\n// Output: 0 1 2 3 4",
+        "tags": "loop, do while, repeat, iteration, javascript"
+    },
+    {
+        "title": "Using a For Loop in JavaScript",
+        "summary": "for (let i = 0; i < n; i++) { // code }",
+        "description": "Executes a block of code a specific number of times.",
+        "example": "for (let i = 0; i < 4; i++) {\n  console.log(i);\n}\n// Output: 0 1 2 3",
+        "tags": "loop, for, iterate, count, javascript"
+    },
+    {
+        "title": "Looping Through an Array in JavaScript",
+        "summary": "for (let i = 0; i < array.length; i++) { // code }",
+        "description": "Iterates over an array using a traditional for loop.",
+        "example": "const numbers = [10, 20, 30];\nfor (let i = 0; i < numbers.length; i++) {\n  console.log(numbers[i]);\n}\n// Output: 10 20 30",
+        "tags": "loop, array, iterate, for, javascript"
+    },
+    {
+        "title": "Breaking a Loop in JavaScript",
+        "summary": "if (condition) { break; }",
+        "description": "Exits a loop immediately when a condition is met.",
+        "example": "for (let i = 0; i < 10; i++) {\n  if (i > 5) break;\n  console.log(i);\n}\n// Output: 0 1 2 3 4 5",
+        "tags": "loop, break, exit, stop, javascript"
+    },
+    {
+        "title": "Continuing to the Next Iteration in JavaScript",
+        "summary": "if (condition) { continue; }",
+        "description": "Skips the current iteration and moves to the next one.",
+        "example": "for (let i = 0; i < 5; i++) {\n  if (i === 2) continue;\n  console.log(i);\n}\n// Output: 0 1 3 4",
+        "tags": "loop, continue, skip, iteration, javascript"
+    },
+    {
+        "title": "Using a Nested Loop in JavaScript",
+        "summary": "for (let i = 0; i < n; i++) { for (let j = 0; j < m; j++) { // code } }",
+        "description": "Loops within another loop for multi-level iteration.",
+        "example": "for (let i = 0; i < 2; i++) {\n  for (let j = 0; j < 3; j++) {\n    console.log(`${i}-${j}`);\n  }\n}\n// Output:\n// 0-0\n// 0-1\n// 0-2\n// 1-0\n// 1-1\n// 1-2",
+        "tags": "loop, nested, multiple, iteration, javascript"
+    },
+    {
+        "title": "Using Valid Property Names in an Object",
+        "summary": "const obj = { 'valid key': 123, '+specialKey': 'value' };",
+        "description": "JavaScript object keys must be valid identifiers unless enclosed in quotes.",
+        "example": "const trainSchedule = {\n  'platform num': 10,\n  '+compartment': 'C'\n};\nconsole.log(trainSchedule['platform num']); // 10",
+        "tags": "object, property, keys, naming, javascript"
+    },
+    {
+        "title": "Accessing Non-Existent Properties in an Object",
+        "summary": "const value = obj.missingKey;",
+        "description": "If you try to access an object property that does not exist, JavaScript returns undefined.",
+        "example": "const classElection = { date: 'January 12' };\nconsole.log(classElection.place); // undefined",
+        "tags": "object, property, undefined, access, javascript"
+    },
+    {
+        "title": "Modifying and Deleting Object Properties",
+        "summary": "delete obj.property; obj.newProperty = 'value';",
+        "description": "Object properties can be modified or deleted, but reassigning an entire object declared with const is not allowed.",
+        "example": "const student = { name: 'Sheldon', score: 100, grade: 'A' };\ndelete student.score;\nstudent.grade = 'F';\nconsole.log(student); // { name: 'Sheldon', grade: 'F' }",
+        "tags": "object, modify, delete, properties, javascript"
+    },
+    {
+        "title": "Using Object Property Shorthand in JavaScript",
+        "summary": "const obj = { key };",
+        "description": "When defining an object, you can use shorthand notation if the property name matches the variable name.",
+        "example": "const activity = 'Surfing';\nconst beach = { activity };\nconsole.log(beach); // { activity: 'Surfing' }",
+        "tags": "object, shorthand, properties, javascript"
+    },
+    {
+        "title": "Destructuring an Object in JavaScript",
+        "summary": "const { key1, key2 } = obj;",
+        "description": "Destructuring syntax allows you to unpack values from objects into distinct variables.",
+        "example": "const person = { name: 'Tom', age: '22' };\nconst { name, age } = person;\nconsole.log(name); // 'Tom'",
+        "tags": "object, destructuring, properties, variables, javascript"
+    },
+    {
+        "title": "Using the Delete Operator in JavaScript",
+        "summary": "delete obj.key;",
+        "description": "The delete operator removes a property from an object.",
+        "example": "const person = { firstName: 'Matilda', age: 27, hobby: 'knitting' };\ndelete person.hobby;\nconsole.log(person); // { firstName: 'Matilda', age: 27 }",
+        "tags": "object, delete, remove, properties, javascript"
+    },
+    {
+        "title": "Passing Objects as Function Arguments",
+        "summary": "function modify(obj) { obj.key = 'newValue'; }",
+        "description": "Objects are passed by reference in JavaScript, meaning changes inside a function persist outside.",
+        "example": "const origObj = { color: 'blue' };\nconst changeItUp = (obj) => { obj.color = 'red'; };\nchangeItUp(origObj);\nconsole.log(origObj.color); // 'red'",
+        "tags": "object, function, arguments, reference, javascript"
+    },
+    {
+        "title": "Using Object Methods in JavaScript",
+        "summary": "const obj = { method() { return 'Hello'; } };",
+        "description": "An object method is a function stored as a property inside an object.",
+        "example": "const engine = {\n  start(adverb) { console.log(`The engine starts ${adverb}...`); },\n  sputter: () => console.log('The engine sputters...')\n};\nengine.start('noisily');",
+        "tags": "object, method, function, javascript"
+    },
+    {
+        "title": "Using the 'this' Keyword in JavaScript Objects",
+        "summary": "const obj = { key: 'value', method() { return this.key; } };",
+        "description": "The 'this' keyword in an object refers to the object itself.",
+        "example": "const cat = { name: 'Pipey', age: 8, whatName() { return this.name; } };\nconsole.log(cat.whatName()); // 'Pipey'",
+        "tags": "object, this, method, properties, javascript"
+    },
+    {
+        "title": "Using Factory Functions to Create Objects",
+        "summary": "const factory = (key) => ({ key });",
+        "description": "Factory functions return new objects dynamically with specified properties.",
+        "example": "const dogFactory = (name, age, breed) => ({ name, age, breed, bark() { console.log('Woof!'); } });\nconst dog = dogFactory('Max', 3, 'Beagle');\ndog.bark();",
+        "tags": "object, factory function, constructor, javascript"
+    },
+    {
+        "title": "Using JavaScript Classes",
+        "summary": "class MyClass { constructor(prop) { this.prop = prop; } }",
+        "description": "Classes in JavaScript provide a structured way to create objects.",
+        "example": "class Song { constructor(title, artist) { this.title = title; this.artist = artist; } }\nconst mySong = new Song('Bohemian Rhapsody', 'Queen');\nconsole.log(mySong.title);",
+        "tags": "class, constructor, javascript, OOP"
+    },
+    {
+        "title": "Using Static Methods in JavaScript Classes",
+        "summary": "class MyClass { static method() { return 'Hello'; } }",
+        "description": "Static methods belong to the class itself, not instances of the class.",
+        "example": "class Dog {\n  static bark() { console.log('Woof!'); }\n}\nDog.bark();",
+        "tags": "class, static, method, javascript"
+    },
+    {
+        "title": "Using Class Methods in JavaScript",
+        "summary": "class MyClass { method() { return 'Hello'; } }",
+        "description": "Class methods define functions that operate on instances of a class.",
+        "example": "class Song { play() { console.log('Playing!'); } stop() { console.log('Stopping!'); } }\nconst mySong = new Song();\nmySong.play();",
+        "tags": "class, method, function, javascript"
+    },
+    {
+        "title": "Using Class Inheritance in JavaScript",
+        "summary": "class Child extends Parent { constructor() { super(); } }",
+        "description": "JavaScript classes support inheritance using the 'extends' keyword.",
+        "example": "class Media { constructor(info) { this.publishDate = info.publishDate; this.name = info.name; } }\nclass Song extends Media { constructor(songData) { super(songData); this.artist = songData.artist; } }\nconst mySong = new Song({ artist: 'Queen', name: 'Bohemian Rhapsody', publishDate: 1975 });",
+        "tags": "class, inheritance, extends, super, javascript"
+    },
+    {
+        "title": "JavaScript Object Property Naming Rules",
+        "summary": "const obj = { 'valid key': 10, 'another-key': 20 };",
+        "description": "Object property names cannot contain spaces, expressions, or special characters unless enclosed in quotes.",
+        "example": "const trainSchedule = {\n  'platform num': 10,\n  '40-10+2': 30,\n  '+compartment': 'C'\n};\nconsole.log(trainSchedule['platform num']); // 10",
+        "tags": "javascript, object, properties, naming, keys"
+    },
+    {
+        "title": "Checking for Non-Existent Properties in a JavaScript Object",
+        "summary": "const value = obj.nonExistentKey;",
+        "description": "Accessing a non-existent property in a JavaScript object returns 'undefined'.",
+        "example": "const classElection = { date: 'January 12' };\nconsole.log(classElection.place); // undefined",
+        "tags": "javascript, object, properties, undefined"
+    },
+    {
+        "title": "Mutating JavaScript Object Properties",
+        "summary": "delete obj.key; obj.newKey = value;",
+        "description": "JavaScript objects allow properties to be deleted or modified, but reassignment to a constant object variable throws an error.",
+        "example": "const student = { name: 'Sheldon', score: 100, grade: 'A' };\ndelete student.score;\nstudent.grade = 'F';\nconsole.log(student); // { name: 'Sheldon', grade: 'F' }\n\nstudent = {}; // TypeError: Assignment to constant variable.",
+        "tags": "javascript, object, mutation, delete, properties"
+    },
+    {
+        "title": "Using Object Destructuring in JavaScript",
+        "summary": "const { key1, key2 } = obj;",
+        "description": "Destructuring allows you to extract values from objects and assign them to variables.",
+        "example": "const person = { name: 'Tom', age: '22' };\nconst { name, age } = person;\nconsole.log(name); // 'Tom'\nconsole.log(age); // '22'",
+        "tags": "javascript, object, destructuring, properties"
+    },
+    {
+        "title": "Deleting Object Properties in JavaScript",
+        "summary": "delete obj.key;",
+        "description": "The 'delete' operator removes a property from an object.",
+        "example": "const person = { firstName: 'Matilda', age: 27, hobby: 'knitting', goal: 'learning JavaScript' };\ndelete person.hobby;\nconsole.log(person); // { firstName: 'Matilda', age: 27, goal: 'learning JavaScript' }",
+        "tags": "javascript, object, delete, properties"
+    },
+    {
+        "title": "Passing Objects as Function Arguments in JavaScript",
+        "summary": "function func(obj) { obj.key = value; }",
+        "description": "Objects in JavaScript are passed by reference, meaning modifications inside a function persist outside the function.",
+        "example": "const origNum = 8;\nconst origObj = { color: 'blue' };\nconst changeItUp = (num, obj) => { num = 7; obj.color = 'red'; };\nchangeItUp(origNum, origObj);\nconsole.log(origNum); // 8 (unchanged)\nconsole.log(origObj.color); // 'red' (changed)",
+        "tags": "javascript, object, function, arguments, reference"
+    },
+    {
+        "title": "Shorthand Object Property Assignment in JavaScript",
+        "summary": "const obj = { key };",
+        "description": "When a variable name matches a property name, JavaScript allows shorthand property assignment.",
+        "example": "const activity = 'Surfing';\nconst beach = { activity };\nconsole.log(beach); // { activity: 'Surfing' }",
+        "tags": "javascript, object, shorthand, properties"
+    },
+    {
+        "title": "Using 'this' Keyword in JavaScript Objects",
+        "summary": "const obj = { key: value, method() { return this.key; } };",
+        "description": "The 'this' keyword inside an object method refers to the object itself.",
+        "example": "const cat = { name: 'Pipey', age: 8, whatName() { return this.name; } };\nconsole.log(cat.whatName()); // 'Pipey'",
+        "tags": "javascript, object, this, method, properties"
+    },
+    {
+        "title": "Creating Objects with Factory Functions in JavaScript",
+        "summary": "function factory(param) { return { key: param }; }",
+        "description": "Factory functions return objects and can accept parameters to customize the object's properties.",
+        "example": "const dogFactory = (name, age, breed) => { return { name, age, breed, bark() { console.log('Woof!'); } }; };",
+        "tags": "javascript, object, factory, functions, creation"
+    },
+    {
+        "title": "Adding Methods to JavaScript Objects",
+        "summary": "const obj = { method() { console.log('Hello'); } };",
+        "description": "JavaScript objects can contain methods defined using function expressions or shorthand syntax.",
+        "example": "const engine = { start(adverb) { console.log(`The engine starts up ${adverb}...`); }, sputter: () => { console.log('The engine sputters...'); } };\nengine.start('noisily');\nengine.sputter();",
+        "tags": "javascript, object, methods, functions"
+    },
+    {
+        "title": "Using Getters and Setters in JavaScript Objects",
+        "summary": "const obj = { get key() { return value; }, set key(val) { value = val; } };",
+        "description": "Getters and setters allow controlled access and modification of object properties.",
+        "example": "const myCat = { _name: 'Dottie', get name() { return this._name; }, set name(newName) { this._name = newName; } };\nconsole.log(myCat.name);\nmyCat.name = 'Yankee';",
+        "tags": "javascript, object, getter, setter, properties"
+    },
+    {
+        "title": "Using Static Methods in JavaScript Classes",
+        "summary": "class ClassName { static method() { return 'value'; } }",
+        "description": "Static methods belong to the class itself and cannot be called on instances of the class.",
+        "example": "class Dog { static bark() { console.log('Woof!'); } }\nDog.bark();",
+        "tags": "javascript, class, static, methods"
+    },
+    {
+        "title": "Creating a JavaScript Class",
+        "summary": "class ClassName { constructor() { } method() { } }",
+        "description": "Classes in JavaScript allow object-oriented programming by defining blueprints for objects.",
+        "example": "class Song { constructor() { this.title; this.author; } play() { console.log('Song playing!'); } }\nconst mySong = new Song();\nmySong.play();",
+        "tags": "javascript, class, object-oriented, methods"
+    },
+    {
+        "title": "Using a Constructor in JavaScript Classes",
+        "summary": "class ClassName { constructor(param) { this.key = param; } }",
+        "description": "The constructor function is called when an instance of a class is created, initializing object properties.",
+        "example": "class Song { constructor(title, artist) { this.title = title; this.artist = artist; } }\nconst mySong = new Song('Bohemian Rhapsody', 'Queen');\nconsole.log(mySong.title);",
+        "tags": "javascript, class, constructor, properties"
+    },
+    {
+        "title": "Creating Class Methods in JavaScript",
+        "summary": "class Song { play() { console.log('Playing!'); } stop() { console.log('Stopping!'); } }",
+        "description": "Defines class methods in JavaScript using the 'class' syntax.",
+        "example": "class Song {\n  play() {\n    console.log('Playing!');\n  }\n  stop() {\n    console.log('Stopping!');\n  }\n}\nconst mySong = new Song();\nmySong.play(); // 'Playing!'\nmySong.stop(); // 'Stopping!'",
+        "tags": "class, method, object-oriented, play, stop, JavaScript"
+    },
+    {
+        "title": "Extending a Class in JavaScript",
+        "summary": "class Song extends Media { constructor(songData) { super(songData); this.artist = songData.artist; } }",
+        "description": "Extends a class in JavaScript using the 'extends' keyword.",
+        "example": "class Media {\n  constructor(info) {\n    this.publishDate = info.publishDate;\n    this.name = info.name;\n  }\n}\nclass Song extends Media {\n  constructor(songData) {\n    super(songData);\n    this.artist = songData.artist;\n  }\n}\nconst mySong = new Song({ artist: 'Queen', name: 'Bohemian Rhapsody', publishDate: 1975 });\nconsole.log(mySong.artist); // 'Queen'",
+        "tags": "class, extends, inheritance, JavaScript, OOP"
+    },
+    {
+        "title": "Exporting Functions and Variables in JavaScript Modules",
+        "summary": "export default function add(x, y) { return x + y; } export function subtract(x, y) { return x - y; } export { multiply, duplicate };",
+        "description": "Exports functions and variables in JavaScript using ES6 module syntax.",
+        "example": "// myMath.js\nexport default function add(x, y) { return x + y; }\nexport function subtract(x, y) { return x - y; }\nexport function multiply(x, y) { return x * y; }\nexport function duplicate(x) { return x * 2; }",
+        "tags": "export, modules, JavaScript, ES6, functions"
+    },
+    {
+        "title": "Importing Functions and Variables from a JavaScript Module",
+        "summary": "import add, { subtract, multiply, duplicate } from './myMath.js';",
+        "description": "Imports functions and variables from an external JavaScript module.",
+        "example": "// main.js\nimport add, { subtract, multiply, duplicate } from './myMath.js';\nconsole.log(add(6, 2)); // 8\nconsole.log(subtract(6, 2)); // 4",
+        "tags": "import, modules, JavaScript, ES6, functions"
+    },
+    {
+        "title": "Using require() to Import a Module in JavaScript",
+        "summary": "const myMath = require('./myMath.js');",
+        "description": "Imports a module in JavaScript using CommonJS require syntax.",
+        "example": "// main.js\nconst myMath = require('./myMath.js');\nconsole.log(myMath.add(6, 2)); // 8",
+        "tags": "require, module, import, JavaScript, CommonJS"
+    },
+    {
+        "title": "Creating a JavaScript Promise",
+        "summary": "const promise = new Promise((resolve, reject) => { if (true) resolve('Resolved!'); else reject(Error('Error')); });",
+        "description": "Creates a JavaScript Promise that resolves or rejects based on a condition.",
+        "example": "const promise = new Promise((resolve, reject) => {\n  if (true) {\n    resolve('Resolved!');\n  } else {\n    reject(Error('Error'));\n  }\n});\npromise.then(res => console.log(res)).catch(err => console.error(err));",
+        "tags": "promise, JavaScript, async, resolve, reject"
+    },
+    {
+        "title": "Using setTimeout() in JavaScript",
+        "summary": "setTimeout(() => console.log('Login'), 6000);",
+        "description": "Executes a function after a specified delay using setTimeout().",
+        "example": "const loginAlert = () => { console.log('Login'); };\nsetTimeout(loginAlert, 6000);",
+        "tags": "setTimeout, delay, async, JavaScript"
+    },
+    {
+        "title": "Using .then() Method in JavaScript Promises",
+        "summary": "promise.then(res => console.log(res), err => console.error(err));",
+        "description": "Handles resolved and rejected states of a JavaScript Promise using .then().",
+        "example": "const promise = new Promise((resolve) => {\n  setTimeout(() => {\n    resolve('Result');\n  }, 200);\n});\npromise.then(res => console.log(res));",
+        "tags": "promise, then, JavaScript, async"
+    },
+    {
+        "title": "Handling Errors with Promise.catch() in JavaScript",
+        "summary": "promise.catch(err => console.error(err));",
+        "description": "Handles rejected Promises using .catch() in JavaScript.",
+        "example": "const promise = new Promise((resolve, reject) => {\n  setTimeout(() => {\n    reject(Error('Promise Rejected Unconditionally.'));\n  }, 1000);\n});\npromise.catch(err => console.error(err));",
+        "tags": "promise, catch, JavaScript, error handling"
+    },
+    {
+        "title": "Using Promise.all() to Run Multiple Promises",
+        "summary": "Promise.all([promise1, promise2]).then(res => console.log(res));",
+        "description": "Executes multiple Promises in parallel using Promise.all().",
+        "example": "const promise1 = new Promise((resolve) => setTimeout(() => resolve(3), 300));\nconst promise2 = new Promise((resolve) => setTimeout(() => resolve(2), 200));\nPromise.all([promise1, promise2]).then(res => console.log(res));",
+        "tags": "promise, all, JavaScript, async"
+    },
+    {
+        "title": "Creating an Async Function in JavaScript",
+        "summary": "async function msg() { const message = await helloWorld(); console.log(message); }",
+        "description": "Defines an async function in JavaScript that waits for a Promise.",
+        "example": "function helloWorld() {\n  return new Promise(resolve => setTimeout(() => resolve('Hello World!'), 2000));\n}\nasync function msg() {\n  const message = await helloWorld();\n  console.log('Message:', message);\n}\nmsg();",
+        "tags": "async, await, JavaScript, promise"
+    },
+    {
+        "title": "Handling Errors in JavaScript Try-Catch",
+        "summary": "try { let user = JSON.parse(json); } catch (e) { console.error('Invalid JSON data!'); }",
+        "description": "Uses try-catch to handle errors in JavaScript.",
+        "example": "let json = '{ \"age\": 30 }';\ntry {\n  let user = JSON.parse(json);\n  console.log(user.name);\n} catch (e) {\n  console.error('Invalid JSON data!');\n}",
+        "tags": "try-catch, error handling, JavaScript"
+    },
+    {
+        "title": "Using Async Await in JavaScript",
+        "summary": "async function msg() { const msg = await helloWorld(); console.log(msg); }",
+        "description": "Demonstrates how to use async-await to handle Promises in JavaScript.",
+        "example": "function helloWorld() { return new Promise((resolve) => setTimeout(() => resolve('Hello World!'), 2000)); }\n\nasync function msg() {\n  const msg = await helloWorld();\n  console.log('Message:', msg);\n}\n\nmsg(); // Message: Hello World! <-- after 2 seconds",
+        "tags": "async, await, promise, asynchronous, JavaScript"
+    },
+    {
+        "title": "Creating a JSON Object in JavaScript",
+        "summary": "const jsonObj = { key: 'value', number: 42 };",
+        "description": "Demonstrates how to create a JSON object in JavaScript.",
+        "example": "const jsonObj = {\n  'name': 'Rick',\n  'id': '11A',\n  'level': 4\n};\nconsole.log(jsonObj.name); // 'Rick'",
+        "tags": "JSON, object, data structure, JavaScript"
+    },
+    {
+        "title": "Making a GET Request with XMLHttpRequest",
+        "summary": "const xhr = new XMLHttpRequest(); xhr.open('GET', url); xhr.send();",
+        "description": "Performs an HTTP GET request using XMLHttpRequest and logs the response.",
+        "example": "const xhr = new XMLHttpRequest();\nxhr.open('GET', 'https://api.example.com/data');\nxhr.responseType = 'json';\nxhr.onload = () => console.log(xhr.response);\nxhr.send();",
+        "tags": "XMLHttpRequest, GET request, HTTP, API call, JavaScript"
+    },
+    {
+        "title": "Making a POST Request with XMLHttpRequest",
+        "summary": "const xhr = new XMLHttpRequest(); xhr.open('POST', url); xhr.send(JSON.stringify(data));",
+        "description": "Sends a JSON payload to a server using an HTTP POST request with XMLHttpRequest.",
+        "example": "const data = { fish: 'Salmon', weight: '1.5 KG', units: 5 };\nconst xhr = new XMLHttpRequest();\nxhr.open('POST', '/inventory/add');\nxhr.responseType = 'json';\nxhr.onload = () => console.log(xhr.response);\nxhr.send(JSON.stringify(data));",
+        "tags": "XMLHttpRequest, POST request, HTTP, JSON, API call, JavaScript"
+    },
+    {
+        "title": "Making a Fetch API Request",
+        "summary": "fetch(url).then(response => response.json()).then(data => console.log(data));",
+        "description": "Uses Fetch API to request data from a URL and process the JSON response.",
+        "example": "fetch('https://api.example.com/data')\n  .then(response => response.json())\n  .then(jsonResponse => console.log(jsonResponse))\n  .catch(error => console.error(error));",
+        "tags": "fetch, API, HTTP, JSON, JavaScript"
+    },
+    {
+        "title": "Making a Fetch API Request with Error Handling",
+        "summary": "fetch(url).then(response => { if (!response.ok) throw new Error('Request failed'); return response.json(); });",
+        "description": "Handles errors while making an HTTP request using Fetch API.",
+        "example": "fetch('https://api.example.com/data')\n  .then(response => {\n    if (!response.ok) {\n      throw new Error('Request failed');\n    }\n    return response.json();\n  })\n  .then(data => console.log(data))\n  .catch(error => console.error('Error:', error));",
+        "tags": "fetch, error handling, HTTP request, API call, JavaScript"
+    },
+    {
+        "title": "Making a Fetch API POST Request with Headers",
+        "summary": "fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });",
+        "description": "Uses fetch API with headers and a JSON body to send an HTTP POST request.",
+        "example": "fetch('https://api.example.com/endpoint', {\n  method: 'POST',\n  headers: {\n    'Content-Type': 'application/json',\n    'apikey': 'your-api-key'\n  },\n  body: JSON.stringify({ id: 200 })\n})\n  .then(response => response.json())\n  .then(jsonResponse => console.log(jsonResponse))\n  .catch(error => console.error(error));",
+        "tags": "fetch, headers, POST request, API, HTTP, JavaScript"
+    },
+    {
+        "title": "Using Fetch API with Async Await",
+        "summary": "const response = await fetch(url); const data = await response.json();",
+        "description": "Uses fetch API with async-await to perform an HTTP request and process the response.",
+        "example": "async function getData() {\n  try {\n    const response = await fetch('https://api.example.com/data');\n    const data = await response.json();\n    console.log(data);\n  } catch (error) {\n    console.error(error);\n  }\n}\n\ngetData();",
+        "tags": "fetch, async, await, API, HTTP request, JavaScript"
+    },
+    {
+        "title": "Promise-Based Fetch Request",
+        "summary": "fetch(url).then(response => console.log(response)).catch(error => console.error(error));",
+        "description": "Executes an HTTP request using Fetch API and handles response via Promises.",
+        "example": "fetch('https://api.example.com/data')\n  .then(response => console.log(response))\n  .catch(error => console.error(error));",
+        "tags": "fetch, promises, HTTP request, API call, JavaScript"
+    },
+    {
+        "title": "Fetch API with Async Await and Try-Catch",
+        "summary": "const response = await fetch(url, { cache: 'no-cache' }); const data = await response.json();",
+        "description": "Uses Fetch API with async-await and try-catch for error handling.",
+        "example": "const getSuggestions = async () => {\n  const wordQuery = inputField.value;\n  const endpoint = `${url}${queryParams}${wordQuery}`;\n  try {\n    const response = await fetch(endpoint, { cache: 'no-cache' });\n    if (response.ok) {\n      const jsonResponse = await response.json();\n      console.log(jsonResponse);\n    }\n  } catch (error) {\n    console.log(error);\n  }\n};",
+        "tags": "fetch, async, await, try-catch, API, JavaScript"
+    }
+]

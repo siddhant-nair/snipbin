@@ -1,0 +1,380 @@
+[
+    {
+        "title": "Printing Hello World in C++",
+        "summary": "std::cout << \"Hello CheatSheets\\n\";",
+        "description": "Outputs 'Hello CheatSheets' to the console using C++.",
+        "example": "#include <iostream>\n\nint main() {\n    std::cout << \"Hello CheatSheets\\n\";\n    return 0;\n}\n",
+        "tags": "hello world, output, console, print, cout, c++"
+    },
+    {
+        "title": "Compiling and Running a C++ Program",
+        "summary": "g++ filename.cpp -o output && ./output",
+        "description": "Compiles a C++ program using g++ and runs the executable.",
+        "example": "$ g++ hello.cpp -o hello\n$ ./hello\nHello CheatSheets",
+        "tags": "compile, run, g++, command line, execute, c++"
+    },
+    {
+        "title": "Declaring Variables in C++",
+        "summary": "int num = 5; float pi = 3.14; bool flag = true;",
+        "description": "Defines different types of variables in C++ including int, float, bool, and string.",
+        "example": "int number = 5;\nfloat f = 0.95;\ndouble PI = 3.14159;\nchar yes = 'Y';\nstd::string s = \"ME\";\nbool isRight = true;\n\nconst float RATE = 0.8; // Constant",
+        "tags": "variables, data types, int, float, string, bool, c++"
+    },
+    {
+        "title": "Declaring Variables with Uniform Initialization",
+        "summary": "int age {25};",
+        "description": "Uses uniform initialization (since C++11) to declare a variable.",
+        "example": "int age {25};\nstd::cout << age; // Output: 25",
+        "tags": "variables, initialization, uniform initialization, c++11, c++"
+    },
+    {
+        "title": "Primitive Data Types in C++",
+        "summary": "int, float, double, char, bool, void, wchar_t",
+        "description": "Lists primitive data types available in C++ and their sizes.",
+        "example": "| Data Type | Size           | Range               |\n| --------- | -------------- | ------------------- |\n| `int`     | 4 bytes        | -2^31^ to 2^31^-1  |\n| `float`   | 4 bytes        | _N/A_               |\n| `double`  | 8 bytes        | _N/A_               |\n| `char`    | 1 byte         | -128 to 127        |\n| `bool`    | 1 byte         | true / false        |\n| `void`    | _N/A_          | _N/A_               |\n| `wchar_t` | 2 or 4 bytes   | 1 wide character    |",
+        "tags": "data types, primitive, int, float, char, bool, c++"
+    },
+    {
+        "title": "Getting User Input in C++",
+        "summary": "std::cin >> variable;",
+        "description": "Uses std::cin to take user input from the console.",
+        "example": "int num;\nstd::cout << \"Type a number: \";\nstd::cin >> num;\nstd::cout << \"You entered \" << num;",
+        "tags": "input, user input, cin, console, read, c++"
+    },
+    {
+        "title": "Swapping Two Variables in C++",
+        "summary": "std::swap(a, b);",
+        "description": "Swaps the values of two variables using std::swap().",
+        "example": "int a = 5, b = 10;\nstd::swap(a, b);\nstd::cout << \"a=\" << a << \", b=\" << b; // Output: a=10, b=5",
+        "tags": "swap, exchange, variables, std::swap, c++"
+    },
+    {
+        "title": "Single and Multi-Line Comments in C++",
+        "summary": "// Single-line comment /* Multi-line comment */",
+        "description": "Demonstrates how to use single-line and multi-line comments in C++.",
+        "example": "// A single one-line comment in C++\n\n/* This is a multiple-line comment\n   in C++ */",
+        "tags": "comments, single-line, multi-line, documentation, c++"
+    },
+    {
+        "title": "Using an If Statement in C++",
+        "summary": "if (condition) { /* code */ }",
+        "description": "Demonstrates an if statement in C++ for conditional execution.",
+        "example": "if (a == 10) {\n    std::cout << \"a is 10\";\n}",
+        "tags": "if statement, condition, branching, logic, c++"
+    },
+    {
+        "title": "Using a For Loop in C++",
+        "summary": "for (int i = 0; i < n; i++) { /* code */ }",
+        "description": "Uses a for loop to iterate a fixed number of times.",
+        "example": "for (int i = 0; i < 10; i++) {\n    std::cout << i << \"\\n\";\n}",
+        "tags": "loop, for loop, iteration, c++"
+    },
+    {
+        "title": "Defining and Calling a Function in C++",
+        "summary": "void functionName() { /* code */ }",
+        "description": "Declares, defines, and calls a function in C++.",
+        "example": "#include <iostream>\n\nvoid hello(); // Declaring\n\nint main() {\n    hello();  // Calling\n}\n\nvoid hello() { // Defining\n    std::cout << \"Hello CheatSheets!\\n\";\n}",
+        "tags": "function, define, call, declaration, c++"
+    },
+    {
+        "title": "Using References in C++",
+        "summary": "int& ref = variable;",
+        "description": "Demonstrates how to create and use a reference in C++.",
+        "example": "int i = 1;\nint& ri = i; // ri is a reference to i\n\nri = 2; // i is now changed to 2\nstd::cout << \"i=\" << i;\n\ni = 3; // i is now changed to 3\nstd::cout << \"ri=\" << ri;",
+        "tags": "references, alias, memory, variables, c++"
+    },
+    {
+        "title": "Using Namespaces in C++",
+        "summary": "namespace name { /* code */ }",
+        "description": "Defines and uses a namespace in C++.",
+        "example": "#include <iostream>\nnamespace ns1 { int val() { return 5; } }\nint main() {\n    std::cout << ns1::val();\n}",
+        "tags": "namespace, scope, global, identifier, c++"
+    },
+    {
+        "title": "Using the 'using namespace' Directive",
+        "summary": "using namespace name;",
+        "description": "Simplifies code by allowing direct use of elements from a namespace.",
+        "example": "#include <iostream>\nnamespace ns1 { int val() { return 5; } }\nusing namespace ns1;\nusing namespace std;\nint main() {\n    cout << val();\n}",
+        "tags": "namespace, using, scope, global, c++"
+    },
+    {
+        "title": "Declaring and Initializing a std::array in C++",
+        "summary": "std::array<int, 3> arr = {1, 2, 3};",
+        "description": "Declares and initializes a std::array with a fixed size and predefined values.",
+        "example": "#include <iostream>\n#include <array>\nint main() {\n    std::array<int, 3> arr = {1, 2, 3};\n    std::cout << arr[0]; // Outputs: 1\n}",
+        "tags": "cpp, array, declaration, initialization, std::array"
+    },
+    {
+        "title": "Accessing Elements in a std::array in C++",
+        "summary": "int value = arr[index];",
+        "description": "Retrieves an element from a std::array using its index.",
+        "example": "#include <iostream>\n#include <array>\nint main() {\n    std::array<int, 3> arr = {10, 20, 30};\n    std::cout << arr[1]; // Outputs: 20\n}",
+        "tags": "cpp, array, access, index, std::array"
+    },
+    {
+        "title": "Modifying Elements in a std::array in C++",
+        "summary": "arr[index] = newValue;",
+        "description": "Updates an element in a std::array by assigning a new value to an index.",
+        "example": "#include <iostream>\n#include <array>\nint main() {\n    std::array<int, 3> arr = {5, 10, 15};\n    arr[1] = 99;\n    std::cout << arr[1]; // Outputs: 99\n}",
+        "tags": "cpp, array, modify, update, std::array"
+    },
+    {
+        "title": "Iterating Over a std::array Using a Range-Based Loop in C++",
+        "summary": "for (const int &n : arr) { std::cout << n; }",
+        "description": "Loops through a std::array using a range-based for loop and prints each element.",
+        "example": "#include <iostream>\n#include <array>\nint main() {\n    std::array<int, 3> arr = {1, 2, 3};\n    for (const int &n : arr) {\n        std::cout << n << ' ';\n    }\n    // Outputs: 1 2 3\n}",
+        "tags": "cpp, array, loop, iterate, range-based, std::array"
+    },
+    {
+        "title": "Iterating Over a std::array Using an Index-Based Loop in C++",
+        "summary": "for (size_t i = 0; i < arr.size(); ++i) { std::cout << arr[i]; }",
+        "description": "Loops through a std::array using a traditional for loop with an index.",
+        "example": "#include <iostream>\n#include <array>\nint main() {\n    std::array<int, 3> arr = {4, 5, 6};\n    for (size_t i = 0; i < arr.size(); ++i) {\n        std::cout << arr[i] << ' ';\n    }\n    // Outputs: 4 5 6\n}",
+        "tags": "cpp, array, loop, iterate, index, std::array"
+    },
+    {
+        "title": "Finding the Size of a std::array in C++",
+        "summary": "size_t size = arr.size();",
+        "description": "Gets the number of elements in a std::array using the size() method.",
+        "example": "#include <iostream>\n#include <array>\nint main() {\n    std::array<int, 4> arr = {1, 2, 3, 4};\n    std::cout << arr.size(); // Outputs: 4\n}",
+        "tags": "cpp, array, size, length, std::array"
+    },
+    {
+        "title": "Checking If a std::array is Empty in C++",
+        "summary": "bool isEmpty = arr.empty();",
+        "description": "Checks whether a std::array is empty using the empty() method.",
+        "example": "#include <iostream>\n#include <array>\nint main() {\n    std::array<int, 0> arr; // Empty array\n    std::cout << std::boolalpha << arr.empty(); // Outputs: true\n}",
+        "tags": "cpp, array, empty, check, std::array"
+    },
+    {
+        "title": "Filling a std::array with a Value in C++",
+        "summary": "arr.fill(value);",
+        "description": "Fills all elements in a std::array with the specified value.",
+        "example": "#include <iostream>\n#include <array>\nint main() {\n    std::array<int, 5> arr;\n    arr.fill(7);\n    for (int n : arr) {\n        std::cout << n << ' ';\n    }\n    // Outputs: 7 7 7 7 7\n}",
+        "tags": "cpp, array, fill, initialize, std::array"
+    },
+    {
+        "title": "Finding the Maximum Value in a std::array in C++",
+        "summary": "int max_val = *std::max_element(arr.begin(), arr.end());",
+        "description": "Finds the largest value in a std::array using the max_element function.",
+        "example": "#include <iostream>\n#include <array>\n#include <algorithm>\nint main() {\n    std::array<int, 4> arr = {10, 20, 5, 15};\n    int max_val = *std::max_element(arr.begin(), arr.end());\n    std::cout << max_val; // Outputs: 20\n}",
+        "tags": "cpp, array, max, std::max_element, std::array"
+    },
+    {
+        "title": "Finding the Minimum Value in a std::array in C++",
+        "summary": "int min_val = *std::min_element(arr.begin(), arr.end());",
+        "description": "Finds the smallest value in a std::array using the min_element function.",
+        "example": "#include <iostream>\n#include <array>\n#include <algorithm>\nint main() {\n    std::array<int, 4> arr = {10, 20, 5, 15};\n    int min_val = *std::min_element(arr.begin(), arr.end());\n    std::cout << min_val; // Outputs: 5\n}",
+        "tags": "cpp, array, min, std::min_element, std::array"
+    },
+    {
+        "title": "Sorting a std::array in C++",
+        "summary": "std::sort(arr.begin(), arr.end());",
+        "description": "Sorts a std::array in ascending order using the sort function.",
+        "example": "#include <iostream>\n#include <array>\n#include <algorithm>\nint main() {\n    std::array<int, 5> arr = {3, 1, 4, 1, 5};\n    std::sort(arr.begin(), arr.end());\n    for (int n : arr) {\n        std::cout << n << ' ';\n    }\n    // Outputs: 1 1 3 4 5\n}",
+        "tags": "cpp, array, sort, std::sort, std::array"
+    },
+    {
+        "title": "Using a Switch Statement in C++",
+        "summary": "switch (num) { case 0: ... case 1: ... default: ... }",
+        "description": "Demonstrates how to use a switch statement in C++ to handle multiple cases.",
+        "example": "int num = 2;\nswitch (num) {\n    case 0:\n        std::cout << \"Zero\";\n        break;\n    case 1:\n        std::cout << \"One\";\n        break;\n    case 2:\n        std::cout << \"Two\";\n        break;\n    default:\n        std::cout << \"What?\";\n        break;\n}",
+        "tags": "switch, case, control flow, branching, C++"
+    },
+    {
+        "title": "Using a While Loop in C++",
+        "summary": "while (condition) { ... }",
+        "description": "Demonstrates a while loop in C++ that iterates while a condition is true.",
+        "example": "int i = 0;\nwhile (i < 6) {\n    std::cout << i++;\n} // Outputs: 012345",
+        "tags": "while loop, iteration, loop, C++"
+    },
+    {
+        "title": "Using a Do-While Loop in C++",
+        "summary": "do { ... } while (condition);",
+        "description": "Executes the loop body at least once, then repeats while the condition is true.",
+        "example": "int i = 1;\ndo {\n    std::cout << i++;\n} while (i <= 5);\n// Outputs: 12345",
+        "tags": "do-while loop, iteration, loop, C++"
+    },
+    {
+        "title": "Using Continue Statement in C++",
+        "summary": "for (int i = 0; i < N; i++) { if (condition) continue; ... }",
+        "description": "Demonstrates how to skip an iteration in a loop using continue.",
+        "example": "for (int i = 0; i < 10; i++) {\n    if (i % 2 == 0) {\n        continue;\n    }\n    std::cout << i;\n} // Outputs: 13579",
+        "tags": "continue, loop, iteration, skip, C++"
+    },
+    {
+        "title": "Creating an Infinite Loop in C++",
+        "summary": "while (true) { ... }",
+        "description": "Demonstrates different ways to create an infinite loop in C++.",
+        "example": "while (true) {\n    std::cout << \"infinite loop\";\n}",
+        "tags": "infinite loop, while loop, endless loop, C++"
+    },
+    {
+        "title": "Iterating Over an Array Using for_each in C++",
+        "summary": "std::for_each(container.begin(), container.end(), function);",
+        "description": "Uses the for_each algorithm to iterate over a collection in C++.",
+        "example": "#include <iostream>\n#include <array>\n#include <algorithm>\n\nint main() {\n    auto print = [](int num) { std::cout << num << std::endl; };\n    std::array<int, 4> arr = {1, 2, 3, 4};\n    std::for_each(arr.begin(), arr.end(), print);\n    return 0;\n}",
+        "tags": "for_each, iteration, array, loop, C++"
+    },
+    {
+        "title": "Iterating Over a List Using a Range-Based for Loop in C++",
+        "summary": "for (auto item : container) { ... }",
+        "description": "Demonstrates a range-based for loop in C++ to iterate over a collection.",
+        "example": "for (int n : {1, 2, 3, 4, 5}) {\n    std::cout << n << \" \";\n} // Outputs: 1 2 3 4 5",
+        "tags": "range-based for, iteration, list, array, C++"
+    },
+    {
+        "title": "Using Break in a While Loop in C++",
+        "summary": "while (condition) { if (break_condition) break; ... }",
+        "description": "Demonstrates how to exit a loop using the break statement.",
+        "example": "int password, times = 0;\nwhile (password != 1234) {\n    if (times++ >= 3) {\n        std::cout << \"Locked!\\n\";\n        break;\n    }\n    std::cout << \"Password: \";\n    std::cin >> password;\n}",
+        "tags": "break, exit loop, while loop, C++"
+    },
+    {
+        "title": "Using Multiple Variables in a For Loop in C++",
+        "summary": "for (int i = 0, j = 0; condition; i++, j--) { ... }",
+        "description": "Demonstrates a for loop with multiple variables in C++.",
+        "example": "for (int i = 0, j = 2; i < 3; i++, j--) {\n    std::cout << \"i=\" << i << \",\";\n    std::cout << \"j=\" << j << \";\";\n}\n// Outputs: i=0,j=2;i=1,j=1;i=2,j=0;",
+        "tags": "for loop, multiple variables, iteration, C++"
+    },
+    {
+        "title": "Defining a Function with Arguments and Return Value in C++",
+        "summary": "return_type function_name(parameters) { ... return value; }",
+        "description": "Demonstrates how to create a function with parameters and a return value.",
+        "example": "#include <iostream>\nint add(int a, int b) {\n    return a + b;\n}\nint main() {\n    std::cout << add(10, 20);\n}",
+        "tags": "function, return value, parameters, C++"
+    },
+    {
+        "title": "Overloading Functions in C++",
+        "summary": "void function(type param) { ... }",
+        "description": "Demonstrates function overloading by defining multiple functions with the same name but different parameters.",
+        "example": "void fun(std::string a, std::string b) {\n    std::cout << a + \" \" + b;\n}\nvoid fun(std::string a) {\n    std::cout << a;\n}\nvoid fun(int a) {\n    std::cout << a;\n}",
+        "tags": "function overloading, multiple parameters, C++"
+    },
+    {
+        "title": "Using Built-in Math Functions in C++",
+        "summary": "#include <cmath> sqrt(value);",
+        "description": "Demonstrates how to use the sqrt() function from the cmath library.",
+        "example": "#include <iostream>\n#include <cmath>\nint main() {\n    std::cout << sqrt(9);\n}",
+        "tags": "math functions, cmath, sqrt, C++"
+    },
+    {
+        "title": "Defining a Class in C++",
+        "summary": "class ClassName { public: type attribute; };",
+        "description": "Demonstrates how to define a simple class with attributes in C++.",
+        "example": "class MyClass {\n  public:\n    int myNum;\n    std::string myString;\n};",
+        "tags": "class, object-oriented programming, attributes, C++"
+    },
+    {
+        "title": "Creating an Object in C++",
+        "summary": "MyClass myObj; myObj.myNum = 15; myObj.myString = \"Hello\";",
+        "description": "Demonstrates how to create an object in C++ and assign values to its members.",
+        "example": "MyClass myObj;\nmyObj.myNum = 15;\nmyObj.myString = \"Hello\";\ncout << myObj.myNum << endl;\ncout << myObj.myString << endl;",
+        "tags": "c++, object, class, instance, create, initialize"
+    },
+    {
+        "title": "Using Constructors in C++",
+        "summary": "class MyClass { public: int myNum; string myString; MyClass() { myNum = 0; myString = \"\"; } };",
+        "description": "Demonstrates how to define and use a constructor in C++ to initialize member variables.",
+        "example": "class MyClass {\n  public:\n    int myNum;\n    string myString;\n    MyClass() { myNum = 0; myString = \"\"; }\n};\nMyClass myObj;\ncout << myObj.myNum << endl;\ncout << myObj.myString << endl;",
+        "tags": "c++, constructor, initialize, class, object, default"
+    },
+    {
+        "title": "Using Destructors in C++",
+        "summary": "class MyClass { public: ~MyClass() { cout << \"Object destroyed.\" << endl; } };",
+        "description": "Shows how to use destructors in C++ to release resources when an object goes out of scope.",
+        "example": "class MyClass {\n  public:\n    ~MyClass() {\n      cout << \"Object destroyed.\" << endl;\n    }\n};\nMyClass myObj;",
+        "tags": "c++, destructor, cleanup, memory, object, class"
+    },
+    {
+        "title": "Defining Class Methods in C++",
+        "summary": "class MyClass { public: void myMethod() { cout << \"Hello World!\" << endl; } };",
+        "description": "Demonstrates how to define and call a method inside a class in C++.",
+        "example": "class MyClass {\n  public:\n    void myMethod() {\n      cout << \"Hello World!\" << endl;\n    }\n};\nMyClass myObj;\nmyObj.myMethod();",
+        "tags": "c++, method, function, class, object, call"
+    },
+    {
+        "title": "Understanding Access Modifiers in C++",
+        "summary": "class MyClass { public: int x; private: int y; protected: int z; };",
+        "description": "Explains the usage of access specifiers (public, private, protected) in C++ classes.",
+        "example": "class MyClass {\n  public:\n    int x;\n  private:\n    int y;\n  protected:\n    int z;\n};\nMyClass myObj;\nmyObj.x = 25;  // Allowed\nmyObj.y = 50;  // Not allowed\nmyObj.z = 75;  // Not allowed",
+        "tags": "c++, access modifier, public, private, protected, class"
+    },
+    {
+        "title": "Using Getters and Setters in C++",
+        "summary": "class MyClass { private: int myNum; public: void setMyNum(int num) { myNum = num; } int getMyNum() { return myNum; } };",
+        "description": "Shows how to use getter and setter methods to access private member variables in C++.",
+        "example": "class MyClass {\n  private:\n    int myNum;\n  public:\n    void setMyNum(int num) {\n      myNum = num;\n    }\n    int getMyNum() {\n      return myNum;\n    }\n};\nMyClass myObj;\nmyObj.setMyNum(15);\ncout << myObj.getMyNum() << endl;",
+        "tags": "c++, getter, setter, encapsulation, class, private, public"
+    },
+    {
+        "title": "Implementing Inheritance in C++",
+        "summary": "class Car : public Vehicle { public: string model = \"Mustang\"; };",
+        "description": "Demonstrates how to implement class inheritance in C++ where a child class inherits from a parent class.",
+        "example": "class Vehicle {\n  public:\n    string brand = \"Ford\";\n    void honk() { cout << \"Tuut, tuut!\" << endl; }\n};\nclass Car : public Vehicle {\n  public:\n    string model = \"Mustang\";\n};\nCar myCar;\nmyCar.honk();\ncout << myCar.brand + \" \" + myCar.model << endl;",
+        "tags": "c++, inheritance, class, parent, child, extend"
+    },
+    {
+        "title": "Including Header Files in C++",
+        "summary": "#include <iostream>",
+        "description": "Shows how to include standard and custom header files in a C++ program.",
+        "example": "#include \"iostream\"\n#include <iostream>",
+        "tags": "c++, include, header, file, iostream, import"
+    },
+    {
+        "title": "Defining Constants with #define in C++",
+        "summary": "#define FOO \"hello\"",
+        "description": "Demonstrates how to define and undefine preprocessor macros in C++ using #define and #undef.",
+        "example": "#define FOO\n#define FOO \"hello\"\n#undef FOO",
+        "tags": "c++, define, macro, preprocessor, constant, undef"
+    },
+    {
+        "title": "Using Conditional Compilation in C++",
+        "summary": "#ifdef DEBUG console.log('hi'); #elif defined VERBOSE ... #else ... #endif",
+        "description": "Shows how to use preprocessor directives for conditional compilation in C++.",
+        "example": "#ifdef DEBUG\n  console.log('hi');\n#elif defined VERBOSE\n  ...\n#else\n  ...\n#endif",
+        "tags": "c++, preprocessor, conditional, ifdef, elif, endif"
+    },
+    {
+        "title": "Generating a Preprocessor Error in C++",
+        "summary": "#if VERSION == 2.0\n  #error Unsupported\n#endif",
+        "description": "Generates a compilation error if a certain condition is met using the C++ preprocessor.",
+        "example": "#define VERSION 2.0\n#if VERSION == 2.0\n  #error Unsupported\n#endif",
+        "tags": "cpp, c++, preprocessor, error, conditional compilation"
+    },
+    {
+        "title": "Defining a Macro in C++",
+        "summary": "#define DEG(x) ((x) * 57.29)",
+        "description": "Defines a macro that converts radians to degrees in C++.",
+        "example": "#define DEG(x) ((x) * 57.29)\ndouble angle = DEG(3.14159); // Converts π radians to degrees",
+        "tags": "cpp, c++, macro, define, preprocessing"
+    },
+    {
+        "title": "Concatenating Tokens in C++ Macros",
+        "summary": "#define DST(name) name##_s name##_t",
+        "description": "Uses the C++ preprocessor token-pasting operator to concatenate tokens dynamically.",
+        "example": "#define DST(name) name##_s name##_t\nDST(object); // Expands to object_s object_t",
+        "tags": "cpp, c++, macro, token pasting, preprocessor"
+    },
+    {
+        "title": "Stringifying a Macro Argument in C++",
+        "summary": "#define STR(name) #name",
+        "description": "Converts a macro argument into a string literal using the C++ preprocessor.",
+        "example": "#define STR(name) #name\nconst char* text = STR(object); // Expands to \"object\"",
+        "tags": "cpp, c++, macro, stringification, preprocessor"
+    },
+    {
+        "title": "Logging File and Line Number in C++ Macros",
+        "summary": "#define LOG(msg) std::cout << __FILE__ << \" \" << __LINE__ << \" \" << msg << std::endl;",
+        "description": "Uses the C++ preprocessor to log the current file and line number along with a message.",
+        "example": "#include <iostream>\n#define LOG(msg) std::cout << __FILE__ << \" \" << __LINE__ << \" \" << msg << std::endl;\nLOG(\"Error occurred\");",
+        "tags": "cpp, c++, logging, debugging, preprocessor"
+    },
+    {
+        "title": "Escape Sequences in C++ Strings",
+        "summary": "std::string str = \"Line 1\\nLine 2\";",
+        "description": "Demonstrates the use of escape sequences in C++ string literals.",
+        "example": "#include <iostream>\nstd::string str = \"Hello\\nWorld\";\nstd::cout << str << std::endl; // Outputs 'Hello' in one line and 'World' in the next",
+        "tags": "cpp, c++, escape sequences, string, special characters"
+    }
+]

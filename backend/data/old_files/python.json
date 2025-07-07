@@ -1,0 +1,1423 @@
+[
+    {
+        "title": "Checking If a List (listUser) Contains an Element",
+        "summary": "value in listUser",
+        "description": "Checks whether a given value exists in a list, returning `True` if found, otherwise `False`.",
+        "example": "numbers = [1, 2, 3, 4, 5]\nprint(3 in numbers)  # Output: True",
+        "tags": "list, contains, search, check, membership, python"
+    },
+    {
+        "title": "Finding the Index of an Element in a List (listUser)",
+        "summary": "res = listUser.index(value)",
+        "description": "Returns the index of the first occurrence of a value in a list, raising a `ValueError` if not found.",
+        "example": "fruits = ['apple', 'banana', 'cherry']\nprint(fruits.index('banana'))  # Output: 1",
+        "tags": "list, index, search, find, lookup, python"
+    },
+    {
+        "title": "Sorting a List (listUser)",
+        "summary": "res = sorted(listUser)",
+        "description": "Returns a new sorted list in ascending order without modifying the original list.",
+        "example": "numbers = [3, 1, 4, 2]\nprint(sorted(numbers))  # Output: [1, 2, 3, 4]",
+        "tags": "list, sort, order, ascending, sorted, python"
+    },
+    {
+        "title": "Reversing a List (listUser)",
+        "summary": "res = listUser.reverse()",
+        "description": "Reverses the elements of a list in place without creating a new list.",
+        "example": "numbers = [1, 2, 3]\nnumbers.reverse()\nprint(numbers)  # Output: [3, 2, 1]",
+        "tags": "list, reverse, modify, swap, python"
+    },
+    {
+        "title": "Removing Duplicates from a List (listUser)",
+        "summary": "res = list(set(listUser))",
+        "description": "Removes duplicate elements from a list by converting it to a set and back to a list.",
+        "example": "numbers = [1, 2, 2, 3, 4, 4]\nprint(list(set(numbers)))  # Output: [1, 2, 3, 4]",
+        "tags": "list, remove duplicates, unique, set, python"
+    },
+    {
+        "title": "Finding the Maximum Value in a List (listUser)",
+        "summary": "res = max(listUser)",
+        "description": "Returns the largest element in a list.",
+        "example": "numbers = [5, 2, 9, 1]\nprint(max(numbers))  # Output: 9",
+        "tags": "list, max, find largest, comparison, python"
+    },
+    {
+        "title": "Finding the Minimum Value in a List (listUser)",
+        "summary": "res = min(listUser)",
+        "description": "Returns the smallest element in a list.",
+        "example": "numbers = [5, 2, 9, 1]\nprint(min(numbers))  # Output: 1",
+        "tags": "list, min, find smallest, comparison, python"
+    },
+    {
+        "title": "Generating a Random Integer",
+        "summary": "res = random.randint(min, max)",
+        "description": "Generates a random integer between `min` and `max`, inclusive.",
+        "example": "import random\nprint(random.randint(1, 10))  # Output: Random number between 1 and 10",
+        "tags": "random, integer, generate, randint, python"
+    },
+    {
+        "title": "Shuffling a List (listUser) Randomly",
+        "summary": "res = random.shuffle(listUser)",
+        "description": "Randomly rearranges the elements of a list in place.",
+        "example": "import random\nnumbers = [1, 2, 3, 4, 5]\nrandom.shuffle(numbers)\nprint(numbers)  # Output: [3, 1, 5, 4, 2] (example)",
+        "tags": "random, shuffle, list, reorder, python"
+    },
+    {
+        "title": "Getting the Current Timestamp",
+        "summary": "res = time.time()",
+        "description": "Returns the current Unix timestamp as the number of seconds since epoch.",
+        "example": "import time\nprint(time.time())  # Output: 1672531199.123 (example)",
+        "tags": "time, timestamp, unix, now, epoch, python"
+    },
+    {
+        "title": "Converting a String to Uppercase",
+        "summary": "res = string.upper()",
+        "description": "Returns a new string with all characters converted to uppercase.",
+        "example": "text = \"hello\"\nprint(text.upper())  # Output: HELLO",
+        "tags": "string, uppercase, transform, modify, python"
+    },
+    {
+        "title": "Converting a String to Lowercase",
+        "summary": "res = string.lower()",
+        "description": "Returns a new string with all characters converted to lowercase.",
+        "example": "text = \"HELLO\"\nprint(text.lower())  # Output: hello",
+        "tags": "string, lowercase, transform, modify, python"
+    },
+    {
+        "title": "Finding a Substring in a String",
+        "summary": "res = string.find(substring)",
+        "description": "Returns the index of the first occurrence of a substring, or `-1` if not found.",
+        "example": "text = \"hello world\"\nprint(text.find(\"world\"))  # Output: 6",
+        "tags": "string, find, substring, index, search, python"
+    },
+    {
+        "title": "Replacing Text in a String",
+        "summary": "res = string.replace(old, new)",
+        "description": "Returns a new string where all occurrences of `old` are replaced with `new`.",
+        "example": "text = \"Hello, World!\"\nprint(text.replace(\"World\", \"Python\"))  # Output: Hello, Python!",
+        "tags": "string, replace, modify, edit, python"
+    },
+    {
+        "title": "Splitting a String into a List (listUser)",
+        "summary": "res = string.split(separator)",
+        "description": "Splits a string into a list of substrings based on a separator.",
+        "example": "text = \"apple,banana,grape\"\nprint(text.split(\",\"))  # Output: ['apple', 'banana', 'grape']",
+        "tags": "string, split, tokenize, delimiter, python"
+    },
+    {
+        "title": "Joining a List (listUser) into a String",
+        "summary": "res = \"separator\".join(listUser)",
+        "description": "Joins elements of a list into a string using a specified separator.",
+        "example": "words = [\"Hello\", \"World\"]\nprint(\" \".join(words))  # Output: Hello World",
+        "tags": "string, join, concatenate, merge, python"
+    },
+    {
+        "title": "Reading a File",
+        "summary": "open(filename).read()",
+        "description": "Reads the entire contents of a file as a string.",
+        "example": "with open(\"file.txt\", \"r\") as f:\n    content = f.read()\nprint(content)",
+        "tags": "file, read, open, text, io, python"
+    },
+    {
+        "title": "Writing to a File",
+        "summary": "open(filename, \"w\").write(data)",
+        "description": "Writes a string to a file, overwriting existing content.",
+        "example": "with open(\"output.txt\", \"w\") as f:\n    f.write(\"Hello, File!\")",
+        "tags": "file, write, open, text, io, python"
+    },
+    {
+        "title": "Appending to a File",
+        "summary": "open(filename, \"a\").write(data)",
+        "description": "Appends a string to the end of a file without overwriting existing content.",
+        "example": "with open(\"output.txt\", \"a\") as f:\n    f.write(\"More text\\n\")",
+        "tags": "file, append, write, io, open, python"
+    },
+    {
+        "title": "Checking If a Dictionary Contains a Key",
+        "summary": "res = key in dictionary",
+        "description": "Checks if a dictionary contains a specific key, returning `True` if found.",
+        "example": "user = {\"name\": \"Alice\", \"age\": 25}\nprint(\"age\" in user)  # Output: True",
+        "tags": "dictionary, key, contains, check, lookup, python"
+    },
+    {
+        "title": "Merging Two Dictionaries",
+        "summary": "dict1.update(dict2)",
+        "description": "Merges two dictionaries by updating the first dictionary with the key-value pairs from the second.",
+        "example": "a = {\"x\": 1, \"y\": 2}\nb = {\"y\": 3, \"z\": 4}\na.update(b)\nprint(a)  # Output: {'x': 1, 'y': 3, 'z': 4}",
+        "tags": "dictionary, merge, update, combine, python"
+    },
+    {
+        "title": "Flattening a Nested List (listUser)",
+        "summary": "res = [item for sublist in listUser for item in sublist]",
+        "description": "Flattens a list of lists into a single list using list comprehension.",
+        "example": "nested = [[1, 2], [3, 4], [5]]\nflat = [item for sublist in nested for item in sublist]\nprint(flat)  # Output: [1, 2, 3, 4, 5]",
+        "tags": "list, flatten, nested, comprehension, transform, python"
+    },
+    {
+        "title": "Finding Common Elements Between Two List (listUser)s",
+        "summary": "res = set(listUser1) & set(listUser2)",
+        "description": "Finds common elements between two lists by converting them to sets and using the `&` operator.",
+        "example": "a = [1, 2, 3]\nb = [2, 3, 4]\nprint(list(set(a) & set(b)))  # Output: [2, 3]",
+        "tags": "list, common, intersection, set, compare, python"
+    },
+    {
+        "title": "Filtering a List (listUser) Based on a Condition",
+        "summary": "res = list(filter(function, listUser))",
+        "description": "Filters elements in a list based on a condition using `filter()`. Returns a new list.",
+        "example": "nums = [1, 2, 3, 4, 5]\nevens = list(filter(lambda x: x % 2 == 0, nums))\nprint(evens)  # Output: [2, 4]",
+        "tags": "list, filter, condition, lambda, python"
+    },
+    {
+        "title": "Swapping Two Variables",
+        "summary": "a, b = b, a",
+        "description": "Swaps the values of two variables without using a temporary variable.",
+        "example": "a, b = 5, 10\na, b = b, a\nprint(a, b)  # Output: 10, 5",
+        "tags": "variable, swap, exchange, tuple, python"
+    },
+    {
+        "title": "Generating a List (listUser) of Squares",
+        "summary": "res = [x**2 for x in range(listUser)]",
+        "description": "Creates a list of squares of numbers from 0 to n-1 using list comprehension.",
+        "example": "print([x**2 for x in range(5)])  # Output: [0, 1, 4, 9, 16]",
+        "tags": "list, comprehension, square, range, transform, python"
+    },
+    {
+        "title": "Merging Two List (listUser)s Element-Wise",
+        "summary": "res = list(zip(listUser1, listUser2))",
+        "description": "Combines two lists element-wise into a list of tuples using `zip()`. Returns a new list.",
+        "example": "a = [1, 2, 3]\nb = ['a', 'b', 'c']\nprint(list(zip(a, b)))  # Output: [(1, 'a'), (2, 'b'), (3, 'c')]",
+        "tags": "list, merge, zip, tuple, combine, python"
+    },
+    {
+        "title": "Counting Frequency of Elements in a List (listUser)",
+        "summary": "res = collections.Counter(listUser)",
+        "description": "Counts occurrences of each element in a list and returns a dictionary-like Counter object.",
+        "example": "from collections import Counter\nnums = [1, 2, 2, 3, 3, 3]\nprint(Counter(nums))  # Output: {1: 1, 2: 2, 3: 3}",
+        "tags": "list, count, frequency, occurrences, python"
+    },
+    {
+        "title": "Reversing a String Efficiently",
+        "summary": "res = string[::-1]",
+        "description": "Creates a reversed copy of a string using slicing.",
+        "example": "text = \"hello\"\nprint(text[::-1])  # Output: 'olleh'",
+        "tags": "string, reverse, slicing, modify, python"
+    },
+    {
+        "title": "Checking If a String Starts with a Substring",
+        "summary": "res = string.startswith(substring)",
+        "description": "Returns `True` if the string starts with the specified substring, otherwise `False`.",
+        "example": "text = \"hello world\"\nprint(text.startswith(\"hello\"))  # Output: True",
+        "tags": "string, startswith, check, match, search, python"
+    },
+    {
+        "title": "Checking If a String Ends with a Substring",
+        "summary": "res = string.endswith(substring)",
+        "description": "Returns `True` if the string ends with the specified substring, otherwise `False`.",
+        "example": "text = \"hello world\"\nprint(text.endswith(\"world\"))  # Output: True",
+        "tags": "string, endswith, check, match, search, python"
+    },
+    {
+        "title": "Generating a List (listUser) of Even Numbers",
+        "summary": "list(range(start, stop, step))",
+        "description": "Creates a list of even numbers within a specified range using `range()`.",
+        "example": "print(list(range(2, 11, 2)))  # Output: [2, 4, 6, 8, 10]",
+        "tags": "list, range, even numbers, sequence, python"
+    },
+    {
+        "title": "Finding the Length of a Dictionary",
+        "summary": "res = len(dictionary)",
+        "description": "Returns the number of key-value pairs in a dictionary.",
+        "example": "data = {\"a\": 1, \"b\": 2, \"c\": 3}\nprint(len(data))  # Output: 3",
+        "tags": "dictionary, length, count, keys, python"
+    },
+    {
+        "title": "Reversing a Dictionary's Key-Value Pairs",
+        "summary": "res = {value: key for key, value in dictionary.items()}",
+        "description": "Creates a new dictionary by swapping keys and values using dictionary comprehension.",
+        "example": "data = {\"a\": 1, \"b\": 2, \"c\": 3}\nreversed_dict = {v: k for k, v in data.items()}\nprint(reversed_dict)  # Output: {1: 'a', 2: 'b', 3: 'c'}",
+        "tags": "dictionary, reverse, swap, keys, values, python"
+    },
+    {
+        "title": "Extracting Keys from a Dictionary",
+        "summary": "res = dictionary.keys()",
+        "description": "Returns a view object of all keys in a dictionary.",
+        "example": "data = {\"a\": 1, \"b\": 2, \"c\": 3}\nprint(list(data.keys()))  # Output: ['a', 'b', 'c']",
+        "tags": "dictionary, keys, extract, iterate, python"
+    },
+    {
+        "title": "Extracting Values from a Dictionary",
+        "summary": "res = dictionary.values()",
+        "description": "Returns a view object of all values in a dictionary.",
+        "example": "data = {\"a\": 1, \"b\": 2, \"c\": 3}\nprint(list(data.values()))  # Output: [1, 2, 3]",
+        "tags": "dictionary, values, extract, iterate, python"
+    },
+    {
+        "title": "Extracting Key-Value Pairs from a Dictionary",
+        "summary": "res = dictionary.items()",
+        "description": "Returns a view object containing tuples of key-value pairs.",
+        "example": "data = {\"a\": 1, \"b\": 2, \"c\": 3}\nprint(list(data.items()))  # Output: [('a', 1), ('b', 2), ('c', 3)]",
+        "tags": "dictionary, items, keys, values, tuples, python"
+    },
+    {
+        "title": "Finding the Factorial of a Number",
+        "summary": "res = math.factorial(listUser)",
+        "description": "Returns the factorial of `n` using the `math` module.",
+        "example": "import math\nprint(math.factorial(5))  # Output: 120",
+        "tags": "math, factorial, compute, multiply, python"
+    },
+    {
+        "title": "Finding the Greatest Common Divisor (GCD)",
+        "summary": "res = math.gcd(a, b)",
+        "description": "Returns the greatest common divisor (GCD) of two numbers.",
+        "example": "import math\nprint(math.gcd(48, 18))  # Output: 6",
+        "tags": "math, gcd, greatest common divisor, compute, python"
+    },
+    {
+        "title": "Finding the Least Common Multiple (LCM)",
+        "summary": "res = math.lcm(a, b)",
+        "description": "Returns the least common multiple (LCM) of two numbers.",
+        "example": "import math\nprint(math.lcm(4, 6))  # Output: 12",
+        "tags": "math, lcm, least common multiple, compute, python"
+    },
+    {
+        "title": "Checking If a Number is Prime",
+        "summary": "function to check if a number is prime",
+        "description": "Defines a function that checks if a number is prime by iterating up to its square root.",
+        "example": "def is_prime(listUser):\n    if n < 2:\n        return False\n    for i in range(2, int(n ** 0.5) + 1):\n        if n % i == 0:\n            return False\n    return True\nprint(is_prime(7))  # Output: True",
+        "tags": "math, prime, check, number, python"
+    },
+    {
+        "title": "Generating Fibonacci Sequence",
+        "summary": "function to generate Fibonacci sequence",
+        "description": "Generates a Fibonacci sequence up to `n` elements using iteration.",
+        "example": "def fibonacci(listUser):\n    seq = [0, 1]\n    for _ in range(n - 2):\n        seq.append(seq[-1] + seq[-2])\n    return seq\nprint(fibonacci(5))  # Output: [0, 1, 1, 2, 3]",
+        "tags": "math, fibonacci, sequence, generate, python"
+    },
+    {
+        "title": "Checking If a List (listUser) is Sorted",
+        "summary": "res = listUser == sorted(listUser)",
+        "description": "Determines if a list is sorted by comparing it to its sorted version.",
+        "example": "numbers = [1, 2, 3, 4]\nprint(numbers == sorted(numbers))  # Output: True",
+        "tags": "list, check, sorted, compare, python"
+    },
+    {
+        "title": "Finding the Most Frequent Element in a List (listUser)",
+        "summary": "res = max(set(listUser), key=listUser.count)",
+        "description": "Finds the most frequently occurring element in a list.",
+        "example": "numbers = [1, 3, 3, 2, 3, 1]\nprint(max(set(numbers), key=numbers.count))  # Output: 3",
+        "tags": "list, most common, frequency, count, python"
+    },
+    {
+        "title": "Removing Punctuation from a String",
+        "summary": "res = string.translate(str.maketrans('', '', string.punctuation))",
+        "description": "Removes all punctuation characters from a string using `str.translate()` and `string.punctuation`.",
+        "example": "import string\ntext = \"Hello, world!\"\nclean_text = text.translate(str.maketrans('', '', string.punctuation))\nprint(clean_text)  # Output: Hello world",
+        "tags": "string, remove punctuation, clean, translate, python"
+    },
+    {
+        "title": "Finding the Most Common Word in a Text",
+        "summary": "res = collections.Counter(text.split()).most_common(1)",
+        "description": "Finds the most frequently occurring word in a text using `collections.Counter()`.",
+        "example": "from collections import Counter\ntext = \"apple banana apple orange banana apple\"\nprint(Counter(text.split()).most_common(1))  # Output: [('apple', 3)]",
+        "tags": "text, count words, frequency, Counter, python"
+    },
+    {
+        "title": "Generating a UUID",
+        "summary": "res = uuid.uuid4()",
+        "description": "Generates a random unique identifier (UUID).",
+        "example": "import uuid\nprint(uuid.uuid4())  # Output: a random UUID like 'f47ac10b-58cc-4372-a567-0e02b2c3d479'",
+        "tags": "uuid, generate, unique id, identifier, python"
+    },
+    {
+        "title": "Checking If a List (listUser) Is Empty",
+        "summary": "res = if not listUser",
+        "description": "Checks if a list is empty using `if not list`.",
+        "example": "numbers = []\nif not numbers:\n    print(\"List (listUser) is empty\")  # Output: List (n) is empty",
+        "tags": "list, check empty, condition, boolean, python"
+    },
+    {
+        "title": "Sorting a Dictionary by Values",
+        "summary": "res = sorted(dictionary.items(), key=lambda item: item[1])",
+        "description": "Sorts a dictionary by its values in ascending order.",
+        "example": "data = {'a': 3, 'b': 1, 'c': 2}\nsorted_data = dict(sorted(data.items(), key=lambda item: item[1]))\nprint(sorted_data)  # Output: {'b': 1, 'c': 2, 'a': 3}",
+        "tags": "dictionary, sort, values, lambda, python"
+    },
+    {
+        "title": "Converting a Datetime Object to a String",
+        "summary": "res = datetime.strftime(format)",
+        "description": "Formats a `datetime` object into a string based on the specified format.",
+        "example": "from datetime import datetime\ndt = datetime(2025, 2, 14, 15, 30)\nprint(dt.strftime('%Y-%m-%d %H:%M'))  # Output: '2025-02-14 15:30'",
+        "tags": "datetime, format, string, conversion, python"
+    },
+    {
+        "title": "Parsing a String to a Datetime Object",
+        "summary": "res = datetime.strptime(date_string, format)",
+        "description": "Parses a string representing a date into a `datetime` object.",
+        "example": "from datetime import datetime\ndt = datetime.strptime('2025-02-14', '%Y-%m-%d')\nprint(dt)  # Output: 2025-02-14 00:00:00",
+        "tags": "datetime, parse, string, conversion, python"
+    },
+    {
+        "title": "Calculating the Difference Between Two Dates",
+        "summary": "res = date1 - date2",
+        "description": "Finds the time difference between two `datetime` objects, returning a `timedelta` object.",
+        "example": "from datetime import datetime\nd1 = datetime(2025, 2, 14)\nd2 = datetime(2024, 2, 14)\nprint(d1 - d2)  # Output: 366 days, 0:00:00",
+        "tags": "datetime, difference, timedelta, subtract, python"
+    },
+    {
+        "title": "Getting the Current Working Directory",
+        "summary": "res = os.getcwd()",
+        "description": "Returns the absolute path of the current working directory.",
+        "example": "import os\nprint(os.getcwd())",
+        "tags": "os, directory, path, getcwd, python"
+    },
+    {
+        "title": "Creating a Directory",
+        "summary": "os.mkdir(directory)",
+        "description": "Creates a new directory in the file system.",
+        "example": "import os\nos.mkdir('new_folder')\nprint('Directory created')",
+        "tags": "os, directory, mkdir, create folder, python"
+    },
+    {
+        "title": "Getting a Random Choice from a List (listUser)",
+        "summary": "res = random.choice(listUser)",
+        "description": "Selects a random element from a non-empty list.",
+        "example": "import random\noptions = ['red', 'blue', 'green']\nprint(random.choice(options))  # Output: 'blue' (example)",
+        "tags": "random, choice, select, list, python"
+    },
+    {
+        "title": "Shuffling a List (listUser)",
+        "summary": "res = random.shuffle(listUser)",
+        "description": "Randomly rearranges the elements of a list in place.",
+        "example": "import random\nnums = [1, 2, 3, 4, 5]\nrandom.shuffle(nums)\nprint(nums)  # Output: [3, 5, 2, 1, 4] (example)",
+        "tags": "random, shuffle, list, rearrange, python"
+    },
+    {
+        "title": "Finding the Intersection of Two List (listUser)s",
+        "summary": "res = list(set(listUser1) & set(listUser2))",
+        "description": "Finds the common elements between two lists by converting them to sets and using the `&` operator.",
+        "example": "a = [1, 2, 3, 4]\nb = [3, 4, 5, 6]\nprint(list(set(a) & set(b)))  # Output: [3, 4]",
+        "tags": "list, intersection, common elements, set, python"
+    },
+    {
+        "title": "Finding the Symmetric Difference of Two List (listUser)s",
+        "summary": "res = list(set(listUser1) ^ set(listUser2))",
+        "description": "Finds elements that are in either list but not both.",
+        "example": "a = [1, 2, 3, 4]\nb = [3, 4, 5, 6]\nprint(list(set(a) ^ set(b)))  # Output: [1, 2, 5, 6]",
+        "tags": "list, symmetric difference, exclusive OR, python"
+    },
+    {
+        "title": "Converting a String to Title Case",
+        "summary": "res = string.title()",
+        "description": "Returns a new string with the first letter of each word capitalized.",
+        "example": "text = \"hello world\"\nprint(text.title())  # Output: 'Hello World'",
+        "tags": "string, title case, capitalize, format, python"
+    },
+    {
+        "title": "Removing Duplicate Elements While Preserving Order",
+        "summary": "res = dict.fromkeys(listUser)",
+        "description": "Creates a dictionary from a list to remove duplicates while maintaining order.",
+        "example": "nums = [1, 2, 2, 3, 3, 4]\nunique_nums = list(dict.fromkeys(nums))\nprint(unique_nums)  # Output: [1, 2, 3, 4]",
+        "tags": "list, unique, remove duplicates, order, python"
+    },
+    {
+        "title": "Checking If a Number is Even or Odd",
+        "summary": "res = num % 2 == 0",
+        "description": "Determines if a number is even or odd using the modulo operator.",
+        "example": "num = 7\nprint(num % 2 == 0)  # Output: False",
+        "tags": "number, even, odd, check, condition, python"
+    },
+    {
+        "title": "Finding the First Non-Repeating Character in a String",
+        "summary": "res = next((ch for ch in s if s.count(ch) == 1), None)",
+        "description": "Finds and returns the first character in a string that does not repeat. Returns None if all characters repeat.",
+        "example": "s = 'swiss'\nprint(next((ch for ch in s if s.count(ch) == 1), None))  # Output: 'w'",
+        "tags": "string, unique, non-repeating, search, first, python"
+    },
+    {
+        "title": "Checking If All Elements in a List (listUser) Are Unique",
+        "summary": "res = len(listUser) == len(set(listUser))",
+        "description": "Determines whether all elements in a list are unique by comparing the length of the list to the length of a set of the same elements.",
+        "example": "lst = [1, 2, 3, 4, 5]\nprint(len(lst) == len(set(lst)))  # Output: True",
+        "tags": "list, unique, check, duplicates, set, python"
+    },
+    {
+        "title": "Finding the First Duplicate in a List (listUser)",
+        "summary": "res = next((x for i, x in enumerate(listUser) if x in listUser[:i]), None)",
+        "description": "Finds and returns the first duplicate element in a list. Returns None if no duplicates exist.",
+        "example": "lst = [1, 2, 3, 2, 4]\nprint(next((x for i, x in enumerate(lst) if x in lst[:i]), None))  # Output: 2",
+        "tags": "list, duplicate, first, find, repeat, python"
+    },
+    {
+        "title": "Swapping Keys and Values in a Dictionary",
+        "summary": "res = {v: k for k, v in d.items()}",
+        "description": "Creates a new dictionary by swapping the keys and values of an existing dictionary.",
+        "example": "d = {'a': 1, 'b': 2}\nprint({v: k for k, v in d.items()})  # Output: {1: 'a', 2: 'b'}",
+        "tags": "dictionary, swap, keys, values, invert, python"
+    },
+    {
+        "title": "Finding the Longest Word in a String",
+        "summary": "res = max(s.split(), key=len)",
+        "description": "Finds and returns the longest word in a given string.",
+        "example": "s = 'The quick brown fox jumps'\nprint(max(s.split(), key=len))  # Output: 'jumps'",
+        "tags": "string, longest, word, search, max, python"
+    },
+    {
+        "title": "Converting a List (listUser) of Tuples to a Dictionary",
+        "summary": "res = dict(listUser)",
+        "description": "Converts a list of key-value tuples into a dictionary.",
+        "example": "lst = [('a', 1), ('b', 2)]\nprint(dict(lst))  # Output: {'a': 1, 'b': 2}",
+        "tags": "list, tuple, dictionary, convert, key-value, python"
+    },
+    {
+        "title": "Finding the Median of a List (listUser)",
+        "summary": "res = statistics.median(listUser)",
+        "description": "Finds the median value of a list using the `statistics` module.",
+        "example": "import statistics\nlst = [1, 2, 3, 4, 5]\nprint(statistics.median(lst))  # Output: 3",
+        "tags": "list, median, statistics, math, center, python"
+    },
+    {
+        "title": "Flattening a List (listUser) of List (n)s",
+        "summary": "res = [item for sublist in listUser for item in sublist]",
+        "description": "Converts a nested list into a flat list using list comprehension.",
+        "example": "lst = [[1, 2], [3, 4]]\nprint([item for sublist in lst for item in sublist])  # Output: [1, 2, 3, 4]",
+        "tags": "list, flatten, nested, reduce, expand, python"
+    },
+    {
+        "title": "Getting the N Largest Elements in a List (listUser)",
+        "summary": "res = heapq.nlargest(n, listUser)",
+        "description": "Finds the `n` largest elements in a list using `heapq`.",
+        "example": "import heapq\nlst = [1, 5, 3, 8, 2]\nprint(heapq.nlargest(2, lst))  # Output: [8, 5]",
+        "tags": "list, largest, max, top, heapq, python"
+    },
+    {
+        "title": "Rotating a List (listUser) Left by N Positions",
+        "summary": "res = listUser[n:] + listUser[:n]",
+        "description": "Rotates a list to the left by `n` positions.",
+        "example": "lst = [1, 2, 3, 4, 5]\nn = 2\nprint(lst[n:] + lst[:n])  # Output: [3, 4, 5, 1, 2]",
+        "tags": "list, rotate, shift, left, modify, python"
+    },
+    {
+        "title": "Grouping Elements in a List (listUser)",
+        "summary": "res = [listUser[i:i+n] for i in range(0, len(listUser), n)]",
+        "description": "Splits a list into chunks of size `n`.",
+        "example": "lst = [1, 2, 3, 4, 5, 6]\nn = 2\nprint([lst[i:i+n] for i in range(0, len(lst), n)])  # Output: [[1, 2], [3, 4], [5, 6]]",
+        "tags": "list, group, chunk, split, partition, python"
+    },
+    {
+        "title": "Finding the Mode of a List (listUser)",
+        "summary": "res = statistics.mode(listUser)",
+        "description": "Finds the most frequently occurring value in a list.",
+        "example": "import statistics\nlst = [1, 2, 2, 3, 3, 3]\nprint(statistics.mode(lst))  # Output: 3",
+        "tags": "list, mode, statistics, frequency, common, python"
+    },
+    {
+        "title": "Finding the N Smallest Elements in a List (listUser)",
+        "summary": "res = heapq.nsmallest(n, listUser)",
+        "description": "Finds the `n` smallest elements in a list using `heapq`.",
+        "example": "import heapq\nlst = [5, 1, 8, 3, 2]\nprint(heapq.nsmallest(2, lst))  # Output: [1, 2]",
+        "tags": "list, smallest, min, top, heapq, python"
+    },
+    {
+        "title": "Reversing Words in a String",
+        "summary": "res = ' '.join(s.split()[::-1])",
+        "description": "Reverses the order of words in a string.",
+        "example": "s = 'Hello world'\nprint(' '.join(s.split()[::-1]))  # Output: 'world Hello'",
+        "tags": "string, reverse, words, split, join, python"
+    },
+    {
+        "title": "Checking If a String Is a Valid Email",
+        "summary": "is_valid = re.match(r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$', email) is not None",
+        "description": "Uses a regular expression to check if a string is formatted as a valid email address.",
+        "example": "import re\nemail = \"test@example.com\"\nis_valid = re.match(r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$', email) is not None",
+        "tags": "string, validation, regex, email, python"
+    },
+    {
+        "title": "Finding the HCF of Two Numbers",
+        "summary": "hcf = math.gcd(a, b)",
+        "description": "Finds the highest common factor (HCF) of two numbers using the built-in `math.gcd` function.",
+        "example": "import math\na, b = 36, 60\nhcf = math.gcd(a, b)",
+        "tags": "math, hcf, gcd, numbers, python"
+    },
+    {
+        "title": "Checking If a String Is a Palindrome",
+        "summary": "is_palindrome = text == text[::-1]",
+        "description": "Determines if a string is a palindrome by comparing it to its reverse.",
+        "example": "text = \"racecar\"\nis_palindrome = text == text[::-1]",
+        "tags": "string, palindrome, reverse, python"
+    },
+    {
+        "title": "Finding the Sum of Digits in a Number",
+        "summary": "sum_digits = sum(int(digit) for digit in str(num))",
+        "description": "Converts a number to a string, iterates through its digits, and calculates their sum.",
+        "example": "num = 12345\nsum_digits = sum(int(digit) for digit in str(num))",
+        "tags": "math, digits, sum, numbers, python"
+    },
+    {
+        "title": "Finding the Number of Vowels in a String",
+        "summary": "vowel_count = sum(1 for char in text if char.lower() in 'aeiou')",
+        "description": "Counts the number of vowels in a given string, considering both uppercase and lowercase vowels.",
+        "example": "text = \"Hello World\"\nvowel_count = sum(1 for char in text if char.lower() in 'aeiou')",
+        "tags": "string, vowels, count, python"
+    },
+    {
+        "title": "Reversing an Integer",
+        "summary": "reversed_num = int(str(num)[::-1])",
+        "description": "Converts an integer to a string, reverses it, and converts it back to an integer.",
+        "example": "num = 12345\nreversed_num = int(str(num)[::-1])",
+        "tags": "integer, reverse, numbers, python"
+    },
+    {
+        "title": "Checking If a String Contains Only Alphabets",
+        "summary": "is_alpha = text.isalpha()",
+        "description": "Uses the `isalpha()` method to check if a string contains only alphabetic characters.",
+        "example": "text = \"Hello\"\nis_alpha = text.isalpha()",
+        "tags": "string, alphabet, validation, python"
+    },
+    {
+        "title": "Generating a List of Prime Numbers Up to N",
+        "summary": "primes = [x for x in range(2, n) if all(x % d != 0 for d in range(2, int(x**0.5) + 1))]",
+        "description": "Uses a list comprehension to generate a list of prime numbers up to `n`.",
+        "example": "n = 50\nprimes = [x for x in range(2, n) if all(x % d != 0 for d in range(2, int(x**0.5) + 1))]",
+        "tags": "math, prime numbers, list comprehension, python"
+    },
+    {
+        "title": "Flattening a Nested Dictionary",
+        "summary": "flat_dict = {k: v for d in nested_dict.values() for k, v in d.items()}",
+        "description": "Merges all sub-dictionaries in a nested dictionary into a single dictionary.",
+        "example": "nested_dict = {\"a\": {\"x\": 1}, \"b\": {\"y\": 2}}\nflat_dict = {k: v for d in nested_dict.values() for k, v in d.items()}",
+        "tags": "dictionary, flatten, python"
+    },
+    {
+        "title": "Counting the Number of Words in a String",
+        "summary": "word_count = len(text.split())",
+        "description": "Splits a string into words and counts the number of words.",
+        "example": "text = \"This is a sample sentence.\"\nword_count = len(text.split())",
+        "tags": "string, words, count, python"
+    },
+    {
+        "title": "Finding the Longest Word in a Sentence",
+        "summary": "longest_word = max(text.split(), key=len)",
+        "description": "Finds the longest word in a given sentence.",
+        "example": "text = \"Python is an amazing language.\"\nlongest_word = max(text.split(), key=len)",
+        "tags": "string, longest word, python"
+    },
+    {
+        "title": "Checking If a Year Is a Leap Year",
+        "summary": "is_leap = year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)",
+        "description": "Determines whether a given year is a leap year based on leap year rules.",
+        "example": "year = 2024\nis_leap = year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)",
+        "tags": "date, leap year, python"
+    },
+    {
+        "title": "Removing All Whitespace from a String",
+        "summary": "no_spaces = text.replace(' ', '')",
+        "description": "Removes all spaces from a given string.",
+        "example": "text = \"Hello World\"\nno_spaces = text.replace(' ', '')",
+        "tags": "string, whitespace, remove, python"
+    },
+    {
+        "title": "Calculating the Square of Each Number in a List",
+        "summary": "squares = [x**2 for x in numbers]",
+        "description": "Uses list comprehension to calculate the square of each number in a list.",
+        "example": "numbers = [1, 2, 3, 4, 5]\nsquares = [x**2 for x in numbers]",
+        "tags": "math, list comprehension, python"
+    },
+    {
+        "title": "Extracting Unique Words from a Sentence",
+        "summary": "unique_words = set(text.split())",
+        "description": "Splits a sentence into words and extracts unique words using a set.",
+        "example": "text = \"Python is great and Python is fun.\"\nunique_words = set(text.split())",
+        "tags": "string, unique words, python"
+    },
+    {
+        "title": "Converting a List of Integers to a String",
+        "summary": "num_string = ' '.join(map(str, numbers))",
+        "description": "Converts a list of integers into a space-separated string.",
+        "example": "numbers = [1, 2, 3, 4, 5]\nnum_string = ' '.join(map(str, numbers))",
+        "tags": "list, string conversion, python"
+    },
+    {
+        "title": "Calculating the Product of All Elements in a List",
+        "summary": "product = math.prod(numbers)",
+        "description": "Computes the product of all elements in a list using `math.prod`.",
+        "example": "import math\nnumbers = [1, 2, 3, 4]\nproduct = math.prod(numbers)",
+        "tags": "math, list, product, python"
+    },
+    {
+        "title": "Removing Duplicate Characters from a String",
+        "summary": "unique_chars = ''.join(dict.fromkeys(text))",
+        "description": "Removes duplicate characters while preserving the original order.",
+        "example": "text = \"banana\"\nunique_chars = ''.join(dict.fromkeys(text))",
+        "tags": "string, duplicates, python"
+    },
+    {
+        "title": "Finding the Greatest Common Divisor (GCD) of a List",
+        "summary": "gcd_value = functools.reduce(math.gcd, numbers)",
+        "description": "Uses `math.gcd` with `functools.reduce` to compute the greatest common divisor of a list of numbers.",
+        "example": "import math, functools\nnumbers = [24, 36, 48]\ngcd_value = functools.reduce(math.gcd, numbers)",
+        "tags": "math, gcd, list, python"
+    },
+    {
+        "title": "Finding the Length of the Longest Substring Without Repeating Characters",
+        "summary": "max_length = max(map(len, re.findall(r'(?=((?!([a-zA-Z0-9])).{0,}))', text)))",
+        "description": "Uses a regex-based approach to find the length of the longest substring with unique characters.",
+        "example": "import re\ntext = \"abcabcbb\"\nmax_length = max(map(len, re.findall(r'(?=((?!([a-zA-Z0-9])).{0,}))', text)))",
+        "tags": "string, substring, regex, python"
+    },
+    {
+        "title": "Extracting the File Name from a Path",
+        "summary": "file_name = os.path.basename(file_path)",
+        "description": "Uses `os.path.basename` to extract the file name from a given file path.",
+        "example": "import os\nfile_path = \"/home/user/document.txt\"\nfile_name = os.path.basename(file_path)",
+        "tags": "file, path, os, python"
+    },
+    {
+        "title": "Calculating the Distance Between Two Points",
+        "summary": "distance = math.sqrt((x2 - x1)**2 + (y2 - y1)**2)",
+        "description": "Computes the Euclidean distance between two points in a 2D space.",
+        "example": "import math\nx1, y1, x2, y2 = 1, 2, 4, 6\ndistance = math.sqrt((x2 - x1)**2 + (y2 - y1)**2)",
+        "tags": "math, distance, points, python"
+    },
+    {
+        "title": "Counting the Occurrences of Each Character in a String",
+        "summary": "char_counts = collections.Counter(text)",
+        "description": "Uses `collections.Counter` to count the frequency of each character in a string.",
+        "example": "import collections\ntext = \"hello world\"\nchar_counts = collections.Counter(text)",
+        "tags": "string, counter, frequency, python"
+    },
+    {
+        "title": "Finding the Intersection of Two Sets",
+        "summary": "common_elements = set1 & set2",
+        "description": "Finds the common elements between two sets using the `&` operator.",
+        "example": "set1 = {1, 2, 3}\nset2 = {2, 3, 4}\ncommon_elements = set1 & set2",
+        "tags": "set, intersection, python"
+    },
+    {
+        "title": "Checking If a Number is a Perfect Square",
+        "summary": "is_perfect_square = math.isqrt(num)**2 == num",
+        "description": "Determines if a number is a perfect square using integer square root.",
+        "example": "import math\nnum = 25\nis_perfect_square = math.isqrt(num)**2 == num",
+        "tags": "math, perfect square, python"
+    },
+    {
+        "title": "Converting a Dictionary to a List of Tuples",
+        "summary": "dict_items = list(dictionary.items())",
+        "description": "Converts a dictionary into a list of key-value tuples using `.items()`.",
+        "example": "dictionary = {\"a\": 1, \"b\": 2}\ndict_items = list(dictionary.items())",
+        "tags": "dictionary, tuple, conversion, python"
+    },
+    {
+        "title": "Filtering a List Based on Another List",
+        "summary": "filtered_list = [x for x in list1 if x in list2]",
+        "description": "Filters elements from one list that are present in another list.",
+        "example": "list1 = [1, 2, 3, 4]\nlist2 = [2, 4]\nfiltered_list = [x for x in list1 if x in list2]",
+        "tags": "list, filtering, python"
+    },
+    {
+        "title": "Extracting Numbers from a String",
+        "summary": "numbers = list(map(int, re.findall(r'\\d+', text)))",
+        "description": "Uses regex to extract all numbers from a string and converts them into integers.",
+        "example": "import re\ntext = \"There are 3 apples and 7 oranges.\"\nnumbers = list(map(int, re.findall(r'\\d+', text)))",
+        "tags": "string, regex, extract, numbers, python"
+    },
+    {
+        "title": "Finding the Transpose of a Matrix",
+        "summary": "transpose = list(map(list, zip(*matrix)))",
+        "description": "Computes the transpose of a given matrix using `zip`.",
+        "example": "matrix = [[1, 2], [3, 4], [5, 6]]\ntranspose = list(map(list, zip(*matrix)))",
+        "tags": "matrix, transpose, python"
+    },
+    {
+        "title": "Reversing a Dictionary",
+        "summary": "reversed_dict = {v: k for k, v in dictionary.items()}",
+        "description": "Swaps keys and values in a dictionary.",
+        "example": "dictionary = {\"a\": 1, \"b\": 2}\nreversed_dict = {v: k for k, v in dictionary.items()}",
+        "tags": "dictionary, reverse, python"
+    },
+    {
+        "title": "Checking If a String Contains a Number",
+        "summary": "contains_number = any(char.isdigit() for char in text)",
+        "description": "Checks if a given string contains at least one numeric character.",
+        "example": "text = \"Hello123\"\ncontains_number = any(char.isdigit() for char in text)",
+        "tags": "string, validation, numbers, python"
+    },
+    {
+        "title": "Finding the Common Elements in Multiple Lists",
+        "summary": "common_elements = set.intersection(*map(set, lists))",
+        "description": "Finds the common elements among multiple lists using `set.intersection`.",
+        "example": "lists = [[1, 2, 3], [2, 3, 4], [3, 4, 5]]\ncommon_elements = set.intersection(*map(set, lists))",
+        "tags": "list, intersection, python"
+    },
+    {
+        "title": "Finding the Sum of Even Numbers in a List",
+        "summary": "sum_even = sum(x for x in numbers if x % 2 == 0)",
+        "description": "Computes the sum of all even numbers in a list.",
+        "example": "numbers = [1, 2, 3, 4, 5, 6]\nsum_even = sum(x for x in numbers if x % 2 == 0)",
+        "tags": "math, list, even numbers, python"
+    },
+    {
+        "title": "Grouping Consecutive Elements in a List",
+        "summary": "groups = [list(g) for k, g in itertools.groupby(numbers)]",
+        "description": "Uses `itertools.groupby` to group consecutive identical elements in a list.",
+        "example": "import itertools\nnumbers = [1, 1, 2, 2, 3, 3, 3]\ngroups = [list(g) for k, g in itertools.groupby(numbers)]",
+        "tags": "list, grouping, itertools, python"
+    },
+    {
+        "title": "Swapping Two Numbers Without a Temporary Variable",
+        "summary": "a, b = b, a",
+        "description": "Swaps the values of two variables without using a temporary variable.",
+        "example": "a, b = 5, 10\na, b = b, a",
+        "tags": "swap, variables, python"
+    },
+    {
+        "title": "Reversing a String Using Slicing",
+        "summary": "reversed_string = text[::-1]",
+        "description": "Uses Python slicing to reverse a string efficiently.",
+        "example": "text = \"hello\"\nreversed_string = text[::-1]",
+        "tags": "string, reverse, slicing, python"
+    },
+    {
+        "title": "Finding the Maximum Value in a List Without max()",
+        "summary": "max_value = sorted(numbers)[-1]",
+        "description": "Finds the maximum value in a list using sorting instead of `max()`.",
+        "example": "numbers = [3, 1, 4, 1, 5, 9]\nmax_value = sorted(numbers)[-1]",
+        "tags": "list, max, sorting, python"
+    },
+    {
+        "title": "Checking If Two Strings Are Anagrams",
+        "summary": "is_anagram = sorted(str1) == sorted(str2)",
+        "description": "Checks if two strings are anagrams by sorting their characters.",
+        "example": "str1, str2 = \"listen\", \"silent\"\nis_anagram = sorted(str1) == sorted(str2)",
+        "tags": "string, anagram, sorting, python"
+    },
+    {
+        "title": "Flattening a Nested List Recursively",
+        "summary": "flattened_list = sum(([x] if not isinstance(x, list) else flatten(x) for x in nested_list), [])",
+        "description": "Flattens a deeply nested list recursively.",
+        "example": "def flatten(nested_list):\n    return sum(([x] if not isinstance(x, list) else flatten(x) for x in nested_list), [])\nnested_list = [1, [2, [3, 4], 5], 6]\nflattened_list = flatten(nested_list)",
+        "tags": "list, recursion, flatten, python"
+    },
+    {
+        "title": "Finding the Power of a Number Without pow()",
+        "summary": "power = base ** exponent",
+        "description": "Computes the power of a number using `**` instead of `pow()`.",
+        "example": "base, exponent = 2, 3\npower = base ** exponent",
+        "tags": "math, power, exponentiation, python"
+    },
+    {
+        "title": "Implementing a Stack Using a List",
+        "summary": "stack.append(item); popped = stack.pop()",
+        "description": "Uses a list to implement a simple stack with push and pop operations.",
+        "example": "stack = []\nstack.append(1)\npopped = stack.pop()",
+        "tags": "stack, list, data structure, python"
+    },
+    {
+        "title": "Implementing a Queue Using collections.deque",
+        "summary": "queue.append(item); removed = queue.popleft()",
+        "description": "Uses `collections.deque` to implement a queue efficiently.",
+        "example": "from collections import deque\nqueue = deque()\nqueue.append(1)\nremoved = queue.popleft()",
+        "tags": "queue, deque, data structure, python"
+    },
+    {
+        "title": "Checking If a List is a Palindrome",
+        "summary": "is_palindrome = numbers == numbers[::-1]",
+        "description": "Determines if a list reads the same forward and backward.",
+        "example": "numbers = [1, 2, 3, 2, 1]\nis_palindrome = numbers == numbers[::-1]",
+        "tags": "list, palindrome, slicing, python"
+    },
+    {
+        "title": "Finding the Nth Fibonacci Number Using Recursion",
+        "summary": "fib = fibonacci(n)",
+        "description": "Computes the Nth Fibonacci number using a recursive approach.",
+        "example": "def fibonacci(n):\n    return n if n <= 1 else fibonacci(n-1) + fibonacci(n-2)\nn = 5\nfib = fibonacci(n)",
+        "tags": "recursion, fibonacci, math, python"
+    },
+    {
+        "title": "Checking If a Number Is a Power of Two",
+        "summary": "is_power_of_two = num > 0 and (num & (num - 1)) == 0",
+        "description": "Determines if a number is a power of two using bitwise operations.",
+        "example": "num = 8\nis_power_of_two = num > 0 and (num & (num - 1)) == 0",
+        "tags": "bitwise, power of two, math, python"
+    },
+    {
+        "title": "Merging Two Sorted Lists",
+        "summary": "merged_list = sorted(list1 + list2)",
+        "description": "Combines two sorted lists and maintains sorted order.",
+        "example": "list1, list2 = [1, 3, 5], [2, 4, 6]\nmerged_list = sorted(list1 + list2)",
+        "tags": "list, merge, sorting, python"
+    },
+    {
+        "title": "Checking If a Number is an Armstrong Number",
+        "summary": "is_armstrong = num == sum(int(digit) ** len(str(num)) for digit in str(num))",
+        "description": "Determines if a number is an Armstrong number (sum of its digits each raised to the power of the number of digits).",
+        "example": "num = 153\nis_armstrong = num == sum(int(digit) ** len(str(num)) for digit in str(num))",
+        "tags": "math, armstrong, python"
+    },
+    {
+        "title": "Generating a List of Prime Numbers Up to N",
+        "summary": "primes = [x for x in range(2, n) if all(x % y != 0 for y in range(2, int(x**0.5) + 1))]",
+        "description": "Creates a list of prime numbers up to N using list comprehension.",
+        "example": "n = 50\nprimes = [x for x in range(2, n) if all(x % y != 0 for y in range(2, int(x**0.5) + 1))]",
+        "tags": "math, prime, list comprehension, python"
+    },
+    {
+        "title": "Reversing a List Using Itertools",
+        "summary": "reversed_list = list(itertools.chain(reversed(numbers)))",
+        "description": "Uses `itertools.chain` and `reversed()` to reverse a list.",
+        "example": "import itertools\nnumbers = [1, 2, 3, 4]\nreversed_list = list(itertools.chain(reversed(numbers)))",
+        "tags": "list, reverse, itertools, python"
+    },
+    {
+        "title": "Calculating Factorial Using Itertools",
+        "summary": "factorial = functools.reduce(lambda x, y: x * y, range(1, n + 1), 1)",
+        "description": "Uses `functools.reduce` to compute the factorial of a number.",
+        "example": "import functools\nn = 5\nfactorial = functools.reduce(lambda x, y: x * y, range(1, n + 1), 1)",
+        "tags": "math, factorial, reduce, python"
+    },
+    {
+        "title": "Finding the GCD of Two Numbers",
+        "summary": "gcd_value = math.gcd(a, b)",
+        "description": "Calculates the greatest common divisor (GCD) of two numbers using `math.gcd()`.",
+        "example": "import math\na, b = 48, 18\ngcd_value = math.gcd(a, b)",
+        "tags": "math, gcd, python"
+    },
+    {
+        "title": "Finding the LCM Without math.lcm()",
+        "summary": "lcm_value = abs(a * b) // math.gcd(a, b)",
+        "description": "Computes the least common multiple (LCM) using GCD.",
+        "example": "import math\na, b = 6, 8\nlcm_value = abs(a * b) // math.gcd(a, b)",
+        "tags": "math, lcm, python"
+    },
+    {
+        "title": "Reversing a Number Using String Conversion",
+        "summary": "reversed_number = int(str(num)[::-1])",
+        "description": "Reverses the digits of a number by converting it to a string.",
+        "example": "num = 12345\nreversed_number = int(str(num)[::-1])",
+        "tags": "math, reverse, string, python"
+    },
+    {
+        "title": "Checking If a List Is Sorted",
+        "summary": "is_sorted = numbers == sorted(numbers)",
+        "description": "Checks if a list is already sorted in ascending order.",
+        "example": "numbers = [1, 2, 3, 4, 5]\nis_sorted = numbers == sorted(numbers)",
+        "tags": "list, sorting, python"
+    },
+    {
+        "title": "Calculating the Hamming Distance Between Two Strings",
+        "summary": "hamming_distance = sum(ch1 != ch2 for ch1, ch2 in zip(str1, str2))",
+        "description": "Finds the number of differing characters between two equal-length strings.",
+        "example": "str1, str2 = \"karolin\", \"kathrin\"\nhamming_distance = sum(ch1 != ch2 for ch1, ch2 in zip(str1, str2))",
+        "tags": "string, hamming distance, python"
+    },
+    {
+        "title": "Finding the Intersection of Two Sets",
+        "summary": "common_elements = set1 & set2",
+        "description": "Finds the common elements between two sets using `&`.",
+        "example": "set1, set2 = {1, 2, 3}, {2, 3, 4}\ncommon_elements = set1 & set2",
+        "tags": "set, intersection, python"
+    },
+    {
+        "title": "Finding the Union of Two Sets",
+        "summary": "union_set = set1 | set2",
+        "description": "Finds the union of two sets using `|`.",
+        "example": "set1, set2 = {1, 2}, {3, 4}\nunion_set = set1 | set2",
+        "tags": "set, union, python"
+    },
+    {
+        "title": "Finding the Difference of Two Sets",
+        "summary": "difference_set = set1 - set2",
+        "description": "Finds elements in `set1` that are not in `set2`.",
+        "example": "set1, set2 = {1, 2, 3}, {2, 3, 4}\ndifference_set = set1 - set2",
+        "tags": "set, difference, python"
+    },
+    {
+        "title": "Sorting a List of Tuples by the Second Element",
+        "summary": "sorted_list = sorted(tuples_list, key=lambda x: x[1])",
+        "description": "Sorts a list of tuples based on the second element.",
+        "example": "tuples_list = [(1, 3), (2, 1), (4, 2)]\nsorted_list = sorted(tuples_list, key=lambda x: x[1])",
+        "tags": "list, sorting, tuple, python"
+    },
+    {
+        "title": "Checking If a List Contains Duplicates",
+        "summary": "has_duplicates = len(numbers) != len(set(numbers))",
+        "description": "Detects if a list has duplicate elements using a set.",
+        "example": "numbers = [1, 2, 3, 4, 4]\nhas_duplicates = len(numbers) != len(set(numbers))",
+        "tags": "list, duplicates, python"
+    },
+    {
+        "title": "Calculating the Exponential of a Number",
+        "summary": "exp_value = math.exp(num)",
+        "description": "Computes the exponential (e^x) of a number.",
+        "example": "import math\nnum = 2\nexp_value = math.exp(num)",
+        "tags": "math, exponential, python"
+    },
+    {
+        "title": "Generating a List of Prime Numbers Using Sieve of Eratosthenes",
+        "summary": "primes = sieve_of_eratosthenes(n)",
+        "description": "Efficiently finds prime numbers up to N.",
+        "example": "def sieve_of_eratosthenes(n):\n    primes = [True] * (n+1)\n    p = 2\n    while p**2 <= n:\n        if primes[p]:\n            for i in range(p*p, n+1, p):\n                primes[i] = False\n        p += 1\n    return [i for i in range(2, n+1) if primes[i]]\nn = 50\nprimes = sieve_of_eratosthenes(n)",
+        "tags": "math, prime, sieve, python"
+    },
+    {
+        "title": "Finding the Square Root Using Newton’s Method",
+        "summary": "sqrt_value = newton_sqrt(n)",
+        "description": "Computes the square root of a number using Newton's method.",
+        "example": "def newton_sqrt(n, precision=1e-10):\n    x = n\n    while abs(x * x - n) > precision:\n        x = (x + n / x) / 2\n    return x\nn = 25\nsqrt_value = newton_sqrt(n)",
+        "tags": "math, square root, python"
+    },
+    {
+        "title": "Finding the First Repeated Character in a String",
+        "summary": "first_repeated = next((char for char in text if text.count(char) > 1), None)",
+        "description": "Finds the first character that appears more than once in a string.",
+        "example": "text = \"swiss\"\nfirst_repeated = next((char for char in text if text.count(char) > 1), None)",
+        "tags": "string, repeated, python"
+    },
+    {
+        "title": "Calculating the Dot Product of Two Lists",
+        "summary": "dot_product = sum(a * b for a, b in zip(list1, list2))",
+        "description": "Computes the dot product of two numeric lists.",
+        "example": "list1, list2 = [1, 2, 3], [4, 5, 6]\ndot_product = sum(a * b for a, b in zip(list1, list2))",
+        "tags": "math, dot product, python"
+    },
+    {
+        "title": "Finding the Mode of a List Using collections.Counter",
+        "summary": "mode = Counter(numbers).most_common(1)[0][0]",
+        "description": "Finds the most frequent element in a list.",
+        "example": "from collections import Counter\nnumbers = [1, 2, 2, 3, 3, 3, 4]\nmode = Counter(numbers).most_common(1)[0][0]",
+        "tags": "list, mode, frequency, python"
+    },
+    {
+        "title": "Checking If a String Is a Valid Identifier",
+        "summary": "is_valid = text.isidentifier()",
+        "description": "Checks if a string is a valid Python variable name.",
+        "example": "text = \"my_var\"\nis_valid = text.isidentifier()",
+        "tags": "string, identifier, python"
+    },
+    {
+        "title": "Checking If a Number Is a Power of Two",
+        "summary": "is_power_of_two = (num & (num - 1)) == 0 and num > 0",
+        "description": "Determines if a number is a power of two using bitwise operations.",
+        "example": "num = 16\nis_power_of_two = (num & (num - 1)) == 0 and num > 0",
+        "tags": "math, bitwise, power of two, python"
+    },
+    {
+        "title": "Counting the Number of Set Bits in an Integer",
+        "summary": "set_bits = bin(num).count('1')",
+        "description": "Counts the number of 1s in the binary representation of an integer.",
+        "example": "num = 29\nset_bits = bin(num).count('1')",
+        "tags": "bitwise, binary, counting, python"
+    },
+    {
+        "title": "Swapping Two Numbers Without a Temporary Variable",
+        "summary": "a, b = b, a",
+        "description": "Swaps two numbers using Python's tuple unpacking.",
+        "example": "a, b = 5, 10\na, b = b, a",
+        "tags": "swap, tuple, python"
+    },
+    {
+        "title": "Reversing a List In-Place",
+        "summary": "numbers.reverse()",
+        "description": "Reverses the elements of a list in place.",
+        "example": "numbers = [1, 2, 3, 4, 5]\nnumbers.reverse()",
+        "tags": "list, reverse, python"
+    },
+    {
+        "title": "Reversing a List Without Modifying It",
+        "summary": "reversed_list = numbers[::-1]",
+        "description": "Creates a reversed copy of a list using slicing.",
+        "example": "numbers = [1, 2, 3, 4, 5]\nreversed_list = numbers[::-1]",
+        "tags": "list, reverse, slicing, python"
+    },
+    {
+        "title": "Flattening a Nested List Using Recursion",
+        "summary": "def flatten(lst): return [item for sublist in lst for item in (flatten(sublist) if isinstance(sublist, list) else [sublist])]",
+        "description": "Flattens a nested list into a single list using recursion.",
+        "example": "nested_list = [[1, [2, 3]], [4, 5]]\nflat_list = flatten(nested_list)",
+        "tags": "list, recursion, flatten, python"
+    },
+    {
+        "title": "Checking If a String Is a Valid Python Variable Name",
+        "summary": "is_valid = text.isidentifier()",
+        "description": "Determines if a string is a valid Python variable name.",
+        "example": "text = \"my_var\"\nis_valid = text.isidentifier()",
+        "tags": "string, variable name, python"
+    },
+    {
+        "title": "Finding the Maximum Depth of a Nested List",
+        "summary": "def max_depth(lst): return 1 + max((max_depth(sub) for sub in lst if isinstance(sub, list)), default=0)",
+        "description": "Finds the maximum depth of a nested list using recursion.",
+        "example": "nested_list = [[1, [2, [3, 4]]], 5]\ndepth = max_depth(nested_list)",
+        "tags": "recursion, nested list, depth, python"
+    },
+    {
+        "title": "Generating a List of Fibonacci Numbers",
+        "summary": "fibonacci = [0, 1] + [sum(fibonacci[-2:]) for _ in range(n-2)]",
+        "description": "Generates a list of the first N Fibonacci numbers.",
+        "example": "n = 10\nfibonacci = [0, 1] + [sum(fibonacci[-2:]) for _ in range(n-2)]",
+        "tags": "math, fibonacci, sequence, python"
+    },
+    {
+        "title": "Finding the Missing Number in a Consecutive List",
+        "summary": "missing_number = sum(range(n+1)) - sum(numbers)",
+        "description": "Finds the missing number in a sequence using sum formula.",
+        "example": "numbers = [1, 2, 4, 5]\nn = 5\nmissing_number = sum(range(n+1)) - sum(numbers)",
+        "tags": "math, missing number, python"
+    },
+    {
+        "title": "Checking If a String Contains Unique Characters",
+        "summary": "is_unique = len(set(text)) == len(text)",
+        "description": "Determines if a string has all unique characters using a set.",
+        "example": "text = \"abcdef\"\nis_unique = len(set(text)) == len(text)",
+        "tags": "string, unique, python"
+    },
+    {
+        "title": "Finding the Longest Common Prefix Among Strings",
+        "summary": "prefix = os.path.commonprefix(strings)",
+        "description": "Finds the longest common prefix in a list of strings.",
+        "example": "import os\nstrings = [\"flower\", \"flow\", \"flight\"]\nprefix = os.path.commonprefix(strings)",
+        "tags": "string, prefix, python"
+    },
+    {
+        "title": "Finding the Most Frequent Word in a Sentence",
+        "summary": "most_common = Counter(words).most_common(1)[0][0]",
+        "description": "Finds the most frequent word in a sentence using `Counter`.",
+        "example": "from collections import Counter\nsentence = \"apple banana apple orange banana apple\"\nwords = sentence.split()\nmost_common = Counter(words).most_common(1)[0][0]",
+        "tags": "string, word frequency, python"
+    },
+    {
+        "title": "Finding the Nth Root of a Number",
+        "summary": "nth_root = num ** (1 / n)",
+        "description": "Calculates the nth root of a number using exponentiation.",
+        "example": "num, n = 16, 4\nnth_root = num ** (1 / n)",
+        "tags": "math, nth root, python"
+    },
+    {
+        "title": "Removing Duplicates From a List While Preserving Order",
+        "summary": "unique_list = list(dict.fromkeys(numbers))",
+        "description": "Removes duplicate elements from a list while keeping the order.",
+        "example": "numbers = [1, 2, 2, 3, 4, 4, 5]\nunique_list = list(dict.fromkeys(numbers))",
+        "tags": "list, unique, python"
+    },
+    {
+        "title": "Grouping Elements in a List by a Key Function",
+        "summary": "grouped = {k: list(g) for k, g in groupby(sorted(numbers, key=key_func), key=key_func)}",
+        "description": "Groups elements in a list based on a key function.",
+        "example": "from itertools import groupby\nnumbers = [1, 2, 2, 3, 4, 4, 5]\nkey_func = lambda x: x % 2\ngrouped = {k: list(g) for k, g in groupby(sorted(numbers, key=key_func), key=key_func)}",
+        "tags": "list, grouping, itertools, python"
+    },
+    {
+        "title": "Checking If a Year Is a Leap Year Without datetime Module",
+        "summary": "is_leap = (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)",
+        "description": "Determines if a year is a leap year using modulo operations.",
+        "example": "year = 2024\nis_leap = (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)",
+        "tags": "date, leap year, python"
+    },
+    {
+        "title": "Finding the Cartesian Product of Two Lists",
+        "summary": "cartesian_product = list(product(list1, list2))",
+        "description": "Computes the Cartesian product of two lists using itertools.",
+        "example": "from itertools import product\nlist1, list2 = [1, 2], ['a', 'b']\ncartesian_product = list(product(list1, list2))",
+        "tags": "list, cartesian product, python"
+    },
+    {
+        "title": "Reversing a String Using Recursion",
+        "summary": "def reverse_string(s): return s if len(s) == 0 else reverse_string(s[1:]) + s[0]",
+        "description": "Reverses a string using a recursive function.",
+        "example": "text = \"hello\"\nreversed_text = reverse_string(text)",
+        "tags": "string, recursion, reverse, python"
+    },
+    {
+        "title": "Checking If Two Strings Are Anagrams",
+        "summary": "is_anagram = sorted(str1) == sorted(str2)",
+        "description": "Determines if two strings are anagrams by sorting their characters.",
+        "example": "str1, str2 = \"listen\", \"silent\"\nis_anagram = sorted(str1) == sorted(str2)",
+        "tags": "string, anagram, sorting, python"
+    },
+    {
+        "title": "Counting the Number of Words in a String",
+        "summary": "word_count = len(text.split())",
+        "description": "Counts the number of words in a string by splitting on whitespace.",
+        "example": "text = \"Python is awesome\"\nword_count = len(text.split())",
+        "tags": "string, count, words, python"
+    },
+    {
+        "title": "Removing Consecutive Duplicates from a List",
+        "summary": "deduplicated = [lst[i] for i in range(len(lst)) if i == 0 or lst[i] != lst[i-1]]",
+        "description": "Removes consecutive duplicate elements from a list while preserving order.",
+        "example": "lst = [1, 1, 2, 2, 3, 4, 4]\ndeduplicated = [lst[i] for i in range(len(lst)) if i == 0 or lst[i] != lst[i-1]]",
+        "tags": "list, duplicates, python"
+    },
+    {
+        "title": "Finding the GCD of Two Numbers Using Recursion",
+        "summary": "def gcd(a, b): return a if b == 0 else gcd(b, a % b)",
+        "description": "Finds the greatest common divisor (GCD) using the Euclidean algorithm.",
+        "example": "a, b = 48, 18\ngcd_value = gcd(a, b)",
+        "tags": "math, gcd, recursion, python"
+    },
+    {
+        "title": "Checking If a Number Is a Perfect Square",
+        "summary": "is_square = num >= 0 and int(math.sqrt(num)) ** 2 == num",
+        "description": "Determines if a number is a perfect square.",
+        "example": "import math\nnum = 16\nis_square = num >= 0 and int(math.sqrt(num)) ** 2 == num",
+        "tags": "math, square, python"
+    },
+    {
+        "title": "Rotating a List Right by One Position",
+        "summary": "rotated_list = [lst[-1]] + lst[:-1]",
+        "description": "Rotates a list to the right by one position.",
+        "example": "lst = [1, 2, 3, 4, 5]\nrotated_list = [lst[-1]] + lst[:-1]",
+        "tags": "list, rotation, python"
+    },
+    {
+        "title": "Converting a List of Booleans to an Integer",
+        "summary": "int_value = int(''.join(map(str, map(int, bool_list))), 2)",
+        "description": "Converts a list of boolean values into an integer representation.",
+        "example": "bool_list = [True, False, True]\nint_value = int(''.join(map(str, map(int, bool_list))), 2)",
+        "tags": "boolean, integer, conversion, python"
+    },
+    {
+        "title": "Finding All Substrings of a String",
+        "summary": "substrings = [text[i:j] for i in range(len(text)) for j in range(i+1, len(text)+1)]",
+        "description": "Generates all possible substrings of a given string.",
+        "example": "text = \"abc\"\nsubstrings = [text[i:j] for i in range(len(text)) for j in range(i+1, len(text)+1)]",
+        "tags": "string, substrings, python"
+    },
+    {
+        "title": "Finding the Length of the Longest Word in a String",
+        "summary": "max_length = max(map(len, text.split()))",
+        "description": "Finds the length of the longest word in a given string.",
+        "example": "text = \"Python programming language\"\nmax_length = max(map(len, text.split()))",
+        "tags": "string, max length, python"
+    },
+    {
+        "title": "Generating All Combinations of a List",
+        "summary": "combinations_list = list(combinations(lst, r))",
+        "description": "Generates all possible combinations of elements from a list.",
+        "example": "from itertools import combinations\nlst = [1, 2, 3]\ncombinations_list = list(combinations(lst, 2))",
+        "tags": "list, combinations, python"
+    },
+    {
+        "title": "Checking If Two Numbers Have the Same Sign",
+        "summary": "same_sign = (a * b) > 0",
+        "description": "Determines if two numbers have the same sign.",
+        "example": "a, b = -3, -7\nsame_sign = (a * b) > 0",
+        "tags": "math, sign, python"
+    },
+    {
+        "title": "Finding the Sum of Digits of an Integer",
+        "summary": "digit_sum = sum(map(int, str(num)))",
+        "description": "Finds the sum of the digits of an integer.",
+        "example": "num = 12345\ndigit_sum = sum(map(int, str(num)))",
+        "tags": "math, digits, python"
+    },
+    {
+        "title": "Converting a Number to Binary Without Using bin()",
+        "summary": "def to_binary(n): return '' if n == 0 else to_binary(n // 2) + str(n % 2)",
+        "description": "Recursively converts a number to its binary representation.",
+        "example": "num = 5\nbinary_string = to_binary(num)",
+        "tags": "math, binary, recursion, python"
+    },
+    {
+        "title": "Generating Pascal’s Triangle Up to N Rows",
+        "summary": "triangle = [[1] * (i+1) for i in range(n)]",
+        "description": "Generates Pascal's Triangle up to N rows.",
+        "example": "n = 5\ntriangle = [[1] * (i+1) for i in range(n)]\nfor i in range(2, n):\n    for j in range(1, i):\n        triangle[i][j] = triangle[i-1][j-1] + triangle[i-1][j]",
+        "tags": "math, pascal triangle, python"
+    },
+    {
+        "title": "Finding the Sum of Unique Elements in a List",
+        "summary": "unique_sum = sum(set(numbers))",
+        "description": "Finds the sum of unique elements in a list using a set.",
+        "example": "numbers = [1, 2, 2, 3, 4, 4, 5]\nunique_sum = sum(set(numbers))",
+        "tags": "list, sum, unique, python"
+    },
+    {
+        "title": "Reversing a Number",
+        "summary": "reversed_num = int(str(abs(num))[::-1]) * (-1 if num < 0 else 1)",
+        "description": "Reverses the digits of an integer while keeping its sign.",
+        "example": "num = -123\nreversed_num = int(str(abs(num))[::-1]) * (-1 if num < 0 else 1)",
+        "tags": "math, reverse, integer, python"
+    },
+    {
+        "title": "Finding the First Repeating Element in a List",
+        "summary": "seen, first_repeating = set(), next((x for x in numbers if x in seen or seen.add(x)), None)",
+        "description": "Finds the first repeating element in a list using a set.",
+        "example": "numbers = [3, 1, 4, 2, 1, 5]\nseen, first_repeating = set(), next((x for x in numbers if x in seen or seen.add(x)), None)",
+        "tags": "list, repetition, python"
+    },
+    {
+        "title": "Finding the HCF (Highest Common Factor) of Two Numbers",
+        "summary": "def hcf(a, b): return a if b == 0 else hcf(b, a % b)",
+        "description": "Computes the highest common factor using recursion.",
+        "example": "a, b = 36, 60\nhcf_value = hcf(a, b)",
+        "tags": "math, hcf, recursion, python"
+    },
+    {
+        "title": "Generating the First N Prime Numbers",
+        "summary": "primes = [x for x in range(2, limit) if all(x % i != 0 for i in range(2, int(x**0.5) + 1))]",
+        "description": "Generates a list of the first N prime numbers.",
+        "example": "limit = 20\nprimes = [x for x in range(2, limit) if all(x % i != 0 for i in range(2, int(x**0.5) + 1))]",
+        "tags": "math, prime, python"
+    },
+    {
+        "title": "Checking If a String Is a Pangram",
+        "summary": "is_pangram = set('abcdefghijklmnopqrstuvwxyz').issubset(text.lower())",
+        "description": "Checks if a string contains all letters of the alphabet.",
+        "example": "text = \"The quick brown fox jumps over the lazy dog\"\nis_pangram = set('abcdefghijklmnopqrstuvwxyz').issubset(text.lower())",
+        "tags": "string, pangram, python"
+    },
+    {
+        "title": "Counting Vowels in a String",
+        "summary": "vowel_count = sum(1 for char in text.lower() if char in 'aeiou')",
+        "description": "Counts the number of vowels in a string.",
+        "example": "text = \"hello world\"\nvowel_count = sum(1 for char in text.lower() if char in 'aeiou')",
+        "tags": "string, vowels, count, python"
+    },
+    {
+        "title": "Checking If a List Is Palindromic",
+        "summary": "is_palindromic = lst == lst[::-1]",
+        "description": "Checks if a list is the same forwards and backwards.",
+        "example": "lst = [1, 2, 3, 2, 1]\nis_palindromic = lst == lst[::-1]",
+        "tags": "list, palindrome, python"
+    },
+    {
+        "title": "Removing Non-Alphabetic Characters from a String",
+        "summary": "cleaned_text = ''.join(filter(str.isalpha, text))",
+        "description": "Removes all non-alphabetic characters from a string.",
+        "example": "text = \"Hello, World!123\"\ncleaned_text = ''.join(filter(str.isalpha, text))",
+        "tags": "string, filtering, python"
+    },
+    {
+        "title": "Flattening a Dictionary",
+        "summary": "flat_dict = {f'{k}.{sub_k}': v for k, subdict in d.items() for sub_k, v in subdict.items()}",
+        "description": "Converts a nested dictionary into a flat dictionary.",
+        "example": "d = {\"a\": {\"b\": 1, \"c\": 2}}\nflat_dict = {f'{k}.{sub_k}': v for k, subdict in d.items() for sub_k, v in subdict.items()}",
+        "tags": "dictionary, flatten, python"
+    },
+    {
+        "title": "Finding the Intersection of Three Lists",
+        "summary": "intersection = set(lst1) & set(lst2) & set(lst3)",
+        "description": "Finds the common elements in three lists.",
+        "example": "lst1, lst2, lst3 = [1, 2, 3], [2, 3, 4], [3, 4, 5]\nintersection = set(lst1) & set(lst2) & set(lst3)",
+        "tags": "list, intersection, python"
+    },
+    {
+        "title": "Generating All Permutations of a List",
+        "summary": "perms = list(permutations(lst))",
+        "description": "Generates all possible orderings of elements in a list.",
+        "example": "from itertools import permutations\nlst = [1, 2, 3]\nperms = list(permutations(lst))",
+        "tags": "list, permutations, python"
+    },
+    {
+        "title": "Finding the Longest Consecutive Sequence in a List",
+        "summary": "max_seq = max(len(set(range(min(s), max(s)+1)) & s) for s in map(set, [lst]))",
+        "description": "Finds the length of the longest consecutive sequence in a list.",
+        "example": "lst = [100, 4, 200, 1, 3, 2]\nmax_seq = max(len(set(range(min(s), max(s)+1)) & s) for s in map(set, [lst]))",
+        "tags": "list, sequence, python"
+    },
+    {
+        "title": "Checking If Two Strings Are Anagrams",
+        "summary": "is_anagram = sorted(str1) == sorted(str2)",
+        "description": "Determines if two strings contain the same letters in different orders.",
+        "example": "str1, str2 = \"listen\", \"silent\"\nis_anagram = sorted(str1) == sorted(str2)",
+        "tags": "string, anagram, sorting, python"
+    },
+    {
+        "title": "Checking If a Number Is a Perfect Square",
+        "summary": "is_perfect_square = int(n**0.5) ** 2 == n",
+        "description": "Determines if a number is a perfect square.",
+        "example": "n = 49\nis_perfect_square = int(n**0.5) ** 2 == n",
+        "tags": "math, perfect square, python"
+    },
+    {
+        "title": "Finding the GCD of Multiple Numbers",
+        "summary": "gcd_value = reduce(math.gcd, numbers)",
+        "description": "Finds the greatest common divisor (GCD) of multiple numbers.",
+        "example": "from math import gcd\nfrom functools import reduce\nnumbers = [48, 60, 72]\ngcd_value = reduce(gcd, numbers)",
+        "tags": "math, gcd, python"
+    },
+    {
+        "title": "Checking If a String Has All Unique Characters",
+        "summary": "is_unique = len(set(text)) == len(text)",
+        "description": "Determines if a string has all unique characters.",
+        "example": "text = \"abcdef\"\nis_unique = len(set(text)) == len(text)",
+        "tags": "string, unique, python"
+    },
+    {
+        "title": "Computing the Power of a Number Efficiently",
+        "summary": "power = pow(base, exponent, mod)",
+        "description": "Computes (base^exponent) % mod efficiently.",
+        "example": "base, exponent, mod = 3, 4, 5\npower = pow(base, exponent, mod)",
+        "tags": "math, power, python"
+    },
+    {
+        "title": "Finding the Second Largest Number in a List",
+        "summary": "second_largest = sorted(set(lst))[-2] if len(set(lst)) > 1 else None",
+        "description": "Finds the second largest number in a list.",
+        "example": "lst = [10, 20, 4, 45, 99]\nsecond_largest = sorted(set(lst))[-2] if len(set(lst)) > 1 else None",
+        "tags": "list, sorting, python"
+    },
+    {
+        "title": "Finding the Missing Number in a Consecutive Sequence",
+        "summary": "missing_number = sum(range(min(lst), max(lst) + 1)) - sum(lst)",
+        "description": "Finds the missing number in a list of consecutive numbers.",
+        "example": "lst = [1, 2, 3, 5]\nmissing_number = sum(range(min(lst), max(lst) + 1)) - sum(lst)",
+        "tags": "list, math, python"
+    },
+    {
+        "title": "Converting a List of Strings to Integers",
+        "summary": "int_list = list(map(int, str_list))",
+        "description": "Converts a list of numeric strings into a list of integers.",
+        "example": "str_list = [\"1\", \"2\", \"3\"]\nint_list = list(map(int, str_list))",
+        "tags": "list, conversion, python"
+    },
+    {
+        "title": "Finding the Most Frequent Word in a String",
+        "summary": "most_frequent = max(set(words), key=words.count)",
+        "description": "Finds the most frequently occurring word in a string.",
+        "example": "text = \"apple banana apple orange banana apple\"\nwords = text.split()\nmost_frequent = max(set(words), key=words.count)",
+        "tags": "string, frequency, python"
+    },
+    {
+        "title": "Filtering Even Numbers from a List",
+        "summary": "evens = list(filter(lambda x: x % 2 == 0, lst))",
+        "description": "Extracts only even numbers from a list.",
+        "example": "lst = [1, 2, 3, 4, 5, 6]\nevens = list(filter(lambda x: x % 2 == 0, lst))",
+        "tags": "list, filter, python"
+    },
+    {
+        "title": "Computing the Sum of a List Using Reduce",
+        "summary": "sum_value = reduce(lambda x, y: x + y, lst)",
+        "description": "Computes the sum of all elements in a list using reduce.",
+        "example": "from functools import reduce\nlst = [1, 2, 3, 4, 5]\nsum_value = reduce(lambda x, y: x + y, lst)",
+        "tags": "list, reduce, python"
+    },
+    {
+        "title": "Merging Two Sorted Lists into One Sorted List",
+        "summary": "merged_list = sorted(lst1 + lst2)",
+        "description": "Merges two sorted lists and keeps the result sorted.",
+        "example": "lst1, lst2 = [1, 3, 5], [2, 4, 6]\nmerged_list = sorted(lst1 + lst2)",
+        "tags": "list, sorting, python"
+    },
+    {
+        "title": "Finding the Longest Common Prefix in a List of Strings",
+        "summary": "prefix = os.path.commonprefix(strings)",
+        "description": "Finds the longest common prefix among a list of strings.",
+        "example": "import os\nstrings = [\"flower\", \"flow\", \"flight\"]\nprefix = os.path.commonprefix(strings)",
+        "tags": "string, prefix, python"
+    },
+    {
+        "title": "Finding the First Repeated Character in a String",
+        "summary": "first_repeated = next((c for c in text if text.count(c) > 1), None)",
+        "description": "Finds the first character that repeats in a string.",
+        "example": "text = \"swiss\"\nfirst_repeated = next((c for c in text if text.count(c) > 1), None)",
+        "tags": "string, repetition, python"
+    },
+    {
+        "title": "Finding the Mode in a List of Numbers",
+        "summary": "mode = max(set(lst), key=lst.count)",
+        "description": "Finds the most frequently occurring number in a list.",
+        "example": "lst = [1, 2, 2, 3, 4, 4, 4]\nmode = max(set(lst), key=lst.count)",
+        "tags": "list, mode, statistics, python"
+    }
+]

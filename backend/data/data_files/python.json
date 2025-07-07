@@ -1,0 +1,436 @@
+[
+    {
+        "title": "Declaring Variables in Python",
+        "summary": "age = 18; name = 'John'",
+        "description": "Declares variables 'age' as an integer and 'name' as a string.",
+        "example": "age = 18\nname = 'John'\nprint(name)  # Output: John",
+        "tags": "variables, assignment, python"
+    },
+    {
+        "title": "Slicing a String",
+        "summary": "result = msg[2:5]",
+        "description": "Extracts a substring from index 2 to 4.",
+        "example": "msg = 'Hello, World!'\nresult = msg[2:5]\nprint(result)  # Output: 'llo'",
+        "tags": "string, slicing, substring, python"
+    },
+    {
+        "title": "Appending to a List",
+        "summary": "mylist.append(value)",
+        "description": "Appends an element to a list.",
+        "example": "mylist = []\nmylist.append(1)\nprint(mylist)  # Output: [1]",
+        "tags": "list, append, python"
+    },
+    {
+        "title": "Checking a Condition with If-Else",
+        "summary": "if num > 0: print('Positive') else: print('Non-positive')",
+        "description": "Checks if a number is positive and prints a message accordingly.",
+        "example": "num = 200\nif num > 0:\n    print('num is greater than 0')\nelse:\n    print('num is not greater than 0')",
+        "tags": "if-else, condition, python"
+    },
+    {
+        "title": "Breaking a Loop in Python",
+        "summary": "if item == 3: break",
+        "description": "Exits the loop when the condition is met.",
+        "example": "for item in range(6):\n    if item == 3: break\n    print(item)  # Output: 0 1 2",
+        "tags": "loops, break, python"
+    },
+    {
+        "title": "Defining and Calling a Function",
+        "summary": "def my_function(): print('Hello from a function')",
+        "description": "Defines and calls a function that prints a message.",
+        "example": "def my_function():\n    print('Hello from a function')\nmy_function()  # Output: Hello from a function",
+        "tags": "function, define, python"
+    },
+    {
+        "title": "Reading a File in Python",
+        "summary": "with open('myfile.txt', 'r', encoding='utf8') as file: for line in file: print(line)",
+        "description": "Opens a file in read mode and prints its contents line by line.",
+        "example": "with open('myfile.txt', 'r', encoding='utf8') as file:\n    for line in file:\n        print(line)",
+        "tags": "file-handling, read, python"
+    },
+    {
+        "title": "Performing Basic Arithmetic",
+        "summary": "result = 10 + 30",
+        "description": "Performs basic arithmetic operations in Python.",
+        "example": "result = 10 + 30  # Output: 40\nresult = 40 - 10  # Output: 30\nresult = 50 * 5  # Output: 250",
+        "tags": "arithmetic, operators, python"
+    },
+    {
+        "title": "Using Plus-Equals for Concatenation",
+        "summary": "message += 'Part 2.'",
+        "description": "Uses '+=' to concatenate strings.",
+        "example": "message = 'Part 1.'\nmessage += 'Part 2.'\nprint(message)  # Output: 'Part 1.Part 2.'",
+        "tags": "string, concatenation, python"
+    },
+    {
+        "title": "Using f-Strings for Formatting",
+        "summary": "f'{num} + 10 = {num + 10}'",
+        "description": "Formats strings using f-strings in Python 3.6+.",
+        "example": "num = 10\nformatted = f'{num} + 10 = {num + 10}'\nprint(formatted)  # Output: '10 + 10 = 20'",
+        "tags": "f-string, format, python"
+    },
+    {
+        "title": "Formatting Numbers with F-Strings in Python",
+        "summary": "formatted_number = f'{number:,.2f}'",
+        "description": "Uses Python f-strings to format numbers with commas and two decimal places.",
+        "example": "number = 1000000\nformatted_number = f'{number:,.2f}'\nprint(formatted_number)  # '1,000,000.00'",
+        "tags": "python, f-string, format, number, decimal, comma, string"
+    },
+    {
+        "title": "Using F-Strings for Percentage Formatting in Python",
+        "summary": "formatted_percentage = f'{value:.0%}'",
+        "description": "Formats a decimal number as a percentage using f-strings.",
+        "example": "value = 0.25\nformatted_percentage = f'{value:.0%}'\nprint(formatted_percentage)  # '25%'",
+        "tags": "python, f-string, percentage, format, string, decimal"
+    },
+    {
+        "title": "Defining Lists in Python",
+        "summary": "my_list = [1, 2, 3]",
+        "description": "Creates a list using square brackets or the list constructor.",
+        "example": "my_list = list(range(1, 11))\nprint(my_list)  # [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]",
+        "tags": "python, list, define, create, range, data structure"
+    },
+    {
+        "title": "Filtering a List in Python",
+        "summary": "filtered_list = list(filter(lambda x: x > 5, my_list))",
+        "description": "Filters elements from a list using a lambda function.",
+        "example": "my_list = [3, 4, 5, 6, 7]\nfiltered_list = list(filter(lambda x: x > 5, my_list))\nprint(filtered_list)  # [6, 7]",
+        "tags": "python, list, filter, lambda, higher-order function"
+    },
+    {
+        "title": "Appending to a List in Python",
+        "summary": "my_list.append(value)",
+        "description": "Adds an element to the end of a list using the append method.",
+        "example": "my_list = []\nmy_list.append(1)\nprint(my_list)  # [1]",
+        "tags": "python, list, append, add, modify, data structure"
+    },
+    {
+        "title": "Slicing a List in Python",
+        "summary": "sliced_list = my_list[start:end]",
+        "description": "Extracts a portion of a list using slice notation.",
+        "example": "my_list = ['spam', 'egg', 'bacon', 'tomato', 'ham', 'lobster']\nsliced_list = my_list[2:5]\nprint(sliced_list)  # ['bacon', 'tomato', 'ham']",
+        "tags": "python, list, slice, extract, subset, range"
+    },
+    {
+        "title": "Reversing a List in Python",
+        "summary": "reversed_list = my_list[::-1]",
+        "description": "Reverses the elements in a list using slicing with a step of -1.",
+        "example": "my_list = ['spam', 'egg', 'bacon']\nreversed_list = my_list[::-1]\nprint(reversed_list)  # ['bacon', 'egg', 'spam']",
+        "tags": "python, list, reverse, slice, modify, order"
+    },
+    {
+        "title": "Removing an Element from a List in Python",
+        "summary": "removed_item = my_list.pop()",
+        "description": "Removes and returns the last element of a list using pop().",
+        "example": "my_list = ['bread', 'butter', 'milk']\nremoved_item = my_list.pop()\nprint(removed_item)  # 'milk'",
+        "tags": "python, list, remove, pop, delete, modify"
+    },
+    {
+        "title": "Accessing Elements in a List in Python",
+        "summary": "element = my_list[index]",
+        "description": "Retrieves an element from a list using its index.",
+        "example": "my_list = ['a', 'b', 'c', 'd']\nelement = my_list[0]\nprint(element)  # 'a'",
+        "tags": "python, list, access, index, retrieve, data structure"
+    },
+    {
+        "title": "Concatenating Lists in Python",
+        "summary": "new_list = list1 + list2",
+        "description": "Combines two lists using the + operator.",
+        "example": "odd = [1, 3, 5]\nnew_list = odd + [9, 11, 13]\nprint(new_list)  # [1, 3, 5, 9, 11, 13]",
+        "tags": "python, list, concatenate, merge, combine, add"
+    },
+    {
+        "title": "Sorting and Reversing a List in Python",
+        "summary": "my_list.sort()\nmy_list.reverse()",
+        "description": "Sorts a list in ascending order and reverses its order.",
+        "example": "my_list = [3, 1, 3, 2, 5]\nmy_list.sort()\nprint(my_list)  # [1, 2, 3, 3, 5]\nmy_list.reverse()\nprint(my_list)  # [5, 3, 3, 2, 1]",
+        "tags": "python, list, sort, reverse, order, modify"
+    },
+    {
+        "title": "Counting Elements in a List in Python",
+        "summary": "count = my_list.count(value)",
+        "description": "Counts the occurrences of a specific value in a list.",
+        "example": "my_list = [3, 1, 3, 2, 5]\ncount = my_list.count(3)\nprint(count)  # 2",
+        "tags": "python, list, count, frequency, occurrences"
+    },
+    {
+        "title": "Repeating Elements in a List in Python",
+        "summary": "repeated_list = [value] * count",
+        "description": "Creates a list by repeating an element multiple times.",
+        "example": "repeated_list = ['re'] * 3\nprint(repeated_list)  # ['re', 're', 're']",
+        "tags": "python, list, repeat, multiplication, duplicate"
+    },
+    {
+        "title": "Using If-Else in Python",
+        "summary": "if condition:\n    action",
+        "description": "Implements conditional statements using if, elif, and else.",
+        "example": "num = 5\nif num > 10:\n    print('Greater than 10')\nelif num < 10:\n    print('Smaller than 10')\nelse:\n    print('Exactly 10')",
+        "tags": "python, if, else, elif, conditional, logic"
+    },
+    {
+        "title": "One-Line If-Else in Python",
+        "summary": "result = 'a' if a > b else 'b'",
+        "description": "Uses a ternary operator for concise if-else statements.",
+        "example": "a, b = 330, 200\nresult = 'a' if a > b else 'b'\nprint(result)  # 'a'",
+        "tags": "python, if-else, one-liner, ternary, conditional"
+    },
+    {
+        "title": "Checking Boolean Values in Python",
+        "summary": "if not value:\n    action",
+        "description": "Uses if-elif-else to check boolean values including None.",
+        "example": "value = True\nif not value:\n    print('Value is False')\nelif value is None:\n    print('Value is None')\nelse:\n    print('Value is True')",
+        "tags": "python, boolean, if, conditional, logic"
+    },
+    {
+        "title": "Using Match Case in Python",
+        "summary": "match x:\n  case 0:\n    print('zero')\n  case 1:\n    print('one')\n  case _:\n    print('multiple')",
+        "description": "Uses the match-case statement to handle different values of a variable.",
+        "example": "x = 1\nmatch x:\n  case 0:\n    print('zero')\n  case 1:\n    print('one')\n  case _:\n    print('multiple')\n# Output: one",
+        "tags": "match, case, switch, pattern matching, Python"
+    },
+    {
+        "title": "Iterate Over a List in Python",
+        "summary": "for item in my_list:\n    print(item)",
+        "description": "Loops through each element in a list using a for loop.",
+        "example": "primes = [2, 3, 5, 7]\nfor prime in primes:\n    print(prime)\n# Output: 2 3 5 7",
+        "tags": "loop, iterate, for loop, list, Python"
+    },
+    {
+        "title": "Iterate Over a List with Index in Python",
+        "summary": "for index, value in enumerate(my_list):\n    print(index, value)",
+        "description": "Uses the enumerate function to iterate over a list while keeping track of the index.",
+        "example": "animals = ['dog', 'cat', 'mouse']\nfor i, value in enumerate(animals):\n    print(i, value)\n# Output: 0 dog 1 cat 2 mouse",
+        "tags": "enumerate, for loop, iterate, index, list, Python"
+    },
+    {
+        "title": "Using While Loop in Python",
+        "summary": "while condition:\n    # code block",
+        "description": "Executes a block of code repeatedly while the condition remains true.",
+        "example": "x = 0\nwhile x < 4:\n    print(x)\n    x += 1\n# Output: 0 1 2 3",
+        "tags": "while loop, iteration, loop, Python"
+    },
+    {
+        "title": "Breaking a Loop in Python",
+        "summary": "for i in range(10):\n    if i == 5:\n        break",
+        "description": "Exits a loop early when a certain condition is met.",
+        "example": "for i in range(10):\n    if i == 5:\n        break\n    print(i)\n# Output: 0 1 2 3 4",
+        "tags": "break, loop, for loop, Python"
+    },
+    {
+        "title": "Skipping an Iteration in Python Loop",
+        "summary": "for i in range(5):\n    if i == 2:\n        continue",
+        "description": "Uses the continue statement to skip a specific iteration in a loop.",
+        "example": "for i in range(5):\n    if i == 2:\n        continue\n    print(i)\n# Output: 0 1 3 4",
+        "tags": "continue, loop, for loop, iteration, Python"
+    },
+    {
+        "title": "Using Range in a Python Loop",
+        "summary": "for i in range(start, stop, step):\n    # code block",
+        "description": "Generates a sequence of numbers with a given range and step.",
+        "example": "for i in range(4, 10, 2):\n    print(i)\n# Output: 4 6 8",
+        "tags": "range, loop, iteration, for loop, Python"
+    },
+    {
+        "title": "Iterating Over Multiple Lists with zip() in Python",
+        "summary": "for a, b in zip(list1, list2):\n    print(a, b)",
+        "description": "Combines two lists element-wise using the zip function.",
+        "example": "words = ['Mon', 'Tue', 'Wed']\nnumbers = [1, 2, 3]\nfor w, n in zip(words, numbers):\n    print(f'{n}: {w}')\n# Output: 1: Mon, 2: Tue, 3: Wed",
+        "tags": "zip, loop, iterate, multiple lists, Python"
+    },
+    {
+        "title": "Using else with for Loop in Python",
+        "summary": "for item in my_list:\n    if condition:\n        break\nelse:\n    print('Not found!')",
+        "description": "Executes the else block only if the loop completes without hitting a break.",
+        "example": "nums = [60, 70, 30, 110, 90]\nfor n in nums:\n    if n > 100:\n        print(f'{n} is bigger than 100')\n        break\nelse:\n    print('Not found!')\n# Output: 110 is bigger than 100",
+        "tags": "for else, loop, break, iteration, Python"
+    },
+    {
+        "title": "Defining a Function in Python",
+        "summary": "def my_function():\n    print('Hello, World!')",
+        "description": "Defines a simple function in Python.",
+        "example": "def hello_world():\n    print('Hello, World!')\nhello_world()\n# Output: Hello, World!",
+        "tags": "function, define, Python"
+    },
+    {
+        "title": "Write an Object to a File",
+        "summary": "with open('file.txt', 'w') as f: f.write(json.dumps(obj))",
+        "description": "Writes a Python object to a file as a JSON string.",
+        "example": "import json\nobj = {'a': 1, 'b': 2}\nwith open('file.txt', 'w') as f:\n    f.write(json.dumps(obj))",
+        "tags": "file, write, json, save, object, python"
+    },
+    {
+        "title": "Read an Object from a File",
+        "summary": "with open('file.txt', 'r') as f: obj = json.load(f)",
+        "description": "Reads a JSON object from a file and converts it into a Python object.",
+        "example": "import json\nwith open('file.txt', 'r') as f:\n    obj = json.load(f)\nprint(obj)",
+        "tags": "file, read, json, load, object, python"
+    },
+    {
+        "title": "Delete a File",
+        "summary": "import os; os.remove('file.txt')",
+        "description": "Deletes a file from the filesystem if it exists.",
+        "example": "import os\nos.remove('file.txt')",
+        "tags": "file, delete, remove, os, python"
+    },
+    {
+        "title": "Check If a File Exists and Delete It",
+        "summary": "if os.path.exists('file.txt'): os.remove('file.txt')",
+        "description": "Checks if a file exists before deleting it to avoid errors.",
+        "example": "import os\nif os.path.exists('file.txt'):\n    os.remove('file.txt')\nelse:\n    print('File does not exist')",
+        "tags": "file, check, delete, exists, os, python"
+    },
+    {
+        "title": "Delete a Folder",
+        "summary": "import os; os.rmdir('folder')",
+        "description": "Deletes an empty folder from the filesystem.",
+        "example": "import os\nos.rmdir('folder')",
+        "tags": "folder, directory, delete, remove, os, python"
+    },
+    {
+        "title": "Define a Python Class",
+        "summary": "class MyClass: pass",
+        "description": "Creates a simple Python class without any attributes or methods.",
+        "example": "class MyClass:\n    pass\n\nobj = MyClass()",
+        "tags": "class, object, oop, define, python"
+    },
+    {
+        "title": "Create a Class Constructor",
+        "summary": "class Animal: def __init__(self, name): self.name = name",
+        "description": "Initializes a class with a constructor that takes parameters.",
+        "example": "class Animal:\n    def __init__(self, name):\n        self.name = name\n\ncat = Animal('Kitty')\nprint(cat.name)  # 'Kitty'",
+        "tags": "class, constructor, init, object, python"
+    },
+    {
+        "title": "Define a Method in a Class",
+        "summary": "class Dog: def bark(self): print('Woof!')",
+        "description": "Defines a method inside a class that can be called on instances.",
+        "example": "class Dog:\n    def bark(self):\n        print('Woof!')\n\nd = Dog()\nd.bark()  # 'Woof!'",
+        "tags": "class, method, function, object, python"
+    },
+    {
+        "title": "Use Class Variables",
+        "summary": "class MyClass: var = 'Hello'",
+        "description": "Creates a class variable that is shared across all instances.",
+        "example": "class MyClass:\n    var = 'Hello'\n\nprint(MyClass.var)  # 'Hello'",
+        "tags": "class, variable, shared, define, python"
+    },
+    {
+        "title": "Use the Super() Function in a Class",
+        "summary": "class Child(Parent): def method(self): super().method()",
+        "description": "Calls the method from the parent class using `super()`.",
+        "example": "class Parent:\n    def greet(self):\n        print('Hello from Parent')\n\nclass Child(Parent):\n    def greet(self):\n        print('Hello from Child')\n        super().greet()\n\nc = Child()\nc.greet()",
+        "tags": "class, inheritance, super, parent, child, python"
+    },
+    {
+        "title": "Use the repr() Method",
+        "summary": "class MyClass: def __repr__(self): return 'MyClass()'",
+        "description": "Defines how an object is represented when printed.",
+        "example": "class Employee:\n    def __init__(self, name):\n        self.name = name\n    def __repr__(self):\n        return self.name\n\njohn = Employee('John')\nprint(john)  # 'John'",
+        "tags": "class, repr, string, representation, python"
+    },
+    {
+        "title": "Define a Custom Exception",
+        "summary": "class CustomError(Exception): pass",
+        "description": "Creates a user-defined exception by inheriting from Exception.",
+        "example": "class CustomError(Exception):\n    pass\n\nraise CustomError('Something went wrong')",
+        "tags": "exception, error, custom, raise, python"
+    },
+    {
+        "title": "Demonstrate Polymorphism in Python",
+        "summary": "class Parent: def method(self): print('Parent')",
+        "description": "Demonstrates polymorphism by overriding methods in subclasses.",
+        "example": "class Parent:\n    def method(self):\n        print('Parent')\n\nclass Child(Parent):\n    def method(self):\n        print('Child')\n\np = Parent()\nc = Child()\np.method()  # 'Parent'\nc.method()  # 'Child'",
+        "tags": "class, polymorphism, method, override, python"
+    },
+    {
+        "title": "Override a Method in Python",
+        "summary": "class Child(Parent): def method(self): print('Child')",
+        "description": "Overrides a method from a parent class in a child class.",
+        "example": "class Parent:\n    def method(self):\n        print('Parent')\n\nclass Child(Parent):\n    def method(self):\n        print('Child')\n\nc = Child()\nc.method()  # 'Child'",
+        "tags": "class, override, method, inheritance, python"
+    },
+    {
+        "title": "Implement Inheritance in Python",
+        "summary": "class Dog(Animal): def sound(self): print('Woof!')",
+        "description": "Shows how to inherit attributes and methods from a parent class.",
+        "example": "class Animal:\n    def __init__(self, name):\n        self.name = name\n\nclass Dog(Animal):\n    def sound(self):\n        print('Woof!')\n\nd = Dog('Buddy')\nprint(d.name)  # 'Buddy'\nd.sound()  # 'Woof!'",
+        "tags": "class, inheritance, parent, child, python"
+    },
+    {
+        "title": "Use Type Hints in Python",
+        "summary": "def func(name: str, age: int) -> str: return f'{name} is {age}'",
+        "description": "Adds type hints to function parameters and return values.",
+        "example": "def greet(name: str, age: int) -> str:\n    return f'{name} is {age} years old'\n\nprint(greet('Alice', 25))  # 'Alice is 25 years old'",
+        "tags": "type hints, annotations, function, python"
+    },
+    {
+        "title": "Using Positional Arguments in Python",
+        "summary": "def function_name(*args): return operation_on_args",
+        "description": "Defines a function that takes multiple positional arguments and performs an operation.",
+        "example": "def calc_summary(*args: int): return sum(args)\nprint(calc_summary(3, 1, 4))  # => 8",
+        "tags": "python, function, positional arguments, args, sum, parameters"
+    },
+    {
+        "title": "Specifying Return Type in Python Functions",
+        "summary": "def function_name(parameter) -> return_type: return processed_value",
+        "description": "Specifies the expected return type of a function using type annotations.",
+        "example": "def say_hello(name) -> str: return 'Hello, ' + name\nvar = 'Python'\nprint(say_hello(var))  # => Hello, Python",
+        "tags": "python, function, return type, type annotation, str"
+    },
+    {
+        "title": "Using Union Return Types in Python Functions",
+        "summary": "from typing import Union\ndef function_name(parameter) -> Union[type1, type2]: return conditional_value",
+        "description": "Uses type annotations to specify multiple possible return types in a function.",
+        "example": "from typing import Union\ndef resp200(meaningful) -> Union[int, str]: return 'OK' if meaningful else 200",
+        "tags": "python, function, union, return type, typing, multiple types"
+    },
+    {
+        "title": "Using Keyword Arguments in Python Functions",
+        "summary": "def function_name(**kwargs): return operation_on_kwargs",
+        "description": "Defines a function that takes keyword arguments and processes them.",
+        "example": "def calc_summary(**kwargs: int): return sum(kwargs.values())\nprint(calc_summary(a=1, b=2))  # => 3",
+        "tags": "python, function, keyword arguments, kwargs, parameters"
+    },
+    {
+        "title": "Returning Multiple Values in Python",
+        "summary": "def function_name(): return value1, value2",
+        "description": "Demonstrates returning multiple values from a function as a tuple.",
+        "example": "def resp200() -> (int, str): return 200, 'OK'\nreturns = resp200()\nprint(returns)  # => (200, 'OK')",
+        "tags": "python, function, return multiple values, tuple"
+    },
+    {
+        "title": "Using Self in Python Classes",
+        "summary": "class ClassName:\n    def method(self, parameter): return operation_on_parameter",
+        "description": "Uses self to refer to instance attributes inside a class.",
+        "example": "class Employee:\n    name: str\n    def set_name(self, name) -> 'Employee': self.name = name; return self",
+        "tags": "python, class, self, instance method"
+    },
+    {
+        "title": "Using Generics in Python Functions",
+        "summary": "from typing import TypeVar, Type\ndef function_name(raw, mapper: Type[T], default: T) -> T: return processed_value",
+        "description": "Defines a generic function using TypeVar for flexible type handling.",
+        "example": "from typing import TypeVar, Type\nT = TypeVar('T')\ndef converter(raw, mapper: Type[T], default: T) -> T:\n    try: return mapper(raw)\n    except: return default",
+        "tags": "python, generics, TypeVar, typing, function"
+    },
+    {
+        "title": "Using Callable in Python Functions",
+        "summary": "from typing import Callable, Any\ndef function_name(raw, mapper: Callable[[Any], return_type], default: return_type) -> return_type: return processed_value",
+        "description": "Defines a function that takes another function as a parameter using Callable.",
+        "example": "from typing import Callable, Any\ndef converter(raw, mapper: Callable[[Any], bool], default: bool) -> bool:\n    try: return mapper(raw)\n    except: return default",
+        "tags": "python, function, callable, typing, higher-order function"
+    },
+    {
+        "title": "Using Walrus Operator in Python",
+        "summary": "while (variable := expression): operation_on_variable",
+        "description": "Uses the walrus operator (:=) to assign and use a value in a single expression.",
+        "example": "values = [1, 'text', True, '', 2]\ni = 0\nwhile (data := values[i]):\n    print(data, end=', ')\n    i += 1",
+        "tags": "python, walrus operator, assignment expression, loop"
+    },
+    {
+        "title": "Using Generators in Python",
+        "summary": "def generator_function(iterable):\n    for item in iterable: yield transformed_item",
+        "description": "Creates a generator function that yields values lazily.",
+        "example": "def double_numbers(iterable):\n    for i in iterable: yield i + i",
+        "tags": "python, generator, yield, iterable, function"
+    }
+]
